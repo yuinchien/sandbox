@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500" rel="stylesheet">
+  <title>Site A</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-family: 'Google Sans';
+    color: rgba(0,0,0,.8);
+    -webkit-font-smoothing: antialiased;
+  }
+  #topbar {
+    height: 60px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: rgb(0,35,153);
+    background: linear-gradient(225deg, rgba(0,35,153,1) 0%, rgba(226,228,37,1) 100%);
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
+    display: flex;
+    padding-left: 60px;
+    color: white;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1000;
+  }
+    #topbar .title {
+      font-weight: 500;
+      font-size: 18px;
+      flex: 1;
+      align-self: center;
+    }
+    #topbar .nav-item {
+      font-weight: 500;
+      font-size: 14px;
+      padding: 0 12px;
+    }
+    #topbar .icon-github {
+      margin-right: 20px;
+      margin-left: 16px;
+      width: 24px;
+      height: 24px;
+      background-size: cover;
+      background-image: url(ic_github_white_24dp.svg);
+    }
+  #main {
+    max-width: 1160px;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    bottom: 0;
+    right: 0;
+    display: flex;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  #collapsed-title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    position: relative;
+    display: none;
+  }
+    #collapsed-title:before {
+      position: absolute;
+      right: 0;
+      width: 24px;
+      height: 24px;
+      content: "";
+      background: url(https://www.gstatic.com/images/icons/material/system/2x/arrow_drop_down_black_24dp.png);
+      background-size: cover;
+    }
+  #right-nav {
+    background: white;
+    width: 240px;
+  }
+    #right-nav .placeholder {
+      line-height: 32px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    #right-nav .subnav {
+      margin-left: 24px;
+      margin-bottom: 8px;
+      position: relative;
+    }
+    #right-nav .subnav .subnav {
+      padding-left: 16px;
+    }
+    #right-nav .subnav .subnav:before {
+      position: absolute;
+      content: "";
+      background: #000;
+      width: 1px;
+      top: 6px;
+      bottom: 6px;
+      left: 0;
+    }
+  #content {
+    flex: 1;
+    margin-right: 40px;
+    overflow: scroll;
+  }
+
+  #content-wrapper,
+  #right-nav {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .row {
+    display: flex;
+  }
+    .row .block {
+      flex: 1;
+    }
+    .row .gap {
+      width: 40px;
+    }
+  .block {
+    background: #f8f8f8;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    #main {
+      margin: 0 auto;
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    #main {
+      padding: 0 60px;
+    }
+
+  }
+  @media screen and (max-width: 960px) {
+    #main {
+      padding: 0 32px;
+    }
+    #topbar {
+      padding-left: 32px;
+    }
+    #content {
+      margin-right: 24px;
+    }
+    #content-wrapper,
+    #right-nav {
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+    .row {
+      display: block;
+    }
+    .row .gap {
+      display: none;
+    }
+    .block {
+      margin-bottom: 24px;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    #topbar {
+      height: 56px;
+      padding-left: 20px;
+    }
+    #collapsed-title {
+      display: block;
+      flex: 1;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    #right-nav {
+      position: fixed;
+      margin-top: 0;
+      top: 56px;
+      left: 0;
+      right: 0;
+      height: 56px;
+      width: auto;
+      border-bottom: 1px solid rgba(0,0,0,.2);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    #right-nav .placeholder,
+    #right-nav .subnav {
+      display: none;
+    }
+    #content {
+      margin-right: 0px;
+    }
+    #main {
+      padding: 0 20px;
+      top: 112px;
+    }
+    #content-wrapper {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    #right-nav {
+      margin: 0;
+    }
+    .block {
+      margin-bottom: 16px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div id="topbar">
+    <div class="title">Project Title</div>
+    <div class="nav-item">Lorem</div>
+    <div class="nav-item">Ipsum</div>
+    <div class="icon-github"></div>
+  </div>
+  <div id="main">
+    <div id="content">
+      <div id="content-wrapper">
+        <div class="block" style="padding-bottom: 60%;"></div>
+        <div class="block" style="padding-bottom: 30%;"></div>
+
+        <div class="row">
+          <div class="block" style="padding-bottom: 40%;"></div>
+          <div class="gap"></div>
+          <div class="block" style="padding-bottom: 40%;"></div>
+        </div>
+        <div class="block" style="padding-bottom: 60%;"></div>
+        <div class="block" style="padding-bottom: 60%;"></div>
+        <div class="row">
+          <div class="block" style="padding-bottom: 40%;"></div>
+          <div class="gap"></div>
+          <div class="block" style="padding-bottom: 40%;"></div>
+        </div>
+        <div class="block" style="padding-bottom: 30%;"></div>
+        <div class="block" style="padding-bottom: 60%;"></div>
+        <div class="block" style="padding-bottom: 40%;"></div>
+      </div>
+    </div>
+    <div id="right-nav">
+      <div id="collapsed-title">Dolor sit amet</div>
+      <div class="placeholder">Dolor sit amet</div>
+      <div class="subnav">
+        <div class="placeholder">Voluptate velit </div>
+          <div class="subnav">
+            <div class="placeholder">Voluptate velit </div>
+            <div class="placeholder">Duis aute irure </div>
+            <div class="placeholder">Laboris nisi ut aliquip </div>
+          </div>
+        <div class="placeholder">Duis aute irure </div>
+        <div class="placeholder">Laboris nisi ut aliquip </div>
+      </div>
+      <div class="placeholder">Commodo consequat</div>
+      <div class="placeholder">Magna aliqua</div>
+      <div class="placeholder">Reprehenderit in voluptate</div>
+      <div class="placeholder">Excepteur sint occaecat</div>
+      <div class="placeholder">Deserunt mollit</div>
+      <div class="placeholder">Cupidatat proident</div>
+    </div>
+  </div>
+</body>
+</html>
