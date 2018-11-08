@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500" rel="stylesheet">
+  <title>Polymer</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-family: 'Google Sans';
+    -webkit-font-smoothing: antialiased;
+    color: rgba(0,0,0,.8);
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  a {
+    color: #FF4470;
+    cursor: pointer;
+  }
+  .flex {
+    flex: 1;
+  }
+
+.onload-fadein {
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: fadein;
+  -webkit-animation-duration: 1s;
+  opacity: 0;
+}
+  @-webkit-keyframes fadein {
+      from {
+          opacity:0;
+          -webkit-transform: translate3d(0,32px,0);
+      }
+      to {
+          opacity:1;
+          -webkit-transform: translate3d(0,0,0);
+      }
+  }
+
+
+  #topbar {
+    height: 60px;
+    z-index: 1000;
+  }
+    body.landing #topbar {
+      align-items: flex-start;
+      height: 72vh;
+    }
+    #topbar .sticky {
+      position: sticky;
+      left: 0;
+      top: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+      height: 60px;
+    }
+
+    #topbar .title {
+      font-weight: 500;
+      font-size: 18px;
+      flex: 1;
+      align-self: center;
+      margin-top: 28vh;
+      color: #FF4470;
+    }
+    body.landing #topbar .title {
+      font-size: 72px;
+      font-weight: 400;
+      position: relative;
+      margin-bottom: 16px;
+      padding-right: 5%;
+      text-indent: -4px;
+    }
+      body.landing #topbar .title:before {
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        height: 2px;
+        width: 48px;
+        background: #FF4470;
+        content: "";
+      }
+
+    body.landing #topbar .blurb {
+      font-size: 28px;
+      line-height: 38px;
+      font-weight: 400;
+      max-width: 640px;
+      color: rgba(0,0,0,0.8);
+      padding-right: 10%;
+    }
+
+    #topbar .nav-item {
+      font-weight: 500;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 0 12px;
+      text-transform: uppercase;
+      color: #FF4470;
+    }
+    #topbar .icon-github {
+      margin-right: 20px;
+      margin-left: 12px;
+      width: 24px;
+      height: 24px;
+      background-size: cover;
+      fill: #FF4470;
+    }
+    .gradient-pink {
+      background: linear-gradient(315deg, rgba(254,161,231,1) 0%, rgba(222,0,168,1) 100%);
+    }
+    .gradient-indigo {
+      background: linear-gradient(315deg, rgba(223,196,255,1) 0%, rgba(103,0,223,1) 100%);
+    }
+    .gradient-green {
+      background: linear-gradient(315deg, rgba(214,255,231,1) 0%, rgba(0,214,124,1) 100%);
+    }
+    .gradient-blue {
+      background: linear-gradient(315deg, rgba(217,244,255,1) 0%, rgba(0,152,214,1) 100%);
+    }
+    .gradient-red {
+      background: linear-gradient(315deg, rgba(255,215,203,1) 0%, rgba(227,52,0,1) 100%);
+    }
+    .gradient-gray {
+      background: linear-gradient(315deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+    }
+    .wrapper {
+      max-width: 1280px;
+    }
+
+  #main {
+    margin-top: 60px;
+  }
+
+  #collapsed-title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    position: relative;
+    display: none;
+  }
+    #collapsed-title:before {
+      position: absolute;
+      right: 0;
+      width: 24px;
+      height: 24px;
+      content: "";
+      background: url(https://www.gstatic.com/images/icons/material/system/2x/arrow_drop_down_black_24dp.png);
+      background-size: cover;
+    }
+
+  .sticky-nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+  }
+
+  #content {
+    flex: 1;
+    margin-right: 40px;
+    margin-left: 40px;
+    overflow: scroll;
+    padding-top: 40px;
+  }
+
+  .row {
+    display: flex;
+  }
+    .row .block {
+      flex: 1;
+    }
+    .row .gap {
+      width: 40px;
+    }
+  .block {
+    background: #f8f8f8;
+    margin-bottom: 40px;
+  }
+
+
+  .thumb-wrapper {
+    width: auto;
+    margin-bottom: 8px;
+    padding: 40px;
+  }
+
+  #footer {
+    padding: 40px 0;
+    background: #f5f5f5;
+  }
+    #footer .wrapper {
+      font-size: 0px;
+    }
+    #footer .group {
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 24px;
+    }
+    #footer .gutter {
+      display: inline-block;
+      width: 40px;
+    }
+    #footer #attribution {
+      font-size: 14px;
+      line-height: 22px;
+      padding-bottom: 40px;
+    }
+
+.two-col > div,
+.three-col > div {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+  .two-col {
+    -webkit-column-count: 2;
+    -webkit-column-gap: 40px;
+    margin: 40px 0 40px 0;
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+  .three-col {
+    -webkit-column-count: 3;
+    -webkit-column-gap: 40px;
+  }
+    .section .desc {
+      font-size: 16px;
+      line-height: 24px;
+      padding-right: 20%;
+      /* max-width: 400px; */
+      margin-bottom: -6px;
+    }
+    .section .desc .title {
+      font-size: 36px;
+      line-height: 44px;
+      margin-bottom: 8px;
+      color: white;
+    }
+
+  .project {
+    padding: 32px;
+    margin-bottom: 40px;
+    position: relative;
+    cursor: pointer;
+    -webkit-transition: .4s all;
+    -webkit-transform: scale(1) translate3d(0,0,0);
+  }
+    .project:hover {
+      -webkit-transform: scale(1.02) translate3d(0,0,0);
+      -moz-box-shadow: 0px 2px 8px rgba(0,0,0,.2), 0px 2px 16px rgba(0,0,0,.2);
+      -webkit-box-shadow: 0px 2px 8px rgba(0,0,0,.2), 0px 2px 16px rgba(0,0,0,.2);
+      box-shadow: 0px 2px 8px rgba(0,0,0,.2), 0px 2px 16px rgba(0,0,0,.2);
+    }
+
+  .status {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    writing-mode: tb-rl;
+    margin: 12px;
+    font-size: 14px;
+    /* text-decoration: underline; */
+    /* color: rgba(0,0,0,.5); */
+    color: white;
+    font-weight: 500;
+    letter-spacing: .25px;
+    text-transform: uppercase;
+  }
+
+  .thumb {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 1400px) {
+    .wrapper {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  @media screen and (max-width: 1400px) {
+    .wrapper {
+      padding: 0 60px;
+    }
+  }
+  @media screen and (max-width: 1160px) {
+    #secondary-nav {
+      display: none;
+    }
+
+    .thumb-wrapper {
+      width: auto;
+      margin-bottom: 16px;
+      padding: 16px;
+    }
+
+    .sticky-nav {
+      top: 92px;
+    }
+    .two-col {
+      -webkit-column-gap: 32px;
+    }
+    .wrapper {
+      padding: 0 32px;
+    }
+
+    #content {
+      margin-right: 0px;
+      margin-left: 24px;
+      padding-top: 32px;
+    }
+
+    .project {
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    .section .desc {
+      padding-right: 10%;
+    }
+    .section .desc .title {
+      font-size: 32px;
+      line-height: 38px;
+      margin-bottom: 4px;
+    }
+    .block {
+      margin-bottom: 24px;
+    }
+
+  }
+  @media screen and (max-width: 640px) {
+    body.landing #topbar .title {
+      font-size: 56px;
+      line-height: 64px;
+    }
+    body.landing #topbar .blurb {
+      font-size: 22px;
+      line-height: 32px;
+    }
+    .two-col,
+    .three-col {
+      -webkit-column-count: 1;
+      -webkit-column-gap: 0;
+    }
+
+    #topbar .sticky,
+    #topbar {
+      height: 56px;
+    }
+
+    #content {
+      margin-left: 0px;
+      margin-right: 0px;
+      padding-top: 20px;
+    }
+    #main {
+      margin-top: 112px;
+    }
+    .project {
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .section .desc .title {
+      font-size: 26px;
+      line-height: 34px;
+      margin-bottom: 4px;
+    }
+    .wrapper {
+      padding: 0 20px;
+    }
+    #footer #attribution {
+      padding-bottom: 0;
+    }
+  }
+  </style>
+</head>
+
+<body class="landing">
+
+  <div id="topbar">
+
+    <div class="sticky">
+      <div class="flex"></div>
+      <div class="nav-item">Blog</div>
+      <div class="icon-github">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        	 width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" >
+        <g id="XMLID_399_">
+        	<path id="XMLID_290_" fill-rule="evenodd" clip-rule="evenodd" d="M12,2C6.48,2,2,6.59,2,12.25c0,4.53,2.87,8.37,6.84,9.73
+        		c0.5,0.09,0.68-0.22,0.68-0.49c0-0.24-0.01-0.89-0.01-1.74c-2.78,0.62-3.37-1.37-3.37-1.37c-0.45-1.18-1.11-1.5-1.11-1.5
+        		c-0.91-0.64,0.07-0.62,0.07-0.62c1,0.07,1.53,1.06,1.53,1.06c0.89,1.57,2.34,1.11,2.91,0.85c0.09-0.66,0.35-1.11,0.63-1.37
+        		c-2.22-0.26-4.56-1.14-4.56-5.07c0-1.12,0.39-2.03,1.03-2.75c-0.1-0.26-0.45-1.3,0.1-2.71c0,0,0.84-0.28,2.75,1.05
+        		c0.8-0.23,1.65-0.34,2.5-0.34c0.85,0,1.7,0.12,2.5,0.34c1.91-1.33,2.75-1.05,2.75-1.05c0.55,1.41,0.2,2.45,0.1,2.71
+        		c0.64,0.72,1.03,1.63,1.03,2.75c0,3.94-2.34,4.81-4.57,5.06c0.36,0.32,0.68,0.94,0.68,1.9c0,1.37-0.01,2.48-0.01,2.81
+        		c0,0.27,0.18,0.59,0.69,0.49c3.97-1.36,6.83-5.2,6.83-9.73C22,6.59,17.52,2,12,2"/>
+        	<rect id="XMLID_289_" fill-rule="evenodd" clip-rule="evenodd" fill="none" width="24" height="24"/>
+        </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="wrapper onload-fadein">
+      <div class="title">Polymer Project</div>
+      <div class="blurb">The Polymer Project is an open-source project led by a team of front-end developers working within the Chrome organization at Google.</div>
+    </div>
+
+  </div>
+
+  <div id="main">
+
+    <div class="wrapper section two-col">
+
+      <div class="onload-fadein" style="-webkit-animation-delay: .15s;">
+        <div class="project gradient-pink">
+          <div class="thumb-wrapper">
+            <div class="thumb" style="background-image:url(thumb_lit-html.svg); padding-bottom: 41%;"></div>
+          </div>
+          <div class="desc"><div class="title">lit-html</div>An efficient, expressive, extensible HTML templating library for JavaScript.</div>
+          <div class="status">Prerelease</div>
+        </div>
+      </div>
+
+      <div class="onload-fadein" style="-webkit-animation-delay: .25s;">
+        <div class="project gradient-blue">
+          <div class="thumb-wrapper">
+            <div class="thumb" style="background-image:url(thumb_litElement.svg); padding-bottom: 35%;"></div>
+          </div>
+          <div class="desc"><div class="title">litElement</div>An ultra-light, highly performant custom element base class with a simple but expressive API.</div>
+          <div class="status">Prerelease</div>
+        </div>
+      </div>
+
+      <div class="onload-fadein" style="-webkit-animation-delay: .4s;">
+        <div class="project gradient-green">
+          <div class="thumb-wrapper">
+            <div class="thumb" style="background-image:url(thumb_polyfills.svg); padding-bottom: 36%;"></div>
+          </div>
+          <div class="desc"><div class="title">Web Components Polyfills</div>A suite of polyfills supporting the Web Components specs.</div>
+          <div class="status">Prerelease</div>
+        </div>
+      </div>
+
+      <div class="onload-fadein" style="-webkit-animation-delay: .4s;">
+        <div class="project gradient-gray">
+          <div class="thumb-wrapper">
+            <div class="thumb" style="background-image:url(thumb_elements.svg); padding-bottom: 35%; "></div>
+          </div>
+          <div class="desc"><div class="title">Polymer elements</div>Our original sets of Polymer-based web components.</div>
+          <div class="status">Maintenance</div>
+        </div>
+      </div>
+
+      <div class="onload-fadein" style="-webkit-animation-delay: .45s;">
+        <div class="project gradient-red">
+          <div class="thumb-wrapper">
+            <div class="thumb" style="background-image:url(thumb_pwa.svg); padding-bottom: 48%;"></div>
+          </div>
+          <div class="desc"><div class="title">PWA Starter Kit</div>Your one-stop shop for building Progressive Web Apps that make the most of the modern web.</div>
+          <div class="status">Prerelease</div>
+        </div>
+      </div>
+
+      <div class="onload-fadein" style="-webkit-animation-delay: .5s;">
+        <div class="project gradient-indigo" >
+          <div class="thumb-wrapper">
+            <div class="thumb" style="background-image:url(thumb_material.svg); padding-bottom: 55%;"></div>
+          </div>
+          <div class="desc"><div class="title">Material Web Components</div>High-fidelity realizations of Google's Material Design spec that work anywhere on the web.</div>
+          <div class="status">Prerelease</div>
+        </div>
+      </div>
+
+      <div class="onload-fadein" style="-webkit-animation-delay: .3s;">
+        <div class="project gradient-gray">
+          <div class="thumb-wrapper">
+            <div class="thumb" style="background-image:url(thumb_library.svg); padding-bottom: 41%; "></div>
+          </div>
+          <div class="desc"><div class="title">Polymer Library</div>Our original web component library.</div>
+          <div class="status">Maintenance</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="wrapper three-col">
+      <div class="group">
+        <div class="caption">Polymer projects</div>
+        <div class="link"><a>lit-html</a></div>
+        <div class="link"><a>LitElement</a></div>
+        <div class="link"><a>Material Web Components</a></div>
+        <div class="link"><a>PWA Starter Kit</a></div>
+        <div class="link"><a>Web Components Polyfills</a></div>
+      </div>
+      <div class="group">
+        <div class="caption">Stay in touch</div>
+        <div class="link"><a>Github</a></div>
+        <div class="link"><a>Twitter</a></div>
+        <div class="link"><a>YouTube</a></div>
+      </div>
+
+      <div id="attribution" class="group">–– A Google Project by the <a>Polymer</a> team.<br>Code licensed under the <a>BSD License</a>.</div>
+    </div>
+  </div>
+
+</body>
+</html>

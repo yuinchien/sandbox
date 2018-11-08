@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="240px" viewBox="0 0 400 240" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-12" fill-rule="nonzero">
+            <rect id="Rectangle" stroke="#FFFFFF" stroke-width="8" x="4" y="4" width="119" height="40"></rect>
+            <rect id="Rectangle-Copy-17" fill="#FFFFFF" x="0" y="112" width="48" height="48"></rect>
+            <rect id="Rectangle-Copy-23" stroke="#FFFFFF" stroke-width="4" x="58" y="114" width="124" height="44"></rect>
+            <polygon id="Rectangle-Copy-11" fill="#FFFFFF" points="0 56 128 56 0 104"></polygon>
+            <path d="M214,3.77359245 L187.608495,46 L240.391505,46 L214,3.77359245 Z" id="Rectangle-Copy-13" stroke="#FFFFFF" stroke-width="4"></path>
+            <polygon id="Rectangle-Copy-31" fill="#FFFFFF" transform="translate(218.000000, 136.000000) scale(-1, -1) rotate(90.000000) translate(-218.000000, -136.000000) " points="194.079812 110 242 162 194 162"></polygon>
+            <rect id="Rectangle-Copy-9" stroke="#FFFFFF" stroke-width="2" x="138" y="57" width="105" height="46"></rect>
+            <rect id="Rectangle-Copy-7" fill="#FFFFFF" x="135" y="0" width="48" height="48" rx="24"></rect>
+            <rect id="Rectangle-Copy-15" fill="#FFFFFF" x="98" y="74" width="30" height="30" rx="15"></rect>
+        </g>
+    </g>
+</svg>
