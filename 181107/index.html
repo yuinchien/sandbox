@@ -41,7 +41,6 @@
       }
   }
 
-
   #topbar {
     height: 60px;
     z-index: 1000;
@@ -137,6 +136,13 @@
 
   #main {
     margin-top: 60px;
+  }
+
+  .for-multiple-column {
+    display: block;
+  }
+  .for-single-column {
+    display: none;
   }
 
   #collapsed-title {
@@ -346,6 +352,12 @@
       font-size: 22px;
       line-height: 32px;
     }
+    .for-multiple-column {
+      display: none;
+    }
+    .for-single-column {
+      display: block;
+    }
     .two-col,
     .three-col {
       -webkit-column-count: 1;
@@ -417,9 +429,9 @@
 
   <div id="main">
 
-    <div class="wrapper section two-col">
+    <div class="for-multiple-column wrapper section two-col">
 
-      <div class="onload-fadein" style="-webkit-animation-delay: .15s;">
+      <div class="onload-fadein" style="-webkit-animation-delay: .15s;" order="1">
         <div class="project gradient-pink">
           <div class="thumb-wrapper">
             <div class="thumb" style="background-image:url(thumb_lit-html.svg); padding-bottom: 41%;"></div>
@@ -429,7 +441,7 @@
         </div>
       </div>
 
-      <div class="onload-fadein" style="-webkit-animation-delay: .25s;">
+      <div class="onload-fadein" style="-webkit-animation-delay: .25s;" order="3">
         <div class="project gradient-blue">
           <div class="thumb-wrapper">
             <div class="thumb" style="background-image:url(thumb_litElement.svg); padding-bottom: 35%;"></div>
@@ -439,7 +451,7 @@
         </div>
       </div>
 
-      <div class="onload-fadein" style="-webkit-animation-delay: .4s;">
+      <div class="onload-fadein" style="-webkit-animation-delay: .4s;" order="5">
         <div class="project gradient-green">
           <div class="thumb-wrapper">
             <div class="thumb" style="background-image:url(thumb_polyfills.svg); padding-bottom: 36%;"></div>
@@ -449,7 +461,7 @@
         </div>
       </div>
 
-      <div class="onload-fadein" style="-webkit-animation-delay: .4s;">
+      <div class="onload-fadein" style="-webkit-animation-delay: .4s;" order="6">
         <div class="project gradient-gray">
           <div class="thumb-wrapper">
             <div class="thumb" style="background-image:url(thumb_elements.svg); padding-bottom: 35%; "></div>
@@ -459,7 +471,7 @@
         </div>
       </div>
 
-      <div class="onload-fadein" style="-webkit-animation-delay: .45s;">
+      <div class="onload-fadein" style="-webkit-animation-delay: .45s;" order="2">
         <div class="project gradient-red">
           <div class="thumb-wrapper">
             <div class="thumb" style="background-image:url(thumb_pwa.svg); padding-bottom: 48%;"></div>
@@ -469,7 +481,7 @@
         </div>
       </div>
 
-      <div class="onload-fadein" style="-webkit-animation-delay: .5s;">
+      <div class="onload-fadein" style="-webkit-animation-delay: .5s;" order="4">
         <div class="project gradient-indigo" >
           <div class="thumb-wrapper">
             <div class="thumb" style="background-image:url(thumb_material.svg); padding-bottom: 55%;"></div>
@@ -479,7 +491,7 @@
         </div>
       </div>
 
-      <div class="onload-fadein" style="-webkit-animation-delay: .3s;">
+      <div class="onload-fadein" style="-webkit-animation-delay: .3s;" order="7">
         <div class="project gradient-gray">
           <div class="thumb-wrapper">
             <div class="thumb" style="background-image:url(thumb_library.svg); padding-bottom: 41%; "></div>
@@ -488,8 +500,81 @@
           <div class="status">Maintenance</div>
         </div>
       </div>
-
     </div>
+
+    <div class="for-single-column wrapper section two-col">
+
+      <div class="onload-fadein" style="-webkit-animation-delay: .15s;" order="1">
+        <div class="project gradient-pink">
+          <div class="thumb-wrapper">
+            <div class="thumb" style="background-image:url(thumb_lit-html.svg); padding-bottom: 41%;"></div>
+          </div>
+          <div class="desc"><div class="title">lit-html</div>An efficient, expressive, extensible HTML templating library for JavaScript.</div>
+          <div class="status">Prerelease</div>
+        </div>
+      </div>
+
+      <div class="onload-fadein" style="-webkit-animation-delay: .45s;" order="2">
+        <div class="project gradient-red">
+          <div class="thumb-wrapper">
+            <div class="thumb" style="background-image:url(thumb_pwa.svg); padding-bottom: 48%;"></div>
+          </div>
+          <div class="desc"><div class="title">PWA Starter Kit</div>Your one-stop shop for building Progressive Web Apps that make the most of the modern web.</div>
+          <div class="status">Prerelease</div>
+        </div>
+      </div>
+
+      <div class="onload-fadein" style="-webkit-animation-delay: .25s;" order="3">
+        <div class="project gradient-blue">
+          <div class="thumb-wrapper">
+            <div class="thumb" style="background-image:url(thumb_litElement.svg); padding-bottom: 35%;"></div>
+          </div>
+          <div class="desc"><div class="title">litElement</div>An ultra-light, highly performant custom element base class with a simple but expressive API.</div>
+          <div class="status">Prerelease</div>
+        </div>
+      </div>
+
+      <div class="onload-fadein" style="-webkit-animation-delay: .5s;" order="4">
+        <div class="project gradient-indigo" >
+          <div class="thumb-wrapper">
+            <div class="thumb" style="background-image:url(thumb_material.svg); padding-bottom: 55%;"></div>
+          </div>
+          <div class="desc"><div class="title">Material Web Components</div>High-fidelity realizations of Google's Material Design spec that work anywhere on the web.</div>
+          <div class="status">Prerelease</div>
+        </div>
+      </div>
+
+      <div class="onload-fadein" style="-webkit-animation-delay: .4s;" order="5">
+        <div class="project gradient-green">
+          <div class="thumb-wrapper">
+            <div class="thumb" style="background-image:url(thumb_polyfills.svg); padding-bottom: 36%;"></div>
+          </div>
+          <div class="desc"><div class="title">Web Components Polyfills</div>A suite of polyfills supporting the Web Components specs.</div>
+          <div class="status">Prerelease</div>
+        </div>
+      </div>
+
+      <div class="onload-fadein" style="-webkit-animation-delay: .4s;" order="6">
+        <div class="project gradient-gray">
+          <div class="thumb-wrapper">
+            <div class="thumb" style="background-image:url(thumb_elements.svg); padding-bottom: 35%; "></div>
+          </div>
+          <div class="desc"><div class="title">Polymer elements</div>Our original sets of Polymer-based web components.</div>
+          <div class="status">Maintenance</div>
+        </div>
+      </div>
+
+      <div class="onload-fadein" style="-webkit-animation-delay: .3s;" order="7">
+        <div class="project gradient-gray">
+          <div class="thumb-wrapper">
+            <div class="thumb" style="background-image:url(thumb_library.svg); padding-bottom: 41%; "></div>
+          </div>
+          <div class="desc"><div class="title">Polymer Library</div>Our original web component library.</div>
+          <div class="status">Maintenance</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <div id="footer">
