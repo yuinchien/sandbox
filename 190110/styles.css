@@ -42,13 +42,13 @@ h1 span {
   display: inline-block;
   transform:translate3d(0,3.5px,0);
 }
-h4 span {
-  display: inline-block;
-  transform:translate3d(0,2px,0);
-}
 p {
   margin-top: .25em;
   margin-bottom: .25em;
+}
+.bracket-offset {
+  -webkit-transform: translate3d(0, 2px, 0);
+  display: inline-block;
 }
 model-viewer:focus {
   outline: 1px solid #ff5252;
