@@ -120,7 +120,6 @@ model-viewer:focus {
 }
 .heading {
   max-width: 400px;
-  /* margin-bottom: 24px; */
 }
 .heading::after {
   content: "";
@@ -129,6 +128,11 @@ model-viewer:focus {
   height: 1px;
   width: 32px;
   background: rgba(0,0,0,.54);
+}
+.heading .blurb {
+  font-size:24px;
+  line-height: 32px;
+  margin-top: -4px;
 }
 #list-example {
   padding-left: 0;
@@ -197,5 +201,10 @@ model-viewer:focus {
   .list-attribute li {
     flex-direction: column;
     padding-top: 0;
+  }
+  .heading .blurb {
+
+    font-size: 20px;
+    line-height: 28px;
   }
 }
