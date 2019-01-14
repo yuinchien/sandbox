@@ -96,7 +96,7 @@ h1 span {
 }
 
 #footer {
-  padding: 0 32px 32px 32px;
+  padding: 16px 32px 40px 32px;
 }
 .attribution {
   color: rgba(0,0,0,.54);
@@ -310,6 +310,10 @@ code {
   }
   .sample {
     display: block;
+
+  }
+  .sample.padding {
+    margin: 0 0 16px 0;
   }
 
   .content .wrapper {
@@ -329,7 +333,10 @@ code {
     font-size: 20px;
     line-height: 28px;
   }
-  .attribution {
+  /* .attribution {
     padding: 4px 16px 20px 16px;
+  } */
+  #footer {
+    padding: 16px 32px 40px 32px;
   }
 }
