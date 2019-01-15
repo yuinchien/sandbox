@@ -218,7 +218,6 @@ code {
   line-height: 32px;
 }
 #list-example {
-  padding-left: 0;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -226,7 +225,6 @@ code {
   margin-bottom: 60px;
 }
 #list-example li {
-  list-style: none;
   margin-bottom: 36px;
   max-width: 480px;
 }
