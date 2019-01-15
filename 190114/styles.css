@@ -43,7 +43,7 @@ h4 {
 }
 h1 span {
   display: inline-block;
-  transform:translate3d(0,3.5px,0);
+  transform:translate3d(0,4px,0);
 }
 #toc {
   /* margin-bottom: 20px; */
@@ -85,6 +85,7 @@ h1 span {
   height: 56px;
   color: white;
   line-height: 58px;
+  text-indent: 2px;
 }
 
 .content h2 {
@@ -96,7 +97,7 @@ h1 span {
 }
 
 #footer {
-  padding: 16px 32px 40px 32px;
+  padding: 0px 32px 32px 32px;
 }
 .attribution {
   color: rgba(0,0,0,.54);
@@ -229,14 +230,6 @@ code {
   margin-bottom: 36px;
   max-width: 480px;
 }
-#list-example h3:after {
-  content: "";
-  display: block;
-  margin-top: 12px;
-  height: 1px;
-  width: 32px;
-  background: rgba(0,0,0,.54);
-}
 
 .list-attribute {
   list-style: none;
@@ -308,6 +301,13 @@ code {
   h2 {
     font-size: 24px;
   }
+  .index {
+    font-size: 32px;
+    width: 48px;
+    height: 48px;
+    color: white;
+    line-height: 50px;
+  }
   .sample {
     display: block;
 
@@ -318,7 +318,7 @@ code {
 
   .content .wrapper {
     margin: 0px 16px;
-    padding-top: 24px;
+    padding-top: 0;
     min-height: auto;
     border-bottom: none;
   }
@@ -337,6 +337,6 @@ code {
     padding: 4px 16px 20px 16px;
   } */
   #footer {
-    padding: 16px 32px 40px 32px;
+    padding: 16px 32px 40px 16px;
   }
 }
