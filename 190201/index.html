@@ -341,31 +341,46 @@
   </div>
   <script>
 
+  var DURATION = .5;
+
   var Logo = function() {
     this.speed = 1;
+    this.typing = false;
+    this.primary = "#222";
+    this.secondary = "#ccc";
     this.animate = function() {
       $('body').removeClass('play');
       setTimeout(function(){ $('body').addClass('play'); }, 200);
     };
-    this.primary = "#222";
-    this.secondary = "#ccc";
+    this.updateAnimation = function() {
+      var self = this;
+      $('.glyph').each(function(i){
+        $('body').removeClass('play');
+        var delay = self.typing ? i * self.speed * DURATION/2 : 0;
+        $(this).children()
+          .css('animation-duration', DURATION*self.speed + 's')
+          .css('animation-delay', delay + 's');
+        $(this).find('.delay').css('animation-delay', (delay + DURATION/2*self.speed) + 's');
+        $(this).find('.delay-short').css('animation-delay', (delay + DURATION/4*self.speed) + 's');
+        self.animate();
+      });
+    };
   };
 
   window.onload = function() {
-    var delay = .5;
     var logo = new Logo();
     var gui = new dat.GUI();
     var controllerPrimary = gui.addColor(logo, 'primary');
     var controllerSecondary = gui.addColor(logo, 'secondary');
     var controllerSpeed = gui.add(logo, 'speed', .25, 2).step(.25);
+    var controllerTyping = gui.add(logo, 'typing');
     gui.add(logo, 'animate');
 
+    controllerTyping.onChange(function(value) {
+      logo.updateAnimation();
+    });
     controllerSpeed.onChange(function(value) {
-      $('.animate-scaling, .animation-scalingX').css('animation-duration', delay*value + 's');
-      $('.delay').css('animation-delay', delay/2*value + 's');
-      $('.delay-short').css('animation-delay', delay/4*value + 's');
-      $('body').removeClass('play');
-      logo.animate();
+      logo.updateAnimation();
     });
     controllerPrimary.onChange(function(value) {
       $('.primary').css('background', value);
