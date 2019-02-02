@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no,
+  minimum-scale=1.0, maximum-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="dat.gui.min.js"></script>
+  <title>Logo</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  #content {
+    margin: 14vw 0;
+  }
+  .grid {
+    clear: both;
+    display: flex;
+    justify-content: center;
+  }
+  .glyph .circle {
+    border-radius: 100%;
+  }
+  .glyph {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: 12vw;
+    height: 12vw;
+    float: left;
+    margin: 1vw;
+  }
+  .grid .glyph-w {
+    width: 14vw;
+  }
+  .grid .glyph-r,
+  .grid .glyph-e,
+  .grid .glyph-l {
+    width: 10vw;
+  }
+  .grid .glyph-i {
+    width: 6vw;
+  }
+  .glyph-e {
+    overflow: hidden;
+  }
+
+  .primary {
+    background: #222;
+  }
+  .secondary {
+    background: #d5d5d5;
+  }
+  .glyph-m .triangle.primary {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+    transform-origin: 0% 100%;
+    transform: scale(0);
+  }
+  .glyph-m .triangle.secondary {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    transform-origin: 100% 100%;
+    transform: scale(0);
+  }
+  .glyph-o .circle.secondary {
+    transform-origin: 50% 50%;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    transform: scale(0);
+  }
+  .glyph-o .circle.primary {
+    transform-origin: 50% 50%;
+    grid-column-start: 2;
+    grid-column-end: -2;
+    grid-row-start: 2;
+    grid-row-end: -2;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+  }
+  .glyph-d .circle {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    border-radius: 50%;
+    transform-origin: 50% 50%;
+    transform: scale(0);
+  }
+  .glyph-d .rectangle {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    transform-origin: 0% 50%;
+    transform: scale(0);
+  }
+
+  .glyph-e .rectangle:nth-child(4n) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    width: 100%;
+    transform-origin: 0% 50%;
+    transform: scaleX(0) translate3d(0,0,0);
+  }
+  .glyph-e .rectangle:nth-child(4n+1) {
+    grid-column-start: 3;
+    grid-column-end: -1;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    height: 50%;
+    width: 50%;
+    justify-self: end;
+    align-self: center;
+    transform-origin: 0% 50%;
+    transform: scaleX(0);
+  }
+  .glyph-e .rectangle:nth-child(4n+2) {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 4;
+    grid-row-end: -1;
+    z-index: 100;
+    transform-origin: 0% 100%;
+    transform: scaleX(0);
+  }
+  .glyph-e .rectangle:nth-child(4n+3) {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    z-index: 100;
+    transform-origin: 0% 50%;
+    transform: scaleX(0);
+  }
+  .glyph-l .rectangle:last-child {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    width: 90%;
+    transform-origin: 0% 100%;
+    transform: scale(0);
+  }
+  .glyph-l .rectangle:first-child {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 4;
+    grid-row-end: -1;
+    transform-origin: 0% 100%;
+    transform: scale(0);
+  }
+  .glyph-v .triangle:first-child {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    clip-path: polygon(0 0, 100% 0%, 50% 100%);
+    transform-origin: 100% 0%;
+    transform: scale(0);
+  }
+  .glyph-v .triangle:last-child {
+    grid-column-start: 3;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    clip-path: polygon(0 0, 100% 0%, 50% 100%);
+    transform-origin: 100% 0%;
+    transform: scale(0);
+  }
+  .glyph-i .rectangle {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    transform-origin: 0% 0%;
+    transform: scale(0);
+  }
+  .glyph-w .triangle:first-child {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    clip-path: polygon(0 0, 70% 0%, 35% 100%);
+    transform-origin: 0% 0%;
+    transform: scale(0);
+  }
+  .glyph-w .triangle:last-child {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    clip-path: polygon(30% 0, 100% 0%, 65% 100%);
+
+    transform-origin: 100% 0%;
+    transform: scale(0);
+  }
+  .glyph-r .rectangle:first-child {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    border-radius: 0 10vw 10vw 0;
+    height: 80%;
+    z-index: 100;
+
+    transform-origin: 0% 0%;
+    transform: scale(0);
+  }
+  .glyph-r .rectangle:last-child {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    clip-path: polygon(0 0, 40% 0%, 100% 100%, 0 100%);
+    transform: scale(0);
+    transform-origin: 0% 0%;
+  }
+
+  .delay {
+    animation-delay: .2s;
+  }
+  .delay-short {
+    animation-delay: .1s;
+  }
+  body.play .animation-scaling {
+    animation-name: scaling;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-duration: .4s;
+  }
+  body.play .animation-scalingX {
+    animation-name: scalingX;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-duration: .4s;
+  }
+
+  @keyframes scaling {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.0);
+    }
+  }
+  @keyframes scalingX {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scaleX(1.0);
+    }
+  }
+  </style>
+</head>
+<body class="">
+  <div id="content">
+    <div class="grid">
+      <div class="glyph glyph-m">
+        <div class="triangle primary animation-scaling delay"></div>
+        <div class="triangle secondary animation-scaling"></div>
+      </div>
+      <div class="glyph glyph-o">
+        <div class="circle secondary animation-scaling"></div>
+        <div class="circle primary animation-scaling delay"></div>
+      </div>
+      <div class="glyph glyph-d">
+        <div class="circle primary animation-scaling delay-short"></div>
+        <div class="rectangle secondary animation-scalingX"></div>
+      </div>
+      <div class="glyph glyph-e">
+        <div class="rectangle secondary animation-scalingX delay"></div>
+        <div class="rectangle secondary animation-scalingX delay-short"></div>
+        <div class="rectangle secondary animation-scalingX"></div>
+        <div class="rectangle primary animation-scalingX"></div>
+      </div>
+      <div class="glyph glyph-l">
+        <div class="rectangle primary animation-scaling delay"></div>
+        <div class="rectangle secondary animation-scaling"></div>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="glyph glyph-v">
+        <div class="triangle secondary animation-scaling"></div>
+        <div class="triangle primary animation-scaling delay"></div>
+      </div>
+      <div class="glyph glyph-i">
+        <div class="rectangle primary animation-scaling"></div>
+      </div>
+      <div class="glyph glyph-e">
+        <div class="rectangle secondary animation-scalingX delay"></div>
+        <div class="rectangle secondary animation-scalingX delay-short"></div>
+        <div class="rectangle secondary animation-scalingX"></div>
+        <div class="rectangle primary animation-scalingX"></div>
+      </div>
+      <div class="glyph glyph-w">
+        <div class="triangle secondary animation-scaling"></div>
+        <div class="triangle primary animation-scaling delay"></div>
+      </div>
+      <div class="glyph glyph-e">
+        <div class="rectangle secondary animation-scalingX delay"></div>
+        <div class="rectangle secondary animation-scalingX delay-short"></div>
+        <div class="rectangle secondary animation-scalingX"></div>
+        <div class="rectangle primary animation-scalingX"></div>
+      </div>
+      <div class="glyph glyph-r">
+        <div class="rectangle primary animation-scaling"></div>
+        <div class="rectangle secondary animation-scalingX delay"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+
+  var Logo = function() {
+    this.speed = 1;
+    this.animate = function() {
+      $('body').removeClass('play');
+      setTimeout(function(){ $('body').addClass('play'); }, 200);
+    };
+    this.primary = "#222";
+    this.secondary = "#ccc";
+  };
+
+  window.onload = function() {
+    var delay = .4;
+    var logo = new Logo();
+    var gui = new dat.GUI();
+    var controllerPrimary = gui.addColor(logo, 'primary');
+    var controllerSecondary = gui.addColor(logo, 'secondary');
+    var controllerSpeed = gui.add(logo, 'speed', .25, 2).step(.25);
+    gui.add(logo, 'animate');
+
+    controllerSpeed.onChange(function(value) {
+      $('.animate-scaling, .animation-scalingX').css('animation-duration', delay*value + 's');
+      $('.delay').css('animation-delay', delay/2*value + 's');
+      $('.delay-short').css('animation-delay', delay/4*value + 's');
+      $('body').removeClass('play');
+      logo.animate();
+    });
+    controllerPrimary.onChange(function(value) {
+      $('.primary').css('background', value);
+    });
+    controllerSecondary.onChange(function(value) {
+      $('.secondary').css('background', value);
+    });
+
+    logo.animate();
+  };
+
+  </script>
+</body>
+</html>
