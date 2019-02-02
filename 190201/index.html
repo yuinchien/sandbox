@@ -245,22 +245,22 @@
   }
 
   .delay {
-    animation-delay: .2s;
+    animation-delay: .25s;
   }
   .delay-short {
-    animation-delay: .1s;
+    animation-delay: .125s;
   }
   body.play .animation-scaling {
     animation-name: scaling;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
-    animation-duration: .4s;
+    animation-duration: .5s;
   }
   body.play .animation-scalingX {
     animation-name: scalingX;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
-    animation-duration: .4s;
+    animation-duration: .5s;
   }
 
   @keyframes scaling {
@@ -352,7 +352,7 @@
   };
 
   window.onload = function() {
-    var delay = .4;
+    var delay = .5;
     var logo = new Logo();
     var gui = new dat.GUI();
     var controllerPrimary = gui.addColor(logo, 'primary');
