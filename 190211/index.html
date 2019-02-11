@@ -10,13 +10,16 @@
   body {
     margin: 0;
     padding: 0;
+    font-family: Helvetica, sans-serif;
+    color: rgba(0,0,0,.8);
+    padding-bottom: 40px;
   }
   .model {
     width: 690px;
     height: 362px;
     position: relative;
     background-image: url(poster.png);
-    margin: 40px auto;
+    margin: 10px auto 10px auto;
   }
   .loader1 {
     position: absolute;
@@ -51,11 +54,45 @@
     left: 0;
     right: 0;
     top: 0;
-    height: 6px;
-    background: rgba(0,0,0,.4);
-    -webkit-animation: expanding 3.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    bottom: 0;
+    background: rgba(255,255,255,.2);
+    -webkit-animation: fadeIn 3.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+  .loader2.yellow {
+    background: rgba(0,0,0,.1);
+    -webkit-animation: fadeInDark 3.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+  .loader2.yellow:after {
+    background: #E9FF16;
   }
 
+  .loader2:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 5px;
+    background: rgba(0,0,0,.4);
+    -webkit-animation: expanding 3.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    z-index: 1000;
+  }
+  @keyframes fadeIn {
+    0% {
+      background: rgba(255,255,255,.2);
+    }
+    100% {
+      background: rgba(255,255,255,0);
+    }
+  }
+  @keyframes fadeInDark {
+    0% {
+      background: rgba(0,0,0,.1);
+    }
+    100% {
+      background: rgba(0,0,0,0);
+    }
+  }
   @keyframes expanding {
     0% {
       width: 0;
@@ -64,10 +101,14 @@
       width: 100%;
     }
   }
-
+  .label {
+    width: 690px;
+    margin: 40px auto 10px auto;
+  }
   </style>
 </head>
 <body class="">
+  <div class="label">A1. Orbit Animation + Light overlay</div>
   <div class="model">
     <div class="loader1" style="background: linear-gradient(135deg, rgba(255,255,255,.2) 0%,rgba(255,255,255,0.1) 100%);">
       <svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -81,8 +122,9 @@
     </div>
   </div>
 
+  <div class="label">A2. Orbit Animation + Dark overlay</div>
   <div class="model">
-    <div class="loader1" style="background: linear-gradient(135deg, rgba(0,0,0,.1) 0%,rgba(0,0,0,0) 100%);">
+    <div class="loader1" style="background: linear-gradient(135deg, rgba(0,0,0,.15) 0%,rgba(0,0,0,0) 100%);">
       <svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <title>Artboard</title>
         <desc>Created with Sketch.</desc>
@@ -94,12 +136,14 @@
     </div>
   </div>
 
+  <div class="label">B1. Progressbar + Light overlay</div>
   <div class="model">
     <div class="loader2"></div>
   </div>
 
+  <div class="label">B2. Progressbar + Dark overlay</div>
   <div class="model">
-    <div class="loader2" style="background: #E7FF00;"></div>
+    <div class="loader2 yellow"></div>
   </div>
 
 </body>
