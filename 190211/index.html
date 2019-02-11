@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no,
+  minimum-scale=1.0, maximum-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="dat.gui.min.js"></script>
+  <title>Logo</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .model {
+    width: 690px;
+    height: 362px;
+    position: relative;
+    background-image: url(poster.png);
+    margin: 40px auto;
+  }
+  .loader1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+  }
+  #orbit {
+    stroke-dasharray: 80;
+    stroke-dashoffset: 0;
+    -webkit-animation: orbiting 1.4s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+
+  @keyframes orbiting {
+    0% {
+      stroke-dashoffset: 80;
+    }
+    50% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: -80;
+    }
+  }
+
+  .loader2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 6px;
+    background: rgba(0,0,0,.4);
+    -webkit-animation: expanding 3.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+
+  @keyframes expanding {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  </style>
+</head>
+<body class="">
+  <div class="model">
+    <div class="loader1" style="background: linear-gradient(135deg, rgba(255,255,255,.2) 0%,rgba(255,255,255,0.1) 100%);">
+      <svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>Artboard</title>
+        <desc>Created with Sketch.</desc>
+        <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <circle id="Oval" stroke="#222" stroke-width="5" fill="#fafafa" cx="40" cy="40" r="22"></circle>
+            <path id="orbit" stroke="#222" stroke-linecap="round" d="M19.0050881,35.3005232 C14.1976699,36.7283122 11.2578953,38.6412741 11.2578953,40.7436487 C11.2578953,45.1619267 24.2416376,48.7436487 40.2578953,48.7436487 C56.2741531,48.7436487 69.2578953,45.1619267 69.2578953,40.7436487 C69.2578953,38.6291553 67.0979455,37.6873094 62.2411961,36.2569257" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" transform="translate(40.257895, 42.022086) rotate(-15.000000) translate(-40.257895, -42.022086) "></path>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="model">
+    <div class="loader1" style="background: linear-gradient(135deg, rgba(0,0,0,.1) 0%,rgba(0,0,0,0) 100%);">
+      <svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>Artboard</title>
+        <desc>Created with Sketch.</desc>
+        <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <circle id="Oval" stroke="#00EF9B" stroke-width="5" fill="#fff" cx="40" cy="40" r="22"></circle>
+            <path id="orbit" stroke="#00EF9B" stroke-linecap="round" d="M19.0050881,35.3005232 C14.1976699,36.7283122 11.2578953,38.6412741 11.2578953,40.7436487 C11.2578953,45.1619267 24.2416376,48.7436487 40.2578953,48.7436487 C56.2741531,48.7436487 69.2578953,45.1619267 69.2578953,40.7436487 C69.2578953,38.6291553 67.0979455,37.6873094 62.2411961,36.2569257" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" transform="translate(40.257895, 42.022086) rotate(-15.000000) translate(-40.257895, -42.022086) "></path>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="model">
+    <div class="loader2"></div>
+  </div>
+
+  <div class="model">
+    <div class="loader2" style="background: #E7FF00;"></div>
+  </div>
+
+</body>
+</html>
