@@ -30,13 +30,50 @@
     display: grid;
     align-content: center;
     justify-content: center;
+    -webkit-animation: fadeInOut 7s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+  .planet {
+    -webkit-animation: bounceInOut 7s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   }
   #orbit {
     stroke-dasharray: 80;
     stroke-dashoffset: 0;
     -webkit-animation: orbiting 1.4s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   }
-
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes bounceInOut {
+    0% {
+      transform: scale(0);
+    }
+    5% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(1);
+    }
+    80% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
   @keyframes orbiting {
     0% {
       stroke-dashoffset: 80;
@@ -111,7 +148,7 @@
   <div class="label">A1. Orbit Animation + Light overlay</div>
   <div class="model">
     <div class="loader1" style="background: linear-gradient(135deg, rgba(255,255,255,.2) 0%,rgba(255,255,255,0.1) 100%);">
-      <svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg class="planet" width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <title>Artboard</title>
         <desc>Created with Sketch.</desc>
         <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -125,7 +162,7 @@
   <div class="label">A2. Orbit Animation + Dark overlay</div>
   <div class="model">
     <div class="loader1" style="background: linear-gradient(135deg, rgba(0,0,0,.15) 0%,rgba(0,0,0,0) 100%);">
-      <svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg class="planet" width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <title>Artboard</title>
         <desc>Created with Sketch.</desc>
         <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
