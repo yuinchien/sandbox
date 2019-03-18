@@ -1,25 +1,24 @@
 :root {
-  --color-red: #ff5252;
-  --color-red-900: #FF3434;
+  --color-red: #FF4E42;
+  --color-red-700: #FFA400;
 
-  --color-green: #17DF67;
-  --color-green-900: #3CB46C;
+  --color-green: #0CCE6B;
+  --color-green-700: #018642;
 
-  --color-orange: #FF710A;
-  --color-orange-900: #EA6A0D;
+  --color-orange: #FFA400;
+  --color-orange-700: #D04900;
 
-  --color-blue: #4285f4;
+  --color-blue: #2962FF;
 
   --color-black: #000;
   --color-black-900: #212121;
+  --color-black-800: #424242;
   --color-black-600: #757575;
-  --color-black-500: #9E9E9E;
   --color-black-400: #BDBDBD;
-  --color-black-200: #EEEEEE;
+  --color-black-200: #E0E0E0;
   --color-black-100: #F5F5F5;
 
-  --color-darkmode-bg: #1A1717;
-  --color-darkmode-color: #f5f5f5;
+  --topbar-bg: #f5f5f5;
 
   --body-fontsize: 16px;
   --body-lineheight: 22px;
@@ -38,22 +37,28 @@
 
   --score-container-width: 160px;
 
+  --score-marginbottom-big: 12px;
+
+  --plugin-size: 36px;
+  --plugin-bg: #FFF;
+
   --topbar-height: 36px;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
   font-size: var(--body-fontsize);
   line-height: var(--body-lineheight);
   color: var(--color-black-900);
 }
   body.dark {
-    --color-black-200: var(--color-black-600);
-    --color-black-100: var(--color-black);
-    background: var(--color-darkmode-bg);
-    color: var(--color-darkmode-color);
+    --color-black-200: var(--color-black-800);
+    --topbar-bg: var(--color-black);
+    --plugin-bg: var(--color-black-800);
+    background: var(--color-black-900);
+    color: var(--color-black-100);
   }
 
 * {
@@ -69,7 +74,7 @@ body {
   display: flex;
   align-items: center;
   height: var(--topbar-height);
-  background-color: var(--color-black-100);
+  background-color: var(--topbar-bg);
   padding: 0 8px;
 }
 #site-url {
@@ -90,10 +95,11 @@ body {
   display: flex;
   align-items: center;
   margin: 0 12px;
+  font-family: 'Roboto Mono', monospace;
 }
 #score-scale > div:before {
   content: "";
-  width: 20px;
+  width: 18px;
   height: 6px;
   display: block;
   border-radius: 10px;
@@ -146,12 +152,13 @@ body {
   justify-content: center;
   font-size: var(--score-number-fontsize);
   margin-bottom: 10px;
+  font-family: 'Roboto Mono', monospace;
 }
   .big .score {
     width: var(--score-size-big);
     height: var(--score-size-big);
     font-size: var(--score-number-fontsize-big);
-    margin-bottom: 12px;
+    margin-bottom: var(--score-marginbottom-big);
   }
   .score > svg {
     position: absolute;
@@ -184,6 +191,30 @@ body {
   fill: var(--color-red);
   stroke: var(--color-red);
 }
+.score.score-pwa {
+  background-color: var(--color-black-200);
+  background-image: url(images/logo-pwa.svg);
+  overflow: hidden;
+  border-radius: 100%;
+}
+.score.score-plugin:before {
+  width: var(--plugin-size);
+  height: var(--plugin-size);
+  background-color: var(--plugin-bg);
+  background-image: url(images/ic_extension_grey600_24dp.svg);
+  background-repeat: no-repeat;
+  background-size: 65% 65%;
+  background-position: 58% 50%;
+  content: "";
+  position: absolute;
+  right: -6px;
+  bottom: -2px;
+  display: block;
+  z-index: 100;
+  box-shadow: 0 0 4px rgba(0,0,0,.2);
+  border-radius: 25%;
+}
+
 
 
 .section {
@@ -242,16 +273,20 @@ body {
     --score-number-fontsize-big: 34px;
     --score-number-fontsize: 26px;
 
-    --score-title-fontsize-big: 24px;
-    --score-title-fontsize: 16px;
+    --score-title-fontsize-big: 22px;
+    --score-title-fontsize: 14px;
 
     --score-title-lineheight-big: 26px;
-    --score-title-lineheight: 22px;
+    --score-title-lineheight: 20px;
 
     --score-size: 72px;
     --score-size-big: 96px;
 
     --score-container-width: 112px;
+
+    --score-marginbottom-big: 8px;
+
+    --plugin-size: 30px;
 
     --topbar-height: 32px;
   }
