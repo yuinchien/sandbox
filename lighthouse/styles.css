@@ -21,7 +21,7 @@
   --topbar-bg: #f5f5f5;
 
   --body-fontsize: 16px;
-  --body-lineheight: 22px;
+  --body-lineheight: 24px;
 
   --score-number-fontsize-big: 42px;
   --score-number-fontsize: 34px;
@@ -41,6 +41,9 @@
 
   --plugin-size: 36px;
   --plugin-bg: #FFF;
+
+  --shape-size: 12px;
+  --shape-margin: 6px 16px 0 0;
 
   --topbar-height: 36px;
 }
@@ -85,13 +88,12 @@ body {
   margin-left: 12px;
 }
 
-.button {
-  width: 24px;
-  height: 24px;
-  opacity: .54;
+.material-icons {
+  font-size: 24px;
+  color: var(--color-black-600);
 }
-.button.selected {
-  opacity: 1;
+.button.selected .material-icons {
+  color: var(--color-black);
 }
 
 #topbar {
@@ -206,7 +208,7 @@ body {
     position: absolute;
   }
   .score .number {
-    -webkit-transform: translate3d(0,2px,0);
+    -webkit-transform: translate3d(0,1px,0);
   }
   .score .bg {
     opacity: .1;
@@ -289,18 +291,20 @@ body {
 .audit {
   border-bottom: 1px solid var(--color-black-200);
   display: flex;
-  align-items: center;
+  /* align-items: baseline; */
+  padding: 12px 0;
 }
+
   .audit:first-child {
     border-top: 1px solid var(--color-black-200);
   }
   .audit:before {
     content: "";
     display: block;
-    width: 14px;
-    height: 14px;
+    width: var(--shape-size);
+    height: var(--shape-size);
     background: var(--color-black-400);
-    margin: 0px 16px 0 0;
+    margin: var(--shape-margin);
   }
   .audit.gray:before {
     border-radius: 100%;
@@ -320,7 +324,6 @@ body {
   }
   .audit > .title {
     font-weight: 500;
-    padding: 12px 0;
     flex: 1;
   }
   .audit > .time {
@@ -344,7 +347,8 @@ body {
     color: var(--color-black-600);
   }
   .audit .material-icons {
-    margin-left: 4px;
+    margin-left: 6px;
+    margin-right: -4px;
   }
 
 
@@ -369,9 +373,17 @@ body {
 
     --score-marginbottom-big: 8px;
 
-    --plugin-size: 30px;
+    --plugin-size: 28px;
+
+    --shape-size: 10px;
+    --shape-margin: 5px 12px 0 0;
 
     --topbar-height: 32px;
+  }
+
+  .material-icons,
+  .button {
+    font-size: 20px;
   }
   #header {
     padding: 16px 0 16px 0;
