@@ -46,6 +46,8 @@
   --shape-margin: 6px 16px 0 0;
 
   --topbar-height: 36px;
+
+  --audits-marginbottom: 40px;
 }
 
 body {
@@ -90,10 +92,10 @@ body {
 
 .material-icons {
   font-size: 24px;
-  color: var(--color-black-600);
+  opacity: .54;
 }
 .button.selected .material-icons {
-  color: var(--color-black);
+  opacity: 1;
 }
 
 #topbar {
@@ -174,16 +176,27 @@ body {
 .score-container {
   text-align: center;
   width: var(--score-container-width);
-  font-size: var(--score-title-fontsize);
-  line-height: var(--score-title-lineheight);
   padding: 12px;
 }
+  .score-container .title {
+    font-size: var(--score-title-fontsize);
+    line-height: var(--score-title-lineheight);
+  }
 .score-container.big {
-  width: 320px;
-  font-size: var(--score-title-fontsize-big);
-  line-height: var(--score-title-lineheight-big);
+  /* padding: 0 32px; */
+  max-width: 400px;
+  width: auto;
   margin: 0px auto;
 }
+  .score-container.big .title {
+    font-size: var(--score-title-fontsize-big);
+    line-height: var(--score-title-lineheight-big);
+  }
+  .score-container p {
+    margin: 4px 0 12px 0;
+  }
+
+
 
 .score {
   width: var(--score-size);
@@ -217,8 +230,6 @@ body {
     fill: transparent;
     stroke-width: 8;
     stroke-linecap: round;
-    stroke-dasharray: 103 265;
-    stroke-dashoffset: 103;
   }
 .score.orange {
   color: var(--color-orange);
@@ -260,6 +271,10 @@ body {
   border-radius: 25%;
 }
 
+.code {
+  font-family: 'Roboto Mono', monospace;
+}
+
 .two-col {
   -webkit-column-count: 2;
   -webkit-column-gap: 40px;
@@ -267,6 +282,7 @@ body {
 
 .section {
   padding: 40px;
+  border-bottom: 1px solid var(--color-black-200);
 }
 
 .wrapper {
@@ -276,17 +292,23 @@ body {
 .caption {
   font-weight: bold;
 }
+.subtitle {
+  max-width: 640px;
+}
 .caption .desc {
   font-weight: 500;
   color: var(--color-black-600);
 }
 
+.audits-collapsed {
+  margin: 16px 0;
+}
 .audits-collapsed .caption > span {
   color: var(--color-black-600);
 }
 
 .audits {
-  margin-bottom: 40px;
+  margin-bottom: var(--audits-marginbottom);
 }
 .audit {
   border-bottom: 1px solid var(--color-black-200);
@@ -379,6 +401,8 @@ body {
     --shape-margin: 5px 12px 0 0;
 
     --topbar-height: 32px;
+
+    --audits-marginbottom: 24px;
   }
 
   .material-icons,

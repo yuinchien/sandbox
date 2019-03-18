@@ -26,9 +26,9 @@
         <div class="score red">
           <svg viewBox="0 0 120 120">
             <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" />
+            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 103 265; stroke-dashoffset: 103;"/>
           </svg>
-          <div class="number">47</div>
+          <div class="number">45</div>
         </div>
         <div class="title">Performance</div>
       </div>
@@ -59,7 +59,7 @@
         <div class="score green">
           <svg viewBox="0 0 120 120">
             <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" />
+            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 243 25; stroke-dashoffset: 1;" />
           </svg>
           <div class="number">98</div>
         </div>
@@ -75,7 +75,7 @@
         <div class="score green score-plugin">
           <svg viewBox="0 0 120 120">
             <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" />
+            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 226 40; stroke-dashoffset: 1;" />
           </svg>
           <div class="number">91</div>
         </div>
@@ -97,17 +97,17 @@
     <div class="wrapper">
 
       <div class="score-container big">
-        <div class="score orange">
+        <div class="score red">
           <svg viewBox="0 0 120 120">
             <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" />
+            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 103 265; stroke-dashoffset: 103;"/>
           </svg>
-          <div class="number">47</div>
+          <div class="number">45</div>
         </div>
         <div class="title">Performance</div>
       </div>
 
-      <div class="row">
+      <div class="row subtitle">
         <div class="caption flex">Metrics</div>
         <div class="button button-less selected"><i class="material-icons">short_text</i></div>
         <div class="button button-more"><i class="material-icons">notes</i></div>
@@ -170,7 +170,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row subtitle">
         <div class="caption">Diagnostics<span class="desc">&mdash;More information about the performance of your application.</span></div>
       </div>
 
@@ -217,6 +217,94 @@
     </div>
 
   </div>
+
+  <div class="section" id="section-performance">
+    <div class="wrapper">
+      <div class="score-container big">
+        <div class="score orange" >
+          <svg viewBox="0 0 120 120">
+            <circle class="bg" r="60" cx="60" cy="60" />
+            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 259 158; stroke-dashoffset: 150;"/>
+          </svg>
+          <div class="number">67</div>
+        </div>
+        <div class="title">Accessibility</div>
+        <p>These checks highlight opportunities to improve the accessibility of your web app. Only a subset of accessibility issues can be automatically detected so so manual testing is also encouraged.</p>
+      </div>
+
+      <div class="row subtitle">
+        <div class="caption">ARIA<span class="desc">&mdash;These are opportunities to improve the usage of ARIA in your application, which
+may enhance the experience for users of assistive technology, like a screen reader.</span></div>
+      </div>
+
+      <div class="audits">
+        <div class="audit red">
+          <div class="title"><span class="code">[aria-*]</span> attributes do not match their roles</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit red">
+          <div class="title">Elements with <span class="code">[role]</span> that require specific children <span class="code">[role]</span>s, are missing.</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit red">
+          <div class="title"><span class="code">[role]</span>s are not contained by their required parent element</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit red">
+          <div class="title"><span class="code">[role]</span> values are not valid</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit red">
+          <div class="title"><span class="code">[aria-*]</span> attributes do not have valid values</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit red">
+          <div class="title"><span class="code">[aria-*]</span> attributes do not have valid or misspelled</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+      </div>
+
+      <div class="row subtitle">
+        <div class="caption">Names and labels<span class="desc">&mdash;These are opportunities to improve the semantics of the controls in your application.
+This may enhance the experience for users of assistive technology, like a screen reader.</span></div>
+      </div>
+      <div class="audits">
+        <div class="audit red">
+          <div class="title">Buttons do not have an accessible name</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit red">
+          <div class="title">Document doesn’t have a <span class="code">&lt;title></span> element</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit red">
+          <div class="title"><span class="code">&lt;frame></span> or <span class="code">&lt;iframe></span> elements do not have a title</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit red">
+          <div class="title">Image elements do not have <span class="code">&lt;alt></span> attributes</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+      </div>
+
+      <div class="row audits-collapsed">
+        <div class="caption flex">Additional items to manually check <span>(11)</span></div>
+        <i class="material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="row audits-collapsed">
+        <div class="caption flex">Passed audits <span>(6)</span></div>
+        <i class="material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="row audits-collapsed">
+        <div class="caption flex">Not applicable <span>(3)</span></div>
+        <i class="material-icons">keyboard_arrow_down</i>
+      </div>
+
+
+    </div>
+
+  </div>
+
 
   <script type="text/javascript" src="dat.gui.min.js"></script>
   <script type="text/javascript">
