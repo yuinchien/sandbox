@@ -55,6 +55,14 @@
   --topbar-height: 36px;
 
   --audits-marginbottom: 40px;
+
+  --icon-size: 24px;
+
+  --section-padding: 40px;
+
+  --header-padding: 20px 0 20px 0;
+  --score-container-padding: 12px;
+  --topbar-padding: 0 8px;
 }
 
 body {
@@ -104,7 +112,7 @@ body {
 }
 
 .material-icons {
-  font-size: 24px;
+  font-size: var(--icon-size);
   opacity: .54;
 }
 .button.selected .material-icons {
@@ -116,7 +124,7 @@ body {
   align-items: center;
   height: var(--topbar-height);
   background-color: var(--topbar-bg);
-  padding: 0 8px;
+  padding: var(--topbar-padding);
   position: fixed;
   top: 0;
   left: 0;
@@ -163,13 +171,13 @@ body {
 
 #header {
   margin-top: var(--topbar-height);
-  padding: 20px 0 20px 0;
+  padding: var(--header-padding);
   border-bottom: 1px solid var(--color-black-200);
   display: grid;
 }
 
 #screenshots {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   -webkit-column-count: 10;
   -webkit-column-gap: 16px;
 }
@@ -177,12 +185,6 @@ body {
   max-width: 100%;
   border: 1px solid var(--color-black-200);
 }
-/* .image-placeholder {
-  height: 0;
-  padding-bottom: 160%;
-  border: 1px solid var(--color-black-200);
-  background: white;
-} */
 
 #scores {
   display: flex;
@@ -218,7 +220,7 @@ body {
 .score-container {
   text-align: center;
   width: var(--score-container-width);
-  padding: 12px;
+  padding: var(--score-container-padding);
   position: relative;
 }
   .score-container.selected:after {
@@ -331,7 +333,7 @@ body {
 }
 
 .section {
-  padding: 40px;
+  padding: var(--section-padding);
   border-bottom: 1px solid var(--color-black-200);
 }
 
@@ -454,33 +456,22 @@ body {
     --topbar-height: 32px;
 
     --audits-marginbottom: 24px;
+
+    --icon-size: 20px;
+
+    --section-padding: 24px;
+
+    --header-padding: 16px 0 16px 0;
+
+    --score-container-padding: 8px;
+    --topbar-padding: 0 4px;
   }
 
-  .material-icons,
-  .button {
-    font-size: 20px;
-  }
-  #header {
-    padding: 16px 0 16px 0;
-  }
-  .score-container {
-    padding: 8px;
-  }
-  .section {
-    padding: 24px;
-  }
-  #topbar {
-    padding: 0 4px;
-  }
-  .section {
-    padding: 20px;
-  }
   .two-col {
     -webkit-column-count: 1;
     -webkit-column-gap: 0;
   }
   #screenshots {
-    margin: 32px 0;
     -webkit-column-count: 5;
     -webkit-column-gap: 12px;
   }
