@@ -10,15 +10,23 @@
 
   --color-blue: #2962FF;
 
-  --color-black: #000;
+  --color-black: #000000;
   --color-black-900: #212121;
   --color-black-800: #424242;
   --color-black-600: #757575;
+  --color-black-500: #9E9E9E;
   --color-black-400: #BDBDBD;
   --color-black-200: #E0E0E0;
   --color-black-100: #F5F5F5;
+  --color-white: #FFFFFF;
 
-  --topbar-bg: #f5f5f5;
+  --topbar-bg: var(--color-black-100);
+  --header-bg: var(--color-white);
+  --highlighter-bg: var(--color-black);
+
+  --plugin-bg: var(--color-white);
+  --plugin-size: 36px;
+  --plugin-icon-size: 65%;
 
   --body-fontsize: 16px;
   --body-lineheight: 24px;
@@ -39,8 +47,7 @@
 
   --score-marginbottom-big: 12px;
 
-  --plugin-size: 36px;
-  --plugin-bg: #FFF;
+  --score-number-offset: 1px;
 
   --shape-size: 12px;
   --shape-margin: 6px 16px 0 0;
@@ -62,13 +69,19 @@ body {
     --color-red-700: var(--color-red);
     --color-green-700: var(--color-green);
     --color-orange-700: var(--color-orange);
-    --color-black-400: var(--color-black-600);
 
     --color-black-200: var(--color-black-800);
+    --color-black-400: var(--color-black-600);
+    --color-black-600: var(--color-black-500);
+
     --topbar-bg: var(--color-black);
     --plugin-bg: var(--color-black-800);
+    --header-bg: var(--color-black-900);
+
     background: var(--color-black-900);
     color: var(--color-black-100);
+
+    --highlighter-bg: var(--color-white);
   }
 
 * {
@@ -108,7 +121,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10000;
+  z-index: 1000;
 }
 #site-url {
   margin-left: 8px;
@@ -167,23 +180,59 @@ body {
   background: white;
 }
 
-.scores {
+#scores {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+#header.stuck #scores-sticky {
+  display: flex;
+}
+#scores-sticky {
+  --score-container-width: 64px;
+  --score-size: 36px;
+  --score-number-fontsize: 13px;
+  --plugin-size: 18px;
+  --plugin-icon-size: 75%;
+  --score-number-offset: 0;
+  font-weight: 700;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  display: none;
+  left: 0;
+  right: 0;
+  top: var(--topbar-height);
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--color-black-200);
+}
+#scores-sticky .score-container .title {
+  display: none;
 }
 
 .score-container {
   text-align: center;
   width: var(--score-container-width);
   padding: 12px;
+  position: relative;
 }
+  .score-container.selected:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    background: var(--highlighter-bg);
+    display: block;
+  }
   .score-container .title {
     font-size: var(--score-title-fontsize);
     line-height: var(--score-title-lineheight);
+    margin-top: 10px;
   }
 .score-container.big {
-  /* padding: 0 32px; */
   max-width: 400px;
   width: auto;
   margin: 0px auto;
@@ -197,18 +246,15 @@ body {
   }
 
 
-
 .score {
   width: var(--score-size);
   height: var(--score-size);
-  margin: 0 20px;
   margin: 0 auto;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: var(--score-number-fontsize);
-  margin-bottom: 10px;
   font-family: 'Roboto Mono', monospace;
 }
   .big .score {
@@ -221,7 +267,7 @@ body {
     position: absolute;
   }
   .score .number {
-    -webkit-transform: translate3d(0,1px,0);
+    -webkit-transform: translate3d(0, var(--score-number-offset), 0);
   }
   .score .bg {
     opacity: .1;
@@ -259,7 +305,7 @@ body {
   background-color: var(--plugin-bg);
   background-image: url(images/ic_extension_grey600_24dp.svg);
   background-repeat: no-repeat;
-  background-size: 65% 65%;
+  background-size: var(--plugin-icon-size);
   background-position: 58% 50%;
   content: "";
   position: absolute;
@@ -396,6 +442,7 @@ body {
     --score-marginbottom-big: 8px;
 
     --plugin-size: 28px;
+    --plugin-icon-size: 75%;
 
     --shape-size: 10px;
     --shape-margin: 5px 12px 0 0;
@@ -423,9 +470,6 @@ body {
   }
   .section {
     padding: 20px;
-  }
-  .score {
-    margin-bottom: 6px;
   }
   .two-col {
     -webkit-column-count: 1;

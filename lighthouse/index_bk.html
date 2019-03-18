@@ -10,7 +10,9 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto:400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
+  <script type="text/javascript" src="TweenMax.min.js"></script>
 	<script type="text/javascript" src="ScrollMagic.min.js"></script>
+	<script type="text/javascript" src="animation.gsap.min.js"></script>
 	<script type="text/javascript" src="debug.addIndicators.min.js"></script>
 
 	<title>Lighthouse</title>
@@ -88,69 +90,6 @@
 
     </div>
 
-    <div id="scores-sticky">
-      <div class="score-container score-performance selected">
-        <div class="score red">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 103 265; stroke-dashoffset: 103;"/>
-          </svg>
-          <div class="number">45</div>
-        </div>
-        <div class="title">Performance</div>
-      </div>
-
-      <div class="score-container">
-        <div class="score orange" >
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 259 158; stroke-dashoffset: 150;"/>
-          </svg>
-          <div class="number">67</div>
-        </div>
-        <div class="title">Accessibility</div>
-      </div>
-
-      <div class="score-container">
-        <div class="score red">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 44 282; stroke-dashoffset: 60;"/>
-          </svg>
-          <div class="number">13</div>
-        </div>
-        <div class="title">Best Practices</div>
-      </div>
-
-      <div class="score-container">
-        <div class="score green">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 243 25; stroke-dashoffset: 1;" />
-          </svg>
-          <div class="number">98</div>
-        </div>
-        <div class="title">SEO</div>
-      </div>
-
-      <div class="score-container">
-        <div class="score green score-pwa"></div>
-        <div class="title">Progressive Web App</div>
-      </div>
-
-      <div class="score-container">
-        <div class="score green score-plugin">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 226 40; stroke-dashoffset: 1;" />
-          </svg>
-          <div class="number">91</div>
-        </div>
-        <div class="title">Google Ads Speed</div>
-      </div>
-
-    </div>
-
     <div id="score-scale">
       <div class="red">0–49</div>
       <div class="orange">50–89</div>
@@ -164,13 +103,46 @@
   <script>
   	// init controller
   	var controller = new ScrollMagic.Controller();
+    return;
+    var tween = new TimelineMax();
+    tween
+      .to("#header", 1, {padding:0}, 0)
+      .to(".score-container", 1, {width:72,height:72}, 0)
+      .to("#scores .score", 1, {width:36,height:36,fontSize:16,fontWeight:500}, 0)
+      .to("#scores .title", .5, {opacity:0}, 0)
+      .to("#score-scale", .5, {opacity:0}, 0);
+
+      // .add(TweenMax.to(".score-container", 1, {css:{width:60}, ease:Linear.easeNone}))
+      // .add(TweenMax.to("#scores .score", 1, {css:{width:36,height:36,fontSize:16,fontWeight:500}, ease:Linear.easeNone}))
+  		// .add(TweenMax.to("#scores .title", 1, {css:{opacity:0}, ease:Linear.easeNone}))
+  		// .add(TweenMax.to("#score-scale", 1, {css:{opacity:0}, ease:Linear.easeNone}));
 
   	// build scene
-  	var scene = new ScrollMagic.Scene({triggerElement: "#trigger", offset: -96, triggerHook: 'onLeave'})
-            .setClassToggle("#header", "stuck")
-  					// .addIndicators()
+  	var scene = new ScrollMagic.Scene({triggerElement: "#section-performance", offset: 0, duration: 240})
+  					// trigger a velocity opaticy animation
+            .setTween(tween)
+            // .setPin("#header", {pushFollowers: false})
+            // .setClassToggle("#header", "stuck")
+  					.addIndicators() // add indicators (requires plugin)
   					.addTo(controller);
 
+    // #header.stuck #scores {
+    //   --score-container-width: 64px;
+    //   --score-size: 36px;
+    //   --score-number-fontsize: 14px;
+    //   font-weight: 500;
+    //   height: 64px;
+    // }
+    // #header.stuck #scores .title {
+    //   opacity: 0;
+    // }
+    //
+    // scene.on("enter", function (event) {
+    //
+    // });
+    // scene.on("leave", function (event) {
+    //
+    // });
   </script>
 
 
