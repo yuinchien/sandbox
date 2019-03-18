@@ -12,15 +12,16 @@
 	<title>Lighthouse</title>
 </head>
 <body>
-	<div id="topbar">
+
+  <div id="topbar">
     <i class="material-icons">lens</i>
     <div id="site-url" class="flex">https://www.cnn.com/</div>
     <i class="material-icons">more_vert</i>
   </div>
+
   <div id="header">
 
     <div class="scores">
-
       <div class="score-container">
         <div class="score red">
           <svg viewBox="0 0 120 120">
@@ -33,10 +34,10 @@
       </div>
 
       <div class="score-container">
-        <div class="score orange">
+        <div class="score orange" >
           <svg viewBox="0 0 120 120">
             <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" />
+            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 259 158; stroke-dashoffset: 150;"/>
           </svg>
           <div class="number">67</div>
         </div>
@@ -47,7 +48,7 @@
         <div class="score red">
           <svg viewBox="0 0 120 120">
             <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" />
+            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 44 282; stroke-dashoffset: 60;"/>
           </svg>
           <div class="number">13</div>
         </div>
@@ -106,12 +107,111 @@
         <div class="title">Performance</div>
       </div>
 
-      <div class="caption">Metrics</div>
+      <div class="row">
+        <div class="caption flex">Metrics</div>
+        <div class="button button-less selected"><i class="material-icons">short_text</i></div>
+        <div class="button button-more"><i class="material-icons">notes</i></div>
+      </div>
 
-      <div class="group">
-        <div class="audit red"><div class="title">Lorem Ipsum</div><i class="material-icons">keyboard_arrow_down</i></div>
-        <div class="audit orange"><div class="title">Lorem Ipsum</div><i class="material-icons">keyboard_arrow_down</i></div>
-        <div class="audit green"><div class="title">Lorem Ipsum</div><i class="material-icons">keyboard_arrow_down</i></div>
+      <div class="audits two-col">
+        <div class="audit red"><div class="title">First Contentful Paint</div><div class="time">9.6 s</div></div>
+        <div class="audit red"><div class="title">Speed Index</div><div class="time">23.8 s</div></div>
+        <div class="audit red"><div class="title">Time to Interactive</div><div class="time">42.0 s</div></div>
+        <div class="audit orange"><div class="title">First Meaningful Paint</div><div class="time">10.7 s</div></div>
+        <div class="audit orange"><div class="title">First CPU Idle</div><div class="time">2.5 s</div></div>
+        <div class="audit green"><div class="title">Estimated Input Latency</div><div class="time">0.3 s</div></div>
+      </div>
+
+      <div id="screenshots">
+        <div class="flex image-placeholder"></div>
+        <div class="flex image-placeholder"></div>
+        <div class="flex image-placeholder"></div>
+        <div class="flex image-placeholder"></div>
+        <div class="flex image-placeholder"></div>
+        <div class="flex image-placeholder"></div>
+        <div class="flex image-placeholder"></div>
+        <div class="flex image-placeholder"></div>
+        <div class="flex image-placeholder"></div>
+        <div class="flex image-placeholder"></div>
+      </div>
+
+      <div class="caption">Metrics<span class="desc">&mdash;These optimizations can speed up your page load.</span></div>
+
+      <div class="row">
+        <div class="flex">Opportunity</div>
+        <div class="">Estimated Savings</div>
+      </div>
+
+      <div class="audits">
+        <div class="audit red">
+          <div class="title">Preload key requests</div>
+          <div class="time">14.85 s</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit red">
+          <div class="title">Serve images in next-gen formats</div>
+          <div class="time">0.94 s</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit orange">
+          <div class="title">Preconnected to required origins</div>
+          <div class="time">0.65 s</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit orange">
+          <div class="title">Defer unused CSS</div>
+          <div class="time">0.31 s</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit green">
+          <div class="title">Efficiently encode imagess</div>
+          <div class="time">0.16 s</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="caption">Diagnostics<span class="desc">&mdash;More information about the performance of your application.</span></div>
+      </div>
+
+      <div class="audits">
+        <div class="audit red">
+          <div class="title">Reduce JavaScript execution time</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit red">
+          <div class="title">Minimize main-thread work</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit red">
+          <div class="title">Ensure text remains visible during webfont load</div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit red">
+          <div class="title">Serve Static assets with an efficient cache policy <span class="red">&mdash;136 resrouces found</span></div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit red">
+          <div class="title">Avoid an excessive DOM size <span class="red">&mdash;3,531 nodes</span></div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit red">
+          <div class="title">Avoid enormous network payloads <span class="red">&mdash;Total size was 5,029 KB</span></div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit gray">
+          <div class="title">Avoid enormous network payloads <span class="gray">&mdash;Total size was 5,029 KB</span></div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="audit gray">
+          <div class="title">Avoid enormous network payloads <span class="gray">&mdash;Total size was 5,029 KB</span></div>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+      </div>
+
+      <div class="row audits-collapsed">
+        <div class="caption flex">Passed audits <span>(3)</span></div>
+        <i class="material-icons">keyboard_arrow_down</i>
       </div>
 
     </div>
