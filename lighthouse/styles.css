@@ -130,6 +130,15 @@ a {
   opacity: 1;
 }
 
+#highlighter {
+  width: var(--score-container-width);
+  height: 1px;
+  background: var(--highlighter-bg);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 #topbar {
   display: flex;
   align-items: center;
@@ -203,7 +212,8 @@ a {
   flex-wrap: wrap;
 }
 #header.stuck #scores-sticky {
-  display: flex;
+  opacity: 1;
+  pointer-events: auto;
 }
 #scores-sticky {
   --score-container-width: 64px;
@@ -217,12 +227,14 @@ a {
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  display: none;
+  display: flex;
   left: 0;
   right: 0;
   top: var(--topbar-height);
   background: var(--header-bg);
   border-bottom: 1px solid var(--color-black-200);
+  pointer-events: none;
+  opacity: 0;
 }
 #scores-sticky .score-container .title {
   display: none;
@@ -234,16 +246,6 @@ a {
   padding: var(--score-container-padding);
   position: relative;
 }
-  .score-container.selected:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -1px;
-    height: 1px;
-    background: var(--highlighter-bg);
-    display: block;
-  }
   .score-container .title {
     font-size: var(--score-title-fontsize);
     line-height: var(--score-title-lineheight);
@@ -309,7 +311,7 @@ a {
   fill: var(--color-red);
   stroke: var(--color-red);
 }
-.score.score-pwa {
+.score.pwa {
   background-color: var(--color-black-200);
   background-image: url(images/logo-pwa.svg);
   background-size: cover;
@@ -432,7 +434,6 @@ a {
   }
   .audit .material-icons {
     margin-left: 6px;
-    margin-right: -4px;
   }
 
 .badge-pwa {

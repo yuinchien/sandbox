@@ -71,7 +71,7 @@
       </div>
 
       <div class="score-container">
-        <div class="score green score-pwa"></div>
+        <div class="score green pwa"></div>
         <div class="title">Progressive Web App</div>
       </div>
 
@@ -89,7 +89,9 @@
     </div>
 
     <div id="scores-sticky">
-      <div class="score-container score-performance selected">
+
+      <div id="highlighter"></div>
+      <div class="score-container" id="score-performance">
         <div class="score red">
           <svg viewBox="0 0 120 120">
             <circle class="bg" r="60" cx="60" cy="60" />
@@ -100,7 +102,7 @@
         <div class="title">Performance</div>
       </div>
 
-      <div class="score-container">
+      <div class="score-container" id="score-accessibility">
         <div class="score orange" >
           <svg viewBox="0 0 120 120">
             <circle class="bg" r="60" cx="60" cy="60" />
@@ -111,7 +113,7 @@
         <div class="title">Accessibility</div>
       </div>
 
-      <div class="score-container">
+      <div class="score-container" id="score-bestpractices">
         <div class="score red">
           <svg viewBox="0 0 120 120">
             <circle class="bg" r="60" cx="60" cy="60" />
@@ -122,7 +124,7 @@
         <div class="title">Best Practices</div>
       </div>
 
-      <div class="score-container">
+      <div class="score-container" id="score-seo">
         <div class="score green">
           <svg viewBox="0 0 120 120">
             <circle class="bg" r="60" cx="60" cy="60" />
@@ -133,12 +135,12 @@
         <div class="title">SEO</div>
       </div>
 
-      <div class="score-container">
-        <div class="score green score-pwa"></div>
+      <div class="score-container" id="score-pwa">
+        <div class="score green pwa"></div>
         <div class="title">Progressive Web App</div>
       </div>
 
-      <div class="score-container">
+      <div class="score-container" id="score-googleadsspeed">
         <div class="score green score-plugin">
           <svg viewBox="0 0 120 120">
             <circle class="bg" r="60" cx="60" cy="60" />
@@ -160,19 +162,6 @@
   </div>
 
   <div id="trigger"></div>
-
-  <script>
-  	// init controller
-  	var controller = new ScrollMagic.Controller();
-
-  	// build scene
-  	var scene = new ScrollMagic.Scene({triggerElement: "#trigger", offset: -96, triggerHook: 'onLeave'})
-            .setClassToggle("#header", "stuck")
-  					// .addIndicators()
-  					.addTo(controller);
-
-  </script>
-
 
   <div class="section" id="section-performance">
 
@@ -466,7 +455,7 @@ This may enhance the experience for users of assistive technology, like a screen
     <div class="wrapper">
 
       <div class="score-container big">
-        <div class="score green score-pwa"></div>
+        <div class="score green pwa"></div>
         <div class="title">Progressive Web App</div>
         <p>These checks validate the aspects of a Progressive Web App. <a href="">Learn more</a>.</p>
       </div>
@@ -548,11 +537,66 @@ This may enhance the experience for users of assistive technology, like a screen
     </div>
   </div>
 
+  <div class="section" id="section-googleadsspeed">
+    <div class="score-container big">
+      <div class="score green score-plugin">
+        <svg viewBox="0 0 120 120">
+          <circle class="bg" r="60" cx="60" cy="60" />
+          <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 226 40; stroke-dashoffset: 1;" />
+        </svg>
+        <div class="number">91</div>
+      </div>
+      <div class="title">Google Ads Speed</div>
+    </div>
+
+    <div class="row empty"></div>
+
+    <div class="audits">
+      <div class="audit green">
+        <div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+        <i class="material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="audit green">
+        <div class="title">Sed ut perspiciatis unde omnis iste natus error sit voluptatem</div>
+        <i class="material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="audit green">
+        <div class="title">Nemo enim ipsam voluptatem</div>
+        <i class="material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="audit green">
+        <div class="title">Ut enim ad minima veniam</div>
+        <i class="material-icons">keyboard_arrow_down</i>
+      </div>
+    </div>
+
+  </div>
+
   <script type="text/javascript">
 
   window.onload = function() {
-    document.addEventListener("keyup", toggleTheme, false);
+    var highlighter = document.getElementById('highlighter');
+    // init controller
+    var controller = new ScrollMagic.Controller();
+  	var scene = new ScrollMagic.Scene({triggerElement: "#trigger", offset: -96, triggerHook: 'onLeave'})
+            .setClassToggle("#header", "stuck")
+  					// .addIndicators()
+  					.addTo(controller);
 
+    var sections = ['performance', 'accessibility', 'bestpractices', 'seo', 'pwa', 'googleadsspeed'];
+
+    for(var i=0; i<sections.length; i++) {
+      var scene = new ScrollMagic.Scene({triggerElement: '#section-'+sections[i]})
+        // .addIndicators()
+        .on("enter", function(e) {
+          var score = document.getElementById('score-'+this.triggerElement().id.split('-')[1]);
+          var left = score.offsetLeft;
+          highlighter.style.left = left + 'px';
+        })
+        .addTo(controller);
+    }
+
+    document.addEventListener("keyup", toggleTheme, false);
     function toggleTheme(e) {
     var keyCode = e.keyCode;
       if(keyCode==68) {
