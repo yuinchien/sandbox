@@ -50,19 +50,24 @@
   --score-number-offset: 1px;
 
   --shape-size: 12px;
-  --shape-margin: 6px 16px 0 0;
+  --shape-margin: 6px 16px 0 6px;
 
   --topbar-height: 36px;
 
   --audits-marginbottom: 40px;
+  --audit-padding: 12px 0;
 
   --icon-size: 24px;
+
+  --row-minheight: 32px;
 
   --section-padding: 40px;
 
   --header-padding: 20px 0 20px 0;
   --score-container-padding: 12px;
   --topbar-padding: 0 8px;
+
+  --badge-marginright: 10px;
 }
 
 body {
@@ -97,11 +102,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 }
+a {
+  color: var(--color-blue);
+}
 .row {
   display: flex;
   align-items: center;
   margin: 8px 0;
-  min-height: 32px;
+  min-height: var(--row-minheight);
+}
+.row.empty {
+  min-height: 12px;
 }
 .flex {
   flex: 1;
@@ -365,8 +376,7 @@ body {
 .audit {
   border-bottom: 1px solid var(--color-black-200);
   display: flex;
-  /* align-items: baseline; */
-  padding: 12px 0;
+  padding: var(--audit-padding);
 }
 
   .audit:first-child {
@@ -425,6 +435,23 @@ body {
     margin-right: -4px;
   }
 
+.badge-pwa {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background-size: 90% 90%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin-right: var(--badge-marginright);
+}
+.badge-fast-and-reliable.green {
+  background-image: url(images/checklist_fast_and_reliable_green.svg);
+}
+.badge-installable.green {
+  background-image: url(images/checklist_installable_green.svg);
+}
+.badge-optimzed.green {
+  background-image: url(images/checklist_optimized_green.svg);
+}
 
 @media only screen and (max-width: 480px) {
   :root {
@@ -451,11 +478,12 @@ body {
     --plugin-icon-size: 75%;
 
     --shape-size: 10px;
-    --shape-margin: 5px 12px 0 0;
+    --shape-margin: 5px 12px 0 5px;
 
     --topbar-height: 32px;
 
     --audits-marginbottom: 24px;
+    --audit-padding: 10px 0;
 
     --icon-size: 20px;
 
@@ -465,6 +493,10 @@ body {
 
     --score-container-padding: 8px;
     --topbar-padding: 0 4px;
+
+    --row-minheight: 24px;
+
+    --badge-marginright: 8px;
   }
 
   .two-col {
