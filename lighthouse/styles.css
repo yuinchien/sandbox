@@ -260,6 +260,9 @@ a {
     font-size: var(--score-title-fontsize-big);
     line-height: var(--score-title-lineheight-big);
   }
+  .score-container.big {
+    --plugin-size: 42px;
+  }
   .score-container p {
     margin: 4px 0 12px 0;
   }
