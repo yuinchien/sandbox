@@ -5,7 +5,7 @@
   --color-green: #0CCE6B;
   --color-green-700: #018642;
 
-  --color-orange: #FFA400;
+  --color-orange: 255, 164, 0; /* #FFA400; */
   --color-orange-700: #D04900;
 
   --color-blue: #2962FF;
@@ -69,6 +69,8 @@
   --topbar-padding: 0 8px;
 
   --badge-marginright: 10px;
+
+  --right-panel-width: 360px;
 }
 
 body {
@@ -82,7 +84,7 @@ body {
   body.dark {
     --color-red-700: var(--color-red);
     --color-green-700: var(--color-green);
-    --color-orange-700: var(--color-orange);
+    --color-orange-700: rgb( var(--color-orange) );
 
     --color-black-200: var(--color-black-800);
     --color-black-400: var(--color-black-600);
@@ -128,6 +130,9 @@ a {
   font-size: var(--icon-size);
   opacity: .54;
 }
+.button {
+  cursor: pointer;
+}
 .button.selected .material-icons {
   opacity: 1;
 }
@@ -140,13 +145,15 @@ a {
   bottom: 0;
   left: 0;
 }
-
-#topbar {
+.toolbar {
   display: flex;
   align-items: center;
   height: var(--topbar-height);
   background-color: var(--topbar-bg);
   padding: var(--topbar-padding);
+}
+
+#topbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -185,7 +192,7 @@ a {
   background-color: var(--color-red);
 }
 #score-scale > div.orange:before {
-  background-color: var(--color-orange);
+  background-color: rgb( var(--color-orange) );
 }
 #score-scale > div.green:before {
   background-color: var(--color-green);
@@ -196,6 +203,39 @@ a {
   padding: var(--header-padding);
   border-bottom: 1px solid var(--color-black-200);
   display: grid;
+}
+
+#right-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--right-panel-width);
+  z-index: 10000;
+  background: var(--plugin-bg);
+  box-shadow: 0 0 4px rgba(0,0,0,.2);
+  -webkit-transform: translate3d(100%,0,0);
+  -webkit-transition: .2s all;
+}
+body.panel #right-panel {
+  -webkit-transform: translate3d(0,0,0);
+}
+#right-panel .wrapper {
+  padding: 20px;
+}
+#right-panel .info {
+  margin: -4px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: rgba(var(--color-orange), .1);
+}
+#right-panel .info p {
+  color: var(--color-orange-700);
+  margin: 0;
+}
+#right-panel .info ul {
+  padding: 0 24px;
+  margin: 6px 0 0 0;
 }
 
 #screenshots {
@@ -304,9 +344,9 @@ a {
     stroke-linecap: round;
   }
 .score.orange {
-  color: var(--color-orange);
-  fill: var(--color-orange);
-  stroke: var(--color-orange);
+  color: rgb( var(--color-orange) );
+  fill: rgb( var(--color-orange) );
+  stroke: rgb( var(--color-orange) );
 }
 .score.green {
   color: var(--color-green);
@@ -357,7 +397,7 @@ a {
   border-bottom: 1px solid var(--color-black-200);
 }
 
-.wrapper {
+.section .wrapper {
   max-width: 760px;
   margin: 0 auto;
 }
@@ -413,7 +453,7 @@ a {
   }
   .audit.orange:before {
     clip-path: polygon(6% 6%, 94% 6%, 94% 94%, 6% 94%);
-    background: var(--color-orange);
+    background: rgb( var(--color-orange) );
   }
   .audit > .title {
     font-weight: 500;
@@ -505,6 +545,8 @@ a {
     --row-minheight: 24px;
 
     --badge-marginright: 8px;
+
+    --right-panel-width: 320px;
   }
 
   .two-col {

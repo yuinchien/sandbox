@@ -17,7 +17,36 @@
 </head>
 <body>
 
-  <div id="topbar">
+  <div id="right-panel">
+    <div class="toolbar"><div class="flex"></div><i id="button-panel-close" class="button material-icons">close</i></div>
+    <div class="wrapper">
+      <div class="info">
+        <p>Chrome extensions negatively affected the load performance for Lighthouse</p>
+        <ul>
+          <li>Try auditing in incognito mode</li>
+          <li>Try auditing from a Chrome profile without extensions</li>
+        </ul>
+      </div>
+
+      <div class="row audits-collapsed">
+        <div class="caption flex">Performance / Opportunities <span>(4)</span></div>
+        <i class="material-icons">keyboard_arrow_down</i>
+      </div>
+
+      <div class="row audits-collapsed">
+        <div class="caption flex">Performance / Diagnostics <span>(2)</span></div>
+        <i class="material-icons">keyboard_arrow_down</i>
+      </div>
+
+      <div class="row audits-collapsed">
+        <div class="caption flex">Progressive Web App <span>(1)</span></div>
+        <i class="material-icons">keyboard_arrow_down</i>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="topbar" class="toolbar">
     <i class="material-icons">lens</i>
     <div id="site-url" class="flex">https://www.cnn.com/</div>
     <i class="material-icons">more_vert</i>
@@ -370,8 +399,6 @@ This may enhance the experience for users of assistive technology, like a screen
         <div class="caption flex">Not applicable <span>(3)</span></div>
         <i class="material-icons">keyboard_arrow_down</i>
       </div>
-
-
     </div>
 
   </div>
@@ -620,6 +647,12 @@ This may enhance the experience for users of assistive technology, like a screen
       var score = document.getElementById('score-'+SECTIONS[i]);
       score.addEventListener('click', jumpToSection, false);
     }
+
+    setTimeout(function(){ document.body.classList.add("panel"); }, 1000);
+
+    document.getElementById('button-panel-close').addEventListener('click', function(){
+      document.body.classList.toggle("panel");
+    }, false);
 
     document.addEventListener("keyup", toggleTheme, false);
     function toggleTheme(e) {
