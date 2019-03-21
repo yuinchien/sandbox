@@ -501,6 +501,21 @@ body.panel #right-panel {
   background-image: url(images/checklist_optimized_green.svg);
 }
 
+.items {
+  margin-top: 20px;
+}
+.items .item:nth-child(2n+1) {
+  background: var(--color-black-100);
+}
+.items .item {
+  display: flex;
+  padding: 10px 12px;
+}
+.items .item .title {
+  min-width: 220px;
+  font-weight: 700;
+}
+
 @media only screen and (max-width: 480px) {
   :root {
     --body-fontsize: 14px;
@@ -559,5 +574,8 @@ body.panel #right-panel {
   }
   #screenshots div:nth-child(2n) {
     display: none;
+  }
+  .items .item {
+    display: block;
   }
 }

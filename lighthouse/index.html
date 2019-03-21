@@ -601,6 +601,29 @@ This may enhance the experience for users of assistive technology, like a screen
     </div>
   </div>
 
+
+  <div class="section" id="section-runtimesettings">
+    <div class="wrapper">
+
+      <div class="score-container big">
+        <div class="title">Runtime Settings</div>
+      </div>
+
+      <div class="items">
+        <div class="item"><div class="title">URL</div>https://www.cnn.com/</div>
+        <div class="item"><div class="title">Fetch time</div>Jan 11, 2019, 3:55 PM PST</div>
+        <div class="item"><div class="title">Device</div>Emulated Nexus 5X</div>
+        <div class="item"><div class="title">Network throttling</div>150 ms TCP RTT, 1,638.4 Kbps throughput (Simulated)</div>
+        <div class="item"><div class="title">CPU throttling</div>4x slowdown (Simulated)</div>
+        <div class="item"><div class="title">User agent (host)</div>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36</div>
+        <div class="item"><div class="title">User agent (network)</div>Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3559.0 Mobile Safari/537.36</div>
+        <div class="item"><div class="title">CPU/Memory Power</div>1373</div>
+      </div>
+
+    </div>
+  </div>
+
+
   <script type="text/javascript">
 
   var SECTIONS = ['performance', 'accessibility', 'bestpractices', 'seo', 'pwa', 'googleadsspeed'];
@@ -648,7 +671,7 @@ This may enhance the experience for users of assistive technology, like a screen
       score.addEventListener('click', jumpToSection, false);
     }
 
-    setTimeout(function(){ document.body.classList.add("panel"); }, 1000);
+    // setTimeout(function(){ document.body.classList.add("panel"); }, 1000);
 
     document.getElementById('button-panel-close').addEventListener('click', function(){
       document.body.classList.toggle("panel");
