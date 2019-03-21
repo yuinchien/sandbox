@@ -609,6 +609,7 @@ This may enhance the experience for users of assistive technology, like a screen
           var index = SECTIONS.indexOf( this.triggerElement().id.split('-')[1] );
           if(e.type=='leave') {
             index--;
+            if(index<0) { index = 0; }
           }
           var score = document.getElementById('score-'+SECTIONS[index]);
           var left = score.offsetLeft;
