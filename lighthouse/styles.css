@@ -27,6 +27,7 @@
   --plugin-bg: var(--color-white);
   --plugin-size: 36px;
   --plugin-icon-size: 65%;
+  --plugin-icon-url: url(images/ic_extension_grey600_24dp.svg);
 
   --body-fontsize: 16px;
   --body-lineheight: 24px;
@@ -95,6 +96,7 @@ body {
     color: var(--color-black-100);
 
     --highlighter-bg: var(--color-white);
+    --plugin-icon-url: url(images/ic_extension_white_24dp.svg);
   }
 
 * {
@@ -325,7 +327,7 @@ a {
   width: var(--plugin-size);
   height: var(--plugin-size);
   background-color: var(--plugin-bg);
-  background-image: url(images/ic_extension_grey600_24dp.svg);
+  background-image: var(--plugin-icon-url);
   background-repeat: no-repeat;
   background-size: var(--plugin-icon-size);
   background-position: 58% 50%;
