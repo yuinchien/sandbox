@@ -505,7 +505,7 @@ body.panel #right-panel {
   margin-top: 20px;
 }
 .items .item:nth-child(2n+1) {
-  background: var(--color-black-100);
+  background: var(--topbar-bg);
 }
 .items .item {
   display: flex;
