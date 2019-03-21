@@ -218,7 +218,7 @@ a {
   pointer-events: auto;
 }
 #scores-sticky {
-  --score-container-width: 64px;
+  --score-container-width: 60px;
   --score-size: 36px;
   --score-number-fontsize: 13px;
   --plugin-size: 18px;
@@ -241,7 +241,9 @@ a {
 #scores-sticky .score-container .title {
   display: none;
 }
-
+#scores-sticky .score-container {
+  cursor: pointer;
+}
 .score-container {
   text-align: center;
   width: var(--score-container-width);

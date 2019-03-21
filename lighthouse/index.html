@@ -576,8 +576,23 @@ This may enhance the experience for users of assistive technology, like a screen
 
   <script type="text/javascript">
 
+  var SECTIONS = ['performance', 'accessibility', 'bestpractices', 'seo', 'pwa', 'googleadsspeed'];
+  var highlighter = document.getElementById('highlighter');
+
+  function jumpToSection(e) {
+    var name = e.currentTarget.id.split('-')[1];
+    var section = document.getElementById('section-'+name);
+    // section.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    window.scrollTo({
+      top: section.offsetTop - 72,
+      left: 0,
+      behavior: 'smooth'
+    });
+    highlighter.style.left = e.currentTarget.offsetLeft + 'px';
+  }
+
   window.onload = function() {
-    var highlighter = document.getElementById('highlighter');
+
     // init controller
     var controller = new ScrollMagic.Controller();
   	var scene = new ScrollMagic.Scene({triggerElement: "#trigger", offset: -96, triggerHook: 'onLeave'})
@@ -585,17 +600,24 @@ This may enhance the experience for users of assistive technology, like a screen
   					// .addIndicators()
   					.addTo(controller);
 
-    var sections = ['performance', 'accessibility', 'bestpractices', 'seo', 'pwa', 'googleadsspeed'];
-
-    for(var i=0; i<sections.length; i++) {
-      var scene = new ScrollMagic.Scene({triggerElement: '#section-'+sections[i]})
+    for(var i=0; i<SECTIONS.length; i++) {
+      var scene = new ScrollMagic.Scene({triggerElement: '#section-'+SECTIONS[i]})
         // .addIndicators()
-        .on("enter", function(e) {
-          var score = document.getElementById('score-'+this.triggerElement().id.split('-')[1]);
+        .on("enter leave", function(e) {
+          // console.log('enter or leave', , e.type);
+
+          var index = SECTIONS.indexOf( this.triggerElement().id.split('-')[1] );
+          if(e.type=='leave') {
+            index--;
+          }
+          var score = document.getElementById('score-'+SECTIONS[index]);
           var left = score.offsetLeft;
           highlighter.style.left = left + 'px';
         })
         .addTo(controller);
+
+      var score = document.getElementById('score-'+SECTIONS[i]);
+      score.addEventListener('click', jumpToSection, false);
     }
 
     document.addEventListener("keyup", toggleTheme, false);
