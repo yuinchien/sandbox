@@ -28,17 +28,17 @@
         </ul>
       </div>
 
-      <div class="row audits-collapsed">
+      <div class="row-caption audits-collapsed">
         <div class="caption flex">Performance / Opportunities <span>(4)</span></div>
         <i class="material-icons">keyboard_arrow_down</i>
       </div>
 
-      <div class="row audits-collapsed">
+      <div class="row-caption audits-collapsed">
         <div class="caption flex">Performance / Diagnostics <span>(2)</span></div>
         <i class="material-icons">keyboard_arrow_down</i>
       </div>
 
-      <div class="row audits-collapsed">
+      <div class="row-caption audits-collapsed">
         <div class="caption flex">Progressive Web App <span>(1)</span></div>
         <i class="material-icons">keyboard_arrow_down</i>
       </div>
@@ -207,20 +207,58 @@
         <div class="title">Performance</div>
       </div>
 
-      <div class="row">
+      <div class="row-caption">
         <div class="caption flex">Metrics</div>
         <div class="button button-less selected"><i class="material-icons">short_text</i></div>
         <div class="button button-more"><i class="material-icons">notes</i></div>
       </div>
 
-      <div class="audits two-col">
-        <div class="audit red"><div class="title">First Contentful Paint</div><div class="time">9.6 s</div></div>
-        <div class="audit red"><div class="title">Speed Index</div><div class="time">23.8 s</div></div>
-        <div class="audit red"><div class="title">Time to Interactive</div><div class="time">42.0 s</div></div>
-        <div class="audit orange"><div class="title">First Meaningful Paint</div><div class="time">10.7 s</div></div>
-        <div class="audit orange"><div class="title">First CPU Idle</div><div class="time">2.5 s</div></div>
-        <div class="audit green"><div class="title">Estimated Input Latency</div><div class="time">0.3 s</div></div>
+      <div id="metrics" class="audits two-col">
+        <div class="audit red">
+          <div class="row">
+            <div class="title">First Contentful Paint</div>
+            <div class="time">9.6 s</div>
+          </div>
+          <div class="description">First Contentful Paint marks the time at which the first text or image is painted. Learn more.</div>
+        </div>
+        <div class="audit red">
+          <div class="row">
+            <div class="title">Speed Index</div>
+            <div class="time">23.8 s</div>
+          </div>
+          <div class="description">Speed Index shows how quickly the contents of a page are visibly populated. Learn more.</div>
+        </div>
+        <div class="audit red">
+          <div class="row">
+            <div class="title">Time to Interactive</div>
+            <div class="time">42.0 s</div>
+          </div>
+          <div class="description">Interactive marks the time at which the page is fully interactive. Learn more.</div>
+        </div>
+        <div class="audit orange">
+          <div class="row">
+            <div class="title">First Meaningful Paint</div>
+            <div class="time">10.7 s</div>
+          </div>
+          <div class="description">First Meaningful Paint measures when the primary content of a page is visible. Learn more.</div>
+        </div>
+        <div class="audit orange">
+          <div class="row">
+            <div class="title">First CPU Idle</div>
+            <div class="time">2.5 s</div>
+          </div>
+          <div class="description">First CPU Idle marks the first time at which the page's main thread is quiet enough to handle input. Learn more.</div>
+        </div>
+        <div class="audit green">
+          <div class="row">
+            <div class="title">Estimated Input Latency</div>
+            <div class="time">0.3 s</div>
+          </div>
+          <div class="description">The score above is an estimate of how long your app takes to respond to user input, in milliseconds, during the busiest 5s window of page load. If your latency is higher than 50 ms, users may perceive your app as laggy. Learn more.</div>
+        </div>
       </div>
+
+      <div class="clear"></div>
 
       <div id="screenshots">
         <div class="flex"><img src="images/blank.png"></div>
@@ -235,81 +273,153 @@
         <div class="flex"><img src="images/1.png"></div>
       </div>
 
-      <div class="caption">Opportunities<span class="desc">&mdash;These optimizations can speed up your page load.</span></div>
+      <div class="row-caption subtitle">
+        <div class="caption">Opportunities<span class="desc">&mdash;These optimizations can speed up your page load.</span></div>
+      </div>
 
-      <div class="row">
+      <div class="row row-list-th">
         <div class="flex">Opportunity</div>
         <div class="">Estimated Savings</div>
       </div>
 
       <div class="audits">
+
         <div class="audit red">
-          <div class="title">Preload key requests</div>
-          <div class="time">14.85 s</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Preload key requests</div>
+            <div class="time">14.85 s</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable">
+            <p>Consider using <span class="code">&lt;link rel=preload></span> to prioritize fetching resources that are currently requested later in page load. Learn more.</p>
+
+            <div class="row row-list-th">
+              <div class="flex">Opportunity</div>
+              <div class="">Estimated Savings</div>
+            </div>
+
+            <div class="items">
+              <div class="item row">
+                <div class="url flex">…2.130.0/wp-video.css</div>
+                <div>14.8 s</div>
+              </div>
+              <div class="item row">
+                <div class="url flex">…2.130.0/wp-video.css</div>
+                <div>14.8 s</div>
+              </div>
+              <div class="item row">
+                <div class="url flex">…2.130.0/wp-video.css</div>
+                <div>14.8 s</div>
+              </div>
+              <div class="item row">
+                <div class="url flex">…2.130.0/wp-video.css</div>
+                <div>14.8 s</div>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="audit red">
-          <div class="title">Serve images in next-gen formats</div>
-          <div class="time">0.94 s</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Serve images in next-gen formats</div>
+            <div class="time">0.94 s</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
+        </div>
+
+        <div class="audit orange">
+          <div class="row">
+            <div class="title">Preconnected to required origins</div>
+            <div class="time">0.65 s</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit orange">
-          <div class="title">Preconnected to required origins</div>
-          <div class="time">0.65 s</div>
-          <i class="material-icons">keyboard_arrow_down</i>
-        </div>
-        <div class="audit orange">
-          <div class="title">Defer unused CSS</div>
-          <div class="time">0.31 s</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Defer unused CSS</div>
+            <div class="time">0.31 s</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit green">
-          <div class="title">Efficiently encode imagess</div>
-          <div class="time">0.16 s</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Efficiently encode imagess</div>
+            <div class="time">0.16 s</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable">
+            <p>Consider using <span class="code">&lt;link rel=preload></span> to prioritize fetching resources that are currently requested later in page load. Learn more.</p>
+          </div>
         </div>
       </div>
 
-      <div class="row subtitle">
+      <div class="row-caption subtitle">
         <div class="caption">Diagnostics<span class="desc">&mdash;More information about the performance of your application.</span></div>
       </div>
 
       <div class="audits">
         <div class="audit red">
-          <div class="title">Reduce JavaScript execution time</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Reduce JavaScript execution time</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit red">
-          <div class="title">Minimize main-thread work</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Minimize main-thread work</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit red">
-          <div class="title">Ensure text remains visible during webfont load</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Ensure text remains visible during webfont load</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit red">
-          <div class="title">Serve Static assets with an efficient cache policy <span class="red">&mdash;136 resrouces found</span></div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Serve Static assets with an efficient cache policy <span class="red">&mdash;136 resrouces found</span></div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit red">
-          <div class="title">Avoid an excessive DOM size <span class="red">&mdash;3,531 nodes</span></div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Avoid an excessive DOM size <span class="red">&mdash;3,531 nodes</span></div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit red">
-          <div class="title">Avoid enormous network payloads <span class="red">&mdash;Total size was 5,029 KB</span></div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Avoid enormous network payloads <span class="red">&mdash;Total size was 5,029 KB</span></div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit gray">
-          <div class="title">Avoid enormous network payloads <span class="gray">&mdash;Total size was 5,029 KB</span></div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Avoid enormous network payloads <span class="gray">&mdash;Total size was 5,029 KB</span></div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit gray">
-          <div class="title">Avoid enormous network payloads <span class="gray">&mdash;Total size was 5,029 KB</span></div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Avoid enormous network payloads <span class="gray">&mdash;Total size was 5,029 KB</span></div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
       </div>
 
-      <div class="row audits-collapsed">
+      <div class="row-caption audits-collapsed">
         <div class="caption flex">Passed audits <span>(3)</span></div>
         <i class="material-icons">keyboard_arrow_down</i>
       </div>
@@ -332,70 +442,100 @@
         <p>These checks highlight opportunities to improve the accessibility of your web app. Only a subset of accessibility issues can be automatically detected so so manual testing is also encouraged.</p>
       </div>
 
-      <div class="row subtitle">
+      <div class="row-caption subtitle">
         <div class="caption">ARIA<span class="desc">&mdash;These are opportunities to improve the usage of ARIA in your application, which
 may enhance the experience for users of assistive technology, like a screen reader.</span></div>
       </div>
 
       <div class="audits">
         <div class="audit red">
-          <div class="title"><span class="code">[aria-*]</span> attributes do not match their roles</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title"><span class="code">[aria-*]</span> attributes do not match their roles</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit red">
-          <div class="title">Elements with <span class="code">[role]</span> that require specific children <span class="code">[role]</span>s, are missing.</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Elements with <span class="code">[role]</span> that require specific children <span class="code">[role]</span>s, are missing.</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit red">
-          <div class="title"><span class="code">[role]</span>s are not contained by their required parent element</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title"><span class="code">[role]</span>s are not contained by their required parent element</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit red">
-          <div class="title"><span class="code">[role]</span> values are not valid</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title"><span class="code">[role]</span> values are not valid</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit red">
-          <div class="title"><span class="code">[aria-*]</span> attributes do not have valid values</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title"><span class="code">[aria-*]</span> attributes do not have valid values</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit red">
-          <div class="title"><span class="code">[aria-*]</span> attributes do not have valid or misspelled</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title"><span class="code">[aria-*]</span> attributes do not have valid or misspelled</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
       </div>
 
-      <div class="row subtitle">
+      <div class="row-caption subtitle">
         <div class="caption">Names and labels<span class="desc">&mdash;These are opportunities to improve the semantics of the controls in your application.
 This may enhance the experience for users of assistive technology, like a screen reader.</span></div>
       </div>
       <div class="audits">
         <div class="audit red">
-          <div class="title">Buttons do not have an accessible name</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Buttons do not have an accessible name</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit red">
-          <div class="title">Document doesn’t have a <span class="code">&lt;title></span> element</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Document doesn’t have a <span class="code">&lt;title></span> element</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit red">
-          <div class="title"><span class="code">&lt;frame></span> or <span class="code">&lt;iframe></span> elements do not have a title</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title"><span class="code">&lt;frame></span> or <span class="code">&lt;iframe></span> elements do not have a title</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
         <div class="audit red">
-          <div class="title">Image elements do not have <span class="code">&lt;alt></span> attributes</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Image elements do not have <span class="code">&lt;alt></span> attributes</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
+          <div class="expandable"></div>
         </div>
       </div>
 
-      <div class="row audits-collapsed">
+      <div class="row-caption audits-collapsed">
         <div class="caption flex">Additional items to manually check <span>(11)</span></div>
         <i class="material-icons">keyboard_arrow_down</i>
       </div>
-      <div class="row audits-collapsed">
+      <div class="row-caption audits-collapsed">
         <div class="caption flex">Passed audits <span>(6)</span></div>
         <i class="material-icons">keyboard_arrow_down</i>
       </div>
-      <div class="row audits-collapsed">
+      <div class="row-caption audits-collapsed">
         <div class="caption flex">Not applicable <span>(3)</span></div>
         <i class="material-icons">keyboard_arrow_down</i>
       </div>
@@ -423,24 +563,32 @@ This may enhance the experience for users of assistive technology, like a screen
 
       <div class="audits">
         <div class="audit red">
-          <div class="title">Does not use passive listeners to improve scrolling performance</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Does not use passive listeners to improve scrolling performance</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
         <div class="audit red">
-          <div class="title">Uses document.write()</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Uses document.write()</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
         <div class="audit red">
-          <div class="title">Links to cross-origin destinations are unsafe</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Links to cross-origin destinations are unsafe</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
         <div class="audit red">
-          <div class="title">Browser errors were logged to the console</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Browser errors were logged to the console</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
       </div>
 
-      <div class="row audits-collapsed">
+      <div class="row-caption audits-collapsed">
         <div class="caption flex">Passed audits <span>(11)</span></div>
         <i class="material-icons">keyboard_arrow_down</i>
       </div>
@@ -465,11 +613,11 @@ This may enhance the experience for users of assistive technology, like a screen
         <p>These checks ensure that your page is optimized for search engine results ranking. There are additional factors Lighthouse does not check that may affect your search ranking. <a href="">Learn more</a>.</p>
       </div>
 
-      <div class="row audits-collapsed">
+      <div class="row-caption audits-collapsed">
         <div class="caption flex">Additional items to manually check <span>(2)</span></div>
         <i class="material-icons">keyboard_arrow_down</i>
       </div>
-      <div class="row audits-collapsed">
+      <div class="row-caption audits-collapsed">
         <div class="caption flex">Passed audits <span>(11)</span></div>
         <i class="material-icons">keyboard_arrow_down</i>
       </div>
@@ -487,72 +635,96 @@ This may enhance the experience for users of assistive technology, like a screen
         <p>These checks validate the aspects of a Progressive Web App. <a href="">Learn more</a>.</p>
       </div>
 
-      <div class="row subtitle">
+      <div class="row-caption subtitle">
         <div class="badge-pwa badge-fast-and-reliable green"></div>
         <div class="caption">Fast and reliable</div>
       </div>
       <div class="audits">
         <div class="audit green">
-          <div class="title">Page load is not fast enough on mobile networks</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Page load is not fast enough on mobile networks</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
         <div class="audit green">
-          <div class="title">Current page does not respond with a 200 when offline</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Current page does not respond with a 200 when offline</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
         <div class="audit green">
-          <div class="title"><span class="code">start_url</span> does not respond with a 200 when offline</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title"><span class="code">start_url</span> does not respond with a 200 when offline</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
       </div>
 
-      <div class="row subtitle">
+      <div class="row-caption subtitle">
         <div class="badge-pwa badge-installable green"></div>
         <div class="caption">Installable</div>
       </div>
       <div class="audits">
         <div class="audit green">
-          <div class="title">Does not register a service worker that controls page and <span class="code">start_url</span></div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Does not register a service worker that controls page and <span class="code">start_url</span></div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
         <div class="audit green">
-          <div class="title">Web app manifest does not meet the installability requirements</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Web app manifest does not meet the installability requirements</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
         <div class="audit green">
-          <div class="title">Uses HTTPS</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Uses HTTPS</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
       </div>
 
-      <div class="row subtitle">
+      <div class="row-caption subtitle">
         <div class="badge-pwa badge-optimzed green"></div>
         <div class="caption">Installable</div>
       </div>
       <div class="audits">
         <div class="audit green">
-          <div class="title">Is not configured for a custom splash screen</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Is not configured for a custom splash screen</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
         <div class="audit green">
-          <div class="title">Does not set an address-bar theme color</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Does not set an address-bar theme color</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
         <div class="audit green">
-          <div class="title">Redirects HTTP traffic to HTTPS</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Redirects HTTP traffic to HTTPS</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
         <div class="audit green">
-          <div class="title">Content is sized correctly for the viewport</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Content is sized correctly for the viewport</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
         <div class="audit green">
-          <div class="title">Has a <span class="code">&lt;meta name="viewport"></span> tag with width or initial-scale</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Has a <span class="code">&lt;meta name="viewport"></span> tag with width or initial-scale</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
         <div class="audit green">
-          <div class="title">Contains some content when JavaScript is not available</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Contains some content when JavaScript is not available</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
       </div>
 
@@ -582,20 +754,28 @@ This may enhance the experience for users of assistive technology, like a screen
 
       <div class="audits">
         <div class="audit green">
-          <div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
         <div class="audit green">
-          <div class="title">Sed ut perspiciatis unde omnis iste natus error sit voluptatem</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Sed ut perspiciatis unde omnis iste natus error sit voluptatem</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
         <div class="audit green">
-          <div class="title">Nemo enim ipsam voluptatem</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Nemo enim ipsam voluptatem</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
         <div class="audit green">
-          <div class="title">Ut enim ad minima veniam</div>
-          <i class="material-icons">keyboard_arrow_down</i>
+          <div class="row">
+            <div class="title">Ut enim ad minima veniam</div>
+            <i class="material-icons">keyboard_arrow_down</i>
+          </div>
         </div>
       </div>
     </div>
@@ -619,8 +799,8 @@ This may enhance the experience for users of assistive technology, like a screen
         <div class="item"><div class="title">User agent (network)</div>Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3559.0 Mobile Safari/537.36</div>
         <div class="item"><div class="title">CPU/Memory Power</div>1373</div>
       </div>
-
     </div>
+
   </div>
 
 
@@ -672,10 +852,54 @@ This may enhance the experience for users of assistive technology, like a screen
     }
 
     // setTimeout(function(){ document.body.classList.add("panel"); }, 1000);
+    var buttonLess = document
+      .getElementById("section-performance")
+      .getElementsByClassName("button-less")[0];
+    var buttonMore = document
+      .getElementById("section-performance")
+      .getElementsByClassName("button-more")[0];
+    var metrics = document.getElementById("section-performance");
+
+    buttonLess.addEventListener('click', function() {
+      var audits = metrics.getElementsByClassName("audit");
+      for(var i in audits) {
+        audits.item(i).classList.remove('open');
+      }
+      buttonLess.classList.add('selected');
+      buttonMore.classList.remove('selected');
+    }, false);
+    buttonMore.addEventListener('click', function() {
+      var audits = metrics.getElementsByClassName("audit");
+      for(var i in audits) {
+        audits.item(i).classList.add('open');
+      }
+      buttonMore.classList.add('selected');
+      buttonLess.classList.remove('selected');
+    }, false);
 
     document.getElementById('button-panel-close').addEventListener('click', function(){
       document.body.classList.toggle("panel");
     }, false);
+
+    var expandables = document.querySelectorAll(".expandable");
+    expandables.forEach(function(e, i, array) {
+      var audit = e.closest('.audit');
+      audit.getElementsByClassName('row')[0].addEventListener('click', function(){
+        this.closest('.audit').classList.toggle('open');
+      }, false);
+      // audit.classList.toggle('open');
+      // console.log('e');
+    });
+
+
+
+    for(var i in expandables) {
+
+      // audit.getElementsByClassName('row')[0].addEventListener('click', function(){
+      //   this.closest('.audit').classList.toggle('open');
+      //   console.log(this);
+      // }, false);
+    }
 
     document.addEventListener("keyup", toggleTheme, false);
     function toggleTheme(e) {
@@ -684,6 +908,7 @@ This may enhance the experience for users of assistive technology, like a screen
         document.body.classList.toggle("dark");
       }
     }
+
   }
 
   </script>
