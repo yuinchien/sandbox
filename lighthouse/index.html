@@ -858,7 +858,7 @@ This may enhance the experience for users of assistive technology, like a screen
     var buttonMore = document
       .getElementById("section-performance")
       .getElementsByClassName("button-more")[0];
-    var metrics = document.getElementById("section-performance");
+    var metrics = document.getElementById("metrics");
 
     buttonLess.addEventListener('click', function() {
       var audits = metrics.getElementsByClassName("audit");
@@ -887,19 +887,7 @@ This may enhance the experience for users of assistive technology, like a screen
       audit.getElementsByClassName('row')[0].addEventListener('click', function(){
         this.closest('.audit').classList.toggle('open');
       }, false);
-      // audit.classList.toggle('open');
-      // console.log('e');
     });
-
-
-
-    for(var i in expandables) {
-
-      // audit.getElementsByClassName('row')[0].addEventListener('click', function(){
-      //   this.closest('.audit').classList.toggle('open');
-      //   console.log(this);
-      // }, false);
-    }
 
     document.addEventListener("keyup", toggleTheme, false);
     function toggleTheme(e) {
