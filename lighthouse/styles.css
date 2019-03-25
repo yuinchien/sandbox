@@ -210,9 +210,9 @@ a {
   display: grid;
 }
 
-body.panel {
+/* body.panel {
   overflow: hidden;
-}
+} */
 #right-panel {
   position: fixed;
   right: 0;
