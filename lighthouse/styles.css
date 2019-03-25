@@ -76,6 +76,8 @@
   --item-padding: 10px 0px;
 
   --right-panel-width: 360px;
+
+  --background: white;
 }
 
 body {
@@ -86,6 +88,7 @@ body {
   font-size: var(--body-fontsize);
   line-height: var(--body-lineheight);
   color: var(--color-black-900);
+  background: var(--background);
 }
   body.dark {
     --color-red-700: var(--color-red);
@@ -100,7 +103,8 @@ body {
     --plugin-bg: var(--color-black-800);
     --header-bg: var(--color-black-900);
 
-    background: var(--color-black-900);
+    --background: var(--color-black-900);
+    /* background: var(--color-black-900); */
     color: var(--color-black-100);
 
     --highlighter-bg: var(--color-white);
@@ -210,9 +214,7 @@ a {
   display: grid;
 }
 
-/* body.panel {
-  overflow: hidden;
-} */
+
 #right-panel {
   position: fixed;
   right: 0;
@@ -232,11 +234,11 @@ body.panel #right-panel {
   bottom: 0;
   top: 0;
   -webkit-transition: .2s all;
-  background: var(--plugin-bg);
+  background: var(--background);
   opacity: 0;
 }
 body.panel #right-panel .mask {
-  opacity: .5;
+  opacity: .8;
 }
 #right-panel .container {
   position: absolute;
