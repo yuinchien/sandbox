@@ -23,6 +23,7 @@
   --topbar-bg: var(--color-black-100);
   --header-bg: var(--color-white);
   --highlighter-bg: var(--color-black);
+  --item-bg: var(--color-black-100);
 
   --plugin-bg: var(--color-white);
   --plugin-size: 36px;
@@ -102,9 +103,9 @@ body {
     --topbar-bg: var(--color-black);
     --plugin-bg: var(--color-black-800);
     --header-bg: var(--color-black-900);
+    --item-bg: rgba(0,0,0,.5);
 
     --background: var(--color-black-900);
-    /* background: var(--color-black-900); */
     color: var(--color-black-100);
 
     --highlighter-bg: var(--color-white);
@@ -151,7 +152,7 @@ a {
   height: 1px;
   background: var(--highlighter-bg);
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
 }
 .toolbar {
@@ -602,7 +603,7 @@ body.panel #right-panel .container {
   margin-bottom: var(--audits-marginbottom);
 }
 .items .item:nth-child(2n+1) {
-  background: var(--topbar-bg);
+  background: var(--item-bg);
 }
 .items .item {
   display: flex;
