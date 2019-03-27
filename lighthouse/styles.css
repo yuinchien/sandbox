@@ -151,8 +151,8 @@ a {
   opacity: 1;
 }
 .symbol-small {
-  width: 24px;
-  height: 24px;
+  width: var(--icon-size);
+  height: var(--icon-size);
   background-image: var(--symbol-url);
   background-size: cover;
 }
