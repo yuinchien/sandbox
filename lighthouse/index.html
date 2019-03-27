@@ -52,7 +52,7 @@
   </div>
 
   <div id="topbar" class="toolbar">
-    <i class="material-icons">lens</i>
+    <div class="symbol-small"></div>
     <div id="site-url" class="flex">https://www.cnn.com/</div>
     <i id="button-panel-open" class="button material-icons">more_vert</i>
   </div>
@@ -905,7 +905,7 @@ This may enhance the experience for users of assistive technology, like a screen
       });
     }
 
-    setTimeout(function(){ document.body.classList.add("panel"); }, 1000);
+    // setTimeout(function(){ document.body.classList.add("panel"); }, 1000);
 
     document.getElementById('right-panel').getElementsByClassName('mask')[0].addEventListener('click', function() {
       document.body.classList.remove("panel");

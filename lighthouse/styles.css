@@ -79,6 +79,8 @@
   --right-panel-width: 360px;
 
   --background: white;
+
+  --symbol-url: url(images/symbol_1_black.svg);
 }
 
 body {
@@ -110,6 +112,8 @@ body {
 
     --highlighter-bg: var(--color-white);
     --plugin-icon-url: url(images/ic_extension_white_24dp.svg);
+
+    --symbol-url: url(images/symbol_1_white.svg);
   }
 
 * {
@@ -145,6 +149,12 @@ a {
 }
 .button.selected .material-icons {
   opacity: 1;
+}
+.symbol-small {
+  width: 24px;
+  height: 24px;
+  background-image: var(--symbol-url);
+  background-size: cover;
 }
 
 #highlighter {
