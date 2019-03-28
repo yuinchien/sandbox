@@ -461,7 +461,40 @@ body.panel #right-panel .container {
   padding: 8px 0;
   color: var(--color-black-600);
 }
+.row-list-th div,
+.items .item div {
+  text-align: right;
+  flex: 1;
+}
+.row-list-th div:first-child,
+.items .item div:first-child {
+  flex: 2;
+  text-align: left;
+}
 
+.items .item:nth-child(2n+1) {
+  background: var(--item-bg);
+}
+.items .item {
+  display: flex;
+  padding: var(--item-padding);
+}
+
+.items .item div:first-child {
+  transform: translate3d(8px,0,0);
+}
+.items .item div:last-child {
+  transform: translate3d(-8px,0,0);
+}
+
+.items .item .title {
+  min-width: var(--setting-title-min-width);
+  font-weight: 700;
+}
+
+#section-runtimesettings .items {
+  margin-bottom: var(--audits-marginbottom);
+}
 #budget .items {
   margin-bottom: var(--audits-marginbottom);
 }
@@ -524,7 +557,16 @@ body.panel #right-panel .container {
   #audits-performance-metrics .audit {
     cursor: auto;
   }
-
+  .audit .warning {
+    color: var(--color-orange-700);
+    padding: var(--expandable-padding);
+  }
+  /* .audit .thumbnail {
+    width: 60px;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  } */
   .audit > .row:before {
     content: "";
     display: block;
@@ -590,6 +632,11 @@ body.panel #right-panel .container {
   .audit .material-icons {
     margin-left: 6px;
   }
+  .audit .items {
+    margin-bottom: 8px;
+  }
+
+
 
 .badge-pwa {
   width: var(--icon-size);
@@ -609,27 +656,7 @@ body.panel #right-panel .container {
   background-image: url(images/checklist_optimized_green.svg);
 }
 
-#section-runtimesettings .items {
-  margin-bottom: var(--audits-marginbottom);
-}
-.items .item:nth-child(2n+1) {
-  background: var(--item-bg);
-}
-.items .item {
-  display: flex;
-  padding: var(--item-padding);
-}
-.items .item div:first-child {
-  padding-left: 12px;
-}
-.items .item div:last-child {
-  padding-right: 12px;
-}
 
-.items .item .title {
-  min-width: var(--setting-title-min-width);
-  font-weight: 700;
-}
 
 @media only screen and (max-width: 480px) {
   :root {
