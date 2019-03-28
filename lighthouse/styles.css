@@ -518,10 +518,10 @@ body.panel #right-panel .container {
   }
 
   .audit:first-child,
-  #metrics .audit:nth-child(6n+2) {
+  #audits-performance-metrics .audit:nth-child(6n+2) {
     border-top: 1px solid var(--color-black-200);
   }
-  #metrics .audit {
+  #audits-performance-metrics .audit {
     cursor: auto;
   }
 
@@ -693,7 +693,7 @@ body.panel #right-panel .container {
   .two-col.audits .audit:nth-child(2n+1) {
     float: none;
   }
-  #metrics .audit:nth-child(6n+2) {
+  #audits-performance-metrics .audit:nth-child(6n+2) {
     border-top: none;
   }
 

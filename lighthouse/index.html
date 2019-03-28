@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto:400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
+  <script type="text/javascript" src="data.js"></script>
 	<script type="text/javascript" src="ScrollMagic.min.js"></script>
 	<script type="text/javascript" src="debug.addIndicators.min.js"></script>
 
@@ -270,50 +271,7 @@
         <div class="button button-more"><i class="material-icons">notes</i></div>
       </div>
 
-      <div id="metrics" class="audits two-col">
-        <div class="audit red">
-          <div class="row">
-            <div class="title">First Contentful Paint</div>
-            <div class="time">9.6 s</div>
-          </div>
-          <div class="description">First Contentful Paint marks the time at which the first text or image is painted. Learn more.</div>
-        </div>
-        <div class="audit red">
-          <div class="row">
-            <div class="title">Speed Index</div>
-            <div class="time">23.8 s</div>
-          </div>
-          <div class="description">Speed Index shows how quickly the contents of a page are visibly populated. Learn more.</div>
-        </div>
-        <div class="audit red">
-          <div class="row">
-            <div class="title">Time to Interactive</div>
-            <div class="time">42.0 s</div>
-          </div>
-          <div class="description">Interactive marks the time at which the page is fully interactive. Learn more.</div>
-        </div>
-        <div class="audit orange">
-          <div class="row">
-            <div class="title">First Meaningful Paint</div>
-            <div class="time">10.7 s</div>
-          </div>
-          <div class="description">First Meaningful Paint measures when the primary content of a page is visible. Learn more.</div>
-        </div>
-        <div class="audit orange">
-          <div class="row">
-            <div class="title">First CPU Idle</div>
-            <div class="time">2.5 s</div>
-          </div>
-          <div class="description">First CPU Idle marks the first time at which the page's main thread is quiet enough to handle input. Learn more.</div>
-        </div>
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Estimated Input Latency</div>
-            <div class="time">0.3 s</div>
-          </div>
-          <div class="description">The score above is an estimate of how long your app takes to respond to user input, in milliseconds, during the busiest 5s window of page load. If your latency is higher than 50 ms, users may perceive your app as laggy. Learn more.</div>
-        </div>
-      </div>
+      <div id="audits-performance-metrics" class="audits two-col"></div>
 
       <div class="clear"></div>
 
@@ -339,79 +297,7 @@
         <div class="">Estimated Savings</div>
       </div>
 
-      <div class="audits">
-
-        <div class="audit red">
-          <div class="row">
-            <div class="title">Preload key requests</div>
-            <div class="time">14.85 s</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-          <div class="expandable">
-            <p>Consider using <span class="code">&lt;link rel=preload></span> to prioritize fetching resources that are currently requested later in page load. Learn more.</p>
-
-            <div class="row row-list-th">
-              <div class="flex">Opportunity</div>
-              <div class="">Estimated Savings</div>
-            </div>
-
-            <div class="items">
-              <div class="item row">
-                <div class="url flex">…2.130.0/wp-video.css</div>
-                <div>14.8 s</div>
-              </div>
-              <div class="item row">
-                <div class="url flex">…2.130.0/wp-video.css</div>
-                <div>14.8 s</div>
-              </div>
-              <div class="item row">
-                <div class="url flex">…2.130.0/wp-video.css</div>
-                <div>14.8 s</div>
-              </div>
-              <div class="item row">
-                <div class="url flex">…2.130.0/wp-video.css</div>
-                <div>14.8 s</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="audit red">
-          <div class="row">
-            <div class="title">Serve images in next-gen formats</div>
-            <div class="time">0.94 s</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-          <div class="expandable"></div>
-        </div>
-
-        <div class="audit orange">
-          <div class="row">
-            <div class="title">Preconnected to required origins</div>
-            <div class="time">0.65 s</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-          <div class="expandable"></div>
-        </div>
-        <div class="audit orange">
-          <div class="row">
-            <div class="title">Defer unused CSS</div>
-            <div class="time">0.31 s</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-          <div class="expandable"></div>
-        </div>
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Efficiently encode imagess</div>
-            <div class="time">0.16 s</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-          <div class="expandable">
-            <p>Consider using <span class="code">&lt;link rel=preload></span> to prioritize fetching resources that are currently requested later in page load. Learn more.</p>
-          </div>
-        </div>
-      </div>
+      <div class="audits" id="audits-performance-opportunities"></div>
 
       <div class="row-caption subtitle">
         <div class="caption">Diagnostics<span class="desc">&mdash;More information about the performance of your application.</span></div>
@@ -838,14 +724,11 @@ This may enhance the experience for users of assistive technology, like a screen
     </div>
   </div>
 
-
   <div class="section" id="section-runtimesettings">
     <div class="wrapper">
-
       <div class="score-container big">
         <div class="title">Runtime Settings</div>
       </div>
-
       <div class="items">
         <div class="item"><div class="title">URL</div>https://www.cnn.com/</div>
         <div class="item"><div class="title">Fetch time</div>Jan 11, 2019, 3:55 PM PST</div>
@@ -857,11 +740,50 @@ This may enhance the experience for users of assistive technology, like a screen
         <div class="item"><div class="title">CPU/Memory Power</div>1373</div>
       </div>
     </div>
-
   </div>
 
-
   <script type="text/javascript">
+
+  let markupPerformanceMetrics = data_performance_metrics.map((i) => {
+    return `<div class="audit ${i.color}">
+      <div class="row">
+        <div class="title">${i.title}</div>
+        <div class="time">${i.time} s</div>
+      </div>
+      <div class="description">${i.description}</div>
+    </div>`;
+  });
+  document.getElementById('audits-performance-metrics').innerHTML = markupPerformanceMetrics.join('');
+
+  let markupOpportunities = data_performance_opportunities.map((i) => {
+    return `<div class="audit ${i.color}">
+      <div class="row">
+        <div class="title">${i.title}</div>
+        <div class="time">${i.time} s</div>
+        <i class="material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="expandable">
+        <p>${i.description}</p>
+        <div class="row row-list-th">
+          <div class="flex">${i.table.header[0]}</div>
+          <div class="">${i.table.header[1]}</div>
+        </div>
+        <div class="items">
+          ${i.table.items.map((item) => {
+            return `
+              <div class="item row">
+                <div class="url flex">${item[0]}</div>
+                <div>${item[1]}</div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    </div>`;
+  });
+  document.getElementById('audits-performance-opportunities').innerHTML = markupOpportunities.join('');
+
+
 
   var SECTIONS = ['performance', 'accessibility', 'bestpractices', 'seo', 'pwa', 'googleadsspeed'];
   var highlighter = document.getElementById('highlighter');
@@ -917,7 +839,7 @@ This may enhance the experience for users of assistive technology, like a screen
     var buttonMore = document
       .getElementById("section-performance")
       .getElementsByClassName("button-more")[0];
-    var metrics = document.getElementById("metrics");
+    var metrics = document.getElementById("audits-performance-metrics");
 
     buttonLess.addEventListener('click', function() {
       var audits = metrics.getElementsByClassName("audit");
