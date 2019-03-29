@@ -493,9 +493,16 @@ body.panel #right-panel .container {
   transform: translate3d(8px,0,0);
 }
 
-.items .item .title {
+
+.items .item div.title {
   min-width: var(--setting-title-min-width);
   font-weight: 700;
+  transform: translate3d(8px,0,0);
+  flex: .5;
+  padding-right: 8px;
+}
+.items .item div.title + div {
+  text-align: left;
 }
 
 #section-runtimesettings .items {
