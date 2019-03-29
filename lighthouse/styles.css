@@ -567,6 +567,10 @@ body.panel #right-panel .container {
     color: var(--color-orange-700);
     padding: var(--expandable-padding);
   }
+  .audit .error {
+    color: var(--color-red-700);
+    padding: var(--expandable-padding);
+  }
   .audit .thumbnail {
     width: 60px;
     height: 100%;
@@ -665,6 +669,8 @@ body.panel #right-panel .container {
 
 
 .badge-pwa {
+  display: inline-block;
+  vertical-align: middle;
   width: var(--icon-size);
   height: var(--icon-size);
   background-size: 90% 90%;

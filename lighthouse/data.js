@@ -461,5 +461,85 @@ const data_seo = [
   }
 ];
 
+const data_pwa_fastandreliable = {
+  caption: '<div class="badge-pwa badge-fast-and-reliable green"></div>Fast and reliable',
+  audits: [
+    {
+      color: 'red', title: 'Page load is not fast enough on mobile networks',
+      description: 'A fast page load over a cellular network ensures a good mobile user experience. Learn more.',
+    },
+    {
+      color: 'red', title: 'Current page does not respond with a 200 when offline',
+      description: 'If you\'re building a Progressive Web App, consider using a service worker so that your app can work offline. Learn more.',
+    },
+    {
+      color: 'red', title: 'start_url does not respond with a 200 when offline',
+      error: 'Unable to fetch start URL via service worker.',
+      description: 'A service worker enables your web app to be reliable in unpredictable network conditions. Learn more.',
+    },
+  ],
+};
+
+const data_pwa_installable = {
+  caption: '<div class="badge-pwa badge-installable green"></div>Installable',
+  audits: [
+    {
+      color: 'red', title: 'Does not use HTTPS <span class="red">&mdash;1 insecure request found</span>',
+      description: 'All sites should be protected with HTTPS, even ones that don\'t handle sensitive data. HTTPS prevents intruders from tampering with or passively listening in on the communications between your app and your users, and is a prerequisite for HTTP/2 and many new web platform APIs. Learn more.',
+      table: {
+        header: ['Insecure URL'],
+        items: [
+          ['…ads-misc/hide-oop-float.css<span class="secondary">www.cnn.com</span>'],
+        ],
+      },
+    },
+    {
+      color: 'red', title: 'Does not register a service worker that controls page and start_url',
+      description: 'The service worker is the technology that enables your app to use many Progressive Web App features, such as offline, add to homescreen, and push notifications. Learn more.',
+    },
+    {
+      color: 'red', title: 'Web app manifest does not meet the installability requirements',
+      error: 'Failures: Manifest does not have a PNG icon of at least 192px, Manifest\'s `display` value is not one of: minimal-ui | fullscreen | standalone, Manifest does not have `short_name`, Manifest does not have `name`.',
+      description: 'Browsers can proactively prompt users to add your app to their homescreen, which can lead to higher engagement. Learn more.',
+    },
+  ],
+};
+
+const data_pwa_optimized = {
+  caption: '<div class="badge-pwa badge-optimized green"></div>PWA Optimized',
+  audits: [
+    {
+      color: 'red', title: 'Is not configured for a custom splash screen',
+      error: 'Failures: Manifest does not have a PNG icon of at least 512px, Manifest does not have `background_color`, Manifest does not have `theme_color`, Manifest does not have `name`.',
+      description: 'A themed splash screen ensures a high-quality experience when users launch your app from their homescreens. Learn more.',
+    },
+    {
+      color: 'red', title: 'Does not set an address-bar theme color',
+      error: 'Failures: Manifest does not have `theme_color`.',
+      description: 'The browser address bar can be themed to match your site. Learn more.',
+    },
+    {
+      color: 'green', title: 'Redirects HTTP traffic to HTTPS',
+      description: 'If you\'ve already set up HTTPS, make sure that you redirect all HTTP traffic to HTTPS. Learn more.',
+    },
+    {
+      color: 'green', title: 'Content is sized correctly for the viewport',
+      description: 'If the width of your app\'s content doesn\'t match the width of the viewport, your app might not be optimized for mobile screens. Learn more.',
+    },
+    {
+      color: 'green', title: 'Has a <meta name="viewport"> tag with width or initial-scale',
+      description: 'Add a viewport meta tag to optimize your app for mobile screens. Learn more.',
+    },
+    {
+      color: 'green', title: 'Contains some content when JavaScript is not available',
+      description: 'Your app should display some content when JavaScript is disabled, even if it\'s just a warning to the user that JavaScript is required to use the app. Learn more.',
+    },
+  ],
+};
+
+
+
+
 const data_performance = [data_performance_opportunities, data_performance_diagnostics];
 const data_accessibility = [data_accessibility_namesandlabels, data_accessibility_contrast, data_accessibility_bestpractices, data_accessibility_internationalizationandlocalization, data_accessibility_tablesandlists];
+const data_pwa = [data_pwa_fastandreliable, data_pwa_installable, data_pwa_optimized];

@@ -427,98 +427,7 @@
         <p>These checks validate the aspects of a Progressive Web App. <a href="">Learn more</a>.</p>
       </div>
 
-      <div class="row-caption subtitle">
-        <div class="badge-pwa badge-fast-and-reliable green"></div>
-        <div class="caption">Fast and reliable</div>
-      </div>
-      <div class="audits">
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Page load is not fast enough on mobile networks</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Current page does not respond with a 200 when offline</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-        <div class="audit green">
-          <div class="row">
-            <div class="title"><span class="code">start_url</span> does not respond with a 200 when offline</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-      </div>
-
-      <div class="row-caption subtitle">
-        <div class="badge-pwa badge-installable green"></div>
-        <div class="caption">Installable</div>
-      </div>
-      <div class="audits">
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Does not register a service worker that controls page and <span class="code">start_url</span></div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Web app manifest does not meet the installability requirements</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Uses HTTPS</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-      </div>
-
-      <div class="row-caption subtitle">
-        <div class="badge-pwa badge-optimzed green"></div>
-        <div class="caption">PWA Optimized</div>
-      </div>
-      <div class="audits">
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Is not configured for a custom splash screen</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Does not set an address-bar theme color</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Redirects HTTP traffic to HTTPS</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Content is sized correctly for the viewport</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Has a <span class="code">&lt;meta name="viewport"></span> tag with width or initial-scale</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Contains some content when JavaScript is not available</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-      </div>
+      <div id="content-pwa"></div>
 
       <div class="row audits-collapsed">
         <div class="caption flex">Additional items to manually check <span>(3)</span></div>
@@ -649,6 +558,7 @@
         <i class="material-icons">keyboard_arrow_down</i>
       </div>
       ${data.warning? `<div class="warning">${data.warning}</div>` : ''}
+      ${data.error? `<div class="error">${data.error}</div>` : ''}
       <div class="expandable">
         <p>${data.description}</p>
         ${data.table ? renderTable(data.table):''}
@@ -697,6 +607,7 @@
     document.getElementById('content-accessibility').innerHTML = renderMarkupAll(data_accessibility);
     document.getElementById('content-bestpractices').innerHTML = renderMarkupAll(data_bestpractices);
     document.getElementById('content-seo').innerHTML = renderMarkupAll(data_seo);
+    document.getElementById('content-pwa').innerHTML = renderMarkupAll(data_pwa);
 
 
     // init controller
