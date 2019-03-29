@@ -691,6 +691,33 @@ This may enhance the experience for users of assistive technology, like a screen
     return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
   }
 
+  function renderTable(table) {
+    return `
+      <div class="row row-list-th">
+      ${table.header.map((header) => {
+        return (header=='Image') ? `<div class="thumbnail-header">${header}</div>` : `<div>${header}</div>`;
+      }).join('')}
+      </div>
+      <div class="items">
+        ${table.items.map((item) => {
+          return `
+            <div class="item row">
+            ${item.map((content) => {
+              if( checkURL(content) ) {
+                return `
+                <div class="thumbnail" style="background-image:url(${content})"></div>
+                `;
+              } else {
+                return `
+                <div>${content}</div>
+                `;
+              }
+            }).join('')}
+            </div>
+          `;
+        }).join('')}
+      </div>`;
+  }
   function renderMarkup(data) {
     return `<div class="audit ${data.color}">
       <div class="row">
@@ -701,32 +728,7 @@ This may enhance the experience for users of assistive technology, like a screen
       ${data.warning? `<div class="warning">${data.warning}</div>` : ''}
       <div class="expandable">
         <p>${data.description}</p>
-        <div class="row row-list-th">
-        ${data.table.header.map((header) => {
-          return `
-          <div>${header}</div>
-          `;
-        }).join('')}
-        </div>
-        <div class="items">
-          ${data.table.items.map((item) => {
-            return `
-              <div class="item row">
-              ${item.map((content) => {
-                if( checkURL(content) ) {
-                  return `
-                  <div class="thumbnail" style="background-image:url(${content})"></div>
-                  `;
-                } else {
-                  return `
-                  <div>${content}</div>
-                  `;
-                }
-              }).join('')}
-              </div>
-            `;
-          }).join('')}
-        </div>
+        ${data.table ? renderTable(data.table):''}
       </div>
     </div>`;
   }
