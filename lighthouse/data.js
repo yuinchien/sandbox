@@ -347,7 +347,7 @@ const data_accessibility_tablesandlists = {
   caption: 'Tables and lists', caption_desc: 'These are opportunities to to improve the experience of reading tabular or list data using assistive technology, like a screen reader.',
   audits: [
     {
-      color: 'red', title: 'Lists do not contain only <li> elements and script supporting elements (<script> and <template>).',
+      color: 'red', title: 'Lists do not contain only &lt;li> elements and script supporting elements (&lt;script> and &lt;template>).',
       description: 'Screen readers have a specific way of announcing lists. Ensuring proper list structure aids screen reader output. Learn more.',
       table: {
         header: ['Failing Elements'],
