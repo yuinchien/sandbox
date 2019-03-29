@@ -288,22 +288,7 @@
         <div class="flex"><img src="images/1.png"></div>
       </div>
 
-      <div class="row-caption subtitle">
-        <div class="caption">Opportunities<span class="desc">&mdash;These optimizations can speed up your page load.</span></div>
-      </div>
-
-      <div class="row row-list-th">
-        <div class="flex">Opportunity</div>
-        <div class="">Estimated Savings</div>
-      </div>
-
-      <div class="audits" id="audits-performance-opportunities"></div>
-
-      <div class="row-caption subtitle">
-        <div class="caption">Diagnostics<span class="desc">&mdash;More information about the performance of your application.</span></div>
-      </div>
-
-      <div class="audits" id="audits-performance-diagnostics"></div>
+      <div id="content-performance"></div>
 
       <div class="row-caption audits-collapsed">
         <div class="caption flex">Passed audits <span>(3)</span></div>
@@ -328,90 +313,7 @@
         <p>These checks highlight opportunities to improve the accessibility of your web app. Only a subset of accessibility issues can be automatically detected so so manual testing is also encouraged.</p>
       </div>
 
-      <div class="row-caption subtitle">
-        <div class="caption">ARIA<span class="desc">&mdash;These are opportunities to improve the usage of ARIA in your application, which
-may enhance the experience for users of assistive technology, like a screen reader.</span></div>
-      </div>
-
-      <div class="audits">
-        <div class="audit red">
-          <div class="row">
-            <div class="title"><span class="code">[aria-*]</span> attributes do not match their roles</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-          <div class="expandable"></div>
-        </div>
-        <div class="audit red">
-          <div class="row">
-            <div class="title">Elements with <span class="code">[role]</span> that require specific children <span class="code">[role]</span>s, are missing.</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-          <div class="expandable"></div>
-        </div>
-        <div class="audit red">
-          <div class="row">
-            <div class="title"><span class="code">[role]</span>s are not contained by their required parent element</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-          <div class="expandable"></div>
-        </div>
-        <div class="audit red">
-          <div class="row">
-            <div class="title"><span class="code">[role]</span> values are not valid</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-          <div class="expandable"></div>
-        </div>
-        <div class="audit red">
-          <div class="row">
-            <div class="title"><span class="code">[aria-*]</span> attributes do not have valid values</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-          <div class="expandable"></div>
-        </div>
-        <div class="audit red">
-          <div class="row">
-            <div class="title"><span class="code">[aria-*]</span> attributes do not have valid or misspelled</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-          <div class="expandable"></div>
-        </div>
-      </div>
-
-      <div class="row-caption subtitle">
-        <div class="caption">Names and labels<span class="desc">&mdash;These are opportunities to improve the semantics of the controls in your application.
-This may enhance the experience for users of assistive technology, like a screen reader.</span></div>
-      </div>
-      <div class="audits">
-        <div class="audit red">
-          <div class="row">
-            <div class="title">Buttons do not have an accessible name</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-          <div class="expandable"></div>
-        </div>
-        <div class="audit red">
-          <div class="row">
-            <div class="title">Document doesn’t have a <span class="code">&lt;title></span> element</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-          <div class="expandable"></div>
-        </div>
-        <div class="audit red">
-          <div class="row">
-            <div class="title"><span class="code">&lt;frame></span> or <span class="code">&lt;iframe></span> elements do not have a title</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-          <div class="expandable"></div>
-        </div>
-        <div class="audit red">
-          <div class="row">
-            <div class="title">Image elements do not have <span class="code">&lt;alt></span> attributes</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-          <div class="expandable"></div>
-        </div>
-      </div>
+      <div id="content-accessibility"></div>
 
       <div class="row-caption audits-collapsed">
         <div class="caption flex">Additional items to manually check <span>(11)</span></div>
@@ -690,18 +592,24 @@ This may enhance the experience for users of assistive technology, like a screen
   function checkURL(url) {
     return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
   }
-
-  function renderTable(table) {
-    return `
-      <div class="row row-list-th">
-      ${table.header.map((header) => {
+  function renderHeader(data) {
+    return `<div class="row row-list-th">
+      ${data.map((header) => {
         return (header=='Image') ? `<div class="thumbnail-header">${header}</div>` : `<div>${header}</div>`;
       }).join('')}
-      </div>
+      </div>`;
+  }
+  function renderTable(table) {
+    return `
+      ${ renderHeader(table.header) }
       <div class="items">
         ${table.items.map((item) => {
+          var isSingleItem = false;
+          if(item.length==1) {
+            isSingleItem = true;
+          }
           return `
-            <div class="item row">
+            <div class="item row ${isSingleItem ? `single-item` : ''}">
             ${item.map((content) => {
               if( checkURL(content) ) {
                 return `
@@ -718,6 +626,17 @@ This may enhance the experience for users of assistive technology, like a screen
         }).join('')}
       </div>`;
   }
+  function renderCaption(caption, desc) {
+    if(desc) {
+      return `<div class="row-caption subtitle">
+        <div class="caption">${caption}<span class="desc">&mdash;${desc}</span></div>
+      </div>`;
+    } else {
+      return `<div class="row-caption subtitle">
+        <div class="caption">${caption}</div>
+      </div>`;
+    }
+  }
   function renderMarkup(data) {
     return `<div class="audit ${data.color}">
       <div class="row">
@@ -731,6 +650,16 @@ This may enhance the experience for users of assistive technology, like a screen
         ${data.table ? renderTable(data.table):''}
       </div>
     </div>`;
+  }
+  function renderMarkupAll(data) {
+    return data.map((d) => {
+      return `
+      ${ renderCaption(d.caption, d.caption_desc) }
+      ${ (d.header) ? renderHeader(d.header) : '' }
+      <div class="audits">
+        ${ d.audits.map((audit) => { return renderMarkup(audit); }).join('') }
+      </div>`;
+    }).join('');
   }
 
   var SECTIONS = ['performance', 'accessibility', 'bestpractices', 'seo', 'pwa', 'googleadsspeed'];
@@ -749,7 +678,7 @@ This may enhance the experience for users of assistive technology, like a screen
 
   window.onload = function() {
 
-    let markupPerformanceMetrics = data_performance_metrics.map((i) => {
+    let markupPerformanceMetrics = data_performance_metrics.audits.map((i) => {
       return `<div class="audit ${i.color}">
         <div class="row">
           <div class="title">${i.title}</div>
@@ -758,14 +687,10 @@ This may enhance the experience for users of assistive technology, like a screen
         <div class="description">${i.description}</div>
       </div>`;
     });
+
     document.getElementById('audits-performance-metrics').innerHTML = markupPerformanceMetrics.join('');
-
-    document.getElementById('audits-performance-opportunities').innerHTML =
-      data_performance_opportunities.map((data) => { return renderMarkup(data); }).join('');
-
-    document.getElementById('audits-performance-diagnostics').innerHTML =
-      data_performance_diagnostics.map((data) => { return renderMarkup(data); }).join('');
-
+    document.getElementById('content-performance').innerHTML = renderMarkupAll(data_performance);
+    document.getElementById('content-accessibility').innerHTML = renderMarkupAll(data_accessibility);
 
     // init controller
     var controller = new ScrollMagic.Controller();

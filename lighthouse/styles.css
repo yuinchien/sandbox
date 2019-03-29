@@ -489,6 +489,10 @@ body.panel #right-panel .container {
   transform: translate3d(-8px,0,0);
 }
 
+.items .item.single-item div:last-child {
+  transform: translate3d(8px,0,0);
+}
+
 .items .item .title {
   min-width: var(--setting-title-min-width);
   font-weight: 700;
