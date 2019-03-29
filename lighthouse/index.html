@@ -349,7 +349,9 @@
 
       <div class="row empty"></div>
 
-      <div class="audits">
+      <div id="content-bestpractices"></div>
+
+      <!-- <div class="audits">
         <div class="audit red">
           <div class="row">
             <div class="title">Does not use passive listeners to improve scrolling performance</div>
@@ -374,7 +376,7 @@
             <i class="material-icons">keyboard_arrow_down</i>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="row-caption audits-collapsed">
         <div class="caption flex">Passed audits <span>(11)</span></div>
@@ -400,6 +402,8 @@
         <div class="title">SEO</div>
         <p>These checks ensure that your page is optimized for search engine results ranking. There are additional factors Lighthouse does not check that may affect your search ranking. <a href="">Learn more</a>.</p>
       </div>
+
+      <div id="content-seo"></div>
 
       <div class="row-caption audits-collapsed">
         <div class="caption flex">Additional items to manually check <span>(2)</span></div>
@@ -691,6 +695,9 @@
     document.getElementById('audits-performance-metrics').innerHTML = markupPerformanceMetrics.join('');
     document.getElementById('content-performance').innerHTML = renderMarkupAll(data_performance);
     document.getElementById('content-accessibility').innerHTML = renderMarkupAll(data_accessibility);
+    document.getElementById('content-bestpractices').innerHTML = renderMarkupAll(data_bestpractices);
+    document.getElementById('content-seo').innerHTML = renderMarkupAll(data_seo);
+
 
     // init controller
     var controller = new ScrollMagic.Controller();

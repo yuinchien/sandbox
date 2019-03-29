@@ -365,6 +365,101 @@ const data_accessibility_tablesandlists = {
   ],
 };
 
+const data_bestpractices = [
+  {
+    caption: '',
+    audits: [
+      {
+        color: 'red', title: 'Does not use HTTPS <span class="red">&mdash;1 insecure request found</span>',
+        description: 'All sites should be protected with HTTPS, even ones that don\'t handle sensitive data. HTTPS prevents intruders from tampering with or passively listening in on the communications between your app and your users, and is a prerequisite for HTTP/2 and many new web platform APIs. Learn more.',
+        table: {
+          header: ['Insecure URL'],
+          items: [
+            ['…ads-misc/hide-oop-float.css<span class="secondary">www.cnn.com</span>'],
+          ],
+        },
+      },
+      {
+        color: 'red', title: 'Does not use passive listeners to improve scrolling performance',
+        description: 'Consider marking your touch and wheel event listeners as `passive` to improve your page\'s scroll performance. Learn more.',
+        table: {
+          header: ['URL', 'Location'],
+          items: [
+            ['…mobile/vce_st.js<span class="secondary">sb.scorecardresearch.com</span>', 'line: 0'],
+            ['…theoplayer-474660ac/theoplayer<span class="secondary">registry.api.cnn.io</span>', 'line: 83'],
+          ],
+        },
+      },
+      {
+        color: 'red', title: 'Uses document.write()',
+        description: 'For users on slow connections, external scripts dynamically injected via `document.write()` can delay page load by tens of seconds. Learn more.',
+        table: {
+          header: ['URL', 'Location'],
+          items: [
+            ['…bundles/usabilla.82008fd….bundle.js<span class="secondary">www.i.cdn.cnn.com</span>', 'line: 0'],
+            ['/gpt/pubads_impl_rendering_201….js<span class="secondary">securepubads.g.doubleclick.net</span>', 'line: 0'],
+            ['https://www.cnn.com', 'line: 16'],
+            ['/turnerdfpcwrefresh475…/moatad.js<span class="secondary">z.moatads.com</span>', 'line: 568'],
+            ['/ym.m2.js<span class="secondary">static.yieldmo.com</span>', 'line: 1'],
+          ],
+        },
+      },
+      {
+        color: 'red', title: 'Links to cross-origin destinations are unsafe',
+        description: 'Add `rel="noopener"` or `rel="noreferrer"` to any external links to improve performance and prevent security vulnerabilities. Learn more.',
+        table: {
+          header: ['URL', 'Target'],
+          items: [
+            ['/giving-consent-to-cookies<span class="secondary">cookiepedia.co.uk</span>', '_blank'],
+            ['/poweredbyonetrust<span class="secondary">onetrust.com</span>', '_blank'],
+            ['/cnn<span class="secondary">www.facebook.com</span>', '_blank'],
+            ['/cnn<span class="secondary">www.twitter.com</span>', '_blank'],
+            ['/cnn<span class="secondary">www.instagram.com</span>', '_blank'],
+          ],
+        },
+      },
+      {
+        color: 'red', title: 'Uses deprecated APIs <span class="red">&mdash;1 warning found</span>',
+        description: 'Deprecated APIs will eventually be removed from the browser. Learn more.',
+        table: {
+          header: ['Deprecation / Warning', 'URL', 'Line'],
+          items: [
+            ['Synchronous XMLHttpRequest on the main thread is deprecated because of its detrimental effects to the end user\'s experience. For more help, check https://xhr.spec.whatwg.org/.', '/jquery-3.3.1.min.js<span class="secondary"></span>', '1' ],
+          ],
+        },
+      },
+      {
+        color: 'red', title: 'Browser errors were logged to the console',
+        description: 'Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns.',
+        table: {
+          header: ['URL', '<div style="text-align:left">Description</div>'],
+          items: [
+            ['/gpt/pubads_impl_201….js', '<div style="text-align:left">Refused to prefetch content from \'https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html\' because it violates the following Content Security Policy directive: "default-src \'self\' blob: https://*.cnn.com:* http://*.cnn.com:* *.cnn.io:* *.cnn.net:* *.turner.com:* *.turner.io:* *.ugdturner.com:* courageousstudio.com *.vgtf.net:*". Note that \'prefetch-src\' was not explicitly set, so \'default-src\' is used as a fallback.</div>'],
+          ],
+        },
+      },
+    ]
+  },
+];
+
+const data_seo = [
+  {
+    caption: 'Mobile Friendly',
+    caption_desc: 'Make sure your pages are mobile friendly so users don’t have to pinch or zoom in order to read the content pages. Learn more.',
+    audits: [
+      {
+        color: 'orange', title: 'Tap targets are not sized appropriately',
+        description: 'Interactive elements like buttons and links should be large enough (48x48px), and have enough space around them, to be easy enough to tap without overlapping onto other elements. Learn more.',
+        table: {
+          header: ['Tap Target', 'Size', 'Overlapping Target'],
+          items: [
+            ['&lt;a class="m-legal__links" data-analytics="footer_terms-of-use" href="/terms">Terms of Use&lt;/a>', '79x19', '&lt;a class="m-legal__links" data-analytics="footer_adchoices" href="#">AdChoices&lt;/a>'],
+          ],
+        },
+      }
+    ]
+  }
+];
 
 const data_performance = [data_performance_opportunities, data_performance_diagnostics];
 const data_accessibility = [data_accessibility_namesandlabels, data_accessibility_contrast, data_accessibility_bestpractices, data_accessibility_internationalizationandlocalization, data_accessibility_tablesandlists];
