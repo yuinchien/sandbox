@@ -635,7 +635,10 @@ body.panel #right-panel .container {
   .audit .items {
     margin-bottom: 8px;
   }
-
+  .audit .secondary {
+    color: var(--color-black-500);
+    padding-left: 8px;
+  }
 
 
 .badge-pwa {
@@ -729,6 +732,9 @@ body.panel #right-panel .container {
     -webkit-column-gap: 12px;
   }
   #screenshots div:nth-child(2n) {
+    display: none;
+  }
+  .audit .secondary {
     display: none;
   }
   /* #section-runtimesettings .items .item {

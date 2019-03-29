@@ -10,7 +10,7 @@ const data_performance_metrics = [
 const data_performance_opportunities = [
   {
     color: 'red', title: 'Preload key requests', time: '14.85',
-    warning: 'Warnings: A preload <link> was found for "https://www.cnn.com/.a/2.146.6/js/gigya-sharebar.min.js" but was not used by the browser. Check that you are using the `crossorigin` attribute properly.',
+    // warning: 'Warnings: A preload <link> was found for "https://www.cnn.com/.a/2.146.6/js/gigya-sharebar.min.js" but was not used by the browser. Check that you are using the `crossorigin` attribute properly.',
     description: 'Consider using <span class="code">&lt;link rel=preload></span> to prioritize fetching resources that are currently requested later in page load. Learn more.',
     table: {
       header: ['URL', 'Potential Savings'],
@@ -121,41 +121,59 @@ const data_performance_diagnostics = [
       ],
     },
   },
+  {
+    color: 'red', title: 'Serve Static assets with an efficient cache policy <span class="red">&mdash;136 resrouces found</span>',
+    description: 'A long cache lifetime can speed up repeat visits to your page. Learn more.',
+    table: {
+      header: ['URL', 'Cache TTL', 'Size'],
+      items: [
+        ['…widgetIcons/achoice.svg<span class="secondary">widgets.outbrain.com</span>', 'None', '2 KB'],
+        ['/skeleton.js<span class="secondary">static.adsafeprotected.com</span>', '2 s', '0 KB'],
+        ['…countries/EU?callback=?<span class="secondary">geolocation.onetrust.com</span>', '5 m', '0 KB'],
+        ['…countries/EU?callback=jQuery3310595…_155…&_=155…<span class="secondary">geolocation.onetrust.com</span>', '10 m', '10 KB'],
+        ['/bcn?fe=…<span class="secondary">www.summerhamster.com</span>', '25 m', '12 KB'],
+        ['/i/adsct?p_id=…<span class="secondary">analytics.twitter.com</span>', '30 m', '100 KB'],
+      ],
+    },
+  },
+  {
+    color: 'red', title: 'Avoid an excessive DOM size <span class="red">&mdash;3,531 nodes</span>',
+    description: 'Browser engineers recommend pages contain fewer than ~1,500 DOM nodes. The sweet spot is a tree depth < 32 elements and fewer than 60 children/parent element. A large DOM can increase memory usage, cause longer style calculations, and produce costly layout reflows. Learn more.',
+    table: {
+      header: ['Statistic', 'Element', 'Value'],
+      items: [
+        ['Total DOM Nodes', '', '3,511'],
+        ['Maximum DOM Depth', '&lt;div aria-hidden="true" id="gigyaShareBar_0-reaction0-left_img">', '21'],
+        ['Maximum Child Elements', '&lt;head>', '155'],
+      ],
+    },
+  },
+  {
+    color: 'gray', title: 'Avoid enormous network payloads <span class="red">&mdash;Total size was 5,029 KB</span>',
+    description: 'Large network payloads cost users real money and are highly correlated with long load times. Learn more.',
+    table: {
+      header: ['URL', 'Size'],
+      items: [
+        ['…theoplayer-474660ac/theoplayer<span class="secondary">registry.api.cnn.io</span>', '411 KB'],
+        ['…js/cnn-footer-lib.min.js<span class="secondary">www.cnn.com</span>', '227 KB'],
+        ['…js/cnn-header-second.min.js<span class="secondary">www.cnn.com</span>', '202 KB'],
+        ['…215…/BRA0632_O….gif<span class="secondary">static.yieldmo.com</span>', '98 KB'],
+      ],
+    },
+  },
+  {
+    color: 'gray', title: 'User Timing marks and measures<span class="gray">&mdash;144 user timings</span>',
+    description: 'Consider instrumenting your app with the User Timing API to measure your app\'s real-world performance during key user experiences. Learn more.',
+    table: {
+      header: ['Name', 'Type', 'Start Time', 'Duration'],
+      items: [
+        ['pageLoad', 'Measure', '0 ms', '28,287 ms'],
+        ['headTime', 'Measure', '5,242 ms', '694.74 ms'],
+        ['timeToInteractive', 'Measure', '5,242 ms', '1,224 ms'],
+        ['timeToDomReady', 'Measure', '5,242 ms', '1,330.59 ms'],
+        ['timeToZonesComplete', 'Measure', '5,242 ms', '4,032.89 ms'],
+        ['timeToZonesAndDomReady', 'Measure', '5,242 ms', '4,202.11 ms'],
+      ],
+    },
+  },
 ];
-
-
-// <div class="audit red">
-//   <div class="row">
-//     <div class="title">Serve Static assets with an efficient cache policy <span class="red">&mdash;136 resrouces found</span></div>
-//     <i class="material-icons">keyboard_arrow_down</i>
-//   </div>
-//   <div class="expandable"></div>
-// </div>
-// <div class="audit red">
-//   <div class="row">
-//     <div class="title">Avoid an excessive DOM size <span class="red">&mdash;3,531 nodes</span></div>
-//     <i class="material-icons">keyboard_arrow_down</i>
-//   </div>
-//   <div class="expandable"></div>
-// </div>
-// <div class="audit red">
-//   <div class="row">
-//     <div class="title">Avoid enormous network payloads <span class="red">&mdash;Total size was 5,029 KB</span></div>
-//     <i class="material-icons">keyboard_arrow_down</i>
-//   </div>
-//   <div class="expandable"></div>
-// </div>
-// <div class="audit gray">
-//   <div class="row">
-//     <div class="title">Avoid enormous network payloads <span class="gray">&mdash;Total size was 5,029 KB</span></div>
-//     <i class="material-icons">keyboard_arrow_down</i>
-//   </div>
-//   <div class="expandable"></div>
-// </div>
-// <div class="audit gray">
-//   <div class="row">
-//     <div class="title">Avoid enormous network payloads <span class="gray">&mdash;Total size was 5,029 KB</span></div>
-//     <i class="material-icons">keyboard_arrow_down</i>
-//   </div>
-//   <div class="expandable"></div>
-// </div>
