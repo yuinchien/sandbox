@@ -14,7 +14,8 @@
   body {
     margin: 0;
     padding: 0;
-    font-family: Helvetica, sans-serif;
+    font-family: sans-serif;
+    line-height: 22px;
     color: rgba(0,0,0,.8);
     padding-bottom: 40px;
   }
@@ -228,21 +229,21 @@
 </head>
 <body class="">
 
-  <div class="label">A. Poster</div>
+  <div class="label"><b>A. Poster exists––</b> masking color should be simple opacity change(15% white –> 0% white)</div>
 
   <div id="modelA" class="model">
     <model-viewer src="https://googlewebcomponents.github.io/model-viewer/examples/assets/Astronaut.glb" alt="A 3D model of an astronaut" background-color="#455A64"></model-viewer>
     <div class="loader"></div>
   </div>
 
-  <div class="label">B1. No Poster + Custom bg color</div>
+  <div class="label"><b>B1. No Poster + Custom bg color––</b> masking color should be animated gradient using custom bg color with different opacity</div>
   <div id="modelB1" class="model">
     <div class="loader-bg"></div>
     <model-viewer src="https://googlewebcomponents.github.io/model-viewer/examples/assets/Astronaut.glb" alt="A 3D model of an astronaut" background-color="#F4FF81"></model-viewer>
     <div class="loader"></div>
   </div>
 
-  <div class="label">B2. No Poster + default bg color (white)</div>
+  <div class="label"><b>B2. No Poster + default bg color (white)––</b>similar gradient animation as B1 with subtle grayscale colors </div>
   <div id="modelB2" class="model">
     <div class="loader-bg"></div>
     <model-viewer src="https://googlewebcomponents.github.io/model-viewer/examples/assets/Astronaut.glb" alt="A 3D model of an astronaut"></model-viewer>
