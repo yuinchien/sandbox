@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no,
+  minimum-scale=1.0, maximum-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="dat.gui.min.js"></script>
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+  <title>Loader</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    color: rgba(0,0,0,.8);
+    padding-bottom: 40px;
+  }
+  model-viewer {
+    width: 100%;
+    height: 100%;
+  }
+  .model {
+    width: 720px;
+    height: 480px;
+    position: relative;
+    margin: 10px auto 10px auto;
+  }
+  .model .poster {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(poster-astronaut.png);
+    background-size: cover;
+    z-index: 100;
+    -webkit-transition: opacity .1s;
+  }
+  .hide {
+    opacity: 0;
+  }
+  .loader1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    -webkit-animation: fadeInOut 7s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+  .planet {
+    -webkit-animation: bounceInOut 7s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+  #orbit {
+    stroke-dasharray: 80;
+    stroke-dashoffset: 0;
+    -webkit-animation: orbiting 1.4s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes bounceInOut {
+    0% {
+      transform: scale(0);
+    }
+    5% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(1);
+    }
+    80% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes orbiting {
+    0% {
+      stroke-dashoffset: 80;
+    }
+    50% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: -80;
+    }
+  }
+
+  .loader {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10000;
+
+  }
+  .loader:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 4px;
+    -webkit-animation: expanding 3s cubic-bezier(0.5, 0, 0.5, 1);
+    z-index: 1000;
+    -webkit-transition: all .2s;
+  }
+  .loader.done:after {
+    height: 0;
+  }
+  #modelA .loader {
+    background: rgba(255,255,255,.15);
+    -webkit-animation: fadeIn 3.2s cubic-bezier(0.5, 0, 0.5, 1);
+    -webkit-animation-fill-mode: forwards;
+  }
+  #modelA .loader:after {
+    background: #CFD8DC;
+  }
+
+
+  .loader-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: 400% 400%;
+    -webkit-animation: gradient 15s ease infinite;
+    -moz-animation: gradient 15s ease infinite;
+    animation: gradient 15s ease infinite;
+    z-index: -1;
+  }
+  #modelB1 .loader-bg {
+    background-image: linear-gradient(-45deg, rgba(244, 255, 129, .5), rgba(244, 255, 129, 1), rgba(244, 255, 129, .5), rgba(244, 255, 129, 1) );
+  }
+  #modelB2 .loader-bg {
+    background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, .05), rgba(0, 0, 0, 0), rgba(0, 0, 0, .05) );
+  }
+
+
+  #modelB1 .loader:after {
+    background: #212121;
+    -webkit-transition-delay: .15s;
+  }
+  #modelB1 model-viewer,
+  #modelB2 model-viewer {
+    opacity: 0;
+    -webkit-transition: all .2s;
+    z-index: 10;
+  }
+
+
+  #modelB2 .loader:after {
+    background: #CCC;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      background: rgba(255,255,255,.15);
+    }
+    100% {
+      background: rgba(255,255,255,0);
+    }
+  }
+  @keyframes fadeInDark {
+    0% {
+      background: rgba(0,0,0,.1);
+    }
+    100% {
+      background: rgba(0,0,0,0);
+    }
+  }
+  @keyframes expanding {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  .label {
+    width: 690px;
+    margin: 40px auto 16px auto;
+  }
+
+  .button {
+    cursor: pointer;
+    float: right;
+    width: 24px;
+    height: 24px;
+    background-image: url(https://www.gstatic.com/images/icons/material/system/2x/refresh_black_24dp.png);
+    background-size: cover;
+  }
+
+  @-webkit-keyframes gradient {
+  	0% {
+  		background-position: 0% 50%
+  	}
+  	50% {
+  		background-position: 100% 50%
+  	}
+  	100% {
+  		background-position: 0% 50%
+  	}
+  }
+
+  </style>
+</head>
+<body class="">
+
+  <div class="label">A. Poster</div>
+
+  <div id="modelA" class="model">
+    <model-viewer src="https://googlewebcomponents.github.io/model-viewer/examples/assets/Astronaut.glb" alt="A 3D model of an astronaut" background-color="#455A64"></model-viewer>
+    <div class="loader"></div>
+  </div>
+
+  <div class="label">B1. No Poster + Custom bg color</div>
+  <div id="modelB1" class="model">
+    <div class="loader-bg"></div>
+    <model-viewer src="https://googlewebcomponents.github.io/model-viewer/examples/assets/Astronaut.glb" alt="A 3D model of an astronaut" background-color="#F4FF81"></model-viewer>
+    <div class="loader"></div>
+  </div>
+
+  <div class="label">B2. No Poster + Custom bg color</div>
+  <div id="modelB2" class="model">
+    <div class="loader-bg"></div>
+    <model-viewer src="https://googlewebcomponents.github.io/model-viewer/examples/assets/Astronaut.glb" alt="A 3D model of an astronaut"></model-viewer>
+    <div class="loader"></div>
+  </div>
+
+  <script>
+  $(document).ready(function() {
+
+    setTimeout(function(){
+      $('#modelA').find('.poster').addClass('hide');
+      $('#modelA').find('model-viewer').attr('auto-rotate', 'true');
+      $('#modelA').find('.loader').addClass('done');
+
+      $('#modelB1').find('.loader').addClass('done');
+      $('#modelB1').find('model-viewer').attr('auto-rotate', 'true');
+
+      $('#modelB2').find('.loader').addClass('done');
+      $('#modelB2').find('model-viewer').attr('auto-rotate', 'true');
+    }, 3000);
+
+    setTimeout(function(){
+      $('#modelB1').find('model-viewer').css('opacity', 1);
+      $('#modelB2').find('model-viewer').css('opacity', 1);
+    }, 2900);
+
+
+
+  });
+
+  </script>
+
+</body>
+</html>
