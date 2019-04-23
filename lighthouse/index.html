@@ -267,8 +267,10 @@
 
       <div class="row-caption">
         <div class="caption flex">Metrics</div>
-        <div class="button button-less selected"><i class="material-icons">short_text</i></div>
-        <div class="button button-more"><i class="material-icons">notes</i></div>
+        <div class="toggle-icon-button">
+          <div class="button button-less selected"><i class="material-icons">short_text</i></div>
+          <div class="button button-more"><i class="material-icons">notes</i></div>
+        </div>
       </div>
 
       <div id="audits-performance-metrics" class="audits two-col"></div>
@@ -693,9 +695,9 @@
         const url = style.getPropertyValue('--symbol-url');
         const root = document.documentElement;
         if(url.includes('_a')) {
-          root.style.setProperty('--symbol-url', 'url(images/logo_192x192_b.svg)');
+          root.style.setProperty('--symbol-url', 'url(images/ic_lighthouse_24x24_b.svg)');
         } else {
-          root.style.setProperty('--symbol-url', 'url(images/logo_192x192_a.svg)');
+          root.style.setProperty('--symbol-url', 'url(images/ic_lighthouse_24x24_a.svg)');
         }
       }
     }

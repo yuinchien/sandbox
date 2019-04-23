@@ -80,7 +80,7 @@
 
   --background: white;
 
-  --symbol-url: url(images/logo_192x192_a.svg);
+  --symbol-url: url(images/ic_lighthouse_24x24_a.svg);
 }
 
 body {
@@ -134,10 +134,7 @@ a {
 .flex {
   flex: 1;
 }
-.button-more,
-.button-less {
-  margin-left: 12px;
-}
+
 
 .material-icons {
   font-size: var(--icon-size);
@@ -145,6 +142,7 @@ a {
 }
 .button {
   cursor: pointer;
+  line-height: 0;
 }
 .button.selected .material-icons {
   opacity: 1;
@@ -154,6 +152,27 @@ a {
   height: var(--icon-size);
   background-image: var(--symbol-url);
   background-size: cover;
+}
+
+.toggle-icon-button {
+  background: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.toggle-icon-button div {
+  padding: 2px 6px;
+}
+.toggle-icon-button div:first-child {
+  padding-left: 8px;
+}
+.toggle-icon-button div:last-child {
+  padding-right: 8px;
+}
+.toggle-icon-button .button.selected {
+  background: var(--color-blue);
+  color: white;
 }
 
 #highlighter {
