@@ -688,6 +688,15 @@
     var keyCode = e.keyCode;
       if(keyCode==68) {
         document.body.classList.toggle("dark");
+      } else if(keyCode==76) {
+        const style = getComputedStyle(document.body);
+        const url = style.getPropertyValue('--symbol-url');
+        const root = document.documentElement;
+        if(url.includes('_a')) {
+          root.style.setProperty('--symbol-url', 'url(images/logo_192x192_b.svg)');
+        } else {
+          root.style.setProperty('--symbol-url', 'url(images/logo_192x192_a.svg)');
+        }
       }
     }
 

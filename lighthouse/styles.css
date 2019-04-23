@@ -60,6 +60,7 @@
   --audit-padding: 12px 0;
 
   --icon-size: 24px;
+  --logo-size: 28px;
 
   --row-minheight: 32px;
 
@@ -113,7 +114,7 @@ body {
     --highlighter-bg: var(--color-white);
     --plugin-icon-url: url(images/ic_extension_white_24dp.svg);
 
-    --symbol-url: url(images/symbol_1_white.svg);
+    /* --symbol-url: url(images/symbol_1_white.svg); */
   }
 
 * {
@@ -151,8 +152,8 @@ a {
   opacity: 1;
 }
 .symbol-small {
-  width: var(--icon-size);
-  height: var(--icon-size);
+  width: var(--logo-size);
+  height: var(--logo-size);
   background-image: var(--symbol-url);
   background-size: cover;
 }
