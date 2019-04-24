@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Artboard Copy 4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard-Copy-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="checklist---gray---optimized">
+            <g id="Group">
+                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                <rect id="Rectangle-3" fill-opacity="0.15" fill="#000000" fill-rule="nonzero" x="2" y="2" width="20" height="20" rx="10"></rect>
+                <g id="ic_grade_black_24dp-copy" transform="translate(5.000000, 5.000000)">
+                    <polygon id="Path" fill="#FFFFFF" points="7 10.0741667 10.605 12.25 9.64833333 8.14916667 12.8333333 5.39 8.63916667 5.03416667 7 1.16666667 5.36083333 5.03416667 1.16666667 5.39 4.35166667 8.14916667 3.395 12.25"></polygon>
+                    <polygon id="Path" points="0 0 14 0 14 14 0 14"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

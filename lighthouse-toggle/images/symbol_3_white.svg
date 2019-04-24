@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="192px" height="192px" viewBox="0 0 192 192" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>symbol_3_white</title>
+    <desc>Created with Sketch.</desc>
+    <g id="symbol_3_white" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <g>
+                <rect id="Rectangle" x="0" y="0" width="192" height="192"></rect>
+                <path d="M64,64 L64,32 L96,12 L128,32 L128,64 L136,64 L136,80 L129.898305,80 L142,182 L50,182 L62.1016949,80 L56,80 L56,64 L64,64 Z M80,64 L112,64 L112,40.8679623 L96,30.8679623 L80,40.8679623 L80,64 Z M74.3316541,112.721894 L70.5186459,144.860106 L119.738188,130.167705 L116.186026,100.228052 L74.3316541,112.721894 Z" id="Shape" fill="#FFFFFF"></path>
+                <rect id="Rectangle" fill="#FFFFFF" transform="translate(30.000000, 60.000000) scale(1, -1) rotate(10.000000) translate(-30.000000, -60.000000) " x="10" y="54" width="40" height="12"></rect>
+                <rect id="Rectangle-Copy" fill="#FFFFFF" transform="translate(30.000000, 34.000000) rotate(10.000000) translate(-30.000000, -34.000000) " x="10" y="28" width="40" height="12"></rect>
+                <rect id="Rectangle" fill="#FFFFFF" transform="translate(162.000000, 60.000000) scale(-1, -1) rotate(10.000000) translate(-162.000000, -60.000000) " x="142" y="54" width="40" height="12"></rect>
+                <rect id="Rectangle-Copy" fill="#FFFFFF" transform="translate(162.000000, 34.000000) scale(-1, 1) rotate(10.000000) translate(-162.000000, -34.000000) " x="142" y="28" width="40" height="12"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

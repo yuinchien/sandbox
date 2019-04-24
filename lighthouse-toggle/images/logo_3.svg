@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="192px" height="192px" viewBox="0 0 192 192" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>logo_3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 192 0 192 192 0 192"></polygon>
+        <rect id="path-3" x="8" y="8" width="176" height="176" rx="88"></rect>
+        <polygon id="path-5" points="0 20 32 0 64 20 64 68 0 68"></polygon>
+        <filter x="-0.8%" y="-0.7%" width="101.6%" height="101.5%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.2 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <rect id="path-7" x="9" y="52" width="80" height="16"></rect>
+        <filter x="-0.6%" y="-3.1%" width="101.2%" height="106.2%" filterUnits="objectBoundingBox" id="filter-8">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.06 0" type="matrix" in="shadowInnerInner1" result="shadowMatrixInner1"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner2"></feOffset>
+            <feComposite in="shadowOffsetInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.1 0" type="matrix" in="shadowInnerInner2" result="shadowMatrixInner2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner2"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="68.9349112%" y1="65.7561304%" x2="31.0650888%" y2="35.7993836%" id="linearGradient-9">
+            <stop stop-color="#262626" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#262626" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="60.1691657%" y1="13.0863251%" x2="29.5315904%" y2="100.996123%" id="linearGradient-10">
+            <stop stop-color="#262626" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#262626" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="35.7993836%" x2="0%" y2="35.7993836%" id="linearGradient-11">
+            <stop stop-color="#262626" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#262626" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="37.597741%" y1="20.3583319%" x2="62.9919411%" y2="100.652008%" id="linearGradient-12">
+            <stop stop-color="#FFFFFF" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="logo_3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Path"></g>
+            <circle id="Oval" fill="#FFF176" fill-rule="nonzero" mask="url(#mask-2)" cx="96" cy="96" r="88"></circle>
+            <mask id="mask-4" fill="white">
+                <use xlink:href="#path-3"></use>
+            </mask>
+            <g id="Rectangle"></g>
+            <g id="Group-2" mask="url(#mask-4)">
+                <g transform="translate(47.000000, 24.000000)">
+                    <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(17.000000, 0.000000)">
+                        <g id="Rectangle">
+                            <use fill="#F4481E" fill-rule="evenodd" xlink:href="#path-5"></use>
+                            <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                        </g>
+                        <polygon id="Path" fill="#FFFFFF" fill-rule="nonzero" points="16 52.1320377 48 52.1320377 48 29 32 19 16 29"></polygon>
+                    </g>
+                    <path d="M24.0993795,60 L9.01487241,186 L88.9851276,186 L73.9006205,60 L24.0993795,60 Z" id="Rectangle" stroke="#F4481E" stroke-width="16" fill="#FAFAFA" fill-rule="evenodd"></path>
+                    <g id="Rectangle" stroke="none" fill="none" fill-rule="nonzero">
+                        <use fill="#F4481E" xlink:href="#path-7"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
+                    </g>
+                    <polygon id="Rectangle-Copy-4" stroke="none" fill="#F4481E" fill-rule="evenodd" points="16 105.97889 79.1225072 85 81 114.456661 16 136"></polygon>
+                    <path d="M13.1287997,152.381013 C24.0843179,157.2775 36.224222,160 49,160 L49,160 C62.3249179,160 74.9581237,157.038429 86.2772918,151.737612" id="Path" stroke="#F4481E" stroke-width="32" fill="none" fill-rule="nonzero"></path>
+                    <polygon id="Path" stroke="none" fill="url(#linearGradient-9)" fill-rule="nonzero" points="49 52 17 52 17 20 49 0"></polygon>
+                    <polygon id="Rectangle" stroke="none" fill="url(#linearGradient-10)" fill-rule="nonzero" points="15 68 49 68 49 170 3 170"></polygon>
+                    <rect id="Rectangle" stroke="none" fill="url(#linearGradient-11)" fill-rule="nonzero" x="9" y="52" width="40" height="16"></rect>
+                    <polygon id="Path" stroke="none" fill="url(#linearGradient-12)" fill-rule="nonzero" points="17 52 17 20 49 0 81 20 81 52 89 52 89 68 82.8983051 68 95 170 3 170 15.1016949 68 9 68 9 52 17 52"></polygon>
+                </g>
+            </g>
+            <g id="Group" mask="url(#mask-4)" fill-opacity="0.2" fill-rule="nonzero">
+                <g transform="translate(8.000000, 8.000000)" id="Path">
+                    <path d="M88,0.92 C136.45,0.92 175.74,40.07 175.99,88.46 C175.99,88.31 176,88.16 176,88 C176,39.4 136.6,2.13162821e-14 88,2.13162821e-14 C39.4,2.13162821e-14 0,39.4 0,88 C0,88.15 0.01,88.3 0.01,88.46 C0.26,40.07 39.55,0.92 88,0.92 Z" fill="#FFFFFF"></path>
+                    <path d="M175.99,87.54 C175.74,135.93 136.45,175.08 88,175.08 C39.55,175.08 0.26,135.93 0.01,87.54 C0.01,87.7 0,87.85 0,88 C0,136.6 39.4,176 88,176 C136.6,176 176,136.6 176,88 C176,87.85 175.99,87.7 175.99,87.54 Z" fill="#263238"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
