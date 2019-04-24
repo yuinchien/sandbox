@@ -114,7 +114,6 @@ body {
 
     --highlighter-bg: var(--color-white);
     --plugin-icon-url: url(images/ic_extension_white_24dp.svg);
-
   }
 
 * {
@@ -285,8 +284,28 @@ body.panel #right-panel .mask {
 body.panel #right-panel .container {
   -webkit-transform: translate3d(0,0,0);
 }
+body.dropdown #dropdown {
+  display: block;
+}
 
-
+#dropdown {
+  padding: 8px 12px 8px 8px;
+  position: fixed;
+  z-index: 10000;
+  top: 8px;
+  right: 8px;
+  background: white;
+  box-shadow: 0 0 4px rgba(0,0,0,.2);
+  display: none;
+}
+  #dropdown > div {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+  }
+  #dropdown > div i {
+    margin-right: 10px;
+  }
 
 #right-panel .wrapper {
   padding: 20px;

@@ -55,7 +55,17 @@
   <div id="topbar" class="toolbar">
     <div class="symbol-small"></div>
     <div id="site-url" class="flex">https://www.cnn.com/</div>
-    <i id="button-panel-open" class="button material-icons">more_vert</i>
+    <i id="button-panel-open" class="button material-icons" style="margin-right: 4px;">error_outline</i>
+    <i id="button-dropdown" class="material-icons button">more_vert</i>
+  </div>
+
+  <div id="dropdown">
+    <div><i class="material-icons button">print</i>Print Summary</div>
+    <div><i class="material-icons button">print</i>Print Expanded</div>
+    <div><i class="material-icons button">content_copy</i>Copy JSON</div>
+    <div><i class="material-icons button">get_app</i>Save as HTML</div>
+    <div><i class="material-icons button">get_app</i>Save as JSON</div>
+    <div><i class="material-icons button">open_in_browser</i>Open in Viewer</div>
   </div>
 
   <div id="header">
@@ -675,6 +685,17 @@
 
     document.getElementById('button-panel-open').addEventListener('click', function(){
       document.body.classList.add("panel");
+    }, false);
+
+    document.getElementById('button-dropdown').addEventListener('click', function(e){
+      e.stopPropagation();
+      document.body.classList.add("dropdown");
+    }, false);
+
+    document.body.addEventListener('click', function(e){
+      if(document.body.classList.contains('dropdown')) {
+        document.body.classList.remove("dropdown");
+      }
     }, false);
 
     var expandables = document.querySelectorAll(".expandable");
