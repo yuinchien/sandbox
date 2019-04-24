@@ -550,7 +550,7 @@ body.panel #right-panel .container {
   font-weight: bold;
 }
 .row-caption .caption {
-  display: flex;
+  /* display: flex; */
 }
 .row-caption.subtitle {
   max-width: 660px;
