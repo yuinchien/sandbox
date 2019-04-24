@@ -79,6 +79,7 @@
   --right-panel-width: 360px;
 
   --background: white;
+  --hover-bg: #fafafa;
 
   --symbol-url: url(images/ic_lighthouse_24x24_a.svg);
 }
@@ -109,6 +110,7 @@ body {
 
     --background: var(--color-black-900);
     color: var(--color-black-100);
+    --hover-bg: rgba(0,0,0,.2);
 
     --highlighter-bg: var(--color-white);
     --plugin-icon-url: url(images/ic_extension_white_24dp.svg);
@@ -571,6 +573,13 @@ body.panel #right-panel .container {
   overflow: hidden;
   cursor: pointer;
 }
+  .audit:hover {
+    background: var(--hover-bg);
+  }
+  #audits-performance-metrics .audit:hover,
+  .audit.open:hover {
+    background: none;
+  }
   .audit.open .description,
   .audit.open .expandable {
     height: auto;
