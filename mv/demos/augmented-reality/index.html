@@ -1,0 +1,38 @@
+<div class="sample">
+  <div id="demo-container-" class="demo"></div>
+  <div class="content">
+    <div class="wrapper">
+<pre><code>  &lt;div class=&quot;heading&quot;&gt;
+    &lt;h2 class=&quot;demo-title&quot;&gt;
+</code></pre>
+<p>Augmented Reality</p>
+</h2>
+        <h4>
+This demonstrates several augmented reality features, including unstable-webxr, magic-leap and ios-src.
+</h4>
+      </div>
+      <example-snippet stamp-to="demo-container-" highlight-as="html">
+        <template>
+<p><model-viewer src="assets/Astronaut.glb" camera-controls alt="A 3D model of an astronaut" background-color="#222" ios-src="assets/Astronaut.usdz" magic-leap unstable-webxr></model-viewer></p>
+<pre><code>    &lt;/template&gt;
+  &lt;/example-snippet&gt;
+</code></pre>
+<h3 style="margin-top: 40px; padding-bottom: 8px;" class="border-bottom">iOS, Magic Leap & WebXR</h3>
+<ul class="list-attribute">
+  <li>
+    <div>ios-src</div>
+    <p>Provides augmented reality on supported iOS 12+ devices via AR Quick Look, but requires an additional USDZ model.</p>
+  </li>
+  <li>
+    <div>magic-leap</div>
+    <p>Provides augmented reality on Magic Leap's Helio browser. Requires that the primary model be a GLB file, and the <a href="https://www.npmjs.com/package/@magicleap/prismatic">@magicleap/prismatic</a> library.</p>
+  </li>
+  <li>
+    <div>unstable-webxr</div>
+    <p>Provides augmented reality via the experimental <a href="https://immersive-web.github.io/webxr/">WebXR Device API</a>, implemented in Chrome Canary only behind flags. For more information see the <a href="https://codelabs.developers.google.com/codelabs/ar-with-webxr/#1">AR with WebXR Codelab</a>.</p>
+  </li>
+</ul>
+<pre><code>&lt;/div&gt;
+</code></pre>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="sample">
+  <div id="demo-container-" class="demo"></div>
+  <div class="content">
+    <div class="wrapper">
+<pre><code>  &lt;div class=&quot;heading&quot;&gt;
+    &lt;h2 class=&quot;demo-title&quot;&gt;
+</code></pre>
+<p>Cycling between posters</p>
+</h2>
+        <h4>
+</h4>
+      </div>
+      <example-snippet stamp-to="demo-container-" highlight-as="html">
+        <template>
+<p><model-viewer id="toggle-poster" reveal="interaction" auto-rotate poster="assets/poster-astronaut.png" src="assets/Astronaut.glb" alt="A 3D model of an astronaut"></model-viewer></p>
+<script>
+  const posters = ['poster-astronaut2.png', 'poster-astronaut3.png', 'poster-astronaut4.png'];
+  let i = 0;
+  setInterval(() =>
+    $('#toggle-poster').setAttribute('poster', `assets/${posters[i++ % 2]}`), 2000);
+</script>
+<pre><code>    &lt;/template&gt;
+  &lt;/example-snippet&gt;
+  
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>

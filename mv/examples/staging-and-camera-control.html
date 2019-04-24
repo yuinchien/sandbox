@@ -1,0 +1,263 @@
+<!--
+/*
+ * Copyright 2018 Google Inc. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the 'License');
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an 'AS IS' BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>&lt;model-viewer&gt;</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/examples/styles/index.css" />
+    <link rel="icon" type="image/png" href="/examples/assets/favicon.png" />
+    <!-- The following libraries and polyfills are recommended to maximize browser support -->
+
+    <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+    <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+    <script src="/node_modules/intersection-observer/intersection-observer.js"></script>
+
+    <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+    <script src="/node_modules/resize-observer-polyfill/dist/ResizeObserver.js"></script>
+
+    <!-- 💁 OPTIONAL: Fullscreen polyfill is required for experimental AR features in Canary -->
+    <script src="/node_modules/fullscreen-polyfill/dist/fullscreen.polyfill.js"></script>
+
+    <!-- 💁 OPTIONAL: Include prismatic.js for Magic Leap support -->
+    <!--<script src="node_modules/@magicleap/prismatic/prismatic.min.js"></script>-->
+  </head>
+  <body>
+
+    <a id="button-github" class="icon-github icon-button" href="https://github.com/GoogleWebComponents/model-viewer/blob/master/examples/augmented-reality.html"></a>
+
+    
+
+  
+    
+    
+      
+      
+      
+      <div class="sample">
+  <div id="demo-container-1" class="demo"></div>
+  <div class="content">
+    <div class="wrapper">
+
+      
+      
+      <a id="button-home" href="../../index.html"><div class="icon-button icon-modelviewer"></div>model-viewer</a>
+      
+
+      
+      <div id="intro"><div>Staging &amp; Camera Control</div> Use these features to frame the perfect shot for your model</div>
+      
+
+      <div class="heading">
+        <h2 class="demo-title">
+  Use the <span class="attribute">camera-controls</span> attribute to enable user interaction
+</h2>
+        <h4></h4>
+      </div>
+      <example-snippet stamp-to="demo-container-1" highlight-as="html">
+        <template>
+          
+<model-viewer camera-controls src="assets/Astronaut.glb" background-color="#622dcf" alt="A 3D model of an astronaut"></model-viewer>
+
+        </template>
+      </example-snippet>
+      
+
+    </div>
+  </div>
+</div>
+
+    
+  
+    
+    
+      
+      <div class="sample">
+  <div id="demo-container-2" class="demo"></div>
+  <div class="content">
+    <div class="wrapper">
+
+      
+
+      
+
+      <div class="heading">
+        <h2 class="demo-title">
+  Set the <span class="attribute">camera-orbit</span> change the initial angle and position of the camera
+</h2>
+        <h4></h4>
+      </div>
+      <example-snippet stamp-to="demo-container-2" highlight-as="html">
+        <template>
+          
+<model-viewer camera-controls camera-orbit="45deg 55deg 1.2m" src="assets/Astronaut.glb" background-color="#622dcf" alt="A 3D model of an astronaut"></model-viewer>
+
+        </template>
+      </example-snippet>
+      
+
+    </div>
+  </div>
+</div>
+
+    
+  
+    
+    
+      
+      <div class="sample">
+  <div id="demo-container-3" class="demo"></div>
+  <div class="content">
+    <div class="wrapper">
+
+      
+
+      
+
+      <div class="heading">
+        <h2 class="demo-title">
+  The camera automatically interpolates between orbits (even when controls are disabled)
+</h2>
+        <h4></h4>
+      </div>
+      <example-snippet stamp-to="demo-container-3" highlight-as="html">
+        <template>
+          
+<model-viewer id="orbit-demo" src="assets/Astronaut.glb" background-color="#622dcf" alt="A 3D model of an astronaut"></model-viewer>
+<script>
+(() => {
+  const modelViewer = document.querySelector('#orbit-demo');
+  const orbitCycle = [
+    '45deg 55deg 2m',
+    '-60deg 110deg 1m',
+    modelViewer.cameraOrbit
+  ];
+
+  setInterval(() => {
+    const currentOrbitIndex = orbitCycle.indexOf(modelViewer.cameraOrbit);
+    modelViewer.cameraOrbit =
+        orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length];
+  }, 3000);
+})();
+</script>
+
+        </template>
+      </example-snippet>
+      
+
+    </div>
+  </div>
+</div>
+
+    
+  
+    
+    
+      
+      <div class="sample">
+  <div id="demo-container-4" class="demo"></div>
+  <div class="content">
+    <div class="wrapper">
+
+      
+
+      
+
+      <div class="heading">
+        <h2 class="demo-title">
+  By default, models are aligned by the center of their bounding box
+</h2>
+        <h4></h4>
+      </div>
+      <example-snippet stamp-to="demo-container-4" highlight-as="html">
+        <template>
+          
+<model-viewer camera-controls src="assets/odd-shape-labeled.glb" background-color="#eee" alt="An abstract 3D model with labeled origin and center"></model-viewer>
+
+        </template>
+      </example-snippet>
+      
+
+    </div>
+  </div>
+</div>
+
+    
+  
+    
+    
+      
+      <div class="sample">
+  <div id="demo-container-5" class="demo"></div>
+  <div class="content">
+    <div class="wrapper">
+
+      
+
+      
+
+      <div class="heading">
+        <h2 class="demo-title">
+  Use the <span class="attribute">align-model</span> attribute to center the model at its origin
+</h2>
+        <h4></h4>
+      </div>
+      <example-snippet stamp-to="demo-container-5" highlight-as="html">
+        <template>
+          
+<model-viewer camera-controls align-model="origin" src="assets/odd-shape-labeled.glb" background-color="#eee" alt="An abstract 3D model with labeled origin and center"></model-viewer>
+
+        </template>
+      </example-snippet>
+      
+
+    </div>
+  </div>
+</div>
+
+    
+  
+
+
+
+    <div class="footer">
+  <ul>
+    
+    <li class="attribution">
+      <a href="https://poly.google.com/view/dLHpzNdygsg">Astronaut</a> by <a href="https://poly.google.com/user/4aEd8rQgKu2">Poly</a>,
+      licensed under <a href="https://creativecommons.org/licenses/by/2.0/">CC-BY</a>.
+    </li>
+    
+  </ul>
+  <div class="copyright">©Copyright 2018 Google Inc. Licensed under the Apache License 2.0.</div>
+</div>
+
+
+    <script src="/examples/scripts/helpers.js"></script>
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+    <!-- Documentation-specific dependencies: -->
+    <script type="module" src="/examples/built/dependencies.js"></script>
+    </script>
+
+  </body>
+</html>

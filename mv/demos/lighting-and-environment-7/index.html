@@ -1,0 +1,35 @@
+<div class="sample">
+  <div id="demo-container-" class="demo"></div>
+  <div class="content">
+    <div class="wrapper">
+<pre><code>  &lt;div class=&quot;heading&quot;&gt;
+    &lt;h2 class=&quot;demo-title&quot;&gt;
+</code></pre>
+<p>Control environment lighting intensity with <span class="attribute">environment-intensity</span></p>
+</h2>
+        <h4>
+</h4>
+      </div>
+      <example-snippet stamp-to="demo-container-" highlight-as="html">
+        <template>
+<p><model-viewer camera-controls id="environment-intensity-demo" environment-intensity="1" background-color="#ff0077" environment-image="assets/whipple_creek_regional_park_04_1k.jpg" alt="A 3D model of a reflective sphere depicted within a forest" src="assets/reflective-sphere.gltf"></model-viewer></p>
+<script>
+(() => {
+  const modelViewer = $('#environment-intensity-demo');
+  const time = performance.now();
+
+  const animate = (now) => {
+    modelViewer.environmentIntensity = oscillate(0, 6, 4000, now - time);
+    requestAnimationFrame(animate);
+  };
+
+  animate();
+})();
+</script>
+<pre><code>    &lt;/template&gt;
+  &lt;/example-snippet&gt;
+  
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
