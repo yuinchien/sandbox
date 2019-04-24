@@ -506,7 +506,7 @@ const data_pwa_installable = {
 };
 
 const data_pwa_optimized = {
-  caption: '<div class="badge-pwa badge-optimized green"></div>PWA Optimized',
+  caption: '<div class="badge-pwa badge-optimzed green"></div>PWA Optimized',
   audits: [
     {
       color: 'red', title: 'Is not configured for a custom splash screen',
