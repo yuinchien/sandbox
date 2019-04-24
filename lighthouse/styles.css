@@ -549,6 +549,9 @@ body.panel #right-panel .container {
 .caption {
   font-weight: bold;
 }
+.row-caption .caption {
+  display: flex;
+}
 .row-caption.subtitle {
   max-width: 660px;
 }
