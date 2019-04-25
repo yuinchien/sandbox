@@ -20,21 +20,21 @@
     <title>&lt;model-viewer&gt;</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/examples/styles/index.css" />
-    <link rel="icon" type="image/png" href="/examples/assets/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="styles/index.css" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
     <!-- The following libraries and polyfills are recommended to maximize browser support -->
 
     <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
-    <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
     <!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
-    <script src="/node_modules/intersection-observer/intersection-observer.js"></script>
+    <script src="../node_modules/intersection-observer/intersection-observer.js"></script>
 
     <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
-    <script src="/node_modules/resize-observer-polyfill/dist/ResizeObserver.js"></script>
+    <script src="../node_modules/resize-observer-polyfill/dist/ResizeObserver.js"></script>
 
     <!-- 💁 OPTIONAL: Fullscreen polyfill is required for experimental AR features in Canary -->
-    <script src="/node_modules/fullscreen-polyfill/dist/fullscreen.polyfill.js"></script>
+    <script src="../node_modules/fullscreen-polyfill/dist/fullscreen.polyfill.js"></script>
 
     <!-- 💁 OPTIONAL: Include prismatic.js for Magic Leap support -->
     <!--<script src="node_modules/@magicleap/prismatic/prismatic.min.js"></script>-->
@@ -43,27 +43,27 @@
 
     <a id="button-github" class="icon-github icon-button" href="https://github.com/GoogleWebComponents/model-viewer/blob/master/examples/augmented-reality.html"></a>
 
-    
 
-  
-    
-    
-      
-      
-      
+
+
+
+
+
+
+
       <div class="sample">
   <div id="demo-container-1" class="demo"></div>
   <div class="content">
     <div class="wrapper">
 
-      
-      
-      <a id="button-home" href="../../index.html"><div class="icon-button icon-modelviewer"></div>model-viewer</a>
-      
 
-      
+
+      <a id="button-home" href="../../index.html"><div class="icon-button icon-modelviewer"></div>model-viewer</a>
+
+
+
       <div id="intro"><div>Lazy Loading</div> Improve UX with these cost-saving &lt;model-viewer&gt; configurations. This page tests usages of the &lt;model-viewer&gt; element using the poster attribute.</div>
-      
+
 
       <div class="heading">
         <h2 class="demo-title">
@@ -74,29 +74,29 @@ Display a poster until loaded
       </div>
       <example-snippet stamp-to="demo-container-1" highlight-as="html">
         <template>
-          
+
 <model-viewer id="reveal" preload camera-controls auto-rotate poster="assets/poster-shishkebab.png" src="assets/shishkebab.glb" alt="A 3D model of a shishkebab"></model-viewer>
 
         </template>
       </example-snippet>
-      
+
     </div>
   </div>
 </div>
 
-    
-  
-    
-    
-      
+
+
+
+
+
       <div class="sample">
   <div id="demo-container-2" class="demo"></div>
   <div class="content">
     <div class="wrapper">
 
-      
 
-      
+
+
 
       <div class="heading">
         <h2 class="demo-title">
@@ -107,30 +107,30 @@ Preload with poster and show model on interaction
       </div>
       <example-snippet stamp-to="demo-container-2" highlight-as="html">
         <template>
-          
+
 <!-- use unique asset to ensure preloading -->
 <model-viewer id="interaction" camera-controls preload reveal="interaction" poster="assets/poster-sphere.png" src="assets/reflective-sphere.gltf" alt="A 3D model of a reflective sphere"></model-viewer>
 
         </template>
       </example-snippet>
-      
+
     </div>
   </div>
 </div>
 
-    
-  
-    
-    
-      
+
+
+
+
+
       <div class="sample">
   <div id="demo-container-3" class="demo"></div>
   <div class="content">
     <div class="wrapper">
 
-      
 
-      
+
+
 
       <div class="heading">
         <h2 class="demo-title">
@@ -141,7 +141,7 @@ Lazy load with poster until interaction
       </div>
       <example-snippet stamp-to="demo-container-3" highlight-as="html">
         <template>
-          
+
 <!-- use unique asset to ensure lazy loading -->
 <model-viewer id="lazy-load" camera-controls poster="assets/poster-damagedhelmet.png" src="assets/DamagedHelmet/DamagedHelmet.gltf" alt="A 3D model of a damaged helmet"></model-viewer>
 <script>
@@ -153,24 +153,24 @@ $('#lazy-load').addEventListener('load', e => {
 
         </template>
       </example-snippet>
-      
+
     </div>
   </div>
 </div>
 
-    
-  
-    
-    
-      
+
+
+
+
+
       <div class="sample">
   <div id="demo-container-4" class="demo"></div>
   <div class="content">
     <div class="wrapper">
 
-      
 
-      
+
+
 
       <div class="heading">
         <h2 class="demo-title">
@@ -181,29 +181,29 @@ Poster with invalid model
       </div>
       <example-snippet stamp-to="demo-container-4" highlight-as="html">
         <template>
-          
+
 <model-viewer poster="assets/poster-astronaut.png" src="i-do-not-exist.glb" alt="An invalid model"></model-viewer>
 
         </template>
       </example-snippet>
-      
+
     </div>
   </div>
 </div>
 
-    
-  
-    
-    
-      
+
+
+
+
+
       <div class="sample">
   <div id="demo-container-5" class="demo"></div>
   <div class="content">
     <div class="wrapper">
 
-      
 
-      
+
+
 
       <div class="heading">
         <h2 class="demo-title">
@@ -214,7 +214,7 @@ Cycling between posters
       </div>
       <example-snippet stamp-to="demo-container-5" highlight-as="html">
         <template>
-          
+
 <model-viewer id="toggle-poster" reveal="interaction" auto-rotate poster="assets/poster-astronaut.png" src="assets/Astronaut.glb" alt="A 3D model of an astronaut"></model-viewer>
 <script>
   const posters = ['poster-astronaut2.png', 'poster-astronaut3.png', 'poster-astronaut4.png'];
@@ -225,47 +225,47 @@ Cycling between posters
 
         </template>
       </example-snippet>
-      
+
     </div>
   </div>
 </div>
 
-    
-  
+
+
 
 
 
     <div class="footer">
   <ul>
-    
+
     <li class="attribution">
       <a href="https://poly.google.com/view/dLHpzNdygsg">Astronaut</a> by <a href="https://poly.google.com/user/4aEd8rQgKu2">Poly</a>,
       licensed under <a href="https://creativecommons.org/licenses/by/2.0/">CC-BY</a>.
     </li>
-    
+
     <li class="attribution">
       <a href="https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/DamagedHelmet">Damaged Helmet</a> by <a href="https://sketchfab.com/theblueturtle_">theblueturtle_</a>,
       licensed under <a href="https://creativecommons.org/licenses/by-nc/3.0/us/">Creative Commons Attribution-NonCommercial</a>.
     </li>
-    
+
     <li class="attribution">
       <a href="https://poly.google.com/view/6uTsH2jqgVn">Shish kebab</a> by <a href="https://poly.google.com/user/4aEd8rQgKu2">Poly</a>,
       licensed under <a href="https://creativecommons.org/licenses/by/2.0/">CC-BY</a>.
     </li>
-    
+
   </ul>
   <div class="copyright">©Copyright 2018 Google Inc. Licensed under the Apache License 2.0.</div>
 </div>
 
 
-    <script src="/examples/scripts/helpers.js"></script>
+<script src="scripts/helpers.js"></script>
 
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
-    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 
-    <!-- Documentation-specific dependencies: -->
-    <script type="module" src="/examples/built/dependencies.js"></script>
-    </script>
+<!-- Documentation-specific dependencies: -->
+<script type="module" src="built/dependencies.js"></script>
+</script>
 
   </body>
 </html>
