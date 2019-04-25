@@ -38,70 +38,83 @@
 
     <!-- 💁 OPTIONAL: Include prismatic.js for Magic Leap support -->
     <!--<script src="node_modules/@magicleap/prismatic/prismatic.min.js"></script>-->
+
+    <style>
+      model-viewer {
+        position: relative;
+      }
+      model-viewer:after {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        background: #ff5252;
+        height: 2px;
+        content: "";
+        display: none;
+        z-index: 10000;
+      }
+      model-viewer:focus:after {
+        display: block;
+      }
+    </style>
   </head>
   <body>
 
     <!-- <a id="button-github" class="icon-github icon-button" href="https://github.com/GoogleWebComponents/model-viewer/blob/master/examples/augmented-reality.html"></a> -->
 
 
+    <div class="sample">
+      <div id="demo-container-1" class="demo"></div>
+      <div class="content">
+        <div class="wrapper">
+
+          <a id="button-home" href="../index.html"><div class="icon-button icon-modelviewer"></div>model-viewer</a>
+
+          <div class="heading">
+            <h2 class="demo-title">
+    Focus State
+    </h2>
+          </div>
+          <example-snippet stamp-to="demo-container-1" highlight-as="html">
+            <template>
+
+              <model-viewer id="demo-focus-state" src="assets/Astronaut.glb" camera-controls alt="A 3D model of an astronaut" background-color="#222" ios-src="assets/Astronaut.usdz" magic-leap unstable-webxr></model-viewer>
 
 
 
+            </template>
+          </example-snippet>
 
-
-
-
-      <div class="sample">
-  <div id="demo-container-1" class="demo"></div>
-  <div class="content">
-    <div class="wrapper">
-
-
-
-      <a id="button-home" href="../index.html"><div class="icon-button icon-modelviewer"></div>model-viewer</a>
-
-
-
-
-      <div class="heading">
-        <h2 class="demo-title">
-Augmented Reality
-</h2>
-        <h4>
-This demonstrates several augmented reality features, including unstable-webxr, magic-leap and ios-src.
-</h4>
+        </div>
       </div>
-      <example-snippet stamp-to="demo-container-1" highlight-as="html">
-        <template>
-
-<model-viewer src="assets/Astronaut.glb" camera-controls alt="A 3D model of an astronaut" background-color="#222" ios-src="assets/Astronaut.usdz" magic-leap unstable-webxr></model-viewer>
-
-        </template>
-      </example-snippet>
-
-<h3 style="margin-top: 40px; padding-bottom: 8px;" class="border-bottom">iOS, Magic Leap & WebXR</h3>
-<ul class="list-attribute">
-  <li>
-    <div>ios-src</div>
-    <p>Provides augmented reality on supported iOS 12+ devices via AR Quick Look, but requires an additional USDZ model.</p>
-  </li>
-  <li>
-    <div>magic-leap</div>
-    <p>Provides augmented reality on Magic Leap's Helio browser. Requires that the primary model be a GLB file, and the <a href="https://www.npmjs.com/package/@magicleap/prismatic">@magicleap/prismatic</a> library.</p>
-  </li>
-  <li>
-    <div>unstable-webxr</div>
-    <p>Provides augmented reality via the experimental <a href="https://immersive-web.github.io/webxr/">WebXR Device API</a>, implemented in Chrome Canary only behind flags. For more information see the <a href="https://codelabs.developers.google.com/codelabs/ar-with-webxr/#1">AR with WebXR Codelab</a>.</p>
-  </li>
-</ul>
-
     </div>
-  </div>
-</div>
+
+    <div class="sample">
+      <div id="demo-container-2" class="demo"></div>
+      <div class="content">
+        <div class="wrapper">
+
+          <a id="button-home" href="../index.html"><div class="icon-button icon-modelviewer"></div>model-viewer</a>
+
+          <div class="heading">
+            <h2 class="demo-title">
+    Focus State
+    </h2>
+          </div>
+          <example-snippet stamp-to="demo-container-2" highlight-as="html">
+            <template>
+
+              <model-viewer id="demo-focus-state-white" src="assets/Astronaut.glb" camera-controls alt="A 3D model of an astronaut" background-color="#fafafa" ios-src="assets/Astronaut.usdz" magic-leap unstable-webxr></model-viewer>
 
 
 
+            </template>
+          </example-snippet>
 
+        </div>
+      </div>
+    </div>
 
 
     <div class="footer">
