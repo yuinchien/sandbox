@@ -592,6 +592,7 @@ body.dropdown #dropdown {
   .audit:hover {
     background: var(--hover-bg);
   }
+  #budget .audit:hover,
   #audits-performance-metrics .audit:hover,
   .audit.open:hover {
     background: none;
@@ -610,7 +611,8 @@ body.dropdown #dropdown {
   #audits-performance-metrics .audit:nth-child(6n+2) {
     border-top: 1px solid var(--color-black-200);
   }
-  #audits-performance-metrics .audit {
+  #audits-performance-metrics .audit,
+  #budget .audit {
     cursor: auto;
   }
   .audit .warning {
