@@ -502,6 +502,10 @@ body.dropdown #dropdown {
   padding: 8px 0;
   color: var(--color-black-600);
 }
+.row-list-th > div {
+  white-space: nowrap;
+  /* letter-spacing: -0.5px; */
+}
 .row-list-th div,
 .items .item div {
   text-align: right;
@@ -548,18 +552,6 @@ body.dropdown #dropdown {
 
 #section-runtimesettings .items {
   margin-bottom: var(--audits-marginbottom);
-}
-#budget .items {
-  margin-bottom: var(--audits-marginbottom);
-}
-#budget .red {
-  color: var(--color-red);
-}
-#budget .orange {
-  color: var(--color-orange-700);
-}
-#budget .green {
-  color: var(--color-green-700);
 }
 
 .row-caption {
@@ -652,7 +644,13 @@ body.dropdown #dropdown {
   .audit .thumbnail-header + div {
     flex: none;
   }
-  .audit > .row:before {
+
+  .list-with-shape {
+    display: flex;
+  }
+
+  .audit > .row:before,
+  .list-with-shape:before {
     content: "";
     display: block;
     width: var(--shape-size);
@@ -660,19 +658,23 @@ body.dropdown #dropdown {
     background: var(--color-black-400);
     margin: var(--shape-margin);
   }
-  .audit.gray > .row:before {
+  .audit.gray > .row:before,
+  .list-with-shape.gray:before {
     border-radius: 100%;
     background: var(--color-black-400);
   }
-  .audit.green > .row:before {
+  .audit.green > .row:before,
+  .list-with-shape.green:before {
     border-radius: 100%;
     background: var(--color-green);
   }
-  .audit.red > .row:before {
+  .audit.red > .row:before,
+  .list-with-shape.red:before {
     clip-path: polygon(50% 0, 100% 100%, 0% 100%);
     background: var(--color-red);
   }
-  .audit.orange > .row:before {
+  .audit.orange > .row:before,
+  .list-with-shape.orange:before {
     clip-path: polygon(6% 6%, 94% 6%, 94% 94%, 6% 94%);
     background: rgb( var(--color-orange) );
   }
@@ -699,7 +701,8 @@ body.dropdown #dropdown {
     font-weight: 500;
   }
   .audit.red .time,
-  .audit .row .title > span.red {
+  .audit .row .title > span.red,
+  .audit .row span.red {
     color: var(--color-red-700);
   }
   .audit.green .row .time,
@@ -813,7 +816,9 @@ body.dropdown #dropdown {
   #audits-performance-metrics .audit:nth-child(6n+2) {
     border-top: none;
   }
-
+  .row-list-th > div {
+    letter-spacing: -0.5px;
+  }
   #screenshots {
     -webkit-column-count: 5;
     -webkit-column-gap: 12px;
