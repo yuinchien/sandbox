@@ -33,8 +33,8 @@
   --body-fontsize: 16px;
   --body-lineheight: 24px;
 
-  --score-number-fontsize-big: 42px;
-  --score-number-fontsize: 34px;
+  --score-number-fontsize-big: 38px;
+  --score-number-fontsize: 28px;
 
   --score-title-fontsize-big: 28px;
   --score-title-fontsize: 20px;
@@ -54,7 +54,7 @@
   --shape-size: 12px;
   --shape-margin: 7px 12px 0 4px;
 
-  --topbar-height: 36px;
+  --topbar-height: 32px;
 
   --audits-marginbottom: 40px;
   --audit-padding: 12px 0;
@@ -328,7 +328,7 @@ body.dropdown #dropdown {
 }
 
 #screenshots {
-  margin: 32px 0;
+  margin: 20px 0;
   -webkit-column-count: 10;
   -webkit-column-gap: 16px;
 }
@@ -386,7 +386,7 @@ body.dropdown #dropdown {
     margin-top: 10px;
   }
 .score-container.big {
-  max-width: 400px;
+  max-width: 480px;
   width: auto;
   margin: 0px auto;
 }
@@ -780,7 +780,7 @@ body.dropdown #dropdown {
     --shape-size: 10px;
     --shape-margin: 5px 12px 0 2px;
 
-    --topbar-height: 32px;
+    --topbar-height: 28px;
 
     --audits-marginbottom: 24px;
     --audit-padding: 10px 0;
