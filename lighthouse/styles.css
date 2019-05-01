@@ -42,8 +42,8 @@
   --score-title-lineheight-big: 36px;
   --score-title-lineheight: 26px;
 
-  --score-size: 96px;
-  --score-size-big: 120px;
+  --score-size: 80px;
+  --score-size-big: 112px;
 
   --score-container-width: 160px;
 
@@ -63,10 +63,10 @@
 
   --row-minheight: 32px;
 
-  --section-padding: 40px;
+  --section-padding: 24px 40px;
 
   --header-padding: 20px 0 20px 0;
-  --score-container-padding: 12px;
+  --score-container-padding: 8px;
   --topbar-padding: 0 8px;
 
   --badge-margin: 0 6px 0 -2px;
@@ -213,7 +213,7 @@ a {
   border-radius: 20px;
   display: inline-flex;
   padding: 8px 8px;
-  margin: 12px auto 0 auto;
+  margin: 6px auto 0 auto;
 }
 #score-scale > div {
   display: flex;
@@ -787,7 +787,7 @@ body.dropdown #dropdown {
 
     --icon-size: 20px;
 
-    --section-padding: 24px;
+    --section-padding: 16px 24px;
 
     --header-padding: 16px 0 16px 0;
 
