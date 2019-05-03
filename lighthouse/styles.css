@@ -81,7 +81,7 @@
   --background: white;
   --hover-bg: #fafafa;
 
-  --symbol-url: url(images/symbol_1_black.svg);
+  --symbol-url: url(images/symbol_b.svg);
 }
 
 body {
@@ -138,6 +138,13 @@ a {
   flex: 1;
 }
 
+
+.icon-info-small {
+  position: absolute;
+  margin: 4px;
+  font-size: 20px !important;
+  cursor: pointer;
+}
 
 .material-icons {
   font-size: var(--icon-size);
@@ -391,6 +398,7 @@ body.dropdown #dropdown {
   margin: 0px auto;
 }
   .score-container.big .title {
+    margin-bottom: 8px;
     font-size: var(--score-title-fontsize-big);
     line-height: var(--score-title-lineheight-big);
   }

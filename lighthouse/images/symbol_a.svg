@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>symbol_a</title>
+    <desc>Created with Sketch.</desc>
+    <g id="symbol_a" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-Copy">
+            <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+            <circle id="Oval-Copy-2" fill="#000000" fill-rule="nonzero" cx="12" cy="12" r="11"></circle>
+            <path d="M10,10.125 L14,10.125 L14,7.23349528 L12,5.98349528 L10,7.23349528 L10,10.125 Z M16.0462963,12.125 L17.4441464,21.5604881 C15.8388784,22.476566 13.9805665,23 12,23 C10.0194335,23 8.16112159,22.476566 6.55585359,21.5604873 L7.9537037,12.125 L7,12.125 L7,10.125 L8,10.125 L8,6.125 L12,3.625 L16,6.125 L16,10.125 L17,10.125 L17,12.125 L16.0462963,12.125 Z M14.2392993,13.5751146 L9.53421557,15.103889 L8.96241092,18.9635704 L14.7585831,17.0802799 L14.2392993,13.5751146 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>
