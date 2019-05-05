@@ -165,7 +165,7 @@ a {
 }
 
 .toggle-icon-button {
-  background: #eee;
+  background: var(--color-black-200);
   border-radius: 20px;
   overflow: hidden;
   display: flex;
