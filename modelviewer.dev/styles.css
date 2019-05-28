@@ -31,6 +31,7 @@ body {
   box-sizing: border-box;
 }
 a {
+  color: var(--text-color);
   text-decoration: none;
   cursor: pointer;
 }
@@ -124,7 +125,7 @@ pre {
 #snippet .underline {
   position: relative;
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 #snippet .underline:after {
   content: "";
