@@ -297,7 +297,9 @@ pre {
   #intro h2 {
     max-width: 300px;
   }
-
+  #glitch {
+    padding: 0 var(--padding);
+  }
   #content {
     left: 0;
     padding-top: 56px;
