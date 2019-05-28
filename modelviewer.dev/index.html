@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <title>model-viewer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="container">
+    <div id="intro">
+      <div class="lockup">model-viewer</div>
+      <h2>Easily display interactive 3D models on the web & in AR</h2>
+      <div class="links">
+        <a href="https://github.com/GoogleWebComponents/model-viewer"><h3>Github</h3></a>
+        <a href="documentation.html"><h3>Documentation</h3></a>
+        <a><h3>Examples</h3></a>
+        <a><h3>Glitch</h3></a>
+        <a><h3>Codelab</h3></a>
+      </div>
+    </div>
+    <div id="glitch">
+      <iframe
+      allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+      src="https://glitch.com/embed/#!/embed/zinc-soccer?path=demo-styles.css&previewSize=100&attributionHidden=true"
+      alt="zinc-soccer on Glitch" style="height: 100%; width: 100%; border: 0;">
+      </iframe>
+    </div>
+
+    <div id="snippet">
+      <h4 class="underline">Quick Start</h4>
+      <h4>Step 1: Import the component</h4>
+
+      <pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://unpkg.com/@google/model-viewer/dist/model-viewer.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">nomodule</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+      <h4>Step 2: Use it like any other HTML element</h4>
+
+      <pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>model-viewer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>examples/assets/Astronaut.glb<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>A 3D model of an astronaut<span class="token punctuation">"</span></span> <span class="token attr-name">auto-rotate</span> <span class="token attr-name">camera-controls</span> <span class="token attr-name">background-color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#455A64<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>model-viewer</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no,
+  minimum-scale=1.0, maximum-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="dat.gui.min.js"></script>
+  <title>model-viewer</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    color: rgba(0,0,0,.8);
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .glitch-embed-wrap {
+    height: 92vh;
+    width: calc(50vw - 80px);
+    padding: 40px;
+    margin-left: 50vw;
+  }
+  @media only screen and (max-width: 600px) {
+    .glitch-embed-wrap {
+      width: 100%;
+      padding: 20px;
+      margin: 0;
+      height: 400px;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <div class="glitch-embed-wrap">
+    <iframe
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    src="https://glitch.com/embed/#!/embed/zinc-soccer?path=demo-styles.css&previewSize=100&attributionHidden=true"
+    alt="zinc-soccer on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+  </div>
+
+</body>
+</html>

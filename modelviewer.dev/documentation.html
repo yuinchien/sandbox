@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <title>model-viewer | documentation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="panel">
+    <div class="lockup">model-viewer</div>
+    <div class="title">Documentation</div>
+    <ul>
+      <li>Attributes</li>
+      <li>CSS custom properties</li>
+      <li>Properties</li>
+      <li>Methods</li>
+      <li>Events</li>
+      <li>Browser Support</li>
+    </ul>
+    <div class="title">Examples</div>
+    <ul>
+      <li>Animation
+      <li>Model Formats</li>
+      <li>Lazy Loading</li>
+      <li>Staging & Camera Control</li>
+      <li>Augmented Reality</li>
+    </li>
+  </div>
+
+  <div id="scrim"></div>
+
+  <div id="content">
+
+    <div id="lockup-wrapper">
+      <div class="lockup">documentation</div>
+    </div>
+
+    <h1>Attributes</h1>
+
+    <table>
+      <tr>
+        <td>src</td>
+        <td>The URL to the 3D model. This parameter is required for &lt;model-viewer> to display. Only glTF/GLB models are supported, see Supported Formats.</td>
+      </tr>
+      <tr>
+        <td>alt</td>
+        <td>Configures the model with custom text that will be used to describe the model to viewers who use a screen reader or otherwise depend on additional semantic context to understand what they are viewing.</td>
+      </tr>
+      <tr>
+        <td>animation-name</td>
+        <td>Selects an animation to play by name. This animation will play when the .play() method is invoked, or when the &lt;model-viewer> is configured to autoplay. If no animation-name is specified, <model-viewer> always picks the first animation it finds in the model.</td>
+      </tr>
+      <tr>
+        <td>src</td>
+        <td>The URL to the 3D model. This parameter is required for &lt;model-viewer> to display. Only glTF/GLB models are supported, see Supported Formats.</td>
+      </tr>
+      <tr>
+        <td>alt</td>
+        <td>Configures the model with custom text that will be used to describe the model to viewers who use a screen reader or otherwise depend on additional semantic context to understand what they are viewing.</td>
+      </tr>
+      <tr>
+        <td>animation-name</td>
+        <td>Selects an animation to play by name. This animation will play when the .play() method is invoked, or when the &lt;model-viewer> is configured to autoplay. If no animation-name is specified, <model-viewer> always picks the first animation it finds in the model.</td>
+      </tr>
+    </table>
+
+  </div>
+
+  <script>
+    document.getElementById('lockup-wrapper').addEventListener('click', function(){
+      document.body.classList.add('panel');
+    })
+    document.getElementById('scrim').addEventListener('click', function(){
+      document.body.classList.remove('panel');
+    })
+
+  </script>
+
+</body>
+</html>

@@ -398,7 +398,6 @@ body.dropdown #dropdown {
   margin: 0px auto;
 }
   .score-container.big .title {
-    /* margin-bottom: 8px; */
     font-size: var(--score-title-fontsize-big);
     line-height: var(--score-title-lineheight-big);
   }
