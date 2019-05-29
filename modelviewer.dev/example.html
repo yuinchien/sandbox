@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <title>model-viewer | documentation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="panel">
+    <div class="lockup">model-viewer</div>
+    <div class="title">Documentation</div>
+    <ul>
+      <li>Attributes</li>
+      <li>CSS custom properties</li>
+      <li>Properties</li>
+      <li>Methods</li>
+      <li>Events</li>
+      <li>Browser Support</li>
+    </ul>
+    <div class="title">Examples</div>
+    <ul>
+      <li class="selected">Animation</li>
+      <li>Model Formats</li>
+      <li>Lazy Loading</li>
+      <li>Staging & Camera Control</li>
+      <li>Augmented Reality</li>
+    </li>
+  </div>
+
+  <div id="scrim"></div>
+
+  <div id="content">
+
+    <div id="lockup-wrapper">
+      <div class="lockup">documentation</div>
+    </div>
+
+    <h1>Animation</h1>
+    <h3>Use &lt;model-viewer> to show off your animated models. This page showcases how you can control models with animations</h3>
+
+    <h3 class="demo-title">Automatically play animations with theautoplay attribute</h3>
+
+    <div class="demo-wrapper">
+      <div class="demo"></div>
+      <pre class="snippet"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>model-viewer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>examples/assets/Astronaut.glb<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>A 3D model of an astronaut<span class="token punctuation">"</span></span> <span class="token attr-name">auto-rotate</span> <span class="token attr-name">camera-controls</span> <span class="token attr-name">background-color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#455A64<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>model-viewer</span><span class="token punctuation">&gt;</span></span></code></pre>
+    </div>
+
+    <h3 class="demo-title">Select a specific animation with <span class="nowrap">animation-name</span></h3>
+
+    <div class="demo-wrapper">
+      <div class="demo"></div>
+      <pre class="snippet"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>model-viewer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>examples/assets/Astronaut.glb<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>A 3D model of an astronaut<span class="token punctuation">"</span></span> <span class="token attr-name">auto-rotate</span> <span class="token attr-name">camera-controls</span> <span class="token attr-name">background-color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#455A64<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>model-viewer</span><span class="token punctuation">&gt;</span></span></code></pre>
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById('lockup-wrapper').addEventListener('click', function(){
+      document.body.classList.add('panel');
+    })
+    document.getElementById('scrim').addEventListener('click', function(){
+      document.body.classList.remove('panel');
+    })
+
+  </script>
+
+</body>
+</html>

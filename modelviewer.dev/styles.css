@@ -9,7 +9,9 @@
   --padding: 2rem;
   --panel-width: 320px;
   --border-style: 1px solid rgba(0,0,0,.2);
-  --table-bg: rgba(0,0,0,.08);
+  --gray-bg: rgba(0,0,0,.05);
+  --p-max-width: 680px;
+  --shadow: 4px 4px 0px rgba(0, 0, 0, .2);
 }
 
 @import url('https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap');
@@ -37,28 +39,23 @@ a {
 }
 h1 {
   font-weight: 400;
-  font-size: 2.4rem;
-  line-height: 2.8rem;
-  margin: 0rem 0 1rem 0;
+  font-size: 2.25rem;
+  line-height: 2.8125rem;
+  margin: 0rem 0 .5rem 0;
 }
 h2 {
-  font-weight: 400;
-  font-size: 2.2rem;
-  line-height: 2.8rem;
-  margin: 0.75rem 0;
-}
-h3 {
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 2.4rem;
   margin: 0;
 }
-h4 {
+h3 {
   font-weight: 400;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  margin: 0 0 0.8rem 0;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin: 0 0 1rem 0;
 }
+
 pre {
   margin: 0.8rem 0;
   overflow-x: scroll;
@@ -78,9 +75,9 @@ pre {
   grid-area: intro;
   padding: var(--padding);
 }
-#intro h2 {
+#intro h1 {
   text-align: center;
-  max-width: 360px;
+  max-width: 380px;
   margin: 1.5rem auto 1rem auto;
 }
 #intro .links {
@@ -161,6 +158,9 @@ pre {
   cursor: pointer;
   padding: 0.32rem 0;
 }
+#panel ul li.selected {
+  font-weight: 500;
+}
 
 #content {
   position: absolute;
@@ -181,6 +181,51 @@ pre {
   background-color: var(--color-yellow);
   cursor: pointer;
 }
+#content h3 {
+  max-width: var(--p-max-width);
+  margin-top: -.25rem;
+  color: var(--secondary-text-color);
+}
+#content h3.demo-title {
+  max-width: 460px;
+  color: var(--text-color);
+  position: relative;
+  padding-left: 2.25rem;
+  margin-top: 1.5rem;
+}
+#content h3.demo-title:before {
+  content: "";
+  border-radius: 1rem;
+  width: 1rem;
+  height: 1rem;
+  background: var(--text-color);
+  margin-right: 1rem;
+  max-width: 720px;
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.demo-wrapper {
+  display: flex;
+  box-shadow: var(--shadow);
+  margin: 1rem 0;
+}
+.demo-wrapper .demo {
+  background: #222;
+}
+.demo-wrapper .snippet {
+  margin: 0;
+  box-shadow: none;
+  background: var(--gray-bg);
+}
+.demo-wrapper > * {
+  flex: 1;
+  min-height: 20rem;
+}
+
 table {
   border-collapse: collapse;
 
@@ -196,13 +241,13 @@ table tr td:nth-child(2n+1) {
   font-weight: 500;
 }
 table tr:nth-child(2n+1) {
-  background: var(--table-bg);
+  background: var(--gray-bg);
 }
 
 pre {
   padding: 1rem;
   background: var(--color-yellow);
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, .2);
+  box-shadow: var(--shadow);
   max-width: 100%;
   white-space: pre-wrap;
 }
@@ -279,13 +324,19 @@ pre {
     line-height: 1.5rem;
     margin: 1rem 0;
   }
-  h2 {
+  #intro h1 {
+    font-weight: 400;
     font-size: 1.75rem;
     line-height: 2.375rem;
+    max-width: 300px;
+  }
+  h2 {
+    font-size: 1.25rem;
+    line-height: 2rem;
   }
   h3 {
-    font-size: 1.2rem;
-    line-height: 2rem;
+    font-size: 1.125rem;
+    line-height: 1.8rem;
   }
   #container {
     display: block;
@@ -294,9 +345,7 @@ pre {
     height: 60vh;
     margin-bottom: 1.2rem;
   }
-  #intro h2 {
-    max-width: 300px;
-  }
+
   #glitch {
     padding: 0 var(--padding);
   }
