@@ -8,7 +8,7 @@
   --icon-size: 24px;
   --padding: 2rem;
   --panel-width: 320px;
-  --border-style: 1px solid rgba(0,0,0,.2);
+  --border-style: 1px solid rgba(0,0,0,.1);
   --gray-bg: rgba(0,0,0,.05);
   --p-max-width: 680px;
   --shadow: 4px 4px 0px rgba(0, 0, 0, .2);
@@ -41,7 +41,7 @@ h1 {
   font-weight: 400;
   font-size: 2.25rem;
   line-height: 2.8125rem;
-  margin: 0rem 0 .5rem 0;
+  margin: 0rem 0 1rem 0;
 }
 h2 {
   font-weight: 400;
@@ -184,7 +184,7 @@ pre {
 }
 #content h3 {
   max-width: var(--p-max-width);
-  margin-top: -.25rem;
+  margin-top: -.75rem;
   color: var(--secondary-text-color);
 }
 #content h3.demo-title {
@@ -192,7 +192,7 @@ pre {
   color: var(--text-color);
   position: relative;
   padding-left: 2.25rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 #content h3.demo-title:before {
   content: "";
@@ -212,7 +212,7 @@ pre {
 .demo-wrapper {
   display: flex;
   box-shadow: var(--shadow);
-  margin: 1rem 0 2.25rem 0;
+  margin: 1rem 0 2rem 0;
   min-height: 20vw;
 }
 .demo-wrapper .demo {
@@ -356,6 +356,9 @@ pre {
   }
   #content h3 {
     margin-top: -0.75rem;
+  }
+  #content h3.demo-title:before {
+    top: 6px;
   }
   #content #lockup-wrapper {
     display: block;
