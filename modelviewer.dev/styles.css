@@ -11,7 +11,7 @@
   --border-style: 1px solid rgba(0,0,0,.1);
   --gray-bg: rgba(0,0,0,.05);
   --p-max-width: 680px;
-  --shadow: 4px 4px 0px rgba(0, 0, 0, .2);
+  --shadow: 4px 4px 0px rgba(0, 0, 0, .25);
 }
 
 @import url('https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap');
@@ -55,7 +55,9 @@ h3 {
   line-height: 1.75rem;
   margin: 0 0 1rem 0;
 }
-
+b {
+  font-weight: 500;
+}
 pre {
   margin: 0.8rem 0;
   overflow-x: scroll;
@@ -227,22 +229,30 @@ pre {
   background: var(--gray-bg);
 }
 
+.section {
+  margin-bottom: 4rem;
+}
+
 table {
   border-collapse: collapse;
-
+  width: 100%;
 }
 table td {
   vertical-align: top;
-  padding: 0.9rem 1rem;
+  padding: 0.875rem 1rem 0.875rem 0;
 }
-table tr td:nth-child(2n+1) {
+.section:not(#section-browser-support) table tr td:nth-child(2n+1) {
   width: 25%;
   max-width: 240px;
   min-width: 180px;
   font-weight: 500;
 }
-table tr:nth-child(2n+1) {
-  background: var(--gray-bg);
+
+table tr:first-child {
+  border-top: var(--border-style);
+}
+table tr {
+  border-bottom: var(--border-style);
 }
 
 pre {
@@ -284,6 +294,124 @@ pre {
   transition: .2s opacity ease-out;
 }
 
+table.browser-support {
+  margin-bottom: 32px;
+  margin-left: 1.5rem;
+}
+table.browser-support td:first-child,
+table.browser-support th:first-child {
+  display: block;
+  line-height: 24px;
+  padding: 12px 2px 8px 0;
+  text-align:left;
+  flex:2;
+  min-width: 92px;
+}
+table.browser-support tr {
+  display: flex;
+}
+table.browser-support tr:first-child {
+  border-top: none;
+}
+table.browser-support th,
+table.browser-support td {
+  flex: 1;
+  font-weight: 400;
+  line-height: 0;
+  padding: 10px 0 10px 0;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+table.browser-support th {
+  color: rgba(0,0,0,.54);
+}
+table.browser-support td {
+  font-weight: 500;
+}
+table.browser-support img {
+  width: 24px;
+  height: 24px;
+}
+.browser-support-desc {
+  max-width: 480px;
+  position: relative;
+  margin: 2.5rem 0 .25rem 0;
+  margin-top: 1rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+.browser-support-desc:before {
+  content: "";
+  border-radius: 1rem;
+  width: .75rem;
+  height: .75rem;
+  background: var(--text-color);
+  margin-right: 1rem;
+  max-width: 720px;
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+
+#browser-support-icon-group {
+  margin-top: -.5rem;
+  margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.zero-interaction {
+  pointer-events: none !important;
+}
+.icon-desc {
+  padding: 8px 0;
+  min-width: 240px;
+}
+.icon-desc > * {
+  margin-right: 16px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.size-24 {
+  width: 24px;
+  height: 24px;
+}
+.logo-chrome {
+  content: url("https://github.com/alrra/browser-logos/raw/master/src/chrome/chrome_48x48.png");
+}
+.logo-canary {
+  content: url("https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome-canary/chrome-canary_48x48.png");
+}
+.logo-safari {
+  content: url("https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png");
+}
+.logo-firefox {
+  content: url("https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png");
+}
+.logo-edge {
+  content: url("https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png");
+}
+.logo-ie {
+  content: url("https://raw.githubusercontent.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png");
+}
+.icon-check {
+  opacity: .6;
+  content: url("https://www.gstatic.com/images/icons/material/system/2x/done_black_24dp.png");
+}
+.icon-warning {
+  opacity: .6;
+  content: url("https://www.gstatic.com/images/icons/material/system/2x/assignment_turned_in_black_24dp.png");
+}
+.icon-na {
+  opacity: .6;
+  content: url("https://www.gstatic.com/images/icons/material/system/2x/not_interested_black_24dp.png");
+}
+.icon-flag {
+  opacity: .5;
+  content: url("https://www.gstatic.com/images/icons/material/system/2x/flag_black_24dp.png");
+}
+
 /* prism.js */
 /* prism */
 .token.tag,
@@ -321,9 +449,9 @@ pre {
   }
   h1 {
     font-weight: 500;
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    margin: 1rem 0;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin: 0.75rem 0;
   }
   #intro h1 {
     font-weight: 400;
@@ -339,15 +467,13 @@ pre {
     font-size: 1.125rem;
     line-height: 1.625rem;
   }
+
   #container {
     display: block;
   }
   #glitch {
     height: 60vh;
     margin-bottom: 1.2rem;
-  }
-
-  #glitch {
     padding: 0 var(--padding);
   }
   #content {
@@ -366,13 +492,16 @@ pre {
   .demo-wrapper {
     display: block;
   }
-  table {
-    margin-left: calc(-1 * var(--padding));
-    margin-right: calc(-1 * var(--padding));
+  table tr > * {
+    display: block;
   }
   table tr td:nth-child(2n+1) {
-    width: 25%;
-    min-width: 120px;
+    width: auto;
+    min-width: auto;
+    padding-bottom: 0;
+  }
+  table.browser-support {
+    margin-left: 0rem;
   }
   #panel {
     box-shadow: 0 0 8px rgba(0,0,0,.2);

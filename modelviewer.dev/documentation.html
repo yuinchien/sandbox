@@ -36,34 +36,235 @@
       <div class="lockup">documentation</div>
     </div>
 
-    <h1>Attributes</h1>
+    <div id="section-attributes" class="section">
+      <h1>Attributes</h1>
+      <table>
+        <tr>
+          <td>src</td>
+          <td>The URL to the 3D model. This parameter is required for &lt;model-viewer> to display. Only glTF/GLB models are supported, see Supported Formats.</td>
+        </tr>
+        <tr>
+          <td>alt</td>
+          <td>Configures the model with custom text that will be used to describe the model to viewers who use a screen reader or otherwise depend on additional semantic context to understand what they are viewing.</td>
+        </tr>
+        <tr>
+          <td>animation-name</td>
+          <td>Selects an animation to play by name. This animation will play when the .play() method is invoked, or when the &lt;model-viewer> is configured to autoplay. If no animation-name is specified, <model-viewer> always picks the first animation it finds in the model.</td>
+        </tr>
+        <tr>
+          <td>src</td>
+          <td>The URL to the 3D model. This parameter is required for &lt;model-viewer> to display. Only glTF/GLB models are supported, see Supported Formats.</td>
+        </tr>
+        <tr>
+          <td>alt</td>
+          <td>Configures the model with custom text that will be used to describe the model to viewers who use a screen reader or otherwise depend on additional semantic context to understand what they are viewing.</td>
+        </tr>
+        <tr>
+          <td>animation-name</td>
+          <td>Selects an animation to play by name. This animation will play when the .play() method is invoked, or when the &lt;model-viewer> is configured to autoplay. If no animation-name is specified, <model-viewer> always picks the first animation it finds in the model.</td>
+        </tr>
+      </table>
+    </div>
 
-    <table>
-      <tr>
-        <td>src</td>
-        <td>The URL to the 3D model. This parameter is required for &lt;model-viewer> to display. Only glTF/GLB models are supported, see Supported Formats.</td>
-      </tr>
-      <tr>
-        <td>alt</td>
-        <td>Configures the model with custom text that will be used to describe the model to viewers who use a screen reader or otherwise depend on additional semantic context to understand what they are viewing.</td>
-      </tr>
-      <tr>
-        <td>animation-name</td>
-        <td>Selects an animation to play by name. This animation will play when the .play() method is invoked, or when the &lt;model-viewer> is configured to autoplay. If no animation-name is specified, <model-viewer> always picks the first animation it finds in the model.</td>
-      </tr>
-      <tr>
-        <td>src</td>
-        <td>The URL to the 3D model. This parameter is required for &lt;model-viewer> to display. Only glTF/GLB models are supported, see Supported Formats.</td>
-      </tr>
-      <tr>
-        <td>alt</td>
-        <td>Configures the model with custom text that will be used to describe the model to viewers who use a screen reader or otherwise depend on additional semantic context to understand what they are viewing.</td>
-      </tr>
-      <tr>
-        <td>animation-name</td>
-        <td>Selects an animation to play by name. This animation will play when the .play() method is invoked, or when the &lt;model-viewer> is configured to autoplay. If no animation-name is specified, <model-viewer> always picks the first animation it finds in the model.</td>
-      </tr>
-    </table>
+    <div id="section-css-custom-properties" class="section">
+      <h1>CSS custom properties</h1>
+      <table>
+        <tr>
+          <td>--poster-color</td>
+          <td>Sets the background-color of the poster. Falls back to --background-color if set. Defaults to #fff.</td>
+        </tr>
+        <tr>
+          <td>--poster-image</td>
+          <td>Sets the background-image of the poster. This is currently overridden by the poster attribute if it is set. Defaults to none.</td>
+        </tr>
+        <tr>
+          <td>--progress-bar-color</td>
+          <td>Sets the background-color of the progress bar. Defaults to rgba(0, 0, 0, 0.4).</td>
+        </tr>
+        <tr>
+          <td>--progress-mask</td>
+          <td>Sets the background of the progress mask. Defaults to #fff.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="section-properties" class="section">
+      <h1>Properties</h1>
+      <table>
+        <tr>
+          <td>currentTime</td>
+          <td>This property reports the current track time of the currently selected animation. If no animations are available, the value is always 0. This property can be set in order to seek along the timeline of the currently playing animation. For example, if you set it to 0, it will reset an animation to the beginning.</td>
+        </tr>
+        <tr>
+          <td>paused</td>
+          <td>This property is read-only. It returns true if animations are paused. It returns false if animations are playing. Animations always start paused, and remain so unless the autoplay attribute is set or the .play() method is invoked.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="section-methods" class="section">
+      <h1>Methods</h1>
+      <table>
+        <tr>
+          <td>getCameraOrbit()</td>
+          <td>Returns the realtime orbital position of the camera. Azimuthal (theta) and polar (phi) angles are representred as radians, and the distance (radius) is represented in meters. This value may differ from the value configured with the camera-orbit attribute on account of user interaction or camera interpolation.</td>
+        </tr>
+        <tr>
+          <td>play()</td>
+          <td>Causes animations to be played. Use the autoplay attribute if you want animations to be played automatically. If there are no animations, nothing will happen, so make sure that the model is loaded before invoking this method.</td>
+        </tr>
+        <tr>
+          <td>pause()</td>
+          <td>Causes animations to be paused. If you want to reset the current animation to the beginning, you should also set the currentTime property to 0.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="section-events" class="section">
+      <h1>Events</h1>
+      <table>
+        <tr>
+          <td>environment-change</td>
+          <td>Fired when the environment has changed. If the environment is derived from background-image or environment-image, the image will have loaded by the time this event fires.</td>
+        </tr>
+        <tr>
+          <td>load</td>
+          <td>Fired when a model is loaded. Can fire multiple times per <model-viewer> if the src attribute is changed.</td>
+        </tr>
+        <tr>
+          <td>poster-visibility</td>
+          <td>This event is fired when the visiblity of the poster image changes. The current visibility state can be read from the event.detail.visible property</td>
+        </tr>
+        <tr>
+          <td>play</td>
+          <td>Dispatched when animations begin to play.</td>
+        </tr>
+        <tr>
+          <td>pause</td>
+          <td>Dispatched when animations are paused. A model always begins in the paused state, so it is worth mentioning that this event will not be dispatched until the the pause() method is invoked after animations have begun playing.</td>
+        </tr>
+        <tr>
+          <td>preload</td>
+          <td>When preload is enabled this event is fired when preloading is done.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="section-browser-support" class="section">
+      <h1>Browser Support</h1>
+
+      <div id="browser-support-icon-group">
+        <div class="icon-desc"><img class="size-24 icon-check"><div>Natively supported</div></div>
+        <div class="icon-desc"><img class="size-24 icon-warning"><div>Available with polyfill</div></div>
+        <div class="icon-desc"><img class="size-24 icon-flag"><div>Behind a flag, unstable</div></div>
+        <div class="icon-desc"><img class="size-24 icon-na"><div>Not available</div></div>
+      </div>
+
+      <div style="clear:both"></div>
+
+      <p class="browser-support-desc">These browser features are <b>required</b> for <span class="attribute">&lt;model-viewer&gt;</span> to work correctly:</p>
+      <table class="browser-support">
+        <tr>
+          <th>Feature</th>
+          <th><img class="logo-chrome" title="Chrome" alt="Chrome"></th>
+          <th><img class="logo-canary" title="Canary" alt="Canary"></th>
+          <th><img class="logo-safari" title="Safari 12" alt="Safari 12"></th>
+          <th><img class="logo-firefox" title="Firefox 65" alt="Firefox 65"></th>
+          <th><img class="logo-edge" title="Edge" alt="Edge"></th>
+          <th><img class="logo-ie" title="IE 11" alt="IE 11"></th>
+        </tr>
+        <tr>
+          <td>Custom Elements</td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-warning"></td>
+          <td><img class="icon-warning"></td>
+        </tr>
+        <tr>
+          <td>Shadow DOM</td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-warning"></td>
+          <td><img class="icon-warning"></td>
+        </tr>
+      </table>
+
+      <p class="browser-support-desc">These browser features are <b>optional</b> and are only used if available for performance optimization:</p>
+      <table class="browser-support">
+        <tr>
+          <th>Feature</th>
+          <th><img class="logo-chrome" title="Chrome" alt="Chrome"></th>
+          <th><img class="logo-canary" title="Canary" alt="Canary"></th>
+          <th><img class="logo-safari" title="Safari 12" alt="Safari 12"></th>
+          <th><img class="logo-firefox" title="Firefox 65" alt="Firefox 65"></th>
+          <th><img class="logo-edge" title="Edge" alt="Edge"></th>
+          <th><img class="logo-ie" title="IE 11" alt="IE 11"></th>
+        </tr>
+        <tr>
+          <td>Resize Observer</td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-warning"></td>
+          <td><img class="icon-warning"></td>
+          <td><img class="icon-warning"></td>
+          <td><img class="icon-warning"></td>
+        </tr>
+        <tr>
+          <td>Intersection Observer</td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-warning"></td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-warning"></td>
+        </tr>
+      </table>
+
+      <p class="browser-support-desc">These browser features are <b>optional</b> and are only needed if you wish to use the unstable-webxr feature:</p>
+      <table class="browser-support">
+        <tr>
+          <th>Feature</th>
+          <th><img class="logo-chrome" title="Chrome" alt="Chrome"></th>
+          <th><img class="logo-canary" title="Canary" alt="Canary"></th>
+          <th><img class="logo-safari" title="Safari 12" alt="Safari 12"></th>
+          <th><img class="logo-firefox" title="Firefox 65" alt="Firefox 65"></th>
+          <th><img class="logo-edge" title="Edge" alt="Edge"></th>
+          <th><img class="logo-ie" title="IE 11" alt="IE 11"></th>
+        </tr>
+        <tr>
+          <td>Fullscreen API</td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-warning"></td>
+          <td><img class="icon-check"></td>
+          <td><img class="icon-warning"></td>
+          <td><img class="icon-warning"></td>
+        </tr>
+        <tr>
+          <td>WebXR Device API</td>
+          <td><img class="icon-na"></td>
+          <td><img class="icon-flag"></td>
+          <td><img class="icon-na"></td>
+          <td><img class="icon-na"></td>
+          <td><img class="icon-na"></td>
+          <td><img class="icon-na"></td>
+        </tr>
+        <tr>
+          <td>WebXR HitTest API</td>
+          <td><img class="icon-na"></td>
+          <td><img class="icon-flag"></td>
+          <td><img class="icon-na"></td>
+          <td><img class="icon-na"></td>
+          <td><img class="icon-na"></td>
+          <td><img class="icon-na"></td>
+        </tr>
+      </table>
+
+    </div>
 
   </div>
 
