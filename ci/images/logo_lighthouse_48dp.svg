@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>logo_lighthouse_48dp</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M9.20833333,2.70833333 L7.89208333,2.70833333 C7.33416667,1.129375 5.83104167,0 4.0625,0 C1.82,0 0,1.82 0,4.0625 C0,6.305 1.82,8.125 4.0625,8.125 L9.20833333,8.125 C10.7033333,8.125 11.9166667,6.91166667 11.9166667,5.41666667 C11.9166667,3.92166667 10.7033333,2.70833333 9.20833333,2.70833333 Z" id="path-1"></path>
+        <linearGradient x1="49.9941435%" y1="0.2255%" x2="49.9941435%" y2="99.7255%" id="linearGradient-3">
+            <stop stop-color="#212121" stop-opacity="0.04" offset="0%"></stop>
+            <stop stop-color="#212121" stop-opacity="0" offset="66%"></stop>
+        </linearGradient>
+        <path d="M5.14583333,0 L0,0 L0,5.41666667 L5.14583333,5.41666667 C6.64083333,5.41666667 7.85416667,4.20333333 7.85416667,2.70833333 C7.85416667,1.21333333 6.64083333,0 5.14583333,0 Z" id="path-4"></path>
+        <radialGradient cx="10.1284091%" cy="14.269%" fx="10.1284091%" fy="14.269%" r="144.566%" gradientTransform="translate(0.101284,0.142690),scale(0.681818,1.000000),translate(-0.101284,-0.142690)" id="radialGradient-6">
+            <stop stop-color="#FFFFFF" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+        <linearGradient x1="36.626067%" y1="20.3583319%" x2="64.0098147%" y2="100.652008%" id="linearGradient-7">
+            <stop stop-color="#FFFFFF" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="68.9349112%" y1="65.7561304%" x2="31.0650888%" y2="35.7993836%" id="linearGradient-8">
+            <stop stop-color="#262626" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#262626" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="62.5305769%" y1="13.0863251%" x2="24.7785622%" y2="100.996123%" id="linearGradient-9">
+            <stop stop-color="#262626" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#262626" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-10">
+            <stop stop-color="#262626" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#262626" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <path d="M10.625,3.125 L9.10625,3.125 C8.4625,1.303125 6.728125,0 4.6875,0 C2.1,0 0,2.1 0,4.6875 C0,7.275 2.1,9.375 4.6875,9.375 L10.625,9.375 C12.35,9.375 13.75,7.975 13.75,6.25 C13.75,4.525 12.35,3.125 10.625,3.125 Z" id="path-11"></path>
+        <linearGradient x1="49.9941435%" y1="0.2255%" x2="49.9941435%" y2="99.7255%" id="linearGradient-13">
+            <stop stop-color="#212121" stop-opacity="0.04" offset="0%"></stop>
+            <stop stop-color="#212121" stop-opacity="0" offset="66%"></stop>
+        </linearGradient>
+        <path d="M5.9375,0 L0,0 L0,6.25 L5.9375,6.25 C7.6625,6.25 9.0625,4.85 9.0625,3.125 C9.0625,1.4 7.6625,0 5.9375,0 Z" id="path-14"></path>
+        <radialGradient cx="10.1284091%" cy="14.269%" fx="10.1284091%" fy="14.269%" r="144.566%" gradientTransform="translate(0.101284,0.142690),scale(0.681818,1.000000),translate(-0.101284,-0.142690)" id="radialGradient-16">
+            <stop stop-color="#FFFFFF" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="14.4886364%" cy="14.5835227%" fx="14.4886364%" fy="14.5835227%" r="99.9727273%" id="radialGradient-17">
+            <stop stop-color="#FFFFFF" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="logo_lighthouse_48dp" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4">
+            <rect id="Rectangle" x="0" y="0" width="48" height="48"></rect>
+            <g id="Group-2" transform="translate(2.000000, 2.000000)">
+                <circle id="Oval-Copy-2" fill="#0535C1" fill-rule="nonzero" cx="22" cy="22" r="22"></circle>
+                <g id="logo_cloudy_dark_48dp" transform="translate(26.750000, 10.000000)">
+                    <rect id="XMLID_4499_" x="0" y="0" width="13" height="13"></rect>
+                    <g id="XMLID_4477_" transform="translate(0.541667, 2.708333)">
+                        <g id="XMLID_4479_">
+                            <g id="XMLID_4480_-Clipped">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <g id="SVGID_142_"></g>
+                                <g id="XMLID_4480_" mask="url(#mask-2)">
+                                    <path d="M9.20833333,2.70833333 L7.89208333,2.70833333 C7.33416667,1.129375 5.83104167,0 4.0625,0 C1.82,0 0,1.82 0,4.0625 C0,6.305 1.82,8.125 4.0625,8.125 L9.20833333,8.125 C10.7033333,8.125 11.9166667,6.91166667 11.9166667,5.41666667 C11.9166667,3.92166667 10.7033333,2.70833333 9.20833333,2.70833333 Z" id="XMLID_4498_" fill="#EAEAEA" fill-rule="nonzero"></path>
+                                    <path d="M11.9166667,5.44916667 C11.9166667,5.43833333 11.9166667,5.4275 11.9166667,5.41666667 C11.9166667,3.92166667 10.7033333,2.70833333 9.20833333,2.70833333 L7.85416667,2.70833333 L7.85416667,2.77604167 L9.20833333,2.77604167 C10.6925,2.77604167 11.8977083,3.97041667 11.9166667,5.44916667 Z" id="XMLID_4495_" fill-opacity="0.2" fill="#FFFFFF" fill-rule="nonzero"></path>
+                                    <polygon id="XMLID_4494_" fill="url(#linearGradient-3)" fill-rule="nonzero" points="13.3114583 8.125 4.0625 8.125 7.89479167 2.70833333"></polygon>
+                                    <g id="XMLID_4488_" transform="translate(4.062500, 2.708333)">
+                                        <g id="XMLID_4489_-Clipped">
+                                            <mask id="mask-5" fill="white">
+                                                <use xlink:href="#path-4"></use>
+                                            </mask>
+                                            <g id="SVGID_145_"></g>
+                                            <g id="XMLID_4489_" mask="url(#mask-5)">
+                                                <g transform="translate(-0.812500, -3.520833)" id="XMLID_979_">
+                                                    <g>
+                                                        <image id="XMLID_984_" opacity="0.1" x="0" y="0" width="5.6875" height="8.66666667" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAgCAYAAAD9oDOIAAAABGdBTUEAALGOfPtRkwAAA7ZJREFUSA2dlttvEkEYxdnlWqhQoEWrlRq1xqQv+qLP9f82fdamvmhjVBJbSnrjUtoCheWy/s6ERagsBSc5+WZnvzl75sxtrcDfYg2rXvTeuMOKF7123+gR2Nvb26FOpxNrt9uheDxuq0ez2XSXlpa6VDuFQqFHHIB7yUVqQRhuNBpZy7LyrutmiBHaA7Zt93i+5vksEonUer1eA3J9ROS+JcgbK5VKJej8EpIdCD4Q3xHf0rbN+01icjAYhLvdbn9jY8Mpl8t9X0ZeiNReX1+PO46zBdEOz+/BK7AJngq0PyZmg8GgjVpnbW2tl06n+7VaTVb8Y4dRmsvlYpDmUfgGVVvEVZITQzwQIVBbkvcRIPJeLBZz8F2qJ4hFGmD4YUIaPENVnpgEIaAJU04MLAP5nQNpMED5FapbKJ7w2ChNJpPkWB6xhi1VmiwzkUSR6yNSn0HpCqNxQQXiy2q12qF9pNYordfrLh7ZTEaaxOckyMM4MEuLqKIPBPl4lCgMIL8ElVAo1Gi1WlpyhtiQ8mBlMhl1kH+anCdAdTMSolc85VIdIt8FN1KLDU3PBo9UvgZIULK8vWuBR6ooYptc2SPFXUgvwuFwrVKpGBtGpHNaAIcpxgpqEqENUsa602w2eyO1455pKG08LZN0QnIdaPeMJoD6eFFfrYg8/V7T5xF1KZ+YCJevSf45+DWME7NK23iR2jBkWn4P6ZtkwrSCrAmlh4eHUlYn4YSvl6m3gZ9SXmkarDCIKtJPH5pQqudFLQig1Cimb5QJM0pHEyVGlQVWgclHodan/C/2+/3SysrKzfjwleT+hwVaWtq6LxTxNXKX1BCTMO8qINXSaLX7UlgR51APTiVdYBXA4+qUakJeB63b29v+VNIFLND+b0J6DH5AekbsTCOlfa5VoKXWhagKcUHQlaO7zJfUs0DJdL4ADhgvOkMb4Ihd+BXyIy5NqZ7YpuMdzCrgZL+mUTvsCvLxLSvCFjgF38FPVFaHtrk6EPwKPK6DiiZRChzUyEMN+xaUeN4nfuJm+U2eVJsbYCYpyV04rkg+h+Caeoq6ZrsE9njeBV+Y8YtisTgaiZ+n9OFM4+YkyE/5egqxTnrN9B74iO97iUSixJUt5aN7SgvXt4ydsSkI10mUym/Ud0W4vLx8fHBwIEK1j8pMUrKs1dVVG3UxPNMxp4n5DPYhLE0jFPMsT/XejUajbf5MdFjo2giisMyQK36E6mTOP1VmFPPzxvsIHluQO/f9T81Dqu/dzZt1cAf+AMymEnybyIybAAAAAElFTkSuQmCC"></image>
+                                                        <path d="M0.8125,0.8125 L3.00895833,7.74854167 C3.74291667,7.011875 4.875,5.99625 4.875,4.875 C4.875,2.6325 3.055,0.8125 0.8125,0.8125 Z" id="XMLID_980_" fill="#E1E1E1" fill-rule="nonzero"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <circle id="XMLID_4487_" fill="#EEEEEE" fill-rule="nonzero" cx="4.0625" cy="4.0625" r="4.0625"></circle>
+                                    <path d="M4.0625,0.0677083333 C6.29416667,0.0677083333 8.10604167,1.86875 8.125,4.09770833 C8.125,4.086875 8.125,4.07604167 8.125,4.06520833 C8.125,1.82270833 6.305,0.00270833333 4.0625,0.00270833333 C1.82,0.00270833333 0,1.82 0,4.0625 C0,4.07333333 0,4.08416667 0,4.095 C0.0189583333,1.86875 1.83083333,0.0677083333 4.0625,0.0677083333 Z" id="XMLID_4484_" fill-opacity="0.2" fill="#FFFFFF" fill-rule="nonzero"></path>
+                                    <path d="M9.20833333,8.05729167 L4.0625,8.05729167 C1.83083333,8.05729167 0.0189583333,6.25625 0,4.02729167 C0,4.038125 0,4.04895833 0,4.05979167 C0,6.30229167 1.82,8.12229167 4.0625,8.12229167 L9.20833333,8.12229167 C10.7033333,8.12229167 11.9166667,6.90895833 11.9166667,5.41395833 C11.9166667,5.403125 11.9166667,5.39229167 11.9166667,5.38145833 C11.8977083,6.86291667 10.6925,8.05729167 9.20833333,8.05729167 Z" id="XMLID_4481_" fill-opacity="0.1" fill="#212121" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <path d="M9.20833333,2.70833333 L7.89208333,2.70833333 C7.33416667,1.129375 5.83104167,0 4.0625,0 C1.82,0 0,1.82 0,4.0625 C0,6.305 1.82,8.125 4.0625,8.125 L9.20833333,8.125 C10.7033333,8.125 11.9166667,6.91166667 11.9166667,5.41666667 C11.9166667,3.92166667 10.7033333,2.70833333 9.20833333,2.70833333 Z" id="XMLID_4478_" fill="url(#radialGradient-6)" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+                <rect id="Rectangle" fill="#FFF176" x="16" y="9.25" width="11.5" height="10"></rect>
+                <rect id="Rectangle" fill="#FFFFFF" x="14.75" y="24.5" width="13.75" height="13.75"></rect>
+                <path d="M30,18.25 L32,18.25 L32,22.25 L12,22.25 L12,18.25 L14,18.25 L14,10.25 L22,5.25 L30,10.25 L30,18.25 Z M26,18.25 L26,12.4669906 L22,9.96699057 L18,12.4669906 L18,18.25 L26,18.25 Z" id="Path" fill="#F4481E" fill-rule="nonzero"></path>
+                <path d="M11.1117072,41.1209761 L14.5,18.25 L29.5,18.25 L32.8882928,41.1209761 C29.6777568,42.9531319 25.961133,44 22,44 C18.038867,44 14.3222432,42.9531319 11.1117072,41.1209745 L11.1117072,41.1209761 Z M26.4785987,25.1502292 L17.0684311,28.2077779 L15.9248218,35.9271407 L27.5171662,32.1605597 L26.4785987,25.1502292 Z" id="Shape" fill="#F4481E" fill-rule="nonzero"></path>
+                <path d="M29.9808854,22.25 L32.7765856,41.1209761 C29.5660496,42.9531319 25.8494258,44 21.8882928,44 C17.9271598,44 14.210536,42.9531319 11,41.1209745 L13.7957002,22.25 L12,22.25 L12,18.25 L14,18.25 L14,10.25 L22,5.25 L30,10.25 L30,18.25 L32,18.25 L32,22.25 L29.9808854,22.25 Z" id="Path" fill="url(#linearGradient-7)" fill-rule="nonzero"></path>
+                <polygon id="Path-Copy-2" fill="url(#linearGradient-8)" fill-rule="nonzero" points="22 18.25 14 18.25 14 10.25 22 5.25"></polygon>
+                <path d="M22,44 C18.0470039,44 14.317722,42.9461476 11.1117072,41.1209745 L13.6185012,22.25 L22,22.25 L22,44 Z" id="Path-Copy-4" fill="url(#linearGradient-9)" fill-rule="nonzero"></path>
+                <rect id="Rectangle-Copy-13" fill="url(#linearGradient-10)" fill-rule="nonzero" transform="translate(17.000000, 20.250000) scale(-1, 1) translate(-17.000000, -20.250000) " x="12" y="18.25" width="10" height="4"></rect>
+                <g id="logo_cloudy_dark_48dp" transform="translate(4.750000, 14.250000)">
+                    <rect id="XMLID_4499_" x="0" y="0" width="15" height="15"></rect>
+                    <g id="XMLID_4477_" transform="translate(0.625000, 3.125000)">
+                        <g id="XMLID_4479_">
+                            <g id="XMLID_4480_-Clipped">
+                                <mask id="mask-12" fill="white">
+                                    <use xlink:href="#path-11"></use>
+                                </mask>
+                                <g id="SVGID_142_"></g>
+                                <g id="XMLID_4480_" mask="url(#mask-12)">
+                                    <path d="M10.625,3.125 L9.10625,3.125 C8.4625,1.303125 6.728125,0 4.6875,0 C2.1,0 0,2.1 0,4.6875 C0,7.275 2.1,9.375 4.6875,9.375 L10.625,9.375 C12.35,9.375 13.75,7.975 13.75,6.25 C13.75,4.525 12.35,3.125 10.625,3.125 Z" id="XMLID_4498_" fill="#FAFAFA" fill-rule="nonzero"></path>
+                                    <path d="M13.75,6.2875 C13.75,6.275 13.75,6.2625 13.75,6.25 C13.75,4.525 12.35,3.125 10.625,3.125 L9.0625,3.125 L9.0625,3.203125 L10.625,3.203125 C12.3375,3.203125 13.728125,4.58125 13.75,6.2875 Z" id="XMLID_4495_" fill-opacity="0.2" fill="#FFFFFF" fill-rule="nonzero"></path>
+                                    <polygon id="XMLID_4494_" fill="url(#linearGradient-13)" fill-rule="nonzero" points="15.359375 9.375 4.6875 9.375 9.109375 3.125"></polygon>
+                                    <g id="XMLID_4488_" transform="translate(4.687500, 3.125000)">
+                                        <g id="XMLID_4489_-Clipped">
+                                            <mask id="mask-15" fill="white">
+                                                <use xlink:href="#path-14"></use>
+                                            </mask>
+                                            <g id="SVGID_145_"></g>
+                                            <g id="XMLID_4489_" mask="url(#mask-15)">
+                                                <g transform="translate(-0.937500, -4.062500)" id="XMLID_979_">
+                                                    <g>
+                                                        <image id="XMLID_984_" opacity="0.1" x="0" y="0" width="6.5625" height="10" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAgCAYAAAD9oDOIAAAABGdBTUEAALGOfPtRkwAAA7ZJREFUSA2dlttvEkEYxdnlWqhQoEWrlRq1xqQv+qLP9f82fdamvmhjVBJbSnrjUtoCheWy/s6ERagsBSc5+WZnvzl75sxtrcDfYg2rXvTeuMOKF7123+gR2Nvb26FOpxNrt9uheDxuq0ez2XSXlpa6VDuFQqFHHIB7yUVqQRhuNBpZy7LyrutmiBHaA7Zt93i+5vksEonUer1eA3J9ROS+JcgbK5VKJej8EpIdCD4Q3xHf0rbN+01icjAYhLvdbn9jY8Mpl8t9X0ZeiNReX1+PO46zBdEOz+/BK7AJngq0PyZmg8GgjVpnbW2tl06n+7VaTVb8Y4dRmsvlYpDmUfgGVVvEVZITQzwQIVBbkvcRIPJeLBZz8F2qJ4hFGmD4YUIaPENVnpgEIaAJU04MLAP5nQNpMED5FapbKJ7w2ChNJpPkWB6xhi1VmiwzkUSR6yNSn0HpCqNxQQXiy2q12qF9pNYordfrLh7ZTEaaxOckyMM4MEuLqKIPBPl4lCgMIL8ElVAo1Gi1WlpyhtiQ8mBlMhl1kH+anCdAdTMSolc85VIdIt8FN1KLDU3PBo9UvgZIULK8vWuBR6ooYptc2SPFXUgvwuFwrVKpGBtGpHNaAIcpxgpqEqENUsa602w2eyO1455pKG08LZN0QnIdaPeMJoD6eFFfrYg8/V7T5xF1KZ+YCJevSf45+DWME7NK23iR2jBkWn4P6ZtkwrSCrAmlh4eHUlYn4YSvl6m3gZ9SXmkarDCIKtJPH5pQqudFLQig1Cimb5QJM0pHEyVGlQVWgclHodan/C/2+/3SysrKzfjwleT+hwVaWtq6LxTxNXKX1BCTMO8qINXSaLX7UlgR51APTiVdYBXA4+qUakJeB63b29v+VNIFLND+b0J6DH5AekbsTCOlfa5VoKXWhagKcUHQlaO7zJfUs0DJdL4ADhgvOkMb4Ihd+BXyIy5NqZ7YpuMdzCrgZL+mUTvsCvLxLSvCFjgF38FPVFaHtrk6EPwKPK6DiiZRChzUyEMN+xaUeN4nfuJm+U2eVJsbYCYpyV04rkg+h+Caeoq6ZrsE9njeBV+Y8YtisTgaiZ+n9OFM4+YkyE/5egqxTnrN9B74iO97iUSixJUt5aN7SgvXt4ydsSkI10mUym/Ud0W4vLx8fHBwIEK1j8pMUrKs1dVVG3UxPNMxp4n5DPYhLE0jFPMsT/XejUajbf5MdFjo2giisMyQK36E6mTOP1VmFPPzxvsIHluQO/f9T81Dqu/dzZt1cAf+AMymEnybyIybAAAAAElFTkSuQmCC"></image>
+                                                        <path d="M0.9375,0.9375 L3.471875,8.940625 C4.31875,8.090625 5.625,6.91875 5.625,5.625 C5.625,3.0375 3.525,0.9375 0.9375,0.9375 Z" id="XMLID_980_" fill="#E1E1E1" fill-rule="nonzero"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <circle id="XMLID_4487_" fill="#FFFFFF" fill-rule="nonzero" cx="4.6875" cy="4.6875" r="4.6875"></circle>
+                                    <path d="M4.6875,0.078125 C7.2625,0.078125 9.353125,2.15625 9.375,4.728125 C9.375,4.715625 9.375,4.703125 9.375,4.690625 C9.375,2.103125 7.275,0.003125 4.6875,0.003125 C2.1,0.003125 0,2.1 0,4.6875 C0,4.7 0,4.7125 0,4.725 C0.021875,2.15625 2.1125,0.078125 4.6875,0.078125 Z" id="XMLID_4484_" fill-opacity="0.2" fill="#FFFFFF" fill-rule="nonzero"></path>
+                                    <path d="M10.625,9.296875 L4.6875,9.296875 C2.1125,9.296875 0.021875,7.21875 0,4.646875 C0,4.659375 0,4.671875 0,4.684375 C0,7.271875 2.1,9.371875 4.6875,9.371875 L10.625,9.371875 C12.35,9.371875 13.75,7.971875 13.75,6.246875 C13.75,6.234375 13.75,6.221875 13.75,6.209375 C13.728125,7.91875 12.3375,9.296875 10.625,9.296875 Z" id="XMLID_4481_" fill-opacity="0.1" fill="#212121" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <path d="M10.625,3.125 L9.10625,3.125 C8.4625,1.303125 6.728125,0 4.6875,0 C2.1,0 0,2.1 0,4.6875 C0,7.275 2.1,9.375 4.6875,9.375 L10.625,9.375 C12.35,9.375 13.75,7.975 13.75,6.25 C13.75,4.525 12.35,3.125 10.625,3.125 Z" id="XMLID_4478_" fill="url(#radialGradient-16)" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+                <g id="Group" fill-opacity="0.1" fill-rule="nonzero">
+                    <path d="M22,0.25 C34.1075,0.25 43.93,10.0325 43.9975,22.125 C43.9975,22.0825 44,22.0425 44,22 C44,9.85 34.15,0 22,0 C9.85,0 0,9.85 0,22 C0,22.0425 0.0025,22.0825 0.0025,22.125 C0.07,10.0325 9.8925,0.25 22,0.25 Z" id="Path" fill="#FFFFFF"></path>
+                    <path d="M22,43.75 C34.1075,43.75 43.93,33.9675 43.9975,21.875 C43.9975,21.9175 44,21.9575 44,22 C44,34.15 34.15,44 22,44 C9.85,44 0,34.15 0,22 C0,21.9575 0.0025,21.9175 0.0025,21.875 C0.07,33.9675 9.8925,43.75 22,43.75 Z" id="Path" fill="#3E2723"></path>
+                </g>
+                <circle id="Oval" fill="url(#radialGradient-17)" fill-rule="nonzero" cx="22" cy="22" r="22"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

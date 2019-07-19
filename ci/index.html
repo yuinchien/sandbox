@@ -14,725 +14,78 @@
 	<script type="text/javascript" src="ScrollMagic.min.js"></script>
 	<script type="text/javascript" src="debug.addIndicators.min.js"></script>
 
-	<title>Lighthouse</title>
+	<title>Lighthouse CI</title>
 </head>
 <body>
 
-  <div id="right-panel">
-
-    <div class="mask"></div>
-
-    <div class="container">
-      <div class="toolbar"><div class="flex"></div><i id="button-panel-close" class="button material-icons">close</i></div>
-      <div class="wrapper">
-        <div class="info">
-          <p>Chrome extensions negatively affected the load performance for Lighthouse</p>
-          <ul>
-            <li>Try auditing in incognito mode</li>
-            <li>Try auditing from a Chrome profile without extensions</li>
-          </ul>
-        </div>
-
-        <div class="row-caption audits-collapsed">
-          <div class="caption flex">Performance / Opportunities <span>(4)</span></div>
-          <i class="material-icons">keyboard_arrow_down</i>
-        </div>
-
-        <div class="row-caption audits-collapsed">
-          <div class="caption flex">Performance / Diagnostics <span>(2)</span></div>
-          <i class="material-icons">keyboard_arrow_down</i>
-        </div>
-
-        <div class="row-caption audits-collapsed">
-          <div class="caption flex">Progressive Web App <span>(1)</span></div>
-          <i class="material-icons">keyboard_arrow_down</i>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div id="topbar" class="toolbar">
-    <div class="symbol-small"></div>
-    <div id="site-url" class="flex">https://www.cnn.com/</div>
-    <i id="button-panel-open" class="button material-icons" style="margin-right: 6px;">error_outline</i>
-    <i id="button-dropdown" style="margin-right:4px;" class="material-icons button">more_vert</i>
-  </div>
-
-  <div id="dropdown">
-    <div><i class="material-icons button">print</i>Print Summary</div>
-    <div><i class="material-icons button">print</i>Print Expanded</div>
-    <div><i class="material-icons button">content_copy</i>Copy JSON</div>
-    <div><i class="material-icons button">get_app</i>Save as HTML</div>
-    <div><i class="material-icons button">get_app</i>Save as JSON</div>
-    <div><i class="material-icons button">open_in_browser</i>Open in Viewer</div>
-  </div>
-
   <div id="header">
-
-    <div id="scores">
-      <div class="score-container score-performance">
-        <div class="score red">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 103 265; stroke-dashoffset: 103;"/>
-          </svg>
-          <div class="number">45</div>
-        </div>
-        <div class="title">Performance</div>
-      </div>
-
-      <div class="score-container score-accessibility">
-        <div class="score orange" >
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 259 158; stroke-dashoffset: 150;"/>
-          </svg>
-          <div class="number">67</div>
-        </div>
-        <div class="title">Accessibility</div>
-      </div>
-
-      <div class="score-container score-bestpractices">
-        <div class="score red">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 44 282; stroke-dashoffset: 60;"/>
-          </svg>
-          <div class="number">13</div>
-        </div>
-        <div class="title">Best Practices</div>
-      </div>
-
-      <div class="score-container score-seo">
-        <div class="score green">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 243 25; stroke-dashoffset: 1;" />
-          </svg>
-          <div class="number">98</div>
-        </div>
-        <div class="title">SEO</div>
-      </div>
-
-      <div class="score-container score-pwa">
-        <div class="score green pwa"></div>
-        <div class="title">Progressive Web App</div>
-      </div>
-
-      <div class="score-container score-googleadsspeed">
-        <div class="score green score-plugin">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 226 40; stroke-dashoffset: 1;" />
-          </svg>
-          <div class="number">91</div>
-        </div>
-        <div class="title">Google Ads Speed</div>
-      </div>
-
-    </div>
-
-    <div id="scores-sticky">
-
-      <div id="highlighter"></div>
-      <div class="score-container score-performance">
-        <div class="score red">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 103 265; stroke-dashoffset: 103;"/>
-          </svg>
-          <div class="number">45</div>
-        </div>
-        <div class="title">Performance</div>
-      </div>
-
-      <div class="score-container score-accessibility">
-        <div class="score orange" >
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 259 158; stroke-dashoffset: 150;"/>
-          </svg>
-          <div class="number">67</div>
-        </div>
-        <div class="title">Accessibility</div>
-      </div>
-
-      <div class="score-container score-bestpractices">
-        <div class="score red">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 44 282; stroke-dashoffset: 60;"/>
-          </svg>
-          <div class="number">13</div>
-        </div>
-        <div class="title">Best Practices</div>
-      </div>
-
-      <div class="score-container score-seo">
-        <div class="score green">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 243 25; stroke-dashoffset: 1;" />
-          </svg>
-          <div class="number">98</div>
-        </div>
-        <div class="title">SEO</div>
-      </div>
-
-      <div class="score-container score-pwa">
-        <div class="score green pwa"></div>
-        <div class="title">Progressive Web App</div>
-      </div>
-
-      <div class="score-container score-googleadsspeed">
-        <div class="score green score-plugin">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 226 40; stroke-dashoffset: 1;" />
-          </svg>
-          <div class="number">91</div>
-        </div>
-        <div class="title">Google Ads Speed</div>
-      </div>
-
-    </div>
-
-    <div id="score-scale">
-      <div class="red">0–49</div>
-      <div class="orange">50–89</div>
-      <div class="green">90–100</div>
-    </div>
-
+    <div id="logo"></div>
+    <div class="dropdown"><span>Project</span>Chrome Website<i class="material-icons">arrow_drop_down</i></div>
+    <div class="dropdown"><span>URL</span>https://www.google.com/chrome<i class="material-icons">arrow_drop_down</i></div>
+    <div class="dropdown"><span>Branch</span>master<i class="material-icons">arrow_drop_down</i></div>
+    <div style="flex:1;"></div>
+    <div id="button-compare" class="button icon-label"><i class="material-icons">compare</i>Compare</div>
   </div>
 
-  <div id="trigger"></div>
-
-  <div class="section" id="section-performance">
-
-    <div class="wrapper">
-
-      <div class="score-container big">
-        <div class="score red">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 103 265; stroke-dashoffset: 103;"/>
-          </svg>
-          <div class="number">45</div>
-        </div>
-        <div class="title">Performance</div>
-      </div>
-
-      <div class="row-caption subtitle">
-        <div class="caption">Budgets<span class="desc">&mdash;Need a help to setup budgets? Check out the performance budget <a>best practices</a>.</span></div>
-      </div>
-
-      <div id="budget">
-        <div class="row row-list-th">
-          <div style="flex:1;margin-right: 28px;">Type</div>
-          <div style="flex:1;text-align:right;">Requests</div>
-          <div style="flex:1;text-align:right;">File Size</div>
-          <div style="flex:1;text-align:right;">Overbudget</div>
-        </div>
-
-        <div class="audits">
-          <div class="audit red">
-            <div class=" row">
-              <div class="title" style="flex:1;"><span class="red">Image</span></div>
-              <div style="flex:1;text-align:right;">4</div>
-              <div style="flex:1;text-align:right;"><span class="red">220.9 KB</span></div>
-              <div style="flex:1;text-align:right;"><span class="red">170.9 KB</span></div>
-            </div>
-          </div>
-          <div class="audit red">
-            <div class=" row">
-              <div class="title" style="flex:1;"><span class="red">Third Party</span></div>
-              <div style="flex:1;text-align:right;">13</div>
-              <div style="flex:1;text-align:right;"><span class="red">101.5 KB</span></div>
-              <div style="flex:1;text-align:right;"><span class="red">101.5 KB</span></div>
-            </div>
-          </div>
-          <div class="audit red">
-            <div class="item row">
-              <div class="title" style="flex:1;"><span class="red">Document</span></div>
-              <div style="flex:1;text-align:right;"><span class="red">107</span></div>
-              <div style="flex:1;text-align:right;"><span class="red">41.5 KB</span></div>
-              <div style="flex:1;text-align:right;"><span class="red">37.6 KB</span></div>
-            </div>
-          </div>
-          <div class="audit red">
-            <div class="item row">
-              <div class="title" style="flex:1;"><span class="red">Font</span></div>
-              <div style="flex:1;text-align:right;">5</div>
-              <div style="flex:1;text-align:right;"><span class="red">37.6 KB</span></div>
-              <div style="flex:1;text-align:right;"><span class="red">1.8 KB</span></div>
-            </div>
-          </div>
-          <div class="audit green">
-            <div class="item row">
-              <div class="title" style="flex:1;">Stylesheet</div>
-              <div style="flex:1;text-align:right;">1</div>
-              <div style="flex:1;text-align:right;">21.8 KB</div>
-              <div style="flex:1;text-align:right;">-</div>
-            </div>
-          </div>
-          <div class="audit green">
-            <div class="item row">
-              <div class="title" style="flex:1;">Document</div>
-              <div style="flex:1;text-align:right;">1</div>
-              <div style="flex:1;text-align:right;">2.0 KB</div>
-              <div style="flex:1;text-align:right;">-</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row-caption">
-        <div class="caption flex">Metrics</div>
-        <div class="toggle-icon-button">
-          <div class="button button-less selected"><i class="material-icons">short_text</i></div>
-          <div class="button button-more"><i class="material-icons">notes</i></div>
-        </div>
-      </div>
-
-      <div id="audits-performance-metrics" class="audits two-col"></div>
-
-      <div class="clear"></div>
-
-      <div id="screenshots">
-        <div class="flex"><img src="images/blank.png"></div>
-        <div class="flex"><img src="images/blank.png"></div>
-        <div class="flex"><img src="images/blank.png"></div>
-        <div class="flex"><img src="images/1.png"></div>
-        <div class="flex"><img src="images/1.png"></div>
-        <div class="flex"><img src="images/1.png"></div>
-        <div class="flex"><img src="images/1.png"></div>
-        <div class="flex"><img src="images/1.png"></div>
-        <div class="flex"><img src="images/1.png"></div>
-        <div class="flex"><img src="images/1.png"></div>
-      </div>
-
-      <div id="content-performance"></div>
-
-      <div class="row-caption audits-collapsed">
-        <div class="caption flex">Passed audits <span>(3)</span></div>
-        <i class="material-icons">keyboard_arrow_down</i>
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="section" id="section-accessibility">
-    <div class="wrapper">
-      <div class="score-container big">
-        <div class="score orange" >
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 259 158; stroke-dashoffset: 150;"/>
-          </svg>
-          <div class="number">67</div>
-        </div>
-        <div class="title">Accessibility<i class="material-icons icon-info-small">info_outline</i></div>
-        <!-- <p>These checks highlight opportunities to improve the accessibility of your web app. Only a subset of accessibility issues can be automatically detected so so manual testing is also encouraged.</p> -->
-      </div>
-
-      <div id="content-accessibility"></div>
-
-      <div class="row-caption audits-collapsed">
-        <div class="caption flex">Additional items to manually check <span>(11)</span></div>
-        <i class="material-icons">keyboard_arrow_down</i>
-      </div>
-      <div class="row-caption audits-collapsed">
-        <div class="caption flex">Passed audits <span>(6)</span></div>
-        <i class="material-icons">keyboard_arrow_down</i>
-      </div>
-      <div class="row-caption audits-collapsed">
-        <div class="caption flex">Not applicable <span>(3)</span></div>
-        <i class="material-icons">keyboard_arrow_down</i>
-      </div>
-    </div>
-
-  </div>
-
-
-  <div class="section" id="section-bestpractices">
-
-    <div class="wrapper">
-
-      <div class="score-container big">
-        <div class="score red">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 44 282; stroke-dashoffset: 60;"/>
-          </svg>
-          <div class="number">13</div>
-        </div>
-        <div class="title">Best Practices</div>
-      </div>
-
-      <div id="content-bestpractices"></div>
-
-      <!-- <div class="audits">
-        <div class="audit red">
-          <div class="row">
-            <div class="title">Does not use passive listeners to improve scrolling performance</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-        <div class="audit red">
-          <div class="row">
-            <div class="title">Uses document.write()</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-        <div class="audit red">
-          <div class="row">
-            <div class="title">Links to cross-origin destinations are unsafe</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-        <div class="audit red">
-          <div class="row">
-            <div class="title">Browser errors were logged to the console</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-      </div> -->
-
-      <div class="row-caption audits-collapsed">
-        <div class="caption flex">Passed audits <span>(11)</span></div>
-        <i class="material-icons">keyboard_arrow_down</i>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="section" id="section-seo">
-
-    <div class="wrapper">
-
-      <div class="score-container big">
-        <div class="score green">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 44 282; stroke-dashoffset: 60;"/>
-          </svg>
-          <div class="number">98</div>
-        </div>
-        <div class="title">SEO<i class="material-icons icon-info-small">info_outline</i></div>
-        <!-- <p>These checks ensure that your page is optimized for search engine results ranking. There are additional factors Lighthouse does not check that may affect your search ranking. <a href="">Learn more</a>.</p> -->
-      </div>
-
-      <div id="content-seo"></div>
-
-      <div class="row-caption audits-collapsed">
-        <div class="caption flex">Additional items to manually check <span>(2)</span></div>
-        <i class="material-icons">keyboard_arrow_down</i>
-      </div>
-      <div class="row-caption audits-collapsed">
-        <div class="caption flex">Passed audits <span>(11)</span></div>
-        <i class="material-icons">keyboard_arrow_down</i>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="section" id="section-pwa">
-
-    <div class="wrapper">
-
-      <div class="score-container big">
-        <div class="score green pwa"></div>
-        <div class="title">Progressive Web App<i class="material-icons icon-info-small">info_outline</i></div>
-        <!-- <p>These checks validate the aspects of a Progressive Web App. <a href="">Learn more</a>.</p> -->
-      </div>
-
-      <div id="content-pwa"></div>
-
-      <div class="row audits-collapsed">
-        <div class="caption flex">Additional items to manually check <span>(3)</span></div>
-        <i class="material-icons">keyboard_arrow_down</i>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="section" id="section-googleadsspeed">
-    <div class="wrapper">
-
-      <div class="score-container big">
-        <div class="score green score-plugin">
-          <svg viewBox="0 0 120 120">
-            <circle class="bg" r="60" cx="60" cy="60" />
-            <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 226 40; stroke-dashoffset: 1;" />
-          </svg>
-          <div class="number">91</div>
-        </div>
-        <div class="title">Google Ads Speed</div>
-      </div>
-
-      <div class="row empty"></div>
-
-      <div class="audits">
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Sed ut perspiciatis unde omnis iste natus error sit voluptatem</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Nemo enim ipsam voluptatem</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-        <div class="audit green">
-          <div class="row">
-            <div class="title">Ut enim ad minima veniam</div>
-            <i class="material-icons">keyboard_arrow_down</i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section" id="section-runtimesettings">
-    <div class="wrapper">
-      <div class="score-container big">
-        <div class="title">Runtime Settings</div>
-      </div>
-      <div class="items">
-        <div class="item"><div class="title">URL</div><div>https://www.cnn.com/</div></div>
-        <div class="item"><div class="title">Fetch time</div><div>Jan 11, 2019, 3:55 PM PST</div></div>
-        <div class="item"><div class="title">Device</div><div>Emulated Nexus 5X</div></div>
-        <div class="item"><div class="title">Network throttling</div><div>150 ms TCP RTT, 1,638.4 Kbps throughput (Simulated)</div></div>
-        <div class="item"><div class="title">CPU throttling</div><div>4x slowdown (Simulated)</div></div>
-        <div class="item"><div class="title">User agent (host)</div><div>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36</div></div>
-        <div class="item"><div class="title">User agent (network)</div><div>Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3559.0 Mobile Safari/537.36</div></div>
-        <div class="item"><div class="title">CPU/Memory Power</div><div>1373</div></div>
-      </div>
+  <div id="charts">
+    <div class="card center medium"></div>
+    <div class="three-up">
+      <div class="card small"></div>
+      <div class="card small"></div>
+      <div class="card small"></div>
+      <div class="card small"></div>
+      <div class="card small"></div>
+      <div class="card small"></div>
     </div>
   </div>
 
   <script type="text/javascript">
 
-  function checkURL(url) {
-    return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
-  }
-  function renderHeader(data) {
-    return `<div class="row row-list-th">
-      ${data.map((header) => {
-        return (header=='Image') ? `<div class="thumbnail-header">${header}</div>` : `<div>${header}</div>`;
-      }).join('')}
-      </div>`;
-  }
-  function renderTable(table) {
-    return `
-      ${ renderHeader(table.header) }
-      <div class="items">
-        ${table.items.map((item) => {
-          var isSingleItem = false;
-          if(item.length==1) {
-            isSingleItem = true;
-          }
-          return `
-            <div class="item row ${isSingleItem ? `single-item` : ''}">
-            ${item.map((content) => {
-              if( checkURL(content) ) {
-                return `
-                <div class="thumbnail" style="background-image:url(${content})"></div>
-                `;
-              } else {
-                return `
-                <div>${content}</div>
-                `;
-              }
-            }).join('')}
-            </div>
-          `;
-        }).join('')}
-      </div>`;
-  }
-  function renderCaption(caption, desc) {
-    if(desc) {
-      return `<div class="row-caption subtitle">
-        <div class="caption">${caption}<span class="desc">&mdash;${desc}</span></div>
-      </div>`;
-    } else {
-      return `<div class="row-caption subtitle">
-        <div class="caption">${caption}</div>
-      </div>`;
-    }
-  }
-  function renderMarkup(data) {
-    return `<div class="audit ${data.color}">
-      <div class="row">
-        <div class="title">${data.title}</div>
-        ${data.time? `<div class="time">${data.time} s</div>` : ''}
-        <i class="material-icons">keyboard_arrow_down</i>
-      </div>
-      ${data.warning? `<div class="warning">${data.warning}</div>` : ''}
-      ${data.error? `<div class="error">${data.error}</div>` : ''}
-      <div class="expandable">
-        <p>${data.description}</p>
-        ${data.table ? renderTable(data.table):''}
-      </div>
-    </div>`;
-  }
-  function renderMarkupAll(data) {
-    return data.map((d) => {
-      return `
-      ${ renderCaption(d.caption, d.caption_desc) }
-      ${ (d.header) ? renderHeader(d.header) : '' }
-      <div class="audits">
-        ${ d.audits.map((audit) => { return renderMarkup(audit); }).join('') }
-      </div>`;
-    }).join('');
-  }
+  // function checkURL(url) {
+  //   return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
+  // }
+  //
+  // function renderMarkup(data) {
+  //   return `<div class="audit ${data.color}">
+  //     <div class="row">
+  //       <div class="title">${data.title}</div>
+  //       ${data.time? `<div class="time">${data.time} s</div>` : ''}
+  //       <i class="material-icons">keyboard_arrow_down</i>
+  //     </div>
+  //     ${data.warning? `<div class="warning">${data.warning}</div>` : ''}
+  //     ${data.error? `<div class="error">${data.error}</div>` : ''}
+  //     <div class="expandable">
+  //       <p>${data.description}</p>
+  //       ${data.table ? renderTable(data.table):''}
+  //     </div>
+  //   </div>`;
+  // }
+  // function renderMarkupAll(data) {
+  //   return data.map((d) => {
+  //     return `
+  //     ${ renderCaption(d.caption, d.caption_desc) }
+  //     ${ (d.header) ? renderHeader(d.header) : '' }
+  //     <div class="audits">
+  //       ${ d.audits.map((audit) => { return renderMarkup(audit); }).join('') }
+  //     </div>`;
+  //   }).join('');
+  // }
 
-  var SECTIONS = ['performance', 'accessibility', 'bestpractices', 'seo', 'pwa', 'googleadsspeed'];
-  var highlighter = document.getElementById('highlighter');
-
-  function jumpToSection(e) {
-    var name = e.currentTarget.className.replace(/score-container/g,'').trim().replace('score-','');
-    var section = document.getElementById('section-'+name);
-    window.scrollTo({
-      top: section.offsetTop - 72,
-      left: 0,
-      behavior: 'smooth'
-    });
-    highlighter.style.left = e.currentTarget.offsetLeft + 'px';
-  }
+  // var SECTIONS = ['performance', 'accessibility', 'bestpractices', 'seo', 'pwa', 'googleadsspeed'];
 
   window.onload = function() {
 
-    let markupPerformanceMetrics = data_performance_metrics.audits.map((i) => {
-      return `<div class="audit ${i.color}">
-        <div class="row">
-          <div class="title">${i.title}</div>
-          <div class="time">${i.time} s</div>
-        </div>
-        <div class="description">${i.description}</div>
-      </div>`;
-    });
+    // let markupPerformanceMetrics = data_performance_metrics.audits.map((i) => {
+    //   return `<div class="audit ${i.color}">
+    //     <div class="row">
+    //       <div class="title">${i.title}</div>
+    //       <div class="time">${i.time} s</div>
+    //     </div>
+    //     <div class="description">${i.description}</div>
+    //   </div>`;
+    // });
 
-    document.getElementById('audits-performance-metrics').innerHTML = markupPerformanceMetrics.join('');
-    document.getElementById('content-performance').innerHTML = renderMarkupAll(data_performance);
-    document.getElementById('content-accessibility').innerHTML = renderMarkupAll(data_accessibility);
-    document.getElementById('content-bestpractices').innerHTML = renderMarkupAll(data_bestpractices);
-    document.getElementById('content-seo').innerHTML = renderMarkupAll(data_seo);
-    document.getElementById('content-pwa').innerHTML = renderMarkupAll(data_pwa);
-
-
-    // init controller
-    var controller = new ScrollMagic.Controller();
-  	var scene = new ScrollMagic.Scene({triggerElement: "#trigger", offset: -96, triggerHook: 'onLeave'})
-            .setClassToggle("#header", "stuck")
-  					.addTo(controller);
-
-    for(var i=0; i<SECTIONS.length; i++) {
-      var scene = new ScrollMagic.Scene({triggerElement: '#section-'+SECTIONS[i]})
-        .on("enter leave", function(e) {
-          var index = SECTIONS.indexOf( this.triggerElement().id.split('-')[1] );
-          if(e.type=='leave') {
-            index--;
-            if(index<0) { index = 0; }
-          }
-          var score = document.getElementById('scores-sticky').getElementsByClassName('score-'+SECTIONS[index])[0];
-          var left = score.offsetLeft;
-          highlighter.style.left = left + 'px';
-        })
-        .addTo(controller);
-
-      var scores = document.querySelectorAll('.score-'+SECTIONS[i]);
-      scores.forEach(function(e, i, array) {
-        e.addEventListener('click', jumpToSection, false);
-      });
-    }
-
-    // setTimeout(function(){ document.body.classList.add("panel"); }, 1000);
-
-    document.getElementById('right-panel').getElementsByClassName('mask')[0].addEventListener('click', function() {
-      document.body.classList.remove("panel");
-    });
-
-    var buttonLess = document
-      .getElementById("section-performance")
-      .getElementsByClassName("button-less")[0];
-    var buttonMore = document
-      .getElementById("section-performance")
-      .getElementsByClassName("button-more")[0];
-    var metrics = document.getElementById("audits-performance-metrics");
-
-    buttonLess.addEventListener('click', function() {
-      var audits = metrics.getElementsByClassName("audit");
-      for(var i in audits) {
-        audits.item(i).classList.remove('open');
-      }
-      buttonLess.classList.add('selected');
-      buttonMore.classList.remove('selected');
-    }, false);
-    buttonMore.addEventListener('click', function() {
-      var audits = metrics.getElementsByClassName("audit");
-      for(var i in audits) {
-        audits.item(i).classList.add('open');
-      }
-      buttonMore.classList.add('selected');
-      buttonLess.classList.remove('selected');
-    }, false);
-
-    document.getElementById('button-panel-close').addEventListener('click', function(){
-      document.body.classList.remove("panel");
-    }, false);
-
-    document.getElementById('button-panel-open').addEventListener('click', function(){
-      document.body.classList.add("panel");
-    }, false);
-
-    document.getElementById('button-dropdown').addEventListener('click', function(e){
-      e.stopPropagation();
-      document.body.classList.add("dropdown");
-    }, false);
-
-    document.body.addEventListener('click', function(e){
-      if(document.body.classList.contains('dropdown')) {
-        document.body.classList.remove("dropdown");
-      }
-    }, false);
-
-    var expandables = document.querySelectorAll(".expandable");
-    expandables.forEach(function(e, i, array) {
-      var audit = e.closest('.audit');
-      audit.getElementsByClassName('row')[0].addEventListener('click', function(){
-        this.closest('.audit').classList.toggle('open');
-      }, false);
-    });
-
-    document.addEventListener("keyup", toggleTheme, false);
-    function toggleTheme(e) {
-    var keyCode = e.keyCode;
-      if(keyCode==68) {
-        document.body.classList.toggle("dark");
-      } else if(keyCode==76) {
-        const style = getComputedStyle(document.body);
-        const url = style.getPropertyValue('--symbol-url');
-        const root = document.documentElement;
-        if(url.includes('_a')) {
-          root.style.setProperty('--symbol-url', 'url(images/ic_lighthouse_24x24_b.svg)');
-        } else {
-          root.style.setProperty('--symbol-url', 'url(images/ic_lighthouse_24x24_a.svg)');
-        }
-      }
-    }
-
+    // document.getElementById('audits-performance-metrics').innerHTML = markupPerformanceMetrics.join('');
   }
 
   </script>
