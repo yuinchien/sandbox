@@ -33,7 +33,7 @@ body {
 
 .material-icons {
   font-size: var(--icon-size);
-  opacity: .54;
+  /* opacity: .54; */
 }
 .button {
   cursor: pointer;
@@ -72,6 +72,11 @@ body {
   margin-left: 4px;
 }
 
+.row {
+  display: flex;
+  align-items: center;
+}
+
 #header {
   display: flex;
   align-items: center;
@@ -95,15 +100,37 @@ body {
 }
 #button-compare {
   color: var(--color-blue);
-  opacity: 1;
+}
+#button-swap {
+  margin: 0 3px;
 }
 
-#charts {
+body.compare .compare-hide {
+  display: none;
+}
+.compare-show {
+  display: none;
+}
+body.compare .compare-show {
+  display: inherit;
+}
+
+#dropdown-commits {
+  position: absolute;
+  left: 50%;
+  transform: translate3d(-50%,0,0);
+}
+
+.hide {
+  display: none;
+}
+
+.cards {
   position: relative;
   height: calc(100vh - var(--header-height));
   margin-top: var(--header-height);
   overflow-y: scroll;
-  padding: 20px 0;
+  padding: 20px;
 }
 .card {
   border: var(--border-style);
@@ -124,6 +151,20 @@ body {
 }
 .card.small {
   max-width: 360px;
+  min-height: 320px;
+}
+.card.large {
+  margin-left: -20px !important;
+  margin-right: -20px !important;
+  min-height: 280px;
+  border-radius: 0;
+}
+
+#cards-compare .card {
+  margin-left: auto;
+  margin-right: auto;
+}
+#cards-compare .card.medium {
   min-height: 320px;
 }
 

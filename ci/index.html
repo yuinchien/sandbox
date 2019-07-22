@@ -10,9 +10,8 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto:400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-  <script type="text/javascript" src="data.js"></script>
-	<script type="text/javascript" src="ScrollMagic.min.js"></script>
-	<script type="text/javascript" src="debug.addIndicators.min.js"></script>
+  <!-- <script type="text/javascript" src="data.js"></script> -->
+	<script type="text/javascript" src="anime.min.js"></script>
 
 	<title>Lighthouse CI</title>
 </head>
@@ -20,14 +19,19 @@
 
   <div id="header">
     <div id="logo"></div>
-    <div class="dropdown"><span>Project</span>Chrome Website<i class="material-icons">arrow_drop_down</i></div>
-    <div class="dropdown"><span>URL</span>https://www.google.com/chrome<i class="material-icons">arrow_drop_down</i></div>
-    <div class="dropdown"><span>Branch</span>master<i class="material-icons">arrow_drop_down</i></div>
+    <div class="dropdown" id="dropdown-project"><span>Project</span>Chrome Website<i class="material-icons">arrow_drop_down</i></div>
+    <div class="dropdown compare-hide" id="dropdown-url"><span>URL</span>https://www.google.com/chrome<i class="material-icons">arrow_drop_down</i></div>
+    <div class="dropdown compare-hide" id="dropdown-branch"><span>Branch</span>master<i class="material-icons">arrow_drop_down</i></div>
     <div style="flex:1;"></div>
-    <div id="button-compare" class="button icon-label"><i class="material-icons">compare</i>Compare</div>
+    <div id="button-compare" class="compare-hide button icon-label"><i class="material-icons">compare</i>Compare</div>
+    <div id="dropdown-commits" class="compare-show row">
+      <div class="dropdown" id="dropdown-commit-1"><span>Commit</span>b750ea3<i class="material-icons">arrow_drop_down</i></div>
+      <div id="button-swap" class="button"><i class="material-icons">swap_horiz</i></div>
+      <div class="dropdown" id="dropdown-commit-2"><span>Commit</span>b751de5<i class="material-icons">arrow_drop_down</i></div>
+    </div>
   </div>
 
-  <div id="charts">
+  <div class="cards" id="cards-home">
     <div class="card center medium"></div>
     <div class="three-up">
       <div class="card small"></div>
@@ -37,6 +41,16 @@
       <div class="card small"></div>
       <div class="card small"></div>
     </div>
+  </div>
+
+  <div class="cards hide" id="cards-compare">
+    <div class="card center large"></div>
+    <div class="card medium"></div>
+    <div class="card medium"></div>
+    <div class="card medium"></div>
+    <div class="card medium"></div>
+    <div class="card medium"></div>
+    <div class="card medium"></div>
   </div>
 
   <script type="text/javascript">
@@ -74,6 +88,39 @@
   // var SECTIONS = ['performance', 'accessibility', 'bestpractices', 'seo', 'pwa', 'googleadsspeed'];
 
   window.onload = function() {
+
+    var cardsHome = document.getElementById('cards-home');
+    var cardsCompare = document.getElementById('cards-compare');
+
+    var buttonCompare = document.getElementById('button-compare');
+    buttonCompare.addEventListener('click', function(){
+      document.body.classList.add('compare');
+
+      anime({
+        targets: '#cards-home .card',
+        opacity: 0,
+        translateY: -20,
+        duration: 400,
+        easing: 'easeOutCubic',
+        complete: function(anim) {
+          cardsHome.classList.add('hide');
+          anime({
+            targets: '#cards-compare .card',
+            opacity: [0, 1],
+            translateY: [20, 0],
+            duration: 600,
+            easing: 'easeOutCubic'
+          });
+          cardsCompare.classList.remove('hide');
+        }
+      });
+
+
+      // cardsHome.querySelectorAll('.card').forEach(function(c, i){
+      //
+      // });
+    });
+
 
     // let markupPerformanceMetrics = data_performance_metrics.audits.map((i) => {
     //   return `<div class="audit ${i.color}">
