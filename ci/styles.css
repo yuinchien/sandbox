@@ -121,6 +121,21 @@ body.compare .compare-show {
   transform: translate3d(-50%,0,0);
 }
 
+#container-detail {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+}
+body.detail #container-detail {
+  pointer-events: auto;
+}
+
 .hide {
   display: none;
 }

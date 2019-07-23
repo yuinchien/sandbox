@@ -44,48 +44,23 @@
   </div>
 
   <div class="cards hide" id="cards-compare">
-    <div class="card center large"></div>
-    <div class="card medium"></div>
-    <div class="card medium"></div>
-    <div class="card medium"></div>
-    <div class="card medium"></div>
-    <div class="card medium"></div>
-    <div class="card medium"></div>
+    <div class="card center large card-summary"></div>
+    <div id="audit-detail">
+      <div class="card medium"></div>
+      <div class="card medium"></div>
+      <div class="card medium"></div>
+      <div class="card medium"></div>
+      <div class="card medium"></div>
+      <div class="card medium"></div>
+    </div>
+    <div id="container-detail"></div>
   </div>
 
   <script type="text/javascript">
 
-  // function checkURL(url) {
-  //   return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
-  // }
-  //
-  // function renderMarkup(data) {
-  //   return `<div class="audit ${data.color}">
-  //     <div class="row">
-  //       <div class="title">${data.title}</div>
-  //       ${data.time? `<div class="time">${data.time} s</div>` : ''}
-  //       <i class="material-icons">keyboard_arrow_down</i>
-  //     </div>
-  //     ${data.warning? `<div class="warning">${data.warning}</div>` : ''}
-  //     ${data.error? `<div class="error">${data.error}</div>` : ''}
-  //     <div class="expandable">
-  //       <p>${data.description}</p>
-  //       ${data.table ? renderTable(data.table):''}
-  //     </div>
-  //   </div>`;
-  // }
-  // function renderMarkupAll(data) {
-  //   return data.map((d) => {
-  //     return `
-  //     ${ renderCaption(d.caption, d.caption_desc) }
-  //     ${ (d.header) ? renderHeader(d.header) : '' }
-  //     <div class="audits">
-  //       ${ d.audits.map((audit) => { return renderMarkup(audit); }).join('') }
-  //     </div>`;
-  //   }).join('');
-  // }
-
-  // var SECTIONS = ['performance', 'accessibility', 'bestpractices', 'seo', 'pwa', 'googleadsspeed'];
+  var gap = 20;
+  var easing = 'easeOutCubic';
+  var duration = 500;
 
   window.onload = function() {
 
@@ -95,43 +70,69 @@
     var buttonCompare = document.getElementById('button-compare');
     buttonCompare.addEventListener('click', function(){
       document.body.classList.add('compare');
-
       anime({
         targets: '#cards-home .card',
         opacity: 0,
         translateY: -20,
-        duration: 400,
-        easing: 'easeOutCubic',
+        duration: duration/2,
+        easing: easing,
         complete: function(anim) {
           cardsHome.classList.add('hide');
           anime({
             targets: '#cards-compare .card',
             opacity: [0, 1],
             translateY: [20, 0],
-            duration: 600,
-            easing: 'easeOutCubic'
+            duration: duration,
+            easing: easing
           });
           cardsCompare.classList.remove('hide');
         }
       });
-
-
-      // cardsHome.querySelectorAll('.card').forEach(function(c, i){
-      //
-      // });
     });
 
+    var cardSummaryCompare = document.getElementById('cards-compare').querySelector('.card-summary');
+    var cardsAuditDetail = document.getElementById('audit-detail').querySelectorAll('.card');
+    var containerDetail = document.getElementById('container-detail');
 
-    // let markupPerformanceMetrics = data_performance_metrics.audits.map((i) => {
-    //   return `<div class="audit ${i.color}">
-    //     <div class="row">
-    //       <div class="title">${i.title}</div>
-    //       <div class="time">${i.time} s</div>
-    //     </div>
-    //     <div class="description">${i.description}</div>
-    //   </div>`;
-    // });
+    cardsAuditDetail.forEach(function(c, i){
+      c.addEventListener('click', function(){
+        document.body.classList.add('detail');
 
+        anime({
+          targets: '#cards-compare .card-summary',
+          opacity: [1, 0],
+          translateY: -20,
+          duration: duration,
+          easing: easing,
+          complete: function(anim) {
+            anime({
+              targets: '#cards-compare .card-summary',
+              height: 0,
+              duration: duration,
+              easing: 'easeOutCubic'
+            });
+          }
+        });
+
+        anime({
+          targets: '#audit-detail',
+          translateY: -300,
+          width: window.innerWidth/2 - gap*2,
+          duration: duration,
+          easing: easing
+        });
+
+        anime({
+          targets: '#container-detail',
+          opacity: 1,
+          translateY: [20,0],
+          delay: duration/2,
+          duration: duration,
+          easing: easing,
+        });
+
+      });
+    });
     // document.getElementById('audits-performance-metrics').innerHTML = markupPerformanceMetrics.join('');
   }
 
