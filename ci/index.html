@@ -44,7 +44,7 @@
   </div>
 
   <div class="cards hide" id="cards-compare">
-    <div class="card center large card-summary"></div>
+    <div class="center card-summary"></div>
     <div id="audit-detail">
       <div class="card medium"></div>
       <div class="card medium"></div>
@@ -53,7 +53,9 @@
       <div class="card medium"></div>
       <div class="card medium"></div>
     </div>
-    <div id="container-detail"></div>
+    <div id="container-detail">
+      <div id="button-close-detail" class="button"><i class="material-icons">close</i></div>
+    </div>
   </div>
 
   <script type="text/javascript">
@@ -79,7 +81,7 @@
         complete: function(anim) {
           cardsHome.classList.add('hide');
           anime({
-            targets: '#cards-compare .card',
+            targets: ['#audit-detail', '#cards-compare .card-summary'],
             opacity: [0, 1],
             translateY: [20, 0],
             duration: duration,
@@ -92,7 +94,40 @@
 
     var cardSummaryCompare = document.getElementById('cards-compare').querySelector('.card-summary');
     var cardsAuditDetail = document.getElementById('audit-detail').querySelectorAll('.card');
-    var containerDetail = document.getElementById('container-detail');
+    var buttonCloseDetail = document.getElementById('button-close-detail');
+
+    buttonCloseDetail.addEventListener('click', function(){
+
+      anime({
+        targets: '#cards-compare .card-summary',
+        opacity: 1,
+        translateY: 0,
+        duration: duration,
+        delay: duration/4,
+        easing: easing
+      });
+
+      anime({
+        targets: '#audit-detail',
+        translateY: 0,
+        width: window.innerWidth,
+        duration: duration,
+        delay: duration/4,
+        easing: easing
+      });
+
+      anime({
+        targets: '#container-detail',
+        opacity: 0,
+        translateY: 20,
+        duration: duration,
+        easing: easing,
+        complete: function(anim) {
+          document.body.classList.remove('detail');
+        }
+      });
+
+    });
 
     cardsAuditDetail.forEach(function(c, i){
       c.addEventListener('click', function(){
@@ -103,21 +138,13 @@
           opacity: [1, 0],
           translateY: -20,
           duration: duration,
-          easing: easing,
-          complete: function(anim) {
-            anime({
-              targets: '#cards-compare .card-summary',
-              height: 0,
-              duration: duration,
-              easing: 'easeOutCubic'
-            });
-          }
+          easing: easing
         });
 
         anime({
           targets: '#audit-detail',
           translateY: -300,
-          width: window.innerWidth/2 - gap*2,
+          width: window.innerWidth/2,
           duration: duration,
           easing: easing
         });
@@ -128,12 +155,11 @@
           translateY: [20,0],
           delay: duration/2,
           duration: duration,
-          easing: easing,
+          easing: easing
         });
 
       });
     });
-    // document.getElementById('audits-performance-metrics').innerHTML = markupPerformanceMetrics.join('');
   }
 
   </script>

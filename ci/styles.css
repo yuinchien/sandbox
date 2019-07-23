@@ -121,6 +121,12 @@ body.compare .compare-show {
   transform: translate3d(-50%,0,0);
 }
 
+#audit-detail {
+  padding: 20px;
+  overflow-y: scroll;
+  height: calc(100vh - var(--header-height));
+}
+
 #container-detail {
   position: absolute;
   right: 0;
@@ -134,6 +140,12 @@ body.compare .compare-show {
 }
 body.detail #container-detail {
   pointer-events: auto;
+  z-index: 100;
+}
+#button-close-detail {
+  position: absolute;
+  right: 12px;
+  top: 12px;
 }
 
 .hide {
@@ -145,7 +157,6 @@ body.detail #container-detail {
   height: calc(100vh - var(--header-height));
   margin-top: var(--header-height);
   overflow-y: scroll;
-  padding: 20px;
 }
 .card {
   border: var(--border-style);
@@ -168,11 +179,16 @@ body.detail #container-detail {
   max-width: 360px;
   min-height: 320px;
 }
-.card.large {
-  margin-left: -20px !important;
-  margin-right: -20px !important;
+
+#cards-home {
+  padding: 20px;
+}
+
+#cards-compare .card-summary {
   min-height: 280px;
   border-radius: 0;
+  background: white;
+  margin-top: 20px;
 }
 
 #cards-compare .card {
