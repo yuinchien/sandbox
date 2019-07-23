@@ -91,6 +91,7 @@ body {
   right: 0;
 }
 #logo {
+  cursor: pointer;
   width: 48px;
   height: 48px;
   background-image: url(images/logo_lighthouse_48dp.svg);

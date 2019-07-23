@@ -66,6 +66,34 @@
 
   window.onload = function() {
 
+    var logo = document.getElementById('logo');
+    logo.addEventListener('click', function(){
+      if(document.body.classList.contains('compare') && !document.body.classList.contains('detail')) {
+        document.body.classList.remove('compare');
+        anime({
+          targets: ['#audit-detail', '#cards-compare .card-summary'],
+          opacity: [1, 0],
+          translateY: [0, 20],
+          duration: duration/2,
+          easing: easing,
+          complete: function(anim) {
+            cardsCompare.classList.add('hide');
+            cardsHome.classList.remove('hide');
+            anime({
+              targets: '#cards-home .card',
+              opacity: [0, 1],
+              translateY: [-20, 0],
+              duration: duration,
+              easing: easing
+            });
+
+          }
+        });
+
+      }
+
+    });
+
     var cardsHome = document.getElementById('cards-home');
     var cardsCompare = document.getElementById('cards-compare');
 
