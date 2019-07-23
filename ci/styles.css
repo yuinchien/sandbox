@@ -123,6 +123,9 @@ body.compare .compare-show {
 
 #audit-detail {
   padding: 20px;
+}
+
+body.detail #audit-detail {
   overflow-y: scroll;
   height: calc(100vh - var(--header-height));
 }

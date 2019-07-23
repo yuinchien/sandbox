@@ -92,6 +92,7 @@
       });
     });
 
+    var cardsCompare = document.getElementById('cards-compare');
     var cardSummaryCompare = document.getElementById('cards-compare').querySelector('.card-summary');
     var cardsAuditDetail = document.getElementById('audit-detail').querySelectorAll('.card');
     var buttonCloseDetail = document.getElementById('button-close-detail');
@@ -131,6 +132,9 @@
 
     cardsAuditDetail.forEach(function(c, i){
       c.addEventListener('click', function(){
+
+        cardsCompare.scrollTop = 0;
+
         document.body.classList.add('detail');
 
         anime({
