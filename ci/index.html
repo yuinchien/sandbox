@@ -29,7 +29,8 @@
   </div>
 
   <div class="cards" id="cards-home">
-    <div class="card center medium"></div>
+    <div id="home-summary" class="card center medium">Compared to the latest deployment, the commit <b>b751de5</b> on 7/3 scored <span class="red score-chip">-13pt</span> for Performance, <span class="green score-chip">+4pt</span> for Accessibility, <span class="orange score-chip">-6pt</span> for Best Practices,
+<span class="green score-chip">+3pt</span> for SEO, and <span class="red score-chip">-18pt</span> for Progressive Web App.</div>
     <div class="three-up">
       <div class="card small"></div>
       <div class="card small"></div>
@@ -60,7 +61,7 @@
   var gap = 20;
   var easing = 'easeOutCubic';
   var duration = 500;
-
+  var shiftY = 12;
   window.onload = function() {
 
     var logo = document.getElementById('logo');
@@ -85,7 +86,7 @@
       anime({
         targets: '#cards-home .card',
         opacity: [0, 1],
-        translateY: [-20, 0],
+        translateY: [-shiftY, 0],
         duration: duration,
         easing: easing
       });
@@ -98,7 +99,7 @@
           anime({
             targets: ['#audit-detail', '#cards-compare .card-summary'],
             opacity: [1, 0],
-            translateY: [0, 20],
+            translateY: [0, shiftY],
             duration: duration/2,
             easing: easing,
             complete: function(anim) {
@@ -109,7 +110,7 @@
           anime({
             targets: '#audit-detail',
             opacity: [1, 0],
-            translateY: [-300, -280],
+            translateY: [-280+gap, -280],
             duration: duration,
             easing: easing,
             complete: function(anim) {
@@ -134,7 +135,7 @@
       anime({
         targets: '#cards-home .card',
         opacity: [1, 0],
-        translateY: [0, -20],
+        translateY: [0, -shiftY],
         duration: duration/2,
         easing: easing,
         complete: function(anim) {
@@ -142,7 +143,7 @@
           anime({
             targets: ['#audit-detail', '#cards-compare .card-summary'],
             opacity: [0, 1],
-            translateY: [20, 0],
+            translateY: [shiftY, 0],
             duration: duration,
             easing: easing
           });
@@ -155,14 +156,14 @@
       anime({
         targets: '#cards-compare .card-summary',
         opacity: [0, 1],
-        translateY: [-20, 0],
+        translateY: [-shiftY, 0],
         duration: duration,
         delay: duration/4,
         easing: easing
       });
       anime({
         targets: '#audit-detail',
-        translateY: [-300, 0],
+        translateY: [-280-gap, 0],
         width: window.innerWidth,
         duration: duration,
         delay: duration/4,
@@ -186,13 +187,13 @@
       anime({
         targets: '#cards-compare .card-summary',
         opacity: [1, 0],
-        translateY: [0, -20],
+        translateY: [0, -shiftY],
         duration: duration,
         easing: easing
       });
       anime({
         targets: '#audit-detail',
-        translateY: [0, -300],
+        translateY: [0, -280-gap],
         width: [window.innerWidth, window.innerWidth/2],
         duration: duration,
         easing: easing
