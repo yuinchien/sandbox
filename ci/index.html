@@ -9,10 +9,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto:400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-
-  <!-- <script type="text/javascript" src="data.js"></script> -->
 	<script type="text/javascript" src="anime.min.js"></script>
-
 	<title>Lighthouse CI</title>
 </head>
 <body>
@@ -67,43 +64,78 @@
   window.onload = function() {
 
     var logo = document.getElementById('logo');
-    logo.addEventListener('click', function(){
-      if(document.body.classList.contains('compare') && !document.body.classList.contains('detail')) {
-        document.body.classList.remove('compare');
-        anime({
-          targets: ['#audit-detail', '#cards-compare .card-summary'],
-          opacity: [1, 0],
-          translateY: [0, 20],
-          duration: duration/2,
-          easing: easing,
-          complete: function(anim) {
-            cardsCompare.classList.add('hide');
-            cardsHome.classList.remove('hide');
-            anime({
-              targets: '#cards-home .card',
-              opacity: [0, 1],
-              translateY: [-20, 0],
-              duration: duration,
-              easing: easing
-            });
-
-          }
-        });
-
-      }
-
-    });
-
     var cardsHome = document.getElementById('cards-home');
     var cardsCompare = document.getElementById('cards-compare');
 
     var buttonCompare = document.getElementById('button-compare');
-    buttonCompare.addEventListener('click', function(){
+    var cardsCompare = document.getElementById('cards-compare');
+    var cardSummaryCompare = cardsCompare.querySelector('.card-summary');
+    var auditDetail = document.getElementById('audit-detail');
+    var cardsAuditDetail = auditDetail.querySelectorAll('.card');
+    var buttonCloseDetail = document.getElementById('button-close-detail');
+
+    logo.addEventListener('click', returnHome);
+    buttonCompare.addEventListener('click', gotoCompare);
+    buttonCloseDetail.addEventListener('click', closeDetailView);
+    cardsAuditDetail.forEach(function(c, i) { c.addEventListener('click', expandDetailView); });
+
+    function fadeInHomeCards() {
+      cardsCompare.classList.add('hide');
+      cardsHome.classList.remove('hide');
+      anime({
+        targets: '#cards-home .card',
+        opacity: [0, 1],
+        translateY: [-20, 0],
+        duration: duration,
+        easing: easing
+      });
+    }
+
+    function returnHome() {
+      if(document.body.classList.contains('compare')) {
+        document.body.classList.remove('compare');
+        if(!document.body.classList.contains('detail')) {
+          anime({
+            targets: ['#audit-detail', '#cards-compare .card-summary'],
+            opacity: [1, 0],
+            translateY: [0, 20],
+            duration: duration/2,
+            easing: easing,
+            complete: function(anim) {
+              fadeInHomeCards();
+            }
+          });
+        } else {
+          anime({
+            targets: '#audit-detail',
+            opacity: [1, 0],
+            translateY: [-300, -280],
+            duration: duration,
+            easing: easing,
+            complete: function(anim) {
+              auditDetail.style.width = window.innerWidth + 'px';
+            }
+          });
+          anime({
+            targets: '#container-detail',
+            opacity: [1, 0],
+            translateY: [0, 20],
+            duration: duration,
+            easing: easing,
+            complete: function(anim) {
+              document.body.classList.remove('detail');
+              fadeInHomeCards();
+            }
+          });
+        }
+      }
+    }
+    function gotoCompare() {
       document.body.classList.add('compare');
       anime({
         targets: '#cards-home .card',
-        opacity: 0,
-        translateY: -20,
+        opacity: [1, 0],
+        translateY: [0, -20],
         duration: duration/2,
         easing: easing,
         complete: function(anim) {
@@ -118,82 +150,65 @@
           cardsCompare.classList.remove('hide');
         }
       });
-    });
+    }
 
-    var cardsCompare = document.getElementById('cards-compare');
-    var cardSummaryCompare = document.getElementById('cards-compare').querySelector('.card-summary');
-    var cardsAuditDetail = document.getElementById('audit-detail').querySelectorAll('.card');
-    var buttonCloseDetail = document.getElementById('button-close-detail');
-
-    buttonCloseDetail.addEventListener('click', function(){
-
+    function closeDetailView() {
       anime({
         targets: '#cards-compare .card-summary',
-        opacity: 1,
-        translateY: 0,
+        opacity: [0, 1],
+        translateY: [-20, 0],
         duration: duration,
         delay: duration/4,
         easing: easing
       });
-
       anime({
         targets: '#audit-detail',
-        translateY: 0,
+        translateY: [-300, 0],
         width: window.innerWidth,
         duration: duration,
         delay: duration/4,
         easing: easing
       });
-
       anime({
         targets: '#container-detail',
-        opacity: 0,
-        translateY: 20,
+        opacity: [1, 0],
+        translateY: [0, 20],
         duration: duration,
         easing: easing,
         complete: function(anim) {
           document.body.classList.remove('detail');
         }
       });
+    }
 
-    });
-
-    cardsAuditDetail.forEach(function(c, i){
-      c.addEventListener('click', function(){
-
-        cardsCompare.scrollTop = 0;
-
-        document.body.classList.add('detail');
-
-        anime({
-          targets: '#cards-compare .card-summary',
-          opacity: [1, 0],
-          translateY: -20,
-          duration: duration,
-          easing: easing
-        });
-
-        anime({
-          targets: '#audit-detail',
-          translateY: -300,
-          width: window.innerWidth/2,
-          duration: duration,
-          easing: easing
-        });
-
-        anime({
-          targets: '#container-detail',
-          opacity: 1,
-          translateY: [20,0],
-          delay: duration/2,
-          duration: duration,
-          easing: easing
-        });
-
+    function expandDetailView() {
+      cardsCompare.scrollTop = 0;
+      document.body.classList.add('detail');
+      anime({
+        targets: '#cards-compare .card-summary',
+        opacity: [1, 0],
+        translateY: [0, -20],
+        duration: duration,
+        easing: easing
       });
-    });
-  }
+      anime({
+        targets: '#audit-detail',
+        translateY: [0, -300],
+        width: [window.innerWidth, window.innerWidth/2],
+        duration: duration,
+        easing: easing
+      });
+      anime({
+        targets: '#container-detail',
+        opacity: [0, 1],
+        translateY: [20, 0],
+        delay: duration/2,
+        duration: duration,
+        easing: easing
+      });
+    }
 
+  }
   </script>
 </body>
 </html>
