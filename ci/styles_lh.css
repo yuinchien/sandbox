@@ -1,0 +1,123 @@
+:root {
+  --score-number-fontsize-big: 38px;
+  --score-number-fontsize: 28px;
+
+  --score-title-fontsize-big: 28px;
+  --score-title-fontsize: 20px;
+
+  --score-title-lineheight-big: 36px;
+  --score-title-lineheight: 26px;
+
+  --score-size: 80px;
+  --score-size-big: 112px;
+
+  --score-container-width: 160px;
+  --score-marginbottom-big: 12px;
+  --score-number-offset: 1px;
+  --score-container-padding: 8px;
+}
+
+.scores {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.score-container {
+  text-align: center;
+  width: var(--score-container-width);
+  padding: var(--score-container-padding);
+  position: relative;
+}
+  .score-container .title {
+    font-size: var(--score-title-fontsize);
+    line-height: var(--score-title-lineheight);
+    margin-top: 10px;
+  }
+.score-container.big {
+  max-width: 480px;
+  width: auto;
+  margin: 0px auto;
+}
+  .score-container.big .title {
+    font-size: var(--score-title-fontsize-big);
+    line-height: var(--score-title-lineheight-big);
+  }
+  .score-container.big {
+    --plugin-size: 42px;
+  }
+  .score-container p {
+    margin: 4px 0 12px 0;
+  }
+
+
+.score {
+  width: var(--score-size);
+  height: var(--score-size);
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--score-number-fontsize);
+  font-family: 'Roboto Mono', monospace;
+}
+  .big .score {
+    width: var(--score-size-big);
+    height: var(--score-size-big);
+    font-size: var(--score-number-fontsize-big);
+    margin-bottom: var(--score-marginbottom-big);
+  }
+  .score > svg {
+    position: absolute;
+  }
+  .score .number {
+    -webkit-transform: translate3d(0, var(--score-number-offset), 0);
+  }
+  .score .bg {
+    opacity: .1;
+  }
+  .score .arc {
+    fill: transparent;
+    stroke-width: 8;
+    stroke-linecap: round;
+  }
+.score.orange {
+  color: var(--color-orange);
+  fill: var(--color-orange);
+  stroke: var(--color-orange);
+}
+.score.green {
+  color: var(--color-green);
+  fill: var(--color-green);
+  stroke: var(--color-green);
+}
+.score.red {
+  color: var(--color-red);
+  fill: var(--color-red);
+  stroke: var(--color-red);
+}
+.score.pwa {
+  background-color: var(--color-black-200);
+  background-image: url(images/logo-pwa.svg);
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 100%;
+}
+.score.score-plugin:before {
+  width: var(--plugin-size);
+  height: var(--plugin-size);
+  background-color: var(--plugin-bg);
+  background-image: var(--plugin-icon-url);
+  background-repeat: no-repeat;
+  background-size: var(--plugin-icon-size);
+  background-position: 58% 50%;
+  content: "";
+  position: absolute;
+  right: -6px;
+  bottom: -2px;
+  display: block;
+  z-index: 100;
+  box-shadow: 0 0 4px rgba(0,0,0,.2);
+  border-radius: 25%;
+}

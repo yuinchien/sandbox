@@ -43,6 +43,8 @@ body {
 }
 
 * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 }
 
@@ -244,6 +246,7 @@ b {
   margin-top: 20px;
   box-shadow: var(--card-shadow);
   background: var(--color-white);
+  padding: 20px 0;
 }
 
 #cards-compare .card {

@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto:400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles_lh.css">
 	<script type="text/javascript" src="anime.min.js"></script>
 	<title>Lighthouse CI</title>
 </head>
@@ -42,7 +43,72 @@
   </div>
 
   <div class="cards hide" id="cards-compare">
-    <div class="center card-summary"></div>
+    <div class="center card-summary">
+
+      <div class="scores">
+        <div class="score-container score-performance">
+          <div class="score red">
+            <svg viewBox="0 0 120 120">
+              <circle class="bg" r="60" cx="60" cy="60" />
+              <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 103 265; stroke-dashoffset: 103;"/>
+            </svg>
+            <div class="number">45</div>
+          </div>
+          <div class="title">Performance</div>
+        </div>
+
+        <div class="score-container score-accessibility">
+          <div class="score orange" >
+            <svg viewBox="0 0 120 120">
+              <circle class="bg" r="60" cx="60" cy="60" />
+              <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 259 158; stroke-dashoffset: 150;"/>
+            </svg>
+            <div class="number">67</div>
+          </div>
+          <div class="title">Accessibility</div>
+        </div>
+
+        <div class="score-container score-bestpractices">
+          <div class="score red">
+            <svg viewBox="0 0 120 120">
+              <circle class="bg" r="60" cx="60" cy="60" />
+              <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 44 282; stroke-dashoffset: 60;"/>
+            </svg>
+            <div class="number">13</div>
+          </div>
+          <div class="title">Best Practices</div>
+        </div>
+
+        <div class="score-container score-seo">
+          <div class="score green">
+            <svg viewBox="0 0 120 120">
+              <circle class="bg" r="60" cx="60" cy="60" />
+              <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 243 25; stroke-dashoffset: 1;" />
+            </svg>
+            <div class="number">98</div>
+          </div>
+          <div class="title">SEO</div>
+        </div>
+
+        <div class="score-container score-pwa">
+          <div class="score green pwa"></div>
+          <div class="title">PWA</div>
+        </div>
+
+        <!-- <div class="score-container score-googleadsspeed">
+          <div class="score green score-plugin">
+            <svg viewBox="0 0 120 120">
+              <circle class="bg" r="60" cx="60" cy="60" />
+              <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 226 40; stroke-dashoffset: 1;" />
+            </svg>
+            <div class="number">91</div>
+          </div>
+          <div class="title">Google Ads Speed</div>
+        </div> -->
+
+      </div>
+
+    </div>
     <div id="audit-detail">
       <div class="card medium"></div>
       <div class="card medium"></div>
