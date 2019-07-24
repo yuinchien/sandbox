@@ -119,7 +119,6 @@
           anime({
             targets: '#container-detail',
             opacity: [1, 0],
-            translateY: [0, 20],
             duration: duration,
             easing: easing,
             complete: function(anim) {
@@ -172,7 +171,6 @@
       anime({
         targets: '#container-detail',
         opacity: [1, 0],
-        translateY: [0, 20],
         duration: duration,
         easing: easing,
         complete: function(anim) {
@@ -182,6 +180,7 @@
     }
 
     function expandDetailView() {
+      if(document.body.classList.contains('detail')) { return; }
       cardsCompare.scrollTop = 0;
       document.body.classList.add('detail');
       anime({
@@ -201,7 +200,6 @@
       anime({
         targets: '#container-detail',
         opacity: [0, 1],
-        translateY: [20, 0],
         delay: duration/2,
         duration: duration,
         easing: easing
