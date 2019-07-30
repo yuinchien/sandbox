@@ -251,7 +251,7 @@ body.detail #container-detail {
 .cards {
   position: relative;
   height: calc(100vh - var(--header-height));
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 .card {
   box-shadow: var(--card-shadow);
