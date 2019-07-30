@@ -1,3 +1,13 @@
+const data_latest_commits = {
+  caption: 'Latest Commits',
+  entries: [
+    {profile_id: 'paul', name: 'paulirish', title: 'Add face descriptors', branch: '#9419', commit: '87fa4c0', time: '35m'},
+    {profile_id: 'patrick', name: 'patrickhulce', title: 'Add script to resize rated photos', branch: '#9410', commit: 'aafc3a7', time: '2h'},
+    {profile_id: 'hwi', name: 'hwi', title: 'UX feedback', branch: '#9416', commit: 'c33a1ac', time: '9h'},
+    {profile_id: 'elizabeth', name: 'esweeny', title: 'roundtrip', branch: '#9413', commit: '905e976', time: '1d'},
+  ]
+};
+
 const data_performance_metrics = {
   caption: 'Metrics',
   audits: [

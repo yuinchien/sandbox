@@ -10,18 +10,19 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto:400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="styles_lh.css">
-	<script type="text/javascript" src="anime.min.js"></script>
+  <script type="text/javascript" src="data.js"></script>
+  <script type="text/javascript" src="anime.min.js"></script>
 	<title>Lighthouse CI</title>
 </head>
 <body>
 
   <div id="header">
     <div id="logo"></div>
-    <div class="dropdown" id="dropdown-project"><span>Project</span>Chrome Website<i class="material-icons">arrow_drop_down</i></div>
-    <div class="dropdown compare-hide" id="dropdown-url"><span>URL</span>https://www.google.com/chrome<i class="material-icons">arrow_drop_down</i></div>
-    <div class="dropdown compare-hide" id="dropdown-branch"><span>Branch</span>master<i class="material-icons">arrow_drop_down</i></div>
+    <div class="dropdown" id="dropdown-project"><i class="material-icons">list</i><span>Chrome Website</span><i class="material-icons">arrow_drop_down</i></div>
+    <div class="dropdown compare-hide" id="dropdown-url"><i class="material-icons">public</i><span>https://www.google.com/chrome</span><i class="material-icons">arrow_drop_down</i></div>
+    <div class="dropdown compare-hide" id="dropdown-branch"><div class="small svg-icon icon-branch"></div><span>master</span><i class="material-icons">arrow_drop_down</i></div>
     <div style="flex:1;"></div>
-    <div id="button-compare" class="compare-hide button icon-label"><i class="material-icons">compare</i>Compare</div>
+    <div id="button-compare" class="compare-hide button"><i class="material-icons">compare</i></div>
     <div id="dropdown-commits" class="compare-show row">
       <div class="dropdown" id="dropdown-commit-1"><span>Commit</span>b750ea3<i class="material-icons">arrow_drop_down</i></div>
       <div id="button-swap" class="button"><i class="material-icons">swap_horiz</i></div>
@@ -29,9 +30,16 @@
     </div>
   </div>
 
+  <div class="card" id="lastest-commits">
+    <div class="wrapper-large">
+      <div class="row"><div class="caption flex">Latest Commits</div><i class="material-icons">more_horiz</i></div>
+      <div id="latest-commits-table"></div>
+    </div>
+  </div>
+
   <div class="cards" id="cards-home">
-    <div id="home-summary" class="card center medium">Compared to the latest deployment, the commit <b>b751de5</b> on 7/3 scored <span class="red score-chip">-13pt</span> for Performance, <span class="green score-chip">+4pt</span> for Accessibility, <span class="orange score-chip">-6pt</span> for Best Practices,
-<span class="green score-chip">+3pt</span> for SEO, and <span class="red score-chip">-18pt</span> for Progressive Web App.</div>
+    <!-- <div id="home-summary" class="card center medium">Compared to the latest deployment, the commit <b>b751de5</b> on 7/3 scored <span class="red score-chip">-13pt</span> for <b>Performance</b>, <span class="green score-chip">+4pt</span> for <b>Accessibility</b>, <span class="orange score-chip">-6pt</span> for <b>Best Practices</b>,
+<span class="green score-chip">+3pt</span> for <b>SEO</b>, and <span class="red score-chip">-18pt</span> for <b>PWA</b>.</div> -->
     <div class="three-up">
       <div class="card small"></div>
       <div class="card small"></div>
@@ -95,27 +103,49 @@
           <div class="title">PWA</div>
         </div>
 
-        <!-- <div class="score-container score-googleadsspeed">
-          <div class="score green score-plugin">
-            <svg viewBox="0 0 120 120">
-              <circle class="bg" r="60" cx="60" cy="60" />
-              <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 226 40; stroke-dashoffset: 1;" />
-            </svg>
-            <div class="number">91</div>
-          </div>
-          <div class="title">Google Ads Speed</div>
-        </div> -->
-
       </div>
 
     </div>
     <div id="audit-detail">
-      <div class="card medium"></div>
-      <div class="card medium"></div>
-      <div class="card medium"></div>
-      <div class="card medium"></div>
-      <div class="card medium"></div>
-      <div class="card medium"></div>
+      <div class="card medium">
+        <div class="caption">Performance: Metrics</div>
+      </div>
+      <div class="card medium">
+        <div class="caption">Performance: Opportunities</div>
+      </div>
+      <div class="card medium">
+        <div class="caption">Performances: Diagnostics</div>
+      </div>
+      <div class="card medium">
+        <div class="caption">Accessibility: Names and labels</div>
+      </div>
+      <div class="card medium">
+        <div class="caption">Accessibility: Contrast</div>
+      </div>
+      <div class="card medium">
+        <div class="caption">Accessibility: Best practices</div>
+      </div>
+      <div class="card medium">
+        <div class="caption">Accessibility: Internationalization and localization</div>
+      </div>
+      <div class="card medium">
+        <div class="caption">Accessibility: Tables and lists</div>
+      </div>
+      <div class="card medium">
+        <div class="caption">Best Practices: Best practices</div>
+      </div>
+      <div class="card medium">
+        <div class="caption">SEO: Mobile Friendly</div>
+      </div>
+      <div class="card medium">
+        <div class="caption">PWA: Fast and reliable</div>
+      </div>
+      <div class="card medium">
+        <div class="caption">PWA: Installable</div>
+      </div>
+      <div class="card medium">
+        <div class="caption">PWA: PWA Optimized</div>
+      </div>
     </div>
     <div id="container-detail">
       <div id="button-close-detail" class="button"><i class="material-icons">close</i></div>
@@ -127,7 +157,7 @@
   var gap = 20;
   var easing = 'easeOutCubic';
   var duration = 500;
-  var shiftY = 12;
+  var shiftY = 10;
   window.onload = function() {
 
     var logo = document.getElementById('logo');
@@ -144,7 +174,24 @@
     logo.addEventListener('click', returnHome);
     buttonCompare.addEventListener('click', gotoCompare);
     buttonCloseDetail.addEventListener('click', closeDetailView);
-    cardsAuditDetail.forEach(function(c, i) { c.addEventListener('click', expandDetailView); });
+    cardsAuditDetail.forEach(function(c, i) {
+      c.addEventListener('click', expandDetailView );
+    });
+
+    document.getElementById('latest-commits-table').innerHTML = renderLatestCommits(data_latest_commits.entries);
+    function renderLatestCommits(data) {
+      return data.map((d) => {
+        return `
+        <div class="list row">
+          <div class="row profile-lockup"><div class="profile profile-${d.profile_id}"></div>${d.name}</div>
+          <div class="title">${d.title}</div>
+          <div class="row icon-lockup"><div class="small svg-icon icon-branch"></div><span>${d.branch}</span></div>
+          <div class="row icon-lockup"><div class="small svg-icon icon-commit"></div><span>${d.commit}</span></div>
+          <div class="row icon-lockup"><i class="material-icons">check</i><span>CI Passed</span></div>
+          <div class="time">${d.time}</div>
+        </div>`;
+      }).join('');
+    }
 
     function fadeInHomeCards() {
       cardsCompare.classList.add('hide');
@@ -247,6 +294,7 @@
     }
 
     function expandDetailView() {
+      console.log('expandDetailView');
       if(document.body.classList.contains('detail')) { return; }
       cardsCompare.scrollTop = 0;
       document.body.classList.add('detail');
@@ -260,7 +308,7 @@
       anime({
         targets: '#audit-detail',
         translateY: [0, -280-gap],
-        width: [window.innerWidth, window.innerWidth/2],
+        width: window.innerWidth/2,
         duration: duration,
         easing: easing
       });

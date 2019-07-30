@@ -72,18 +72,35 @@ body {
   opacity: 1;
 }
 
+.svg-icon {
+  width: 24px;
+  height: 24px;
+  background-position: 50% 50%;
+  background-repeat: no-no-repeat;
+  background-size: 24px;
+}
+.svg-icon.small {
+  background-size: 22px;
+}
+.icon-branch {
+  background-image: url(images/ic_branch_24x24.svg);
+}
+.icon-commit {
+  background-image: url(images/ic_commit_24x24.svg);
+}
+
 .dropdown {
   display: flex;
   align-items: center;
   margin: 0 6px;
   cursor: pointer;
   background: var(--color-black-100);
-  border-radius: 4px;
-  padding: 4px 4px 4px 12px;
+  border-radius: 20px;
+  padding: 4px 6px;
+  font-weight: 500;
 }
 .dropdown span {
-  opacity: .54;
-  margin-right: 10px;
+  margin-left: 6px;
 }
 .dropdown i {
   margin-left: 4px;
@@ -92,6 +109,58 @@ body {
 .row {
   display: flex;
   align-items: center;
+}
+.flex {
+  flex: 1;
+}
+
+
+#latest-commits-table {
+  font-weight: 500;
+}
+#latest-commits-table .list {
+  padding: 6px 12px;
+}
+#latest-commits-table .list:nth-child(2n+1) {
+  background: var(--color-black-100);
+}
+#latest-commits-table .time {
+  text-align: right;
+  flex: 1;
+}
+.profile-lockup {
+  width: 200px;
+  flex: 2;
+}
+#latest-commits-table .title {
+  flex: 3;
+}
+#latest-commits-table .icon-lockup {
+  flex: 1;
+}
+
+.profile {
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+.profile-paul {
+  background-image: url(images/profile_paul.png);
+}
+.profile-elizabeth {
+  background-image: url(images/profile_elizabeth.png);
+}
+.profile-hwi {
+  background-image: url(images/profile_hwi.png);
+}
+.profile-patrick {
+  background-image: url(images/profile_patrick.png);
+}
+
+
+.icon-lockup span {
+  margin-left: 4px;
 }
 
 #header {
@@ -142,7 +211,7 @@ body.compare .compare-show {
 }
 
 #audit-detail {
-  padding: 20px;
+  padding: var(--gap);
 }
 #audit-detail .card {
   cursor: pointer;
@@ -182,17 +251,13 @@ body.detail #container-detail {
 .cards {
   position: relative;
   height: calc(100vh - var(--header-height));
-  margin-top: var(--header-height);
   overflow-y: scroll;
 }
 .card {
   box-shadow: var(--card-shadow);
   background: var(--color-white);
-  -webkit-column-break-inside: avoid;
-          page-break-inside: avoid;
-               break-inside: avoid;
+  padding: calc(var(--gap) - 6px) var(--gap);
 }
-
 .card.center {
   margin-left: auto;
   margin-right: auto;
@@ -203,6 +268,17 @@ body.detail #container-detail {
 .card.small {
   max-width: 360px;
   min-height: 320px;
+}
+
+.card .caption {
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 12px;
+}
+
+
+#lastest-commits {
+  margin-top: var(--header-height);
 }
 
 #home-summary {
@@ -223,6 +299,7 @@ b {
   border-radius: 4px;
   color: white;
   font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
   font-size: 22px;
 }
 .score-chip.red {
@@ -243,10 +320,10 @@ b {
   min-height: 280px;
   border-radius: 0;
   background: white;
-  margin-top: 20px;
+  margin-top: var(--gap);
   box-shadow: var(--card-shadow);
   background: var(--color-white);
-  padding: 20px 0;
+  padding: var(--gap) 0;
 }
 
 #cards-compare .card {
@@ -258,14 +335,55 @@ b {
 }
 
 .three-up {
-  max-width: 1120px;
-  margin: 20px auto;
   justify-content: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: var(--gap);
 }
+.three-up,
+.card .wrapper-large {
+  max-width: 1120px;
+  margin: 20px auto;
+}
 
-@media only screen and (max-width: 1160px) {
+@media only screen and (max-width: 960px) {
+  #dropdown-url,
+  #dropdown-branch {
+    display: none;
+  }
+  .three-up {
+    grid-template-columns: 1fr 1fr;
+  }
+  .three-up .card {
+    max-width: none;
+  }
+  .button.icon-label i {
+    margin-right: 0;
+  }
+  .button.icon-label span {
+    display: none;
+  }
+}
 
+@media only screen and (max-width: 600px) {
+  :root {
+    --gap: 16px;
+  }
+  body.compare #dropdown-project {
+    display: none;
+  }
+  .dropdown > span {
+    display: none;
+  }
+  .three-up {
+    grid-template-columns: 1fr;
+  }
+  #home-summary {
+    font-size: 18px;
+    line-height: 28px;
+    padding: 0 8px;
+  }
+  .score-chip {
+    font-size: 17px;
+  }
 }

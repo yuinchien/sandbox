@@ -121,3 +121,57 @@
   box-shadow: 0 0 4px rgba(0,0,0,.2);
   border-radius: 25%;
 }
+
+@media only screen and (max-width: 600px) {
+  :root {
+  --body-fontsize: 14px;
+  --body-lineheight: 20px;
+
+  --score-number-fontsize-big: 34px;
+  --score-number-fontsize: 26px;
+
+  --score-title-fontsize-big: 22px;
+  --score-title-fontsize: 14px;
+
+  --score-title-lineheight-big: 26px;
+  --score-title-lineheight: 20px;
+
+  --score-size: 72px;
+  --score-size-big: 96px;
+
+  --score-container-width: 112px;
+
+  --score-marginbottom-big: 8px;
+
+  /* --plugin-size: 28px; */
+  /* --plugin-icon-size: 75%; */
+
+  --shape-size: 10px;
+  --shape-margin: 5px 12px 0 2px;
+
+  /* --topbar-height: 28px; */
+
+  --audits-marginbottom: 24px;
+  --audit-padding: 10px 0;
+
+  /* --icon-size: 20px; */
+
+  /* --section-padding: 16px 24px; */
+
+  /* --header-padding: 16px 0 16px 0; */
+
+  --score-container-padding: 8px;
+  /* --topbar-padding: 0 4px; */
+
+  --row-minheight: 24px;
+
+  /* --badge-margin: 0 7px 0 -3px; */
+
+  --expandable-padding: 0 0 2px 24px;
+  --item-padding: 10px 0px;
+
+  /* --right-panel-width: 320px; */
+
+  /* --setting-title-min-width: 120px; */
+}
+}
