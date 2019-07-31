@@ -17,7 +17,8 @@
 <body>
 
   <div id="header">
-    <div id="logo"></div>
+    <div id="logo" class="compare-hide"></div>
+    <div id="button-return" class="compare-show"><i class="material-icons">arrow_back</i></div>
     <div class="dropdown" id="dropdown-project"><i class="material-icons">list</i><span>Chrome Website</span><i class="material-icons">arrow_drop_down</i></div>
     <div class="dropdown compare-hide" id="dropdown-url"><i class="material-icons">public</i><span>https://www.google.com/chrome</span><i class="material-icons">arrow_drop_down</i></div>
     <div class="dropdown compare-hide" id="dropdown-branch"><div class="small svg-icon icon-branch"></div><span>master</span><i class="material-icons">arrow_drop_down</i></div>
@@ -32,182 +33,126 @@
 
   <div id="content">
 
-    <div class="card" id="lastest-commits">
+    <div class="card" id="latest-commits">
       <div class="wrapper-large">
         <div class="row row-caption"><div class="caption flex">Latest Commits</div><i class="material-icons">more_horiz</i></div>
         <div id="latest-commits-table"></div>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" id="scores">
       <div class="wrapper-large">
         <div class="scores">
-              <div class="score-container score-performance">
-                <div class="score red">
-                  <svg viewBox="0 0 120 120">
-                    <circle class="bg" r="60" cx="60" cy="60" />
-                    <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 103 265; stroke-dashoffset: 103;"/>
-                  </svg>
-                  <div class="number">45</div>
-                </div>
-                <div class="title">Performance</div>
-              </div>
-
-              <div class="score-container score-accessibility">
-                <div class="score orange" >
-                  <svg viewBox="0 0 120 120">
-                    <circle class="bg" r="60" cx="60" cy="60" />
-                    <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 259 158; stroke-dashoffset: 150;"/>
-                  </svg>
-                  <div class="number">67</div>
-                </div>
-                <div class="title">Accessibility</div>
-              </div>
-
-              <div class="score-container score-bestpractices">
-                <div class="score red">
-                  <svg viewBox="0 0 120 120">
-                    <circle class="bg" r="60" cx="60" cy="60" />
-                    <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 44 282; stroke-dashoffset: 60;"/>
-                  </svg>
-                  <div class="number">13</div>
-                </div>
-                <div class="title">Best Practices</div>
-              </div>
-
-              <div class="score-container score-seo">
-                <div class="score green">
-                  <svg viewBox="0 0 120 120">
-                    <circle class="bg" r="60" cx="60" cy="60" />
-                    <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 243 25; stroke-dashoffset: 1;" />
-                  </svg>
-                  <div class="number">98</div>
-                </div>
-                <div class="title">SEO</div>
-              </div>
-
-              <div class="score-container score-pwa">
-                <div class="score green pwa"></div>
-                <div class="title">PWA</div>
-              </div>
-
+          <div class="score-container score-performance">
+            <div class="score red">
+              <svg viewBox="0 0 120 120">
+                <circle class="bg" r="60" cx="60" cy="60" />
+                <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 103 265; stroke-dashoffset: 103;"/>
+              </svg>
+              <div class="number">45</div>
             </div>
+            <div class="title">Performance</div>
+          </div>
+
+          <div class="score-container score-accessibility">
+            <div class="score orange" >
+              <svg viewBox="0 0 120 120">
+                <circle class="bg" r="60" cx="60" cy="60" />
+                <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 259 158; stroke-dashoffset: 150;"/>
+              </svg>
+              <div class="number">67</div>
+            </div>
+            <div class="title">Accessibility</div>
+          </div>
+
+          <div class="score-container score-bestpractices">
+            <div class="score red">
+              <svg viewBox="0 0 120 120">
+                <circle class="bg" r="60" cx="60" cy="60" />
+                <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 44 282; stroke-dashoffset: 60;"/>
+              </svg>
+              <div class="number">13</div>
+            </div>
+            <div class="title">Best Practices</div>
+          </div>
+
+          <div class="score-container score-seo">
+            <div class="score green">
+              <svg viewBox="0 0 120 120">
+                <circle class="bg" r="60" cx="60" cy="60" />
+                <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 243 25; stroke-dashoffset: 1;" />
+              </svg>
+              <div class="number">98</div>
+            </div>
+            <div class="title">SEO</div>
+          </div>
+
+          <div class="score-container score-pwa">
+            <div class="score green pwa"></div>
+            <div class="title">PWA</div>
+          </div>
+
+        </div>
       </div>
     </div>
 
-    <div class="cards" id="cards-home">
-    <div class="three-up">
-      <div class="card small"></div>
-      <div class="card small"></div>
-      <div class="card small"></div>
-      <div class="card small"></div>
-      <div class="card small"></div>
-      <div class="card small"></div>
+    <div class="cards" id="cards-timeline">
+      <div class="three-up">
+        <div class="card small"></div>
+        <div class="card small"></div>
+        <div class="card small"></div>
+        <div class="card small"></div>
+        <div class="card small"></div>
+        <div class="card small"></div>
+      </div>
     </div>
-  </div>
 
     <div class="cards hide" id="cards-compare">
-
-    <div class="center card-summary">
-
-      <div class="scores">
-        <div class="score-container score-performance">
-          <div class="score red">
-            <svg viewBox="0 0 120 120">
-              <circle class="bg" r="60" cx="60" cy="60" />
-              <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 103 265; stroke-dashoffset: 103;"/>
-            </svg>
-            <div class="number">45</div>
-          </div>
-          <div class="title">Performance</div>
+      <div id="audit-detail">
+        <div class="card medium">
+          <div class="caption">Performance: Metrics</div>
         </div>
-
-        <div class="score-container score-accessibility">
-          <div class="score orange" >
-            <svg viewBox="0 0 120 120">
-              <circle class="bg" r="60" cx="60" cy="60" />
-              <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 259 158; stroke-dashoffset: 150;"/>
-            </svg>
-            <div class="number">67</div>
-          </div>
-          <div class="title">Accessibility</div>
+        <div class="card medium">
+          <div class="caption">Performance: Opportunities</div>
         </div>
-
-        <div class="score-container score-bestpractices">
-          <div class="score red">
-            <svg viewBox="0 0 120 120">
-              <circle class="bg" r="60" cx="60" cy="60" />
-              <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 44 282; stroke-dashoffset: 60;"/>
-            </svg>
-            <div class="number">13</div>
-          </div>
-          <div class="title">Best Practices</div>
+        <div class="card medium">
+          <div class="caption">Performances: Diagnostics</div>
         </div>
-
-        <div class="score-container score-seo">
-          <div class="score green">
-            <svg viewBox="0 0 120 120">
-              <circle class="bg" r="60" cx="60" cy="60" />
-              <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 243 25; stroke-dashoffset: 1;" />
-            </svg>
-            <div class="number">98</div>
-          </div>
-          <div class="title">SEO</div>
+        <div class="card medium">
+          <div class="caption">Accessibility: Names and labels</div>
         </div>
-
-        <div class="score-container score-pwa">
-          <div class="score green pwa"></div>
-          <div class="title">PWA</div>
+        <div class="card medium">
+          <div class="caption">Accessibility: Contrast</div>
         </div>
-
+        <div class="card medium">
+          <div class="caption">Accessibility: Best practices</div>
+        </div>
+        <div class="card medium">
+          <div class="caption">Accessibility: Internationalization and localization</div>
+        </div>
+        <div class="card medium">
+          <div class="caption">Accessibility: Tables and lists</div>
+        </div>
+        <div class="card medium">
+          <div class="caption">Best Practices: Best practices</div>
+        </div>
+        <div class="card medium">
+          <div class="caption">SEO: Mobile Friendly</div>
+        </div>
+        <div class="card medium">
+          <div class="caption">PWA: Fast and reliable</div>
+        </div>
+        <div class="card medium">
+          <div class="caption">PWA: Installable</div>
+        </div>
+        <div class="card medium">
+          <div class="caption">PWA: PWA Optimized</div>
+        </div>
       </div>
-
-    </div>
-    <div id="audit-detail">
-      <div class="card medium">
-        <div class="caption">Performance: Metrics</div>
-      </div>
-      <div class="card medium">
-        <div class="caption">Performance: Opportunities</div>
-      </div>
-      <div class="card medium">
-        <div class="caption">Performances: Diagnostics</div>
-      </div>
-      <div class="card medium">
-        <div class="caption">Accessibility: Names and labels</div>
-      </div>
-      <div class="card medium">
-        <div class="caption">Accessibility: Contrast</div>
-      </div>
-      <div class="card medium">
-        <div class="caption">Accessibility: Best practices</div>
-      </div>
-      <div class="card medium">
-        <div class="caption">Accessibility: Internationalization and localization</div>
-      </div>
-      <div class="card medium">
-        <div class="caption">Accessibility: Tables and lists</div>
-      </div>
-      <div class="card medium">
-        <div class="caption">Best Practices: Best practices</div>
-      </div>
-      <div class="card medium">
-        <div class="caption">SEO: Mobile Friendly</div>
-      </div>
-      <div class="card medium">
-        <div class="caption">PWA: Fast and reliable</div>
-      </div>
-      <div class="card medium">
-        <div class="caption">PWA: Installable</div>
-      </div>
-      <div class="card medium">
-        <div class="caption">PWA: PWA Optimized</div>
+      <div id="container-detail">
+        <div id="button-close-detail" class="button"><i class="material-icons">close</i></div>
       </div>
     </div>
-    <div id="container-detail">
-      <div id="button-close-detail" class="button"><i class="material-icons">close</i></div>
-    </div>
-  </div>
 
   </div>
 
@@ -219,10 +164,10 @@
   var shiftY = 10;
   window.onload = function() {
 
-    var logo = document.getElementById('logo');
-    var cardsHome = document.getElementById('cards-home');
+    var cardsTimeline = document.getElementById('cards-timeline');
     var cardsCompare = document.getElementById('cards-compare');
 
+    var buttonReturn = document.getElementById('button-return');
     var buttonCompare = document.getElementById('button-compare');
     var cardsCompare = document.getElementById('cards-compare');
     var cardSummaryCompare = cardsCompare.querySelector('.card-summary');
@@ -230,7 +175,10 @@
     var cardsAuditDetail = auditDetail.querySelectorAll('.card');
     var buttonCloseDetail = document.getElementById('button-close-detail');
 
-    logo.addEventListener('click', returnHome);
+    var latestCommits = document.getElementById('latest-commits');
+    var scores = document.getElementById('scores');
+
+    buttonReturn.addEventListener('click', returnHome);
     buttonCompare.addEventListener('click', gotoCompare);
     buttonCloseDetail.addEventListener('click', closeDetailView);
     cardsAuditDetail.forEach(function(c, i) {
@@ -256,9 +204,9 @@
 
     function fadeInHomeCards() {
       cardsCompare.classList.add('hide');
-      cardsHome.classList.remove('hide');
+      cardsTimeline.classList.remove('hide');
       anime({
-        targets: '#cards-home .card',
+        targets: '#cards-timeline .card',
         opacity: [0, 1],
         translateY: [-shiftY, 0],
         duration: duration,
@@ -269,51 +217,44 @@
     function returnHome() {
       if(document.body.classList.contains('compare')) {
         document.body.classList.remove('compare');
-        if(!document.body.classList.contains('detail')) {
-          anime({
-            targets: ['#audit-detail', '#cards-compare .card-summary'],
-            opacity: [1, 0],
-            translateY: [0, shiftY],
-            duration: duration/2,
-            easing: easing,
-            complete: function(anim) {
-              fadeInHomeCards();
-            }
-          });
-        } else {
-          anime({
-            targets: '#audit-detail',
-            opacity: [1, 0],
-            translateY: [-280+gap, -280],
-            duration: duration,
-            easing: easing,
-            complete: function(anim) {
-              auditDetail.style.width = window.innerWidth + 'px';
-            }
-          });
-          anime({
-            targets: '#container-detail',
-            opacity: [1, 0],
-            duration: duration,
-            easing: easing,
-            complete: function(anim) {
-              document.body.classList.remove('detail');
-              fadeInHomeCards();
-            }
-          });
-        }
+        anime({
+          targets: ['#audit-detail', '#cards-compare .card-summary'],
+          opacity: [1, 0],
+          translateY: [0, shiftY],
+          duration: duration/2,
+          easing: easing,
+          complete: function(anim) {
+            fadeInHomeCards();
+          }
+        });
       }
     }
+
     function gotoCompare() {
+      var latestCommitH = latestCommits.offsetHeight;
       document.body.classList.add('compare');
       anime({
-        targets: '#cards-home .card',
+        targets: '#latest-commits',
+        opacity: [1, 0],
+        translateY: [0, -latestCommitH],
+        duration: duration,
+        easing: easing
+      });
+      anime({
+        targets: '#scores',
+        height: [scores.offsetHeight, scores.offsetHeight + 120],
+        translateY: [0, -latestCommitH],
+        duration: duration,
+        easing: easing
+      });
+      anime({
+        targets: ['#cards-timeline .card'],
         opacity: [1, 0],
         translateY: [0, -shiftY],
-        duration: duration/2,
+        duration: duration,
         easing: easing,
         complete: function(anim) {
-          cardsHome.classList.add('hide');
+          cardsTimeline.classList.add('hide');
           anime({
             targets: ['#audit-detail', '#cards-compare .card-summary'],
             opacity: [0, 1],
@@ -323,6 +264,12 @@
           });
           cardsCompare.classList.remove('hide');
         }
+      });
+      anime({
+        targets: '#cards-compare',
+        translateY: [0, -latestCommitH],
+        duration: duration,
+        easing: easing
       });
     }
 
@@ -359,16 +306,23 @@
       if(document.body.classList.contains('detail')) { return; }
       cardsCompare.scrollTop = 0;
       document.body.classList.add('detail');
+      var latestCommitH = latestCommits.offsetHeight;
+      var scoresH = scores.offsetHeight;
       anime({
-        targets: '#cards-compare .card-summary',
+        targets: '#scores',
         opacity: [1, 0],
-        translateY: [0, -shiftY],
+        translateY: [0, -scoresH-latestCommitH],
+        duration: duration,
+        easing: easing
+      });
+      anime({
+        targets: '#cards-compare',
+        translateY: [0, -scoresH-latestCommitH-gap],
         duration: duration,
         easing: easing
       });
       anime({
         targets: '#audit-detail',
-        translateY: [0, -280-gap],
         width: window.innerWidth/2,
         duration: duration,
         easing: easing

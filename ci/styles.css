@@ -203,6 +203,10 @@ body {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
+#button-return {
+  cursor: pointer;
+  margin: 12px;
+}
 #button-compare {
   color: var(--color-blue);
 }
@@ -277,6 +281,7 @@ body.detail #container-detail {
   padding: calc(var(--gap) - 6px) var(--gap);
   margin-bottom: var(--gap);
 }
+
 .card.center {
   margin-left: auto;
   margin-right: auto;
@@ -319,8 +324,12 @@ b {
   background: var(--color-green);
 }
 
-#cards-home {
+#cards-timeline {
   padding: 0 var(--gap) var(--gap) var(--gap);
+}
+
+#cards-compare {
+  margin-top: calc(-1 * var(--gap));
 }
 
 #cards-compare .card-summary {
@@ -345,7 +354,7 @@ b {
   justify-content: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 0 var(--gap);
+  grid-gap: var(--gap);
 }
 .three-up,
 .card .wrapper-large {
