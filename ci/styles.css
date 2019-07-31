@@ -39,7 +39,7 @@ body {
   font-size: var(--body-fontsize);
   line-height: var(--body-lineheight);
   color: var(--color-black-900);
-  background: #fefefe;
+  /* background: #fefefe; */
 }
 
 * {
@@ -114,12 +114,30 @@ body {
   flex: 1;
 }
 
+#content {
+  overflow-y: scroll;
+  height: calc(100vh - var(--header-height));
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+}
 
 #latest-commits-table {
   font-weight: 500;
 }
 #latest-commits-table .list {
   padding: 6px 12px;
+  position: relative;
+}
+#latest-commits-table .list.selected:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #4285f4;
+  content: "";
 }
 #latest-commits-table .list:nth-child(2n+1) {
   background: var(--color-black-100);
@@ -250,13 +268,14 @@ body.detail #container-detail {
 
 .cards {
   position: relative;
-  height: calc(100vh - var(--header-height));
+  /* height: calc(100vh - var(--header-height)); */
   /* overflow-y: scroll; */
 }
 .card {
   box-shadow: var(--card-shadow);
   background: var(--color-white);
   padding: calc(var(--gap) - 6px) var(--gap);
+  margin-bottom: var(--gap);
 }
 .card.center {
   margin-left: auto;
@@ -273,23 +292,11 @@ body.detail #container-detail {
 .card .caption {
   font-size: 20px;
   line-height: 28px;
+}
+.row-caption {
   margin-bottom: 12px;
 }
 
-
-#lastest-commits {
-  margin-top: var(--header-height);
-}
-
-#home-summary {
-  background: none;
-  box-shadow: none;
-  font-size: 24px;
-  line-height: 36px;
-  font-weight: 400;
-  padding: 6px 0 6px 0;
-  text-indent: 32px;
-}
 b {
   font-weight: 500;
 }
@@ -313,7 +320,7 @@ b {
 }
 
 #cards-home {
-  padding: var(--gap);
+  padding: 0 var(--gap) var(--gap) var(--gap);
 }
 
 #cards-compare .card-summary {
@@ -338,12 +345,18 @@ b {
   justify-content: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: var(--gap);
+  grid-gap: 0 var(--gap);
 }
 .three-up,
 .card .wrapper-large {
   max-width: 1120px;
-  margin: 20px auto;
+  margin: 0px auto;
+}
+
+#lastest-commits .wrapper-large,
+.scores {
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 @media only screen and (max-width: 960px) {

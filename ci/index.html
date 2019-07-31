@@ -30,16 +30,72 @@
     </div>
   </div>
 
-  <div class="card" id="lastest-commits">
-    <div class="wrapper-large">
-      <div class="row"><div class="caption flex">Latest Commits</div><i class="material-icons">more_horiz</i></div>
-      <div id="latest-commits-table"></div>
-    </div>
-  </div>
+  <div id="content">
 
-  <div class="cards" id="cards-home">
-    <!-- <div id="home-summary" class="card center medium">Compared to the latest deployment, the commit <b>b751de5</b> on 7/3 scored <span class="red score-chip">-13pt</span> for <b>Performance</b>, <span class="green score-chip">+4pt</span> for <b>Accessibility</b>, <span class="orange score-chip">-6pt</span> for <b>Best Practices</b>,
-<span class="green score-chip">+3pt</span> for <b>SEO</b>, and <span class="red score-chip">-18pt</span> for <b>PWA</b>.</div> -->
+    <div class="card" id="lastest-commits">
+      <div class="wrapper-large">
+        <div class="row row-caption"><div class="caption flex">Latest Commits</div><i class="material-icons">more_horiz</i></div>
+        <div id="latest-commits-table"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="wrapper-large">
+        <div class="scores">
+              <div class="score-container score-performance">
+                <div class="score red">
+                  <svg viewBox="0 0 120 120">
+                    <circle class="bg" r="60" cx="60" cy="60" />
+                    <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 103 265; stroke-dashoffset: 103;"/>
+                  </svg>
+                  <div class="number">45</div>
+                </div>
+                <div class="title">Performance</div>
+              </div>
+
+              <div class="score-container score-accessibility">
+                <div class="score orange" >
+                  <svg viewBox="0 0 120 120">
+                    <circle class="bg" r="60" cx="60" cy="60" />
+                    <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 259 158; stroke-dashoffset: 150;"/>
+                  </svg>
+                  <div class="number">67</div>
+                </div>
+                <div class="title">Accessibility</div>
+              </div>
+
+              <div class="score-container score-bestpractices">
+                <div class="score red">
+                  <svg viewBox="0 0 120 120">
+                    <circle class="bg" r="60" cx="60" cy="60" />
+                    <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 44 282; stroke-dashoffset: 60;"/>
+                  </svg>
+                  <div class="number">13</div>
+                </div>
+                <div class="title">Best Practices</div>
+              </div>
+
+              <div class="score-container score-seo">
+                <div class="score green">
+                  <svg viewBox="0 0 120 120">
+                    <circle class="bg" r="60" cx="60" cy="60" />
+                    <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 243 25; stroke-dashoffset: 1;" />
+                  </svg>
+                  <div class="number">98</div>
+                </div>
+                <div class="title">SEO</div>
+              </div>
+
+              <div class="score-container score-pwa">
+                <div class="score green pwa"></div>
+                <div class="title">PWA</div>
+              </div>
+
+            </div>
+      </div>
+    </div>
+
+    <div class="cards" id="cards-home">
     <div class="three-up">
       <div class="card small"></div>
       <div class="card small"></div>
@@ -50,7 +106,8 @@
     </div>
   </div>
 
-  <div class="cards hide" id="cards-compare">
+    <div class="cards hide" id="cards-compare">
+
     <div class="center card-summary">
 
       <div class="scores">
@@ -152,6 +209,8 @@
     </div>
   </div>
 
+  </div>
+
   <script type="text/javascript">
 
   var gap = 20;
@@ -178,7 +237,9 @@
       c.addEventListener('click', expandDetailView );
     });
 
-    document.getElementById('latest-commits-table').innerHTML = renderLatestCommits(data_latest_commits.entries);
+    var latestCommitsTable = document.getElementById('latest-commits-table');
+    latestCommitsTable.innerHTML = renderLatestCommits(data_latest_commits.entries);
+    latestCommitsTable.getElementsByClassName('list')[0].classList.add('selected');
     function renderLatestCommits(data) {
       return data.map((d) => {
         return `
