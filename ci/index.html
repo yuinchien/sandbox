@@ -170,7 +170,6 @@
     var buttonReturn = document.getElementById('button-return');
     var buttonCompare = document.getElementById('button-compare');
     var cardsCompare = document.getElementById('cards-compare');
-    var cardSummaryCompare = cardsCompare.querySelector('.card-summary');
     var auditDetail = document.getElementById('audit-detail');
     var cardsAuditDetail = auditDetail.querySelectorAll('.card');
     var buttonCloseDetail = document.getElementById('button-close-detail');
@@ -217,21 +216,39 @@
     function returnHome() {
       if(document.body.classList.contains('compare')) {
         document.body.classList.remove('compare');
+        var latestCommitH = latestCommits.offsetHeight;
+        var scoresH = scores.offsetHeight;
         anime({
-          targets: ['#audit-detail', '#cards-compare .card-summary'],
-          opacity: [1, 0],
-          translateY: [0, shiftY],
-          duration: duration/2,
-          easing: easing,
-          complete: function(anim) {
-            fadeInHomeCards();
-          }
+          targets: '#latest-commits',
+          opacity: [0, 1],
+          translateY: [-latestCommitH, 0],
+          duration: duration,
+          easing: easing
         });
+        anime({
+          targets: '#scores',
+          height: [scoresH, scoresH-120],
+          translateY: [-latestCommitH, 0],
+          duration: duration,
+          easing: easing
+        });
+        fadeInHomeCards();
+        // anime({
+        //   targets: ['#audit-detail'],
+        //   opacity: [1, 0],
+        //   translateY: [0, shiftY],
+        //   duration: duration/2,
+        //   easing: easing,
+        //   complete: function(anim) {
+        //     fadeInHomeCards();
+        //   }
+        // });
       }
     }
 
     function gotoCompare() {
       var latestCommitH = latestCommits.offsetHeight;
+      var scoresH = scores.offsetHeight;
       document.body.classList.add('compare');
       anime({
         targets: '#latest-commits',
@@ -242,7 +259,7 @@
       });
       anime({
         targets: '#scores',
-        height: [scores.offsetHeight, scores.offsetHeight + 120],
+        height: [scoresH, scoresH + 120],
         translateY: [0, -latestCommitH],
         duration: duration,
         easing: easing
@@ -256,7 +273,7 @@
         complete: function(anim) {
           cardsTimeline.classList.add('hide');
           anime({
-            targets: ['#audit-detail', '#cards-compare .card-summary'],
+            targets: ['#audit-detail'],
             opacity: [0, 1],
             translateY: [shiftY, 0],
             duration: duration,
@@ -274,20 +291,25 @@
     }
 
     function closeDetailView() {
+      var latestCommitH = latestCommits.offsetHeight;
+      var scoresH = scores.offsetHeight;
       anime({
-        targets: '#cards-compare .card-summary',
+        targets: '#scores',
         opacity: [0, 1],
-        translateY: [-shiftY, 0],
+        translateY: [-scoresH-latestCommitH, -latestCommitH],
         duration: duration,
-        delay: duration/4,
+        easing: easing
+      });
+      anime({
+        targets: '#cards-compare',
+        translateY: [-scoresH-latestCommitH-gap, -latestCommitH],
+        duration: duration,
         easing: easing
       });
       anime({
         targets: '#audit-detail',
-        translateY: [-280-gap, 0],
-        width: window.innerWidth,
+        width: [window.innerWidth/2, window.innerWidth],
         duration: duration,
-        delay: duration/4,
         easing: easing
       });
       anime({
@@ -330,7 +352,7 @@
       anime({
         targets: '#container-detail',
         opacity: [0, 1],
-        delay: duration/2,
+        // delay: duration/2,
         duration: duration,
         easing: easing
       });

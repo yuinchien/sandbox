@@ -354,7 +354,7 @@ b {
   justify-content: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: var(--gap);
+  grid-gap: 0 var(--gap);
 }
 .three-up,
 .card .wrapper-large {
