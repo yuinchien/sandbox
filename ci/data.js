@@ -1,3 +1,5 @@
+const data_sections = ['Performance', 'Accessibility', 'Best Practices', 'SEO', 'PWA'];
+
 const data_latest_commits = {
   caption: 'Latest Commits',
   entries: [
