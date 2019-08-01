@@ -94,7 +94,8 @@ body {
   align-items: center;
   margin: 0 6px;
   cursor: pointer;
-  background: var(--color-black-100);
+  border: var(--border-style);
+  /* background: var(--color-black-100); */
   border-radius: 20px;
   padding: 4px 6px;
   font-weight: 500;
@@ -177,7 +178,10 @@ body {
   background-image: url(images/profile_patrick.png);
 }
 
-
+#latest-commits-table .icon-lockup,
+#latest-commits-table .time {
+  opacity: .5;
+}
 .icon-lockup span {
   margin-left: 4px;
 }
