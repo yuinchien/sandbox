@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto:400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
+  <link rel="icon"  type="image/png" href="images/lh_favicon_16x16_2x.png" />
+
   <script type="text/javascript" src="data.js"></script>
 	<script type="text/javascript" src="ScrollMagic.min.js"></script>
 	<script type="text/javascript" src="debug.addIndicators.min.js"></script>
@@ -657,8 +659,6 @@
         e.addEventListener('click', jumpToSection, false);
       });
     }
-
-    // setTimeout(function(){ document.body.classList.add("panel"); }, 1000);
 
     document.getElementById('right-panel').getElementsByClassName('mask')[0].addEventListener('click', function() {
       document.body.classList.remove("panel");

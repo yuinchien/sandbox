@@ -82,6 +82,11 @@
     stroke-width: 8;
     stroke-linecap: round;
   }
+  .score .delta {
+    fill: transparent;
+    stroke-width: 8;
+    stroke-linecap: round;
+  }
 .score.orange {
   color: var(--color-orange);
   fill: var(--color-orange);
@@ -97,6 +102,35 @@
   fill: var(--color-red);
   stroke: var(--color-red);
 }
+
+.delta-number {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-weight: 500;
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+  margin-top: 12px;
+}
+.delta-number.regress {
+  background: var(--color-regress);
+}
+.delta-number.improve {
+  background: var(--color-improve);
+}
+
+body[mode="diff"] #scores .score {
+  fill: #757575;
+  color: #222;
+  stroke: #444;
+}
+body[mode="diff"] #scores .score.improve .delta {
+  stroke: var(--color-improve);
+}
+body[mode="diff"] #scores .score.regress .delta {
+  stroke: var(--color-regress);
+}
+
 .score.pwa {
   background-color: var(--color-black-200);
   background-image: url(images/logo-pwa.svg);

@@ -14,6 +14,9 @@
   --color-black-100: #F5F5F5;
   --color-white: #FFFFFF;
 
+  --color-regress: #FF4081;
+  --color-improve: #00BCD4;
+
   --color-red: #FF4E42;
   --color-red-700: #EB0F00;
 
@@ -55,6 +58,7 @@ body {
 .button {
   cursor: pointer;
   line-height: 0;
+  padding: 12px;
 }
 .button.icon-label {
   display: flex;
@@ -88,25 +92,6 @@ body {
 .icon-commit {
   background-image: url(images/ic_commit_24x24.svg);
 }
-
-.dropdown {
-  display: flex;
-  align-items: center;
-  margin: 0 6px;
-  cursor: pointer;
-  border: var(--border-style);
-  /* background: var(--color-black-100); */
-  border-radius: 20px;
-  padding: 4px 6px;
-  font-weight: 500;
-}
-.dropdown span {
-  margin-left: 6px;
-}
-.dropdown i {
-  margin-left: 4px;
-}
-
 .row {
   display: flex;
   align-items: center;
@@ -123,7 +108,9 @@ body {
   left: 0;
   right: 0;
 }
-
+#latest-commits {
+  display: none;
+}
 #latest-commits-table {
   font-weight: 500;
 }
@@ -186,13 +173,49 @@ body {
   margin-left: 4px;
 }
 
+#build-chips {
+  min-width: 760px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.build-chip {
+  display: flex;
+  align-items: center;
+  border: 1px solid #999;
+  border-radius: 20px;
+  padding: 0px 12px;
+  line-height: 30px;
+  margin: 0 5px;
+}
+.build-chip .kind {
+  padding-right: 8px;
+  margin-right: 10px;
+  border-right: 1px solid #999;
+}
+#chip-compare {
+  color: var(--color-blue);
+  border-color: var(--color-blue);
+}
+#chip-compare.build-chip .kind {
+  border-color: var(--color-blue);
+}
+.commit {
+  font-weight: 500;
+  font-family: 'Roboto Mono', monospace;
+  margin-right: 6px;
+}
+
+#project-title {
+  font-weight: 500;
+}
 #header {
   display: flex;
   align-items: center;
   height: var(--header-height);
   box-shadow: var(--card-shadow);
   background: var(--color-white);
-  padding: 0 12px 0 6px;
+  padding: 0 4px;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -212,9 +235,7 @@ body {
   cursor: pointer;
   margin: 12px;
 }
-#button-compare {
-  color: var(--color-blue);
-}
+
 #button-swap {
   margin: 0 3px;
 }
@@ -396,12 +417,7 @@ b {
   :root {
     --gap: 16px;
   }
-  body.compare #dropdown-project {
-    display: none;
-  }
-  .dropdown > span {
-    display: none;
-  }
+
   .three-up {
     grid-template-columns: 1fr;
   }

@@ -6,28 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
   <meta name="mobile-web-app-capable" content="yes">
 	<meta name="author" content="Yuin Chien">
+
+  <link rel="icon" type="image/png" href="" />
+
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto:400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="styles_lh.css">
   <script type="text/javascript" src="data.js"></script>
   <script type="text/javascript" src="anime.min.js"></script>
-	<title>Lighthouse CI</title>
+	<title>Lighthouse</title>
 </head>
-<body>
+<body mode="diff">
 
   <div id="header">
-    <div id="logo" class="compare-hide"></div>
-    <div id="button-return" class="compare-show"><i class="material-icons">arrow_back</i></div>
-    <div class="dropdown" id="dropdown-project"><i class="material-icons">list</i><span>Chrome Website</span><i class="material-icons">arrow_drop_down</i></div>
-    <div class="dropdown compare-hide" id="dropdown-url"><i class="material-icons">public</i><span>https://www.google.com/chrome</span><i class="material-icons">arrow_drop_down</i></div>
-    <div class="dropdown compare-hide" id="dropdown-branch"><div class="small svg-icon icon-branch"></div><span>master</span><i class="material-icons">arrow_drop_down</i></div>
-    <div style="flex:1;"></div>
-    <div id="button-compare" class="compare-hide button"><i class="material-icons">compare</i></div>
-    <div id="dropdown-commits" class="compare-show row">
-      <div class="dropdown" id="dropdown-commit-1"><span>Commit</span>b750ea3<i class="material-icons">arrow_drop_down</i></div>
-      <div id="button-swap" class="button"><i class="material-icons">swap_horiz</i></div>
-      <div class="dropdown" id="dropdown-commit-2"><span>Commit</span>b751de5<i class="material-icons">arrow_drop_down</i></div>
+    <div class="row" style="width:260px;">
+      <div id="button-menu" class="button"><i class="material-icons">menu</i></div>
+      <div id="button-return" class="compare-show"><i class="material-icons">arrow_back</i></div>
+      <div id="project-title">Chrome Website</div>
+    </div>
+    <div id="build-chips" style="flex:1;">
+      <div class="build-chip">
+        <div class="kind">base</div>
+        <div class="row"><div class="commit">a311ab8</div>docs: link to good first issues</div>
+      </div>
+      <div class="build-chip" id="chip-compare">
+        <div class="kind">compare</div>
+        <div class="row"><div class="commit">b751de5</div>Add face descriptors  </div>
+      </div>
+    </div>
+    <div class="row" style="width:260px;justify-content: flex-end;">
+      <div id="button-chart" class="compare-hide button"><i class="material-icons">show_chart</i></div>
     </div>
   </div>
 
@@ -44,47 +54,55 @@
       <div class="wrapper-large">
         <div class="scores">
           <div class="score-container score-performance">
-            <div class="score red">
+            <div class="score red improve">
               <svg viewBox="0 0 120 120">
                 <circle class="bg" r="60" cx="60" cy="60" />
                 <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 103 265; stroke-dashoffset: 103;"/>
+                <circle class="delta" r="56" cx="60" cy="60" style="stroke-dasharray: 126 312; stroke-dashoffset: 103;"/>
               </svg>
               <div class="number">45</div>
             </div>
             <div class="title">Performance</div>
+            <div class="delta-number improve">+21</div>
           </div>
 
           <div class="score-container score-accessibility">
-            <div class="score orange" >
+            <div class="score orange regress" >
               <svg viewBox="0 0 120 120">
                 <circle class="bg" r="60" cx="60" cy="60" />
                 <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 259 158; stroke-dashoffset: 150;"/>
+                <circle class="delta" r="56" cx="60" cy="60" style="stroke-dasharray: 15 240; stroke-dashoffset: 150;"/>
               </svg>
               <div class="number">67</div>
             </div>
             <div class="title">Accessibility</div>
+            <div class="delta-number regress">-8</div>
           </div>
 
           <div class="score-container score-bestpractices">
-            <div class="score red">
+            <div class="score red regress">
               <svg viewBox="0 0 120 120">
                 <circle class="bg" r="60" cx="60" cy="60" />
                 <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 44 282; stroke-dashoffset: 60;"/>
+                <circle class="delta" r="56" cx="60" cy="60" style="stroke-dasharray: 13 346; stroke-dashoffset: 60;"/>
               </svg>
               <div class="number">13</div>
             </div>
             <div class="title">Best Practices</div>
+            <div class="delta-number regress">-4</div>
           </div>
 
           <div class="score-container score-seo">
-            <div class="score green">
+            <div class="score green improve">
               <svg viewBox="0 0 120 120">
                 <circle class="bg" r="60" cx="60" cy="60" />
                 <circle class="arc" r="56" cx="60" cy="60" style="stroke-dasharray: 243 25; stroke-dashoffset: 1;" />
+                <circle class="delta" r="56" cx="60" cy="60" style="stroke-dasharray: 55 310; stroke-dashoffset: -188;" />
               </svg>
               <div class="number">98</div>
             </div>
             <div class="title">SEO</div>
+            <div class="delta-number improve">+7</div>
           </div>
 
           <div class="score-container score-pwa">
@@ -157,15 +175,12 @@
   var shiftY = 10;
   var scoresDiffH = 92;
 
-
   window.onload = function() {
 
     var cardsTimeline = document.getElementById('cards-timeline');
     var cardsCompare = document.getElementById('cards-compare');
 
     var buttonReturn = document.getElementById('button-return');
-    var buttonCompare = document.getElementById('button-compare');
-    var cardsCompare = document.getElementById('cards-compare');
     var auditDetail = document.getElementById('audit-detail');
     var cardsAuditDetail = auditDetail.querySelectorAll('.card');
     var buttonCloseDetail = document.getElementById('button-close-detail');
@@ -174,7 +189,6 @@
     var scores = document.getElementById('scores');
 
     buttonReturn.addEventListener('click', returnHome);
-    buttonCompare.addEventListener('click', gotoCompare);
     buttonCloseDetail.addEventListener('click', closeDetailView);
     cardsAuditDetail.forEach(function(c, i) {
       c.addEventListener('click', expandDetailView );
@@ -330,7 +344,7 @@
         targets: '#scores',
         opacity: [1, 0],
         translateY: [0, -scoresH-latestCommitH],
-        duration: duration,
+        duration: duration*1.4,
         easing: easing
       });
       anime({
@@ -348,7 +362,7 @@
       anime({
         targets: '#container-detail',
         opacity: [0, 1],
-        duration: duration,
+        duration: duration*1.4,
         easing: easing
       });
     }
