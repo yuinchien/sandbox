@@ -20,7 +20,6 @@
   --color-black-100: #F5F5F5;
   --color-white: #FFFFFF;
 
-
   --topbar-bg: var(--color-black-100);
   --header-bg: var(--color-white);
   --highlighter-bg: var(--color-black);
@@ -82,7 +81,7 @@
   --background: white;
   --hover-bg: #fafafa;
 
-  --symbol-url: url(images/lh_symbol_24x24_2.svg);
+  --symbol-url: url(images/lh_symbol_24x24.svg);
 }
 
 body {
