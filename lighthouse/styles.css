@@ -5,10 +5,12 @@
   --color-green: #0CCE6B;
   --color-green-700: #018642;
 
-  --color-orange: 255, 164, 0; /* #FFA400; */
+  --color-orange-rgb: 255, 164, 0;
+  --color-orange: #FFA400;
   --color-orange-700: #D04900;
 
   --color-blue: #2962FF;
+  --color-blue-200: #90CAF9;
 
   --color-black: #000000;
   --color-black-900: #212121;
@@ -43,7 +45,7 @@
   --score-title-lineheight: 26px;
 
   --score-size: 80px;
-  --score-size-big: 112px;
+  --score-size-big: 120px;
 
   --score-container-width: 148px;
 
@@ -71,8 +73,6 @@
 
   --badge-margin: 0 6px 0 -2px;
 
-  --setting-title-min-width: 220px;
-
   --expandable-padding: 0 0 2px 28px;
   --item-padding: 10px 0px;
 
@@ -97,7 +97,7 @@ body {
   body.dark {
     --color-red-700: var(--color-red);
     --color-green-700: var(--color-green);
-    --color-orange-700: rgb( var(--color-orange) );
+    --color-orange-700: var(--color-orange);
 
     --color-black-200: var(--color-black-800);
     --color-black-400: var(--color-black-600);
@@ -244,7 +244,7 @@ a {
   background-color: var(--color-red);
 }
 #score-scale > div.orange:before {
-  background-color: rgb( var(--color-orange) );
+  background-color: var(--color-orange);
 }
 #score-scale > div.green:before {
   background-color: var(--color-green);
@@ -329,7 +329,7 @@ body.dropdown #dropdown {
   margin: -4px;
   padding: 12px 16px;
   border-radius: 8px;
-  background: rgba(var(--color-orange), .1);
+  background: rgba(var(--color-orange-rgb), .1);
 }
 #right-panel .info p {
   color: var(--color-orange-700);
@@ -447,9 +447,9 @@ body.dropdown #dropdown {
     stroke-linecap: round;
   }
 .score.orange {
-  color: rgb( var(--color-orange) );
-  fill: rgb( var(--color-orange) );
-  stroke: rgb( var(--color-orange) );
+  color: var(--color-orange);
+  fill: var(--color-orange);
+  stroke: var(--color-orange);
 }
 .score.green {
   color: var(--color-green);
@@ -508,7 +508,7 @@ body.dropdown #dropdown {
 }
 
 .section .wrapper {
-  max-width: 760px;
+  max-width: 880px;
   margin: 0 auto;
 }
 .row-list-th {
@@ -553,7 +553,6 @@ body.dropdown #dropdown {
 
 
 .items .item div.title {
-  min-width: var(--setting-title-min-width);
   font-weight: 700;
   transform: translate3d(8px,0,0);
   flex: .5;
@@ -691,7 +690,7 @@ body.dropdown #dropdown {
   .audit.orange > .row:before,
   .list-with-shape.orange:before {
     clip-path: polygon(6% 6%, 94% 6%, 94% 94%, 6% 94%);
-    background: rgb( var(--color-orange) );
+    background: var(--color-orange);
   }
   .audit .description,
   .audit .expandable {
@@ -772,7 +771,7 @@ body.dropdown #dropdown {
     --body-lineheight: 20px;
 
     --score-number-fontsize-big: 34px;
-    --score-number-fontsize: 26px;
+    --score-number-fontsize: 20px;
 
     --score-title-fontsize-big: 22px;
     --score-title-fontsize: 14px;
@@ -780,8 +779,8 @@ body.dropdown #dropdown {
     --score-title-lineheight-big: 26px;
     --score-title-lineheight: 20px;
 
-    --score-size: 72px;
-    --score-size-big: 96px;
+    --score-size: 64px;
+    --score-size-big: 92px;
 
     --score-container-width: 112px;
 
@@ -815,8 +814,6 @@ body.dropdown #dropdown {
     --item-padding: 10px 0px;
 
     --right-panel-width: 320px;
-
-    --setting-title-min-width: 120px;
   }
 
   .two-col.audits .audit {
@@ -844,7 +841,7 @@ body.dropdown #dropdown {
   .audit .secondary {
     display: none;
   }
-  /* #section-runtimesettings .items .item {
-    display: block;
-  } */
+  .score .number {
+    font-weight: 500;
+  }
 }
