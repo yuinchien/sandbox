@@ -28,15 +28,16 @@
   --item-bg: var(--color-black-100);
 
   --plugin-bg: var(--color-white);
-  --plugin-size: 36px;
-  --plugin-icon-size: 65%;
+  --plugin-size: 32px;
+  --plugin-size-big: 42px;
+  --plugin-icon-size: 70%;
   --plugin-icon-url: url(images/ic_extension_grey600_24dp.svg);
 
   --body-fontsize: 16px;
   --body-lineheight: 24px;
 
-  --score-number-fontsize-big: 38px;
-  --score-number-fontsize: 28px;
+  --score-number-fontsize-big: 40px;
+  --score-number-fontsize: 24px;
 
   --score-title-fontsize-big: 28px;
   --score-title-fontsize: 20px;
@@ -51,7 +52,7 @@
 
   --score-marginbottom-big: 12px;
 
-  --score-number-offset: 1px;
+  --score-number-offset: 2px;
 
   --shape-size: 12px;
   --shape-margin: 7px 12px 0 4px;
@@ -74,7 +75,7 @@
   --badge-margin: 0 6px 0 -2px;
 
   --expandable-padding: 0 0 2px 28px;
-  --item-padding: 10px 0px;
+  --item-padding: 10px 8px;
 
   --right-panel-width: 360px;
 
@@ -106,7 +107,7 @@ body {
     --topbar-bg: var(--color-black);
     --plugin-bg: var(--color-black-800);
     --header-bg: var(--color-black-900);
-    --item-bg: rgba(0,0,0,.5);
+    --item-bg: rgba(0,0,0,.15);
 
     --background: var(--color-black-900);
     color: var(--color-black-100);
@@ -362,11 +363,11 @@ body.dropdown #dropdown {
 #scores-sticky {
   --score-container-width: 60px;
   --score-size: 36px;
-  --score-number-fontsize: 13px;
-  --plugin-size: 18px;
+  --score-number-fontsize: 14px;
+  --plugin-size: 16px;
   --plugin-icon-size: 75%;
   --score-number-offset: 0;
-  font-weight: 700;
+  font-weight: 500;
   position: fixed;
   align-items: center;
   justify-content: center;
@@ -408,7 +409,7 @@ body.dropdown #dropdown {
     line-height: var(--score-title-lineheight-big);
   }
   .score-container.big {
-    --plugin-size: 42px;
+    --plugin-size: var(--plugin-size-big);
   }
   .score-container p {
     margin: 4px 0 12px 0;
@@ -436,7 +437,11 @@ body.dropdown #dropdown {
     position: absolute;
   }
   .score .number {
-    -webkit-transform: translate3d(0, var(--score-number-offset), 0);
+    font-weight: 500;
+    transform: translate3d(0, var(--score-number-offset), 0);
+  }
+  .big .score .number {
+    font-weight: 400;
   }
   .score .bg {
     opacity: .1;
@@ -475,11 +480,11 @@ body.dropdown #dropdown {
   background-image: var(--plugin-icon-url);
   background-repeat: no-repeat;
   background-size: var(--plugin-icon-size);
-  background-position: 58% 50%;
+  background-position: 56% 50%;
   content: "";
   position: absolute;
-  right: -6px;
-  bottom: -2px;
+  right: -2px;
+  bottom: 0px;
   display: block;
   z-index: 100;
   box-shadow: 0 0 4px rgba(0,0,0,.2);
@@ -490,6 +495,12 @@ body.dropdown #dropdown {
 }
 .code {
   font-family: 'Roboto Mono', monospace;
+  font-size: calc(var(--body-fontsize) - 1px);
+}
+.items .item .code {
+  display: block;
+  line-height: calc(var(--body-lineheight) - 4px);
+  font-size: calc(var(--body-fontsize) - 3px);
 }
 
 .two-col.audits .audit {
@@ -512,7 +523,7 @@ body.dropdown #dropdown {
   margin: 0 auto;
 }
 .row-list-th {
-  padding: 8px 0;
+  padding: var(--item-padding);
   color: var(--color-black-600);
 }
 .row-list-th > div {
@@ -521,8 +532,8 @@ body.dropdown #dropdown {
 }
 .row-list-th div,
 .items .item div {
-  text-align: right;
   flex: 1;
+  padding: 0 4px;
 }
 .row-list-th div:first-child,
 .items .item div:first-child {
@@ -538,8 +549,11 @@ body.dropdown #dropdown {
   padding: var(--item-padding);
   position: relative;
 }
+.item.row {
+  align-items: baseline;
+}
 
-.items .item div:first-child {
+/* .items .item div:first-child {
   transform: translate3d(8px,0,0);
 }
 
@@ -549,7 +563,7 @@ body.dropdown #dropdown {
 
 .items .item.single-item div:last-child {
   transform: translate3d(8px,0,0);
-}
+} */
 
 
 .items .item div.title {
@@ -581,7 +595,7 @@ body.dropdown #dropdown {
   max-width: 660px;
 }
 .caption .desc {
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-black-600);
 }
 
@@ -650,7 +664,7 @@ body.dropdown #dropdown {
   }
   .audit .thumbnail + div {
     text-align: left;
-    text-indent: 68px;
+    text-indent: 60px;
   }
   .audit .thumbnail-header{
     flex: 1 !important;
@@ -786,7 +800,8 @@ body.dropdown #dropdown {
 
     --score-marginbottom-big: 8px;
 
-    --plugin-size: 28px;
+    --plugin-size: 24px;
+    --plugin-size-big: 32px;
     --plugin-icon-size: 75%;
 
     --shape-size: 10px;
@@ -811,7 +826,7 @@ body.dropdown #dropdown {
     --badge-margin: 0 7px 0 -3px;
 
     --expandable-padding: 0 0 2px 24px;
-    --item-padding: 10px 0px;
+    --item-padding: 10px 8px;
 
     --right-panel-width: 320px;
   }

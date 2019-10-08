@@ -177,8 +177,8 @@ const data_performance_diagnostics = {
         header: ['Element', 'Statistic', 'Value'],
         items: [
           ['', 'Total DOM Nodes', '3,511'],
-          ['&lt;div aria-hidden="true" id="gigyaShareBar_0-reaction0-left_img">', 'Maximum DOM Depth', '21'],
-          ['&lt;head>', 'Maximum Child Elements', '155'],
+          ['<span class="code">&lt;div aria-hidden="true" id="gigyaShareBar_0-reaction0-left_img"></span>', 'Maximum DOM Depth', '21'],
+          ['<span class="code">&lt;head></span>', 'Maximum Child Elements', '155'],
         ],
       },
     },
@@ -226,34 +226,34 @@ const data_accessibility_namesandlabels = {
       table: {
         header: ['Failing Elements'],
         items: [
-          ['&lt;button type="submit" class="search-input__button"></button>'],
+          ['<span class="code">&lt;button type="submit" class="search-input__button"></button></span>'],
         ],
       },
     },
     {
-      color: 'red', title: 'Image elements do not have [alt] attributes',
+      color: 'red', title: 'Image elements do not have <span class="code">[alt]</span> attributes',
       description: 'Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. Learn more.',
       table: {
         header: ['Failing Elements'],
         items: [
-          ['&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_politics.png" class="nav-menu__img-politics" style="width: 78.79px;" data-demand-load="loaded">'],
-          ['&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_health.png" class="nav-menu__img-health" style="width: 70px;" data-demand-load="loaded">'],
-          ['&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_entertainment.png" class="nav-menu__img-entertainment" style="width: 132.5px;" data-demand-load="loaded">'],
-          ['&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_style_new.png" class="nav-menu__img-style" style="width: 63px;" data-demand-load="loaded">'],
-          ['&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_travel.png" class="nav-menu__img-travel" style="width: 57px;" data-demand-load="loaded">'],
-          ['&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_bleacher.png" class="nav-menu__img-bleacher" style="width: 81.85px;" data-demand-load="loaded">'],
+          ['<span class="code">&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_politics.png" class="nav-menu__img-politics" style="width: 78.79px;" data-demand-load="loaded"></span>'],
+          ['<span class="code">&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_health.png" class="nav-menu__img-health" style="width: 70px;" data-demand-load="loaded"></span>'],
+          ['<span class="code">&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_entertainment.png" class="nav-menu__img-entertainment" style="width: 132.5px;" data-demand-load="loaded"></span>'],
+          ['<span class="code">&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_style_new.png" class="nav-menu__img-style" style="width: 63px;" data-demand-load="loaded"></span>'],
+          ['<span class="code">&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_travel.png" class="nav-menu__img-travel" style="width: 57px;" data-demand-load="loaded"></span>'],
+          ['<span class="code">&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_bleacher.png" class="nav-menu__img-bleacher" style="width: 81.85px;" data-demand-load="loaded"></span>'],
         ],
       },
     },
     {
-      color: 'red', title: '&lt;frame> or &lt;iframe> elements do not have a title',
+      color: 'red', title: '<span class="code">&lt;frame></span> or <span class="code">&lt;iframe></span> elements do not have a title',
       description: 'Screen reader users rely on frame titles to describe the contents of frames. Learn more.',
       table: {
         header: ['Failing Elements'],
         items: [
-          ['&lt;iframe frameborder="0" scrolling="no" allowfullscreen="" style="border: 0px; display: block; width: 412px; height: 194px; margin-top: 0px !important;" width="412" height="194">&lt;/iframe>'],
-          ['&lt;iframe width="100%" style="display: block !important; height:487px !important;" frameborder="0" scrolling="no" height="487">'],
-          ['&lt;iframe class="ym-ad-choices" frameborder="0" scrolling="no" width="100%" height="16" style=" display: block !important; background: transparent !important; height: 16px !important;" srcdoc="&lt;style>'],
+          ['<span class="code">&lt;iframe frameborder="0" scrolling="no" allowfullscreen="" style="border: 0px; display: block; width: 412px; height: 194px; margin-top: 0px !important;" width="412" height="194">&lt;/iframe></span>'],
+          ['<span class="code">&lt;iframe width="100%" style="display: block !important; height:487px !important;" frameborder="0" scrolling="no" height="487"></span>'],
+          ['<span class="code">&lt;iframe class="ym-ad-choices" frameborder="0" scrolling="no" width="100%" height="16" style=" display: block !important; background: transparent !important; height: 16px !important;" srcdoc="&lt;style></span>'],
         ],
       },
     },
@@ -263,7 +263,7 @@ const data_accessibility_namesandlabels = {
       table: {
         header: ['Failing Elements'],
         items: [
-          ['&lt;input class="search-input__text" type="text" placeholder="Search CNN..." id="searchInputFooter" name="q">'],
+          ['<span class="code">&lt;input class="search-input__text" type="text" placeholder="Search CNN..." id="searchInputFooter" name="q"></span>'],
         ],
       },
     },
@@ -273,10 +273,10 @@ const data_accessibility_namesandlabels = {
       table: {
         header: ['Failing Elements'],
         items: [
-          ['&lt;a href="/" id="logo" class="nav__logo">&lt;/a>'],
-          ['&lt;a class="m-footer__title__link" href="/politics" data-analytics="footer_politics">&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_politics.png" class="nav-menu__img-politics" style="width: 78.79px;" data-demand-load="loaded">&lt;/a>'],
-          ['&lt;a class="m-footer__title__link" href="/health" data-analytics="footer_health">&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_health.png" class="nav-menu__img-health" style="width: 70px;" data-demand-load="loaded">&lt;/a>'],
-          ['&lt;class="logo" href="/" data-analytics="edition-picker-logo">&lt;/a>'],
+          ['<span class="code">&lt;a href="/" id="logo" class="nav__logo">&lt;/a></span>'],
+          ['<span class="code">&lt;a class="m-footer__title__link" href="/politics" data-analytics="footer_politics">&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_politics.png" class="nav-menu__img-politics" style="width: 78.79px;" data-demand-load="loaded">&lt;/a></span>'],
+          ['<span class="code">&lt;a class="m-footer__title__link" href="/health" data-analytics="footer_health">&lt;img src="//cdn.cnn.com/cnn/.e1mo/img/4.0/logos/menu_health.png" class="nav-menu__img-health" style="width: 70px;" data-demand-load="loaded">&lt;/a></span>'],
+          ['<span class="code">&lt;class="logo" href="/" data-analytics="edition-picker-logo">&lt;/a></span>'],
         ],
       },
     },
@@ -292,17 +292,17 @@ const data_accessibility_contrast = {
       table: {
         header: ['Failing Elements'],
         items: [
-          ['&lt;span class="ob-unit ob-rec-source" data-type="Source">THE CITIZENRY&lt;/span>'],
-          ['&lt;span class="copyright">'],
-          ['&lt;a class="m-copyright__links" data-analytics="footer_turner-broadcasting-system-inc" href="http://www.turner.com" title="Turner Broadcasting System, Inc.">Turner&nbsp;Broadcasting&nbsp;System,&nbsp;Inc.&lt;/a>'],
-          ['&lt;a class="m-legal__links" data-analytics="footer_terms-of-use" href="/terms">Terms of Use&lt;/a>'],
-          ['&lt;a class="m-legal__links" data-analytics="footer_privacy-policy" href="/privacy">Privacy Policy&lt;/a>'],
-          ['&lt;a class="m-legal__links" data-analytics="footer_accessibility-cc" href="/accessibility">Accessibility &amp; CC&lt;/a>'],
-          ['&lt;a class="m-legal__links" data-analytics="footer_adchoices" href="#">AdChoices&lt;/a>'],
-          ['&lt;a class="m-legal__links" data-analytics="footer_about-us" href="/about">About us&lt;/a>'],
-          ['&lt;a class="m-legal__links" data-analytics="footer_cnn-studio-tours" href="//tours.cnn.com">CNN Studio Tours&lt;/a>'],
-          ['&lt;a class="m-legal__links" data-analytics="footer_cnn-store" href="//store.cnn.com">CNN Store&lt;/a>'],
-          ['&lt;a class="m-legal__links" data-analytics="footer_newsletters" href="/newsletters">Newsletters&lt;/a>'],
+          ['<span class="code">&lt;span class="ob-unit ob-rec-source" data-type="Source">THE CITIZENRY&lt;/span></span>'],
+          ['<span class="code">&lt;span class="copyright"></span>'],
+          ['<span class="code">&lt;a class="m-copyright__links" data-analytics="footer_turner-broadcasting-system-inc" href="http://www.turner.com" title="Turner Broadcasting System, Inc.">Turner&nbsp;Broadcasting&nbsp;System,&nbsp;Inc.&lt;/a></span>'],
+          ['<span class="code">&lt;a class="m-legal__links" data-analytics="footer_terms-of-use" href="/terms">Terms of Use&lt;/a></span>'],
+          ['<span class="code">&lt;a class="m-legal__links" data-analytics="footer_privacy-policy" href="/privacy">Privacy Policy&lt;/a></span>'],
+          ['<span class="code">&lt;a class="m-legal__links" data-analytics="footer_accessibility-cc" href="/accessibility">Accessibility &amp; CC&lt;/a></span>'],
+          ['<span class="code">&lt;a class="m-legal__links" data-analytics="footer_adchoices" href="#">AdChoices&lt;/a></span>'],
+          ['<span class="code">&lt;a class="m-legal__links" data-analytics="footer_about-us" href="/about">About us&lt;/a></span>'],
+          ['<span class="code">&lt;a class="m-legal__links" data-analytics="footer_cnn-studio-tours" href="//tours.cnn.com">CNN Studio Tours&lt;/a></span>'],
+          ['<span class="code">&lt;a class="m-legal__links" data-analytics="footer_cnn-store" href="//store.cnn.com">CNN Store&lt;/a></span>'],
+          ['<span class="code">&lt;a class="m-legal__links" data-analytics="footer_newsletters" href="/newsletters">Newsletters&lt;/a></span>'],
         ],
       },
     },
@@ -313,14 +313,14 @@ const data_accessibility_bestpractices = {
   caption: 'Best practices', caption_desc: 'These items highlight common accessibility best practices.',
   audits: [
     {
-      color: 'red', title: '[id] attributes on the page are not unique',
+      color: 'red', title: '<span class="code">[id]</span> attributes on the page are not unique',
       description: 'The value of an id attribute must be unique to prevent other instances from being overlooked by assistive technologies. Learn more.',
       table: {
         header: ['Failing Elements'],
         items: [
-          ['&lt;div id="gigyaShareBar_0-reaction0" class="gig-button-up" title="" alt="">'],
-          ['&lt;div id="gigyaShareBar_1-reaction0" class="gig-button-up" title="" alt="">'],
-          ['&lt;div id="gigyaShareBar_2-reaction0" class="gig-button-up" title="" alt="">'],
+          ['<span class="code">&lt;div id="gigyaShareBar_0-reaction0" class="gig-button-up" title="" alt=""></span>'],
+          ['<span class="code">&lt;div id="gigyaShareBar_1-reaction0" class="gig-button-up" title="" alt=""></span>'],
+          ['<span class="code">&lt;div id="gigyaShareBar_2-reaction0" class="gig-button-up" title="" alt=""></span>'],
         ],
       },
     },
@@ -331,12 +331,12 @@ const data_accessibility_internationalizationandlocalization = {
   caption: 'Internationalization and localization', caption_desc: 'These are opportunities to improve the interpretation of your content by users in different locales.',
   audits: [
     {
-      color: 'red', title: '&lt;html> element does not have a [lang] attribute',
+      color: 'red', title: '<span class="code">&lt;html></span> element does not have a <span class="code">[lang]</span> attribute',
       description: 'If a page doesn\'t specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn\'t actually in the default language, then the screen reader might not announce the page\'s text correctly. Learn more.',
       table: {
         header: ['Failing Elements'],
         items: [
-          ['&lt;html class="js no-flash geolocation websockets localstorage webworkers touchevents fontface supports textshadow csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox csstransforms3d mobile phone no-tablet mobilegradea no-gdpr no-ios android no-iospre10 no-iemobile no-ieunsupported no-ie11unsupported no-ie no-edge" data-formfactor="mobile" style="">'],
+          ['<span class="code">&lt;html class="js no-flash geolocation websockets localstorage webworkers touchevents fontface supports textshadow csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox csstransforms3d mobile phone no-tablet mobilegradea no-gdpr no-ios android no-iospre10 no-iemobile no-ieunsupported no-ie11unsupported no-ie no-edge" data-formfactor="mobile" style=""></span>'],
         ],
       },
     },
@@ -347,18 +347,18 @@ const data_accessibility_tablesandlists = {
   caption: 'Tables and lists', caption_desc: 'These are opportunities to to improve the experience of reading tabular or list data using assistive technology, like a screen reader.',
   audits: [
     {
-      color: 'red', title: 'Lists do not contain only &lt;li> elements and script supporting elements (&lt;script> and &lt;template>).',
+      color: 'red', title: 'Lists do not contain only <span class="code">&lt;li></span> elements and script supporting elements (<span class="code">&lt;script></span> and <span class="code">&lt;template></span>).',
       description: 'Screen readers have a specific way of announcing lists. Ensuring proper list structure aids screen reader output. Learn more.',
       table: {
         header: ['Failing Elements'],
         items: [
-          ['&lt;ul class="cn cn-list-hierarchical-xs cn--idx-2 cn-container_35DC1942-D3DF-7FE1-F688-C99E962F7CB1" data-layout="list-hierarchical-xs" data-vr-zone="home-top-col3">'],
-          ['&lt;ul class="cn cn-list-hierarchical-xs cn--idx-4 cn-container_22E9F464-EB7E-C538-E799-CA34429B1FB7" data-layout="list-hierarchical-xs">'],
-          ['&lt;ul class="cn cn-list-hierarchical-xs cn--idx-1 cn-container_2C59F041-665D-BE21-0170-A8211182E86F" data-layout="list-hierarchical-xs">'],
-          ['&lt;ul class="cn cn-list-hierarchical-xs cn--idx-3 cn-container_EF2EE969-E050-E82F-0481-C819290829EB" data-layout="list-hierarchical-xs">'],
-          ['&lt;ul class="cn cn-list-hierarchical-xs cn--idx-5 cn-container_38DFE7C3-7CAD-C585-D4A2-C98382BBA289" data-layout="list-hierarchical-xs">'],
-          ['&lt;ul class="cn cn-list-hierarchical-xs cn--idx-7 cn-container_577E9053-CB35-9A0D-B11D-616833D3CA0E" data-layout="list-hierarchical-xs">'],
-          ['&lt;ul class="cn cn-list-hierarchical-xs cn--idx-9 cn-container_56C08895-8C64-6C5B-1859-C902E625979F" data-layout="list-hierarchical-xs">'],
+          ['<span class="code">&lt;ul class="cn cn-list-hierarchical-xs cn--idx-2 cn-container_35DC1942-D3DF-7FE1-F688-C99E962F7CB1" data-layout="list-hierarchical-xs" data-vr-zone="home-top-col3"></span>'],
+          ['<span class="code">&lt;ul class="cn cn-list-hierarchical-xs cn--idx-4 cn-container_22E9F464-EB7E-C538-E799-CA34429B1FB7" data-layout="list-hierarchical-xs"></span>'],
+          ['<span class="code">&lt;ul class="cn cn-list-hierarchical-xs cn--idx-1 cn-container_2C59F041-665D-BE21-0170-A8211182E86F" data-layout="list-hierarchical-xs"></span>'],
+          ['<span class="code">&lt;ul class="cn cn-list-hierarchical-xs cn--idx-3 cn-container_EF2EE969-E050-E82F-0481-C819290829EB" data-layout="list-hierarchical-xs"></span>'],
+          ['<span class="code">&lt;ul class="cn cn-list-hierarchical-xs cn--idx-5 cn-container_38DFE7C3-7CAD-C585-D4A2-C98382BBA289" data-layout="list-hierarchical-xs"></span>'],
+          ['<span class="code">&lt;ul class="cn cn-list-hierarchical-xs cn--idx-7 cn-container_577E9053-CB35-9A0D-B11D-616833D3CA0E" data-layout="list-hierarchical-xs"></span>'],
+          ['<span class="code">&lt;ul class="cn cn-list-hierarchical-xs cn--idx-9 cn-container_56C08895-8C64-6C5B-1859-C902E625979F" data-layout="list-hierarchical-xs"></span>'],
         ],
       },
     },
@@ -391,7 +391,7 @@ const data_bestpractices = [
         },
       },
       {
-        color: 'red', title: 'Uses document.write()',
+        color: 'red', title: 'Uses <span class="code">document.write()</span>',
         description: 'For users on slow connections, external scripts dynamically injected via `document.write()` can delay page load by tens of seconds. Learn more.',
         table: {
           header: ['URL', 'Location'],
@@ -453,7 +453,7 @@ const data_seo = [
         table: {
           header: ['Tap Target', 'Size', 'Overlapping Target'],
           items: [
-            ['&lt;a class="m-legal__links" data-analytics="footer_terms-of-use" href="/terms">Terms of Use&lt;/a>', '79x19', '&lt;a class="m-legal__links" data-analytics="footer_adchoices" href="#">AdChoices&lt;/a>'],
+            ['<span class="code">&lt;a class="m-legal__links" data-analytics="footer_terms-of-use" href="/terms">Terms of Use&lt;/a></span>', '79x19', '<span class="code">&lt;a class="m-legal__links" data-analytics="footer_adchoices" href="#">AdChoices&lt;/a></span>'],
           ],
         },
       }
@@ -473,7 +473,7 @@ const data_pwa_fastandreliable = {
       description: 'If you\'re building a Progressive Web App, consider using a service worker so that your app can work offline. Learn more.',
     },
     {
-      color: 'red', title: 'start_url does not respond with a 200 when offline',
+      color: 'red', title: '<span class="code">start_url</span> does not respond with a 200 when offline',
       error: 'Unable to fetch start URL via service worker.',
       description: 'A service worker enables your web app to be reliable in unpredictable network conditions. Learn more.',
     },
@@ -494,7 +494,7 @@ const data_pwa_installable = {
       },
     },
     {
-      color: 'red', title: 'Does not register a service worker that controls page and start_url',
+      color: 'red', title: 'Does not register a service worker that controls page and <span class="code">start_url</span>',
       description: 'The service worker is the technology that enables your app to use many Progressive Web App features, such as offline, add to homescreen, and push notifications. Learn more.',
     },
     {

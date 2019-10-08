@@ -238,12 +238,12 @@ const data_accessibility_namesandlabels = {
       table: {
         header: ['Failing Elements'],
         items: [
-          ['&lt;button type="submit" class="search-input__button"></button>'],
+          ['<span class="code">&lt;button type="submit" class="search-input__button"></button></span>'],
         ],
       },
     },
     {
-      color: 'red', title: 'Image elements do not have [alt] attributes',
+      color: 'red', title: 'Image elements do not have <span class="code">[alt]</span> attributes',
       description: 'Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. Learn more.',
       table: {
         header: ['Failing Elements'],
