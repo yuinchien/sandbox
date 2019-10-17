@@ -105,17 +105,21 @@ function init() {
 var counter = 0;
 function onFrame(event) {
   counter += 1;
-  if(counter%80==0) {
+
+	if(counter%480==0) {
+		init();
+		counter == 0;
+	}
+
+  if(counter%80==0 && counter!=0) {
 		for(var i=0; i<shapes.length; i++) {
-			if(Math.random()>.7) {
+			var chance = 0.8 * 1 / Math.sqrt(shapes.length) + 0.4;
+			if(Math.random()<chance) {
 				shapes[i].update();
 			}
 		}
   }
-	if(counter%400==0) {
-		init();
-		counter == 0;
-	}
+
 }
 
 function shuffle(array) {
