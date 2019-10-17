@@ -1,0 +1,163 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Scale canvas with resize attribute to full size */
+canvas[resize] {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#buttons {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.button {
+  width: 44px;
+  height: 44px;
+  opacity: .8;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  background-position: 50% 50%;
+}
+#slider-container {
+  margin-right: 12px;
+}
+
+#button-loop {
+  background-image: url(assets/round-play_arrow-24px.svg);
+}
+#button-loop.stop {
+  background-image: url(assets/round-close-24px.svg);
+}
+#button-motion {
+  background-image: url(assets/round-control_point_duplicate-24px.svg);
+}
+
+#toolbar {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 8px;
+}
+#toolbar .item {
+  width: 36px;
+  height: 36px;
+  margin: 8px;
+  opacity: .8;
+  cursor: pointer;
+}
+#toolbar div:hover {
+  opacity: 1;
+}
+#toolbar .item-control {
+  background-size: 36px;
+  background-repeat: no-no-repeat;
+  background-position: center center;
+}
+#button-add {
+  background-image: url(assets/round-add_circle_outline-24px.svg);
+}
+#button-remove {
+  background-image: url(assets/round-remove_circle_outline-24px.svg);
+}
+
+#toolbar .item-color {
+  border-radius: 18px;
+  border: 3px solid white;
+}
+#color-red {
+  background: #F54935;
+}
+#color-blue {
+  background: #0206CA;
+}
+#color-green {
+  background: #0BA160;
+}
+#color-black {
+  background: #000;
+}
+
+#path-editing {
+  display: none;
+  align-items: center;
+}
+#toolbar.path-selected #path-editing {
+  display: flex;
+}
+
+#toolbar .icon {
+  background-size: 32px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#icon-resize {
+  background-image: url(assets/round-format_size-24px.svg);
+}
+
+#icon-rotate {
+  background-image: url(assets/round-rotate_90_degrees_ccw-24px.svg);
+}
+
+#toolbar .divider {
+  margin: 0 8px 0 10px;
+  border-left: 1px solid rgba(0,0,0,.1);
+  height: 36px;
+}
+
+#toolbar .slidecontainer {
+  width: 180px;
+  margin: 0 12px 0 4px;
+  border: none;
+  height: 26px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: #ccc;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #222;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
