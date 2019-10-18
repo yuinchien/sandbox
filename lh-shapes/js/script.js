@@ -91,9 +91,12 @@ function init() {
 	});
 
 	var cells = [20, 30, 40, 50, 60, 80, 100, 120, 160, 200, 240, 320, 360, 480, 560, 600, 640, 720];
+	// var cells = [640, 720];
 	var cell = cells[ Math.floor(Math.random()*cells.length) ];
 	var cols = Math.floor(paper.view.size.width / cell);
 	var rows = Math.floor(paper.view.size.height / cell);
+	cols = Math.max(cols, 1);
+	rows = Math.max(rows, 1);
 	var marginX = (paper.view.size.width - cols * cell)/2;
 	var marginY = (paper.view.size.height - rows * cell)/2;
 	shapes = [];
