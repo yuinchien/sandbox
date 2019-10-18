@@ -1,7 +1,7 @@
-
 var colors = {'triangle':'#FF4E42', 'rectangle':"#FFA400", "circle": "#0CCE6B"};
 var types = Object.keys(colors);
 var shapes = [];
+var darkmode = false;
 
 init();
 
@@ -83,7 +83,14 @@ function Shape(center, r, fill) {
 
 function init() {
 	project.clear();
-	var cells = [30, 40, 50, 60, 80, 100, 120, 160, 200, 240, 320, 360, 480, 560, 600, 640];
+
+	var background = new Path.Rectangle({
+		point: new Point(0,0),
+		size: view.size,
+		fillColor: darkmode ? '#212121' : '#fff'
+	});
+
+	var cells = [20, 30, 40, 50, 60, 80, 100, 120, 160, 200, 240, 320, 360, 480, 560, 600, 640, 720];
 	var cell = cells[ Math.floor(Math.random()*cells.length) ];
 	var cols = Math.floor(paper.view.size.width / cell);
 	var rows = Math.floor(paper.view.size.height / cell);
@@ -107,8 +114,9 @@ function onFrame(event) {
   counter += 1;
 
 	if(counter%480==0) {
-		init();
 		counter == 0;
+		darkmode = Math.random() > .5;
+		init();
 	}
 
   if(counter%80==0 && counter!=0) {
@@ -119,7 +127,6 @@ function onFrame(event) {
 			}
 		}
   }
-
 }
 
 function shuffle(array) {
