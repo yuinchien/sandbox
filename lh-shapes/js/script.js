@@ -1,12 +1,14 @@
 var colors = {"triangle":'#FF4E42', "rectangle":"#FFB511", "circle": "#0CCE6B"};
-var colors700 = {"triangle": "#FF5252", "rectangle":"#FF6C2F", "circle": "#407060"};
+var colors700 = {"triangle": "#FF4E42", "rectangle":"#FF6C2F", "circle": "#407060"};
 
 var types = Object.keys(colors);
 var shapes = [];
 var myShape = null;
 var darkmode = false;
-var duration = 400;
+var duration = 450;
 init();
+
+
 
 function Shape(center, r, fill) {
 	this.fill = fill;
@@ -88,18 +90,25 @@ function Shape(center, r, fill) {
 			}
     });
 
+		// var gradientPositions = [];
+		// gradientPositions[0] = [new Point(view.size.width/2,0), new Point(view.size.width/2, view.size.height)];
+		// gradientPositions[0] = [new Point(view.size.width/2,0), new Point(0, view.size.height)];
+		// gradientPositions[1] = [new Point(0,0), view.size];
+
+		// var positions = gradientPositions[ Math.floor(gradientPositions.length*Math.random()) ];
+
 		anime({
 			targets: config,
 			gradientStep: 100,
 			round: 1,
-			duration: duration*1.5,
+			duration: duration*2,
 			// easing: 'linear',
 			// easing: 'cubicBezier(.5, .05, .1, .3)',
 			easing: 'easeInOutSine',
 			update: function() {
 				var hex = me.scale700(config.gradientStep/100).hex();
 				var gradient = new Gradient([ chroma(hex).alpha(0.2).hex(), hex]);
-				var gradientColor = new Color(gradient, new Point(view.size.width/2,0), new Point(view.size.width/2, view.size.height));
+				var gradientColor = new Color(gradient, new Point(view.size.width/2,0), new Point(view.size.width/2, view.size.height) );
 				me.background.fillColor = gradientColor;
 			}
 		});
