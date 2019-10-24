@@ -64,13 +64,13 @@ function Shape(center, r, fill) {
 
 	this.background.sendToBack();
 
-  this.update = function() {
+  this.update = function() { console.log('udpate');
     this.from = this.to;
     this.to = this.pickDiffShape(this.from);
     this.scale = this.updateScale();
 		this.scale700 = this.updateScale700();
 
-    var config = { step: 0, gradientStep: 0 };
+    var config = { step: 0, gradientStep: 0, rotateStep: 0};
 		var me = this;
 
     anime({
@@ -90,6 +90,8 @@ function Shape(center, r, fill) {
 				me.path.rotate(config.step/100*360);
 			}
     });
+
+
 
 
 		// var gradientPositions = [];
@@ -148,7 +150,7 @@ function init() {
 var counter = 0;
 function onFrame(event) {
   counter += 1;
-  if(counter%150==0) {
+  if(counter%200==0) {
 		myShape.update();
 		counter = 0;
   }
