@@ -5,7 +5,7 @@ var types = Object.keys(colors);
 var shapes = [];
 var myShape = null;
 var darkmode = false;
-var duration = 450;
+var duration = 300;
 init();
 
 
@@ -77,18 +77,20 @@ function Shape(center, r, fill) {
       targets: config,
       step: 100,
       round: 1,
-      duration: duration,
+      duration: duration*3,
       // easing: 'linear',
       // easing: 'cubicBezier(.5, .05, .1, .3)',
-      easing: 'easeInOutSine',
+      easing: 'easeOutQuad',
       update: function() {
         var hex = me.scale(config.step/100).hex();
         me.path.interpolate(me.paths[me.from], me.paths[me.to], config.step/100);
         me.path.fillColor = hex;
         // me.path.strokeColor = hex;
 				me.path.shadowColor = hex;
+				me.path.rotate(config.step/100*360);
 			}
     });
+
 
 		// var gradientPositions = [];
 		// gradientPositions[0] = [new Point(view.size.width/2,0), new Point(view.size.width/2, view.size.height)];
@@ -110,6 +112,8 @@ function Shape(center, r, fill) {
 				var gradient = new Gradient([ chroma(hex).alpha(0.2).hex(), hex]);
 				var gradientColor = new Color(gradient, new Point(view.size.width/2,0), new Point(view.size.width/2, view.size.height) );
 				me.background.fillColor = gradientColor;
+
+
 			}
 		});
 
@@ -144,7 +148,7 @@ function init() {
 var counter = 0;
 function onFrame(event) {
   counter += 1;
-  if(counter%80==0) {
+  if(counter%150==0) {
 		myShape.update();
 		counter = 0;
   }
