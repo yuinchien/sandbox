@@ -1,20 +1,26 @@
-var colors = {'triangle':'#FF4E42', 'rectangle':"#FFA400", "circle": "#0CCE6B"};
+var colors = {"triangle":'#FF4E42', "rectangle":"#FFB511", "circle": "#0CCE6B"};
+var colors700 = {"triangle": "#FF5252", "rectangle":"#FF6C2F", "circle": "#407060"};
+
 var types = Object.keys(colors);
 var shapes = [];
+var myShape = null;
 var darkmode = false;
-
+var duration = 400;
 init();
 
 function Shape(center, r, fill) {
 	this.fill = fill;
 	this.center = center;
+
   var size = new Size(r, r);
   this.path = new Path.Rectangle({
     point: center - size/2,
     size: size,
+		shadowColor: new Color(255,255,255),
+    shadowBlur: r/20,
+    shadowOffset: new Point(0, 0)
   });
-  this.path.strokeWidth = Math.ceil( r/8 );
-  // this.path.fullySelected = true;
+  this.path.strokeWidth = 0;//Math.ceil( r/8 );
 
   this.paths = {};
 
@@ -40,31 +46,64 @@ function Shape(center, r, fill) {
   this.from = types[Math.floor(types.length*Math.random())];
   this.to = types[Math.floor(types.length*Math.random())];
   this.scale = null;
+	this.scale700 = null;
+
+	this.background = new Path.Rectangle({
+		point: new Point(0,0),
+		size: view.size,
+		fillColor: {
+			gradient: {
+        stops: [ chroma(colors700[this.to]).alpha(0.2).hex(), colors700[this.to]]
+      },
+			origin: new Point(0,0),
+      destination: view.size
+		}
+	});
+
+	this.background.sendToBack();
 
   this.update = function() {
     this.from = this.to;
     this.to = this.pickDiffShape(this.from);
     this.scale = this.updateScale();
+		this.scale700 = this.updateScale700();
 
-    var config = { step: 0 };
+    var config = { step: 0, gradientStep: 0 };
 		var me = this;
+
     anime({
       targets: config,
       step: 100,
       round: 1,
-      duration: 300,
+      duration: duration,
       // easing: 'linear',
       // easing: 'cubicBezier(.5, .05, .1, .3)',
       easing: 'easeInOutSine',
       update: function() {
         var hex = me.scale(config.step/100).hex();
         me.path.interpolate(me.paths[me.from], me.paths[me.to], config.step/100);
-				if(me.fill) {
-	        me.path.fillColor = hex;
-				}
-        me.path.strokeColor = hex;
-      }
+        me.path.fillColor = hex;
+        // me.path.strokeColor = hex;
+				me.path.shadowColor = hex;
+			}
     });
+
+		anime({
+			targets: config,
+			gradientStep: 100,
+			round: 1,
+			duration: duration*1.5,
+			// easing: 'linear',
+			// easing: 'cubicBezier(.5, .05, .1, .3)',
+			easing: 'easeInOutSine',
+			update: function() {
+				var hex = me.scale700(config.gradientStep/100).hex();
+				var gradient = new Gradient([ chroma(hex).alpha(0.2).hex(), hex]);
+				var gradientColor = new Color(gradient, new Point(view.size.width/2,0), new Point(view.size.width/2, view.size.height));
+				me.background.fillColor = gradientColor;
+			}
+		});
+
   };
 
   this.pickDiffShape = function(current) {
@@ -79,57 +118,40 @@ function Shape(center, r, fill) {
   this.updateScale = function() {
     return chroma.scale([colors[this.from], colors[this.to]]).mode('lab');
   }
+
+	this.updateScale700 = function() {
+		return chroma.scale([colors700[this.from], colors700[this.to]]).mode('lab');
+	}
+
 }
 
 function init() {
-	project.clear();
-
-	var background = new Path.Rectangle({
-		point: new Point(0,0),
-		size: view.size,
-		fillColor: darkmode ? '#212121' : '#fff'
-	});
-
-	var cells = [20, 30, 40, 50, 60, 80, 100, 120, 160, 200, 240, 320, 360, 480, 560, 600, 640, 720];
-	// var cells = [640, 720];
-	var cell = cells[ Math.floor(Math.random()*cells.length) ];
-	var cols = Math.floor(paper.view.size.width / cell);
-	var rows = Math.floor(paper.view.size.height / cell);
-	cols = Math.max(cols, 1);
-	rows = Math.max(rows, 1);
-	var marginX = (paper.view.size.width - cols * cell)/2;
-	var marginY = (paper.view.size.height - rows * cell)/2;
-	shapes = [];
-
-	for(var i=0; i<cols; i++) {
-		for(var j=0; j<rows; j++) {
-			var center = new Point(i*cell + cell/2 + marginX, j*cell + cell/2 + marginY);
-			var r = cell * .4;
-			var shape = new Shape(center, r, Math.random()>0.5);
-			shapes.push(shape);
-			shape.update();
-		}
-	}
+	var cell = Math.min(paper.view.size.width, Math.floor(paper.view.size.height));
+	var r = cell * .7;
+	myShape = new Shape(paper.view.center, r, 1);
+	myShape.update();
 }
 
 var counter = 0;
 function onFrame(event) {
   counter += 1;
+  if(counter%80==0) {
+		myShape.update();
+		counter = 0;
+  }
+}
 
-	if(counter%480==0) {
-		counter == 0;
-		darkmode = Math.random() > .5;
-		init();
+function downloadAsSVG(fileName) {
+	if(!fileName) {
+		fileName = "shape.svg"
 	}
 
-  if(counter%80==0 && counter!=0) {
-		for(var i=0; i<shapes.length; i++) {
-			var chance = 0.8 * 1 / Math.sqrt(shapes.length) + 0.4;
-			if(Math.random()<chance) {
-				shapes[i].update();
-			}
-		}
-  }
+	var url = "data:image/svg+xml;utf8," + encodeURIComponent(paper.project.exportSVG({asString:true}));
+
+	var link = document.createElement("a");
+	link.download = fileName;
+	link.href = url;
+	link.click();
 }
 
 function shuffle(array) {
