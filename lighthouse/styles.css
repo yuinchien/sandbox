@@ -55,7 +55,7 @@
   --score-number-offset: 2px;
 
   --shape-size: 12px;
-  --shape-margin: 7px 12px 0 4px;
+  --shape-margin: 6px 12px 0 4px;
 
   --topbar-height: 32px;
 
@@ -214,6 +214,7 @@ a {
 #site-url {
   margin-left: 4px;
   line-height: 23px;
+  opacity: 0.8;
   /* font-weight: 500; */
 }
 
@@ -523,14 +524,14 @@ body.dropdown #dropdown {
   margin: 0 auto;
 }
 .row-list-th {
-  padding: var(--item-padding);
+  padding-bottom: 8px;
   color: var(--color-black-600);
 }
 .row-list-th > div {
   white-space: nowrap;
   /* letter-spacing: -0.5px; */
 }
-.row-list-th div,
+/* .row-list-th div, */
 .items .item div {
   flex: 1;
   padding: 0 4px;
@@ -698,7 +699,7 @@ body.dropdown #dropdown {
   }
   .audit.red > .row:before,
   .list-with-shape.red:before {
-    clip-path: polygon(50% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(50% 0, 100% 94%, 0% 94%);
     background: var(--color-red);
   }
   .audit.orange > .row:before,
