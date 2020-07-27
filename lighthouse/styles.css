@@ -800,6 +800,7 @@ body.dropdown #dropdown {
     --score-container-width: 112px;
 
     --score-marginbottom-big: 8px;
+    --score-number-offset: 1px;
 
     --plugin-size: 24px;
     --plugin-size-big: 32px;
