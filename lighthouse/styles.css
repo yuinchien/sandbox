@@ -55,7 +55,7 @@
   --score-number-offset: 2px;
 
   --shape-size: 12px;
-  --shape-margin: 6px 12px 0 4px;
+  --shape-margin: 0px 12px 6px 4px;
 
   --topbar-height: 32px;
 
@@ -780,7 +780,7 @@ body.dropdown #dropdown {
 
 
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 560px) {
   :root {
     --body-fontsize: 14px;
     --body-lineheight: 20px;
@@ -807,7 +807,7 @@ body.dropdown #dropdown {
     --plugin-icon-size: 75%;
 
     --shape-size: 10px;
-    --shape-margin: 5px 12px 0 2px;
+    --shape-margin: 0px 12px 5px 2px;
 
     --topbar-height: 28px;
 
