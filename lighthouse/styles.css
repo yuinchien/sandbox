@@ -235,22 +235,10 @@ a {
   font-family: 'Roboto Mono', monospace;
 }
 #score-scale > div:before {
-  content: "";
-  width: 18px;
-  height: 6px;
-  display: block;
-  border-radius: 10px;
+  margin-top: 5px;
   margin-right: 10px;
 }
-#score-scale > div.red:before {
-  background-color: var(--color-red);
-}
-#score-scale > div.orange:before {
-  background-color: var(--color-orange);
-}
-#score-scale > div.green:before {
-  background-color: var(--color-green);
-}
+
 
 #header {
   margin-top: var(--topbar-height);
